@@ -1,5 +1,95 @@
+.header
+    min-height: 650px
+    height: calc(100vh - 199px)
+    display: flex
+    margin-top: 5px
+
 .swiper
     display: flex
     width: 100%
-    min-height: 600px
-    height: calc(100vh - 100px)
+    height: 100%
+
+.slide
+    height: 100%
+
+.text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    &__wrap
+        width: 345px
+        position: relative
+        height: 100%
+
+.title
+    color: var(--grey-900)
+    font-size: 80px
+    line-height: 96%
+    font-weight: 400
+    text-transform: uppercase
+
+.description
+    margin-top: 24px
+    color: var(--grey-800)
+    font-size: 24px
+    line-height: 116%
+
+.link
+    color: var(--grey-900)
+    font-size: 24px
+    line-height: 104%
+    letter-spacing: 0.48px
+    text-transform: uppercase
+    &__wrap
+        display: flex
+        align-items: center
+        margin-top: 95px
+
+.circle
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    left: -32px
+    width: 131px
+    height: 131px
+    border-radius: 50%
+    border: 1px solid var(--grey-400, #C3BDC7)
+    
+.mainImg
+    height: 100%
+    width: 670px
+    background: url(./../../../../../public/mainImg.jpg) center/cover no-repeat
+
+.smallImg
+    width: 325px
+    height: 297px
+    margin-left: 20px
+    background: url(./../../../../../public/smallImg.png) center/cover no-repeat
+
+.swiperPagination
+    width: 325px
+    position: static
+    text-align: left
+    color: var(--grey-500)
+    font-size: 14px
+    line-height: 24px
+    span:nth-child(1)
+        font-size: 20px
+        margin-right: -4px
+        color: var(--grey-900)
+    span:nth-child(2)
+        margin-left: -2px
+    &__wrap
+        width: 100%
+        height: 100%
+        display: flex
+        justify-content: flex-end
+        align-items: end
+        position: absolute
+        z-index: 0
