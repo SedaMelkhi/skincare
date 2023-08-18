@@ -1,0 +1,32 @@
+.logo
+    width: 75px
+    height: 40px
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    @media ( min-width: 1200px )
+        justify-content: start
+    &__img
+        position: relative
+        z-index: 1
+        width: 55px
+        height: 26px
+        @media ( min-width: 1200px )
+            width: 117px
+            height: 55px
+.blur
+    width: 100%
+    height: 100%
+    background-color: #E1A8FF
+    filter: blur(8.5px)
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 0
+    @media ( min-width: 1200px )
+        filter: blur(40px)
+        width: 210px
+        height: 119px
+        top: -40px
+        left: -50px
