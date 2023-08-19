@@ -16,7 +16,7 @@ const Header: FC = () => {
         <Swiper
           className={style.swiper}
           modules={[Pagination, Navigation, EffectFade, Autoplay, Parallax]}
-          speed={400}
+          speed={1000}
           parallax={true}
           autoplay={{
             delay: 3000,
