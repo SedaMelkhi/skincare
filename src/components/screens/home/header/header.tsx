@@ -16,13 +16,13 @@ const Header: FC = () => {
         <Swiper
           className={style.swiper}
           modules={[Pagination, Navigation, EffectFade, Autoplay, Parallax]}
-          speed={1000}
+          speed={900}
           parallax={true}
           autoplay={{
-            delay: 3000,
+            delay: 8000,
           }}
           effect="fade"
-          loop={false}
+          loop={true}
           pagination={{
             type: 'fraction',
             el: '.swiper-pagination',
