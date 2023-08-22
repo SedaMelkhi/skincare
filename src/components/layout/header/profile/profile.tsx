@@ -5,7 +5,7 @@ import style from './profile.module.sass';
 const Profile: FC = () => {
   return (
     <div className={style.profile}>
-      <img src="./user.png" alt="" />
+      <img src="./user.svg" alt="" />
     </div>
   );
 };

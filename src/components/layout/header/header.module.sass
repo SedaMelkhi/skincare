@@ -1,16 +1,24 @@
 .header
     padding: 14px 0
     display: flex
+    justify-content: space-between
+        
     
 .logo
-    width: 345px
+    @media ( min-width: 1200px )
+        width: 345px
 .group
     display: flex
     align-items: center
+    @media( min-width:  768px)
+        width: 132px
+        flex-shrink: 0
     &_right
-        width: 325px
-        margin-left: 20px
+        
+        align-items: center
         justify-content: flex-end
+        @media ( min-width: 1200px )
+            width: 345px
     img
         display: block
     @media ( min-width: 1200px )
