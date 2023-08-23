@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC, useCallback, useEffect } from 'react';
 
 import Marquee from 'react-fast-marquee';
 
@@ -12,10 +12,10 @@ import style from './header.module.sass';
 import Link from 'next/link';
 
 const Header: FC = () => {
-  const documentHeight = (document: Document) => {
+  const documentHeight = useCallback((document: Document) => {
     const doc = document.documentElement;
     doc.style.setProperty('--doc-height', `${window.innerHeight - 68}px`);
-  };
+  }, []);
   useEffect(() => {
     documentHeight(document);
     window.addEventListener('resize', () => documentHeight(document));
