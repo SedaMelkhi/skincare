@@ -18,9 +18,9 @@ const Header: FC = () => {
           modules={[Pagination, Navigation, EffectFade, Autoplay, Parallax]}
           speed={900}
           parallax={true}
-          autoplay={{
-            delay: 8000,
-          }}
+          // autoplay={{
+          //   delay: 8000,
+          // }}
           effect="fade"
           loop={true}
           pagination={{
@@ -58,12 +58,29 @@ const Header: FC = () => {
                   </div>
                 </div>
               </div>
-              <div className={style.mainImg} data-swiper-parallax="-100%"></div>
+              <div className={style.mainImg__wrap}>
+                <div className={style.mainImg} data-swiper-parallax="-100%"></div>
+                <div className={style.text + ' ' + style.text_mobile}>
+                  <h1 className={style.title} data-swiper-parallax="-100%">
+                    летняя коллекция
+                  </h1>
+                  <p className={style.description} data-swiper-parallax="-100%">
+                    Мы привезли много крутых новинок, давай скорее смотреть?
+                  </p>
+                  <div className={style.link__wrap}>
+                    <Link href="/" className={style.link}>
+                      смотреть
+                    </Link>
+                    <div className={style.circle}>
+                      <img src="./arrowCircle.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className={style.smallImg} data-swiper-parallax="-110%"></div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            {' '}
             <div className={style.header}>
               <div className={style.text__wrap}>
                 <div className={style.text}>
@@ -83,10 +100,28 @@ const Header: FC = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className={style.mainImg}
-                data-swiper-parallax="-100%"
-                style={{ backgroundImage: 'url(./mainImg2.png)' }}></div>
+              <div className={style.mainImg__wrap}>
+                <div
+                  className={style.mainImg}
+                  data-swiper-parallax="-100%"
+                  style={{ backgroundImage: 'url(./mainImg2.png)' }}></div>
+                <div className={style.text + ' ' + style.text_mobile}>
+                  <h1 className={style.title} data-swiper-parallax="-100%">
+                    осенняя коллекция
+                  </h1>
+                  <p className={style.description} data-swiper-parallax="-100%">
+                    Мы привезли много крутых новинок, давай скорее смотреть?
+                  </p>
+                  <div className={style.link__wrap}>
+                    <Link href="/" className={style.link}>
+                      смотреть
+                    </Link>
+                    <div className={style.circle}>
+                      <img src="./arrowCircle.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div
                 className={style.smallImg}
                 data-swiper-parallax="-110%"
@@ -94,7 +129,6 @@ const Header: FC = () => {
             </div>
           </SwiperSlide>
           <SwiperSlide>
-            {' '}
             <div className={style.header}>
               <div className={style.text__wrap}>
                 <div className={style.text}>
@@ -114,10 +148,29 @@ const Header: FC = () => {
                   </div>
                 </div>
               </div>
-              <div
-                className={style.mainImg}
-                data-swiper-parallax="-100%"
-                style={{ backgroundImage: 'url(./mainImg3.png)' }}></div>
+              <div className={style.mainImg__wrap}>
+                <div
+                  className={style.mainImg}
+                  data-swiper-parallax="-100%"
+                  style={{ backgroundImage: 'url(./mainImg3.png)' }}></div>
+                <div className={style.text + ' ' + style.text_mobile}>
+                  <h1 className={style.title} data-swiper-parallax="-100%">
+                    летняя коллекция
+                  </h1>
+                  <p className={style.description} data-swiper-parallax="-100%">
+                    Мы привезли много крутых новинок, давай скорее смотреть?
+                  </p>
+                  <div className={style.link__wrap}>
+                    <Link href="/" className={style.link}>
+                      смотреть
+                    </Link>
+                    <div className={style.circle}>
+                      <img src="./arrowCircle.svg" alt="" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+
               <div
                 className={style.smallImg}
                 data-swiper-parallax="-110%"
