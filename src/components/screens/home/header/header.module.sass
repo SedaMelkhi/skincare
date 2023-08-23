@@ -10,6 +10,7 @@
         height: calc(100vh - 196px)
     &__wrap
         min-height: calc(100vh - 68px)
+        min-height: -webkit-fill-available
         position: relative
 .swiper
     display: flex
@@ -203,6 +204,10 @@
 
 
 .marquee
+    &__wrap
+        background: linear-gradient(90deg, #DAD8E4 0%, #D1CFD7 8.77%, #F4F4FC 26.31%, #ECECF1 52.26%, #EBEBF2 73.02%, #D2D2DD 92.16%)
+        position: absolute
+        bottom: 0
     height: 72px
     display: flex
     align-items: center
