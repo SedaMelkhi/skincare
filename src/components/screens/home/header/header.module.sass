@@ -10,7 +10,7 @@
         height: calc(100vh - 196px)
         min-height: 670px 
     &__wrap
-        min-height: 100%
+        min-height: var(--doc-height)
         position: relative
 .swiper
     display: flex
@@ -206,7 +206,7 @@
 .marquee
     &__wrap
         background: linear-gradient(90deg, #DAD8E4 0%, #D1CFD7 8.77%, #F4F4FC 26.31%, #ECECF1 52.26%, #EBEBF2 73.02%, #D2D2DD 92.16%)
-        position: sticky
+        position: absolute!important
         bottom: 0
         margin-top: 12px
     height: 72px
