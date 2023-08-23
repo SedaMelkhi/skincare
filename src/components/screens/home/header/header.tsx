@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { CSSProperties, FC } from 'react';
 
 import Marquee from 'react-fast-marquee';
 
@@ -12,7 +12,7 @@ import style from './header.module.sass';
 import Link from 'next/link';
 
 const Header: FC = () => {
-  const marqueeStyle = {
+  const marqueeStyle: CSSProperties | undefined = {
     background:
       ' linear-gradient(90deg, #DAD8E4 0%, #D1CFD7 8.77%, #F4F4FC 26.31%, #ECECF1 52.26%, #EBEBF2 73.02%, #D2D2DD 92.16%)',
     position: 'absolute',
@@ -206,8 +206,12 @@ const Header: FC = () => {
           </div>
         </Swiper>
       </header>
-      <Marquee style={marqueeStyle}>
+      <Marquee style={marqueeStyle} speed={100}>
         <div className={style.marquee}>
+          <img src="./star.svg" alt="" />
+          <span>подбор ухода</span>
+          <img src="./star.svg" alt="" />
+          <span>разбор косметички</span>
           <img src="./star.svg" alt="" />
           <span>подбор ухода</span>
           <img src="./star.svg" alt="" />
