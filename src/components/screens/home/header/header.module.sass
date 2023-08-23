@@ -7,6 +7,9 @@
     background-color: var(--light-purple)
     @media ( min-width: 1200px )
         height: calc(100vh - 196px)
+    &__wrap
+        min-height: calc(100vh - 68px)
+        position: relative
 .swiper
     display: flex
     width: 100%
@@ -119,6 +122,7 @@
         left: -16px    
 .mainImg
     height:40vh
+    min-height:276px
     width: 100%
     background: url(./../../../../../public/mainImg.jpg) center/cover no-repeat
     @media ( min-width: 768px )
@@ -132,8 +136,9 @@
             width: 670px
 
 .smallImg
-    width: 20vh
-    height: 125px
+    width: 32%
+    height: 20vh
+    min-height: 125px
     margin-left: 8px
     background: url(./../../../../../public/smallImg.png) center/cover no-repeat
     @media ( min-width: 768px )
@@ -160,12 +165,16 @@
     position: static
     text-align: left
     color: var(--grey-500)
-    font-size: 14px
+    font-size: 12px
     line-height: 24px
+    @media ( min-width: 768px ) 
+        font-size: 14px
     span:nth-child(1)
-        font-size: 20px
+        font-size: 16px
         margin-right: -4px
         color: var(--grey-900)
+        @media ( min-width: 768px ) 
+            font-size: 20px
     span:nth-child(2)
         margin-left: -2px
     &__wrap
@@ -177,10 +186,31 @@
 
 .arrows
     display: flex
+    img
+        width: 16px
+        @media ( min-width: 768px )
+            width: 24px
 .arrow
     &__right
         cursor: pointer
-        margin-left: 8px
+        margin-left: 2px
+        @media ( min-width: 1200px )
+            margin-left: 8px
     &__left
         cursor: pointer
         transform: rotate(180deg)
+
+
+.marquee
+    height: 72px
+    display: flex
+    align-items: center
+    gap: 16px
+    color: var(--grey-800)
+    font-size: 20px
+    line-height: 24px
+    text-transform: uppercase
+    padding-right: 16px
+    img
+        width: 24px
+        margin-top: -5px

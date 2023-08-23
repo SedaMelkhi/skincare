@@ -1,5 +1,7 @@
 import { FC } from 'react';
 
+import Marquee from 'react-fast-marquee';
+
 import { Pagination, Navigation, EffectFade, Autoplay, Parallax } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,9 +12,15 @@ import style from './header.module.sass';
 import Link from 'next/link';
 
 const Header: FC = () => {
+  const marqueeStyle = {
+    background:
+      ' linear-gradient(90deg, #DAD8E4 0%, #D1CFD7 8.77%, #F4F4FC 26.31%, #ECECF1 52.26%, #EBEBF2 73.02%, #D2D2DD 92.16%)',
+    position: 'absolute',
+    bottom: '0',
+  };
   return (
-    <div className="wrap">
-      <header>
+    <div className={style.header__wrap}>
+      <header className="wrap">
         <Swiper
           className={style.swiper}
           modules={[Pagination, Navigation, EffectFade, Autoplay, Parallax]}
@@ -198,6 +206,14 @@ const Header: FC = () => {
           </div>
         </Swiper>
       </header>
+      <Marquee style={marqueeStyle}>
+        <div className={style.marquee}>
+          <img src="./star.svg" alt="" />
+          <span>подбор ухода</span>
+          <img src="./star.svg" alt="" />
+          <span>разбор косметички</span>
+        </div>
+      </Marquee>
     </div>
   );
 };
