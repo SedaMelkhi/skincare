@@ -1,7 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
 
-import { Pagination, Navigation, EffectFade, Autoplay, Parallax } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import style from './Categories.module.sass';
@@ -15,11 +14,26 @@ const Categories: FC = () => {
         <h2 className={style.title}>Категории</h2>
         <div className={style.products}>
           <Swiper
-            slidesPerView={1.1}
+            slidesPerView={3}
             slideNextClass={style.nextSlide}
             slidePrevClass={style.prevSlide}
             slideActiveClass={style.activeSlide}
-            spaceBetween={16}>
+            spaceBetween={20}
+            breakpoints={{
+              1200: {
+                spaceBetween: 20,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 16,
+              },
+              550: {
+                slidesPerView: 2,
+              },
+              0: {
+                slidesPerView: 1.1,
+              },
+            }}>
             <SwiperSlide>
               <Link href="/catalog" className={style.card}>
                 <div className={style.img + ' img ' + style.img_one}></div>
