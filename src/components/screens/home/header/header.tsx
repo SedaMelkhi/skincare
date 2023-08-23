@@ -16,10 +16,9 @@ const Header: FC = () => {
     const doc = document.documentElement;
     doc.style.setProperty('--doc-height', `${window.innerHeight - 68}px`);
   };
-  //window.addEventListener('resize', documentHeight);
-
   useEffect(() => {
     documentHeight(document);
+    window.addEventListener('resize', () => documentHeight(document));
   }, []);
   return (
     <div className={style.header__wrap}>
