@@ -4,9 +4,9 @@ import style from './save.module.sass';
 
 const Save: FC = () => {
   return (
-    <div className={style.save}>
+    <Link href="/save" className={style.save}>
       <img src="./save.svg" alt="" />
-    </div>
+    </Link>
   );
 };
 export default Save;

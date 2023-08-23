@@ -203,13 +203,13 @@ const Header: FC = () => {
       <Marquee className={style.marquee__wrap} speed={100}>
         <div className={style.marquee}>
           <img src="./star.svg" alt="" />
-          <span>подбор ухода</span>
+          <Link href="">подбор ухода</Link>
           <img src="./star.svg" alt="" />
-          <span>разбор косметички</span>
+          <Link href="">разбор косметички</Link>
           <img src="./star.svg" alt="" />
-          <span>подбор ухода</span>
+          <Link href="">подбор ухода</Link>
           <img src="./star.svg" alt="" />
-          <span>разбор косметички</span>
+          <Link href="">разбор косметички</Link>
         </div>
       </Marquee>
     </div>

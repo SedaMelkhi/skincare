@@ -8,9 +8,9 @@ const Basket: FC = () => {
       <div className={style.basket}>
         <img src="./basket.svg" alt="" />
       </div>
-      <div className={style.basket__text}>
+      <Link href="/basket" className={style.basket__text}>
         cумочка (<span className={style.count}>3</span>)
-      </div>
+      </Link>
     </div>
   );
 };

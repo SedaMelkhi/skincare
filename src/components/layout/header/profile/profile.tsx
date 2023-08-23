@@ -4,9 +4,9 @@ import style from './profile.module.sass';
 
 const Profile: FC = () => {
   return (
-    <div className={style.profile}>
+    <Link href="/profile" className={style.profile}>
       <img src="./user.svg" alt="" />
-    </div>
+    </Link>
   );
 };
 export default Profile;
