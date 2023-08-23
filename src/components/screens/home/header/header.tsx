@@ -62,7 +62,7 @@ const Header: FC = () => {
                 <div className={style.mainImg} data-swiper-parallax="-100%"></div>
                 <div className={style.text + ' ' + style.text_mobile}>
                   <h1 className={style.title} data-swiper-parallax="-100%">
-                    летняяя коллекция
+                    летняя коллекция
                   </h1>
                   <p className={style.description} data-swiper-parallax="-100%">
                     Мы привезли много крутых новинок, давай скорее смотреть?
