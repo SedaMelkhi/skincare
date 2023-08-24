@@ -194,7 +194,11 @@ const Sets: FC = () => {
           </div>
         </div>
       </div>
-      <button className={style.btn}>Купить сет — 10 234 ₽</button>
+      <div className={style.button + " wrap"}>
+        <div className={style.btn__wrap}>
+          <button className={style.btn}>Купить сет — 10 234 ₽</button>
+        </div>
+      </div>
     </section>
   );
 };

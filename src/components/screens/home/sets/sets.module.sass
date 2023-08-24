@@ -130,10 +130,20 @@
         background: url(../../../../../public/sets/main1.png) center/cover no-repeat
     &_two
         background: url(../../../../../public/mainImg.jpg) center/cover no-repeat
-
-.btn
+.button
     display: flex
-    height: 48px
+    justify-content: flex-end
+    margin-top: 33px
+    @media (min-width: 768px)
+        margin-top: 52px
+.btn
+    &__wrap
+        width: 1015px  
+    display: flex
+    cursor: pointer
+    height: 50px
+    width: 259px
+    font-weight: 400
     justify-content: center
     align-items: center
     color: var(--grey-25)
@@ -141,3 +151,6 @@
     line-height: 18px
     letter-spacing: 0.64px
     text-transform: uppercase
+    border-radius: 70px
+    background: var(--grey-900)
+    
