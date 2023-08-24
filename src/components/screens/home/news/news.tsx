@@ -17,6 +17,7 @@ const News: FC = () => {
         <div className={style.products}>
           <Swiper
             slidesPerView={3}
+            slidesPerGroup={3}
             slideNextClass={style.nextSlide}
             slidePrevClass={style.prevSlide}
             slideActiveClass={style.activeSlide}
@@ -37,15 +38,33 @@ const News: FC = () => {
               },
               550: {
                 slidesPerView: 2,
+                slidesPerGroup: 2,
               },
               0: {
                 slidesPerView: 1.9,
+                slidesPerGroup: 1,
                 spaceBetween: 16,
               },
             }}>
             <SwiperSlide>
               <Link href="/catalog" className={style.card}>
                 <div className={style.img + ' img ' + style.img_one}></div>
+                <h3 className={style.subtitle}>SKIN&LAB</h3>
+                <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
+                <div className={style.price}>2 234 ₽</div>
+              </Link>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Link href="/catalog" className={style.card}>
+                <div className={style.img + ' img ' + style.img_two}></div>
+                <h3 className={style.subtitle}>SKIN&LAB</h3>
+                <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
+                <div className={style.price}>2 234 ₽</div>
+              </Link>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Link href="/catalog" className={style.card}>
+                <div className={style.img + ' img ' + style.img_three}></div>
                 <h3 className={style.subtitle}>SKIN&LAB</h3>
                 <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
                 <div className={style.price}>2 234 ₽</div>

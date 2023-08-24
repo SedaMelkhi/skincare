@@ -5,12 +5,10 @@ import Layout from '@/components/layout/Layout';
 import Header from './header/header';
 import Categories from './categories/categories';
 
-import { Inter } from 'next/font/google';
-
 import style from './Home.module.sass';
 import News from './news/news';
+import Sets from './sets/sets';
 
-const inter = Inter({ subsets: ['latin'] });
 const HomePage: FC = () => {
   return (
     <Layout title="Главная" description="Онлайн магазин косметики">
@@ -23,6 +21,7 @@ const HomePage: FC = () => {
           </Link>
         </div>
         <News />
+        <Sets />
       </main>
     </Layout>
   );
