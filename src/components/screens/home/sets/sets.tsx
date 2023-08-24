@@ -7,10 +7,58 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import Arrows from '@/components/other/arrows/arrows';
 
+import Marquee from 'react-fast-marquee';
+
 import style from './sets.module.sass';
+
 const Sets: FC = () => {
   return (
-    <section>
+    <section className={style.sets__wrap}>
+      <div className={style.marquee__wrap}>
+        <Marquee className={style.marquee + ' ' + style.marquee__pc} speed={1}>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+        </Marquee>
+      </div>
+
+      <div className={style.marquee__pc__wrap}>
+        <Marquee className={style.marquee} speed={50}>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+          <span>
+            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
+          </span>
+        </Marquee>
+      </div>
       <div className={style.sets}>
         <h2 className={style.title}>сеты</h2>
         <div>
@@ -194,7 +242,7 @@ const Sets: FC = () => {
           </div>
         </div>
       </div>
-      <div className={style.button + " wrap"}>
+      <div className={style.button + ' wrap'}>
         <div className={style.btn__wrap}>
           <button className={style.btn}>Купить сет — 10 234 ₽</button>
         </div>

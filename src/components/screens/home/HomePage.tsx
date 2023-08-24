@@ -5,9 +5,10 @@ import Layout from '@/components/layout/Layout';
 import Header from './header/header';
 import Categories from './categories/categories';
 
-import style from './Home.module.sass';
 import News from './news/news';
 import Sets from './sets/sets';
+
+import style from './Home.module.sass';
 
 const HomePage: FC = () => {
   return (
@@ -21,6 +22,7 @@ const HomePage: FC = () => {
           </Link>
         </div>
         <News />
+
         <Sets />
       </main>
     </Layout>
