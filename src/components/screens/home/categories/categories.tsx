@@ -55,9 +55,6 @@ const Categories: FC = () => {
           </Swiper>
         </div>
       </div>
-      <Link href="/" className={style.sticker__wrap}>
-        <img src="./sticker.png" alt="" className={style.sticker} />
-      </Link>
     </section>
   );
 };
