@@ -194,6 +194,7 @@ const Sets: FC = () => {
           </div>
         </div>
       </div>
+      <button className={style.btn}>Купить сет — 10 234 ₽</button>
     </section>
   );
 };

@@ -8,7 +8,7 @@
     margin-top: 2px
     @media ( min-width: 1200px )
         height: calc(100vh - 196px)
-        min-height: 600px 
+        min-height: 650px 
     &__wrap
         min-height: var(--doc-height)
         position: relative
@@ -16,10 +16,12 @@
     position: relative
     display: flex
     width: 100%
-    min-height: var(--doc-height)
-    padding-bottom: 84px
-    @media ( min-width: 768px )
-        padding-bottom: 126px
+    height: 100%
+    &__wrap
+        min-height: var(--doc-height)
+        padding-bottom: 84px
+        @media ( min-width: 768px )
+            padding-bottom: 126px
 
 .slide
     height: 100%
@@ -81,7 +83,6 @@
         margin-top: 16px 
         font-size: 24px
     @media ( min-width: 1200px )
-        
         line-height: 116%
         margin-top: 24px
 .link
@@ -155,16 +156,20 @@
         height: 297px
 .swiperParams
     width: 100%
-    bottom: 84px
+    bottom: 17px
+    top: auto
     display: flex
     justify-content: flex-end
     align-items: end
     position: absolute
     z-index: 10
-    @media ( min-width: 768px )   
-        bottom: 138px
-    @media ( min-width: 1200px )
-        height: 150px
+    @media ( max-height: 720px )
+        bottom: auto
+        top: 83vh
+    @media ( max-width: 768px )
+        bottom: 10px
+        top: auto
+    
 
 .swiperPagination
     position: static
@@ -183,11 +188,11 @@
     span:nth-child(2)
         margin-left: -2px
     &__wrap
-        width: 31%
+        width: 32%
         display: flex
         justify-content: space-between
         @media ( min-width: 1200px )
-            width: 325px
+            width: 24%
 
 .marquee
     &__wrap
