@@ -2,10 +2,12 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-
-import style from './News.module.sass';
+import { Navigation } from 'swiper/modules';
 
 import 'swiper/css';
+import Arrows from '@/components/other/arrows/arrows';
+
+import style from './News.module.sass';
 
 const News: FC = () => {
   return (
@@ -19,6 +21,12 @@ const News: FC = () => {
             slidePrevClass={style.prevSlide}
             slideActiveClass={style.activeSlide}
             spaceBetween={57.5}
+            modules={[Navigation]}
+            navigation={{
+              nextEl: '.next',
+              prevEl: '.prev',
+              enabled: true,
+            }}
             breakpoints={{
               1200: {
                 spaceBetween: 57.5,
@@ -69,6 +77,9 @@ const News: FC = () => {
             </SwiperSlide>
           </Swiper>
         </div>
+      </div>
+      <div className={style.arrows}>
+        <Arrows next="next" prev="prev" />
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import { FC, useCallback, useEffect } from 'react';
+import Link from 'next/link';
 
 import Marquee from 'react-fast-marquee';
 
@@ -9,7 +10,7 @@ import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 import style from './header.module.sass';
-import Link from 'next/link';
+import Arrows from '@/components/other/arrows/arrows';
 
 const Header: FC = () => {
   const documentHeight = useCallback((document: Document) => {
@@ -192,18 +193,7 @@ const Header: FC = () => {
               <div>
                 <div className={'swiper-pagination ' + style.swiperPagination}></div>
               </div>
-              <div className={style.arrows}>
-                <img
-                  src="./arrow.svg"
-                  alt=""
-                  className={'swiper-button-prev ' + style.arrow__left}
-                />
-                <img
-                  src="./arrow.svg"
-                  alt=""
-                  className={'swiper-button-next ' + style.arrow__right}
-                />
-              </div>
+              <Arrows next="swiper-button-next" prev="swiper-button-prev" />
             </div>
           </div>
         </Swiper>
