@@ -1,4 +1,4 @@
-import { FC, useState, useEffect, useRef } from 'react';
+import { FC } from 'react';
 import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,33 +8,15 @@ import 'swiper/css';
 import Arrows from '@/components/other/arrows/arrows';
 
 import style from './sets.module.sass';
-import PinkMarquee from './pinkMarquee/pinkMarquee';
+import PinkMarquee from './../pinkMarquee/pinkMarquee';
 
-const Sets: FC = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const section = useRef<HTMLDivElement | null>(null);
+interface SetsProps {
+  isVisible: boolean;
+}
 
-  useEffect(() => {
-    const checkVisibility = () => {
-      if (section.current) {
-        const rect = section.current.getBoundingClientRect();
-        const halfHeight = section.current.offsetHeight / 2;
-
-        if (rect.top <= window.innerHeight - halfHeight && rect.bottom >= halfHeight) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      }
-    };
-    window.addEventListener('scroll', checkVisibility);
-    return () => {
-      window.removeEventListener('scroll', checkVisibility);
-    };
-  }, []);
-
+const Sets: FC<SetsProps> = ({ isVisible }) => {
   return (
-    <section className={style.sets__wrap} ref={section}>
+    <section className={style.sets__wrap}>
       <PinkMarquee isVisible={isVisible} />
       <div className={style.sets}>
         <h2 className={style.title}>сеты</h2>

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 import Layout from '@/components/layout/Layout';
@@ -7,10 +7,37 @@ import Categories from './categories/categories';
 
 import News from './news/news';
 import Sets from './sets/sets';
+import PinkMarquee from './pinkMarquee/pinkMarquee';
 
 import style from './Home.module.sass';
+import Hits from './hits/Hits';
 
 const HomePage: FC = () => {
+  const [isVisible, setIsVisible] = useState(false);
+  const section = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+    const checkVisibility = () => {
+      if (section.current) {
+        const rect = section.current.getBoundingClientRect();
+        const halfHeight = section.current.offsetHeight / 2;
+
+        if (
+          rect.top <= window.innerHeight - halfHeight &&
+          rect.bottom >= halfHeight &&
+          rect.bottom > 0
+        ) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+    window.addEventListener('scroll', checkVisibility);
+    return () => {
+      window.removeEventListener('scroll', checkVisibility);
+    };
+  }, []);
   return (
     <Layout title="Главная" description="Онлайн магазин косметики">
       <Header />
@@ -22,8 +49,10 @@ const HomePage: FC = () => {
           </Link>
         </div>
         <News />
-
-        <Sets />
+        <div ref={section} className={style.pinkMarqueeWrap}>
+          <Sets isVisible={isVisible} />
+          <Hits />
+        </div>
       </main>
     </Layout>
   );
