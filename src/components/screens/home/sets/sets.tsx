@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,58 +7,35 @@ import { Navigation } from 'swiper/modules';
 import 'swiper/css';
 import Arrows from '@/components/other/arrows/arrows';
 
-import Marquee from 'react-fast-marquee';
-
 import style from './sets.module.sass';
+import PinkMarquee from './pinkMarquee/pinkMarquee';
 
 const Sets: FC = () => {
-  return (
-    <section className={style.sets__wrap}>
-      <div className={style.marquee__wrap}>
-        <Marquee className={style.marquee + ' ' + style.marquee__pc} speed={1}>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-        </Marquee>
-      </div>
+  const [isVisible, setIsVisible] = useState(false);
+  const section = useRef<HTMLDivElement | null>(null);
 
-      <div className={style.marquee__pc__wrap}>
-        <Marquee className={style.marquee} speed={50}>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-        </Marquee>
-      </div>
+  useEffect(() => {
+    const checkVisibility = () => {
+      if (section.current) {
+        const rect = section.current.getBoundingClientRect();
+        const halfHeight = section.current.offsetHeight / 2;
+
+        if (rect.top <= window.innerHeight - halfHeight && rect.bottom >= halfHeight) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      }
+    };
+    window.addEventListener('scroll', checkVisibility);
+    return () => {
+      window.removeEventListener('scroll', checkVisibility);
+    };
+  }, []);
+
+  return (
+    <section className={style.sets__wrap} ref={section}>
+      <PinkMarquee isVisible={isVisible} />
       <div className={style.sets}>
         <h2 className={style.title}>сеты</h2>
         <div>
