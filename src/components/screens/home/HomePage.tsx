@@ -11,6 +11,8 @@ import PinkMarquee from './pinkMarquee/pinkMarquee';
 
 import style from './Home.module.sass';
 import Hits from './hits/Hits';
+import Experts from './experts/experts';
+import Journal from './jourmal/journal';
 
 const HomePage: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -53,6 +55,8 @@ const HomePage: FC = () => {
           <Sets isVisible={isVisible} />
           <Hits />
         </div>
+        <Experts />
+        <Journal />
       </main>
     </Layout>
   );
