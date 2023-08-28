@@ -2,7 +2,6 @@ import { FC } from 'react';
 import Link from 'next/link';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation } from 'swiper/modules';
 
 import Title from '@/components/other/title/title';
 
@@ -11,39 +10,33 @@ import style from './experts.module.sass';
 
 const Experts: FC = () => {
   return (
-    <div className="wrap experts">
+    <div className="experts">
       <section className={style.experts}>
-        <Title text="мы эксперты в уходе за кожей" />
+        <div className="wrap">
+          <Title text="мы эксперты в уходе за кожей" />
+        </div>
 
         <div className={style.steps__wrap}>
           <div className={style.steps}>
             <Swiper
               slidesPerView={3}
-              slidesPerGroup={3}
-              spaceBetween={20}
+              slidesPerGroup={1}
+              spaceBetween={16}
               direction="vertical"
-              modules={[Navigation]}
-              navigation={{
-                nextEl: '.next',
-                prevEl: '.prev',
-                enabled: true,
-              }}
               breakpoints={{
                 1200: {
-                  spaceBetween: 20,
+                  direction: 'vertical',
                 },
                 768: {
-                  slidesPerView: 3,
-                  spaceBetween: 16,
+                  direction: 'vertical',
                 },
-                550: {
-                  slidesPerView: 2,
-                  slidesPerGroup: 2,
+                767: {
+                  direction: 'horizontal',
+                  slidesPerView: 1.1,
                 },
                 0: {
-                  slidesPerView: 1.6,
-                  slidesPerGroup: 1,
-                  spaceBetween: 16,
+                  direction: 'horizontal',
+                  slidesPerView: 1.1,
                 },
               }}>
               <SwiperSlide>
