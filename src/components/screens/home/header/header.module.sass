@@ -11,16 +11,13 @@
     @media ( min-width: 768px )
         padding: 0 24px
     @media ( min-width: 1200px )
-        max-width: var(--max-width)
-        box-sizing: content-box
-        margin: 2px auto 0
         height: calc(100vh - 196px)
-        min-height: 650px 
-        padding: 0 40px
-        
+        min-height: 650px
+        padding: 0
     &__wrap
         min-height: var(--doc-height)
         position: relative
+        
 
 .swiper
     position: relative
@@ -32,6 +29,11 @@
         padding-bottom: 84px
         @media ( min-width: 768px )
             padding-bottom: 126px
+        @media ( min-width: 1200px )
+            max-width: var(--max-width)
+            box-sizing: content-box
+            margin: 0 auto
+            padding: 0 40px  
 
 .slide
     height: 100%
@@ -49,7 +51,6 @@
         width: 510px
     @media ( min-width: 1200px )
         width: 100%
-        width: 256px
     &_mobile
         display: flex
         position: static
@@ -186,7 +187,6 @@
         bottom: 10px
         top: auto
         padding-right: 16px
-
     
 
 .swiperPagination
