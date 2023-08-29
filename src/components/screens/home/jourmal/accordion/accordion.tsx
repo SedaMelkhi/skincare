@@ -43,11 +43,12 @@ const Accordion: FC = () => {
     },
   ];
   return (
-    <div className={style.accordion + ' wrap'}>
+    <div className={style.accordion}>
       {items.map(({ title, description, type, id }): any => (
         <div className={style.item} key={id} onClick={() => onItemClick(id)}>
           <div className={style.column}>
             <div className={style.text}>
+              <div className={style.type__mobile}>{type}</div>
               <div className={style.title + ' ' + (activeIndex === id ? style.title_active : '')}>
                 <h3>{title}</h3>
                 <div
@@ -57,6 +58,7 @@ const Accordion: FC = () => {
                   <CircleArrow sizeCircle="48px" sizeImg="32px" color="var(--primary-500)" />
                 </div>
               </div>
+
               <div
                 className={
                   style.description + ' ' + (activeIndex === id ? style.active : style.hidden)

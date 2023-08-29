@@ -1,29 +1,49 @@
 .accordion
     margin-top: 40px
+    padding: 0 16px
+    @media (min-width: 728px)
+        padding: 0 24px
+    @media (min-width: 1200px)
+        padding: 0
 
 .item
-    display: none
+    display: flex
+    justify-content: space-between
+    border-top: 1px solid var(--grey-300)
+    padding: 8px 0
+    gap: 12px
     @media (min-width: 728px)
-        display: flex
-        justify-content: space-between
+        gap: 50px
         padding: 18px 0
-        border-top: 1px solid var(--grey-300)
         cursor: pointer
         overflow: hidden
 
-
+.column
+    &:nth-child(2)
+        order: -1
+        @media (min-width: 768px)
+            order: 0
 .image
-    width: 167px
-    height: 100%
+    width: 108px
+    height: 82px
     background: url(./../../../../../../public/journal/1.png) no-repeat center/cover 
+    @media (min-width: 768px)
+        width: 120px
+        height: 74px
+        margin-top: 10px
+    @media (min-width: 1200px)
+        width: 167px
+        height: 100%
+        margin-top: 0
 
 .title
     display: flex
     align-items: center
     color: var(--grey-800)
     text-transform: uppercase
-    &_active
-        color: var(--primary-500)
+    @media (min-width: 1200px)
+        &_active
+            color: var(--primary-500)
     h3
         font-size: 20px
         line-height: 120%
@@ -31,46 +51,68 @@
         margin-right: 24px
 
 .circle
-    margin-top: -4px
+    display: none
+    @media (min-width: 768px)
+        display: block
+        margin-top: -4px
 
 .description
-    color: var(--grey-600)
-    font-size: 16px
-    line-height: 137.5%
-    max-width: 492px
-    padding-top: 12px
+    display: none
+    @media (min-width: 768px)
+        color: var(--grey-600)
+        font-size: 16px
+        line-height: 137.5%
+        max-width: 492px
+        padding-top: 12px
     
 .type
-    color: var(--primary-500)
-    font-size: 12px
-    line-height: 133.333%
-    text-transform: uppercase
+    display: none
+    &__mobile
+        color: var(--primary-500)
+        margin-bottom: 8px
+        font-size: 12px
+        line-height: 133.333%
+        text-transform: uppercase
+        @media (min-width: 768px)
+            display: none
+    @media (min-width: 768px)
+        display: block
+        color: var(--primary-500)
+        font-size: 12px
+        line-height: 133.333%
+        text-transform: uppercase
+        width: 122px
 
 .hidden
-    animation:  hidden .5s linear 1 forwards
-    @keyframes hidden
-        0%
-            margin-top: 0px
-            opacity: 1
-        50%
-            opacity: 0
-        100%
-            margin-top: -100px
-            opacity: 0
-            visibility: hidden
+    @media (min-width: 768px)
+        display: block
+        opacity: 1
+    @media (min-width: 1200px)
+        animation:  hidden .5s linear 1 forwards
+        @keyframes hidden
+            0%
+                margin-top: 0px
+                opacity: 1
+            50%
+                opacity: 0
+            100%
+                margin-top: -100px
+                opacity: 0
+                visibility: hidden
             
 .active
-    display: block
-    margin-top: -100px
-    opacity: 0
-    animation:  visible .5s linear 1 forwards
-    @keyframes visible 
-        0%
-            margin-top: -100px
-            opacity: 0
-        50%
-            opacity: 0
-        100%
-            margin-top: 0px
-            opacity: 1
+    @media (min-width: 1200px)
+        display: block
+        margin-top: -100px
+        opacity: 0
+        animation:  visible .5s linear 1 forwards
+        @keyframes visible 
+            0%
+                margin-top: -100px
+                opacity: 0
+            50%
+                opacity: 0
+            100%
+                margin-top: 0px
+                opacity: 1  
            

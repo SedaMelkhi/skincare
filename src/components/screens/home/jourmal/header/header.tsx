@@ -7,7 +7,7 @@ const Header: FC = () => {
   return (
     <div className={style.header}>
       <div className={style.image}></div>
-      <div className={style.header__text + ' wrap'}>
+      <div className={'wrap ' + style.header__text}>
         <h3 className={style.title}>
           Как составить уход?
           <div className={style.arrow}>
