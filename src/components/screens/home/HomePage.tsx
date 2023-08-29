@@ -13,6 +13,7 @@ import style from './Home.module.sass';
 import Hits from './hits/Hits';
 import Experts from './experts/experts';
 import Journal from './jourmal/journal';
+import Present from './present/presemt';
 
 const HomePage: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -57,6 +58,7 @@ const HomePage: FC = () => {
         </div>
         <Experts />
         <Journal />
+        <Present />
       </main>
     </Layout>
   );
