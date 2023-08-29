@@ -14,6 +14,7 @@ import Hits from './hits/Hits';
 import Experts from './experts/experts';
 import Journal from './jourmal/journal';
 import Present from './present/presemt';
+import About from './about/about';
 
 const HomePage: FC = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,6 +60,7 @@ const HomePage: FC = () => {
         <Experts />
         <Journal />
         <Present />
+        <About />
       </main>
     </Layout>
   );
