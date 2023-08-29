@@ -11,7 +11,7 @@ import style from './News.module.sass';
 
 const News: FC = () => {
   return (
-    <section className="wrap">
+    <section>
       <div className={style.news}>
         <h2 className={style.title}>новинки</h2>
         <div className={style.products}>

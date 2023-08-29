@@ -23,7 +23,7 @@ const CircleArrow: FC<CircleArrowProps> = ({ sizeCircle, sizeImg, color }) => {
           <path
             d="M31.5741 3L37.5 9M31.5741 15L37.5 9M37.5 9L31.5741 9L7.5 9"
             stroke={color || '#19171A'}
-            stroke-width="1.5"
+            strokeWidth="1.5"
           />
         </svg>
       </span>
