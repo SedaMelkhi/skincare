@@ -22,7 +22,7 @@ const HomePage: FC = () => {
     const checkVisibility = () => {
       if (section.current) {
         const rect = section.current.getBoundingClientRect();
-        const halfHeight = section.current.offsetHeight / 2;
+        const halfHeight = (section.current.offsetHeight - 200) / 2;
 
         if (
           rect.top <= window.innerHeight - halfHeight &&
