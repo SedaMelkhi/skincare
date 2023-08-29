@@ -23,7 +23,7 @@ const Header: FC = () => {
   }, []);
   return (
     <div className={style.header__wrap}>
-      <header className="wrap">
+      <header>
         <div className={style.swiper__wrap}>
           <Swiper
             className={style.swiper}
