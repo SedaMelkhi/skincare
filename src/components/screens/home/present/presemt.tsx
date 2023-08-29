@@ -102,7 +102,7 @@ const Present: FC = () => {
                   <path
                     d="M42.0988 4L50 12M42.0988 20L50 12M50 12H42.0988L10 12"
                     stroke="#19171A"
-                    stroke-width="2"
+                    strokeWidth="2"
                   />
                 </svg>
               </span>
