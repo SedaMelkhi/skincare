@@ -1,16 +1,18 @@
 import { FC } from 'react';
 
 import style from './header.module.sass';
+import CircleArrow from '@/components/other/circleArrow/circleArrow';
 
 const Header: FC = () => {
   return (
     <div className={style.header}>
       <div className={style.image}></div>
-      <div className={style.header__text}>
+      <div className={style.header__text + ' wrap'}>
         <h3 className={style.title}>
           Как составить уход?
-          <div className={style.circle}>
-            <img src="./arrowCircle.svg" alt="" />
+          <div className={style.arrow}>
+            {' '}
+            <CircleArrow sizeCircle="48px" sizeImg="32px" />
           </div>
         </h3>
         <div className={style.subtitle}>Проблемная кожа</div>

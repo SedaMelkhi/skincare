@@ -1,17 +1,21 @@
-.categories
-    display: flex
-    flex-direction: column
+.categories 
     margin-top: 80px
     @media (min-width: 1200px)
+        display: flex
         justify-content: space-between
         gap: 20px
         flex-direction: row
-        margin-top: 160px
+        max-width: var(--max-width)
+        padding: 160px 16px 0
+        box-sizing: content-box
+        margin: 0 auto
         
 .products
     height: 390px
+    padding-left: 16px
     @media (min-width: 768px)
         height: auto
+        padding:  0 24px
     @media (min-width: 1200px)
         width: 1015px
 
@@ -25,6 +29,10 @@
     @media (min-width: 768px)
         font-size: 32px
         line-height: 100%
+    @media (min-width: 1200px)
+        margin: 0
+        padding: 0
+        
 
 .card
     display: block     

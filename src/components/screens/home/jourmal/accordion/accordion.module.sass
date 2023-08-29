@@ -1,0 +1,76 @@
+.accordion
+    margin-top: 40px
+
+.item
+    display: none
+    @media (min-width: 728px)
+        display: flex
+        justify-content: space-between
+        padding: 18px 0
+        border-top: 1px solid var(--grey-300)
+        cursor: pointer
+        overflow: hidden
+
+
+.image
+    width: 167px
+    height: 100%
+    background: url(./../../../../../../public/journal/1.png) no-repeat center/cover 
+
+.title
+    display: flex
+    align-items: center
+    color: var(--grey-800)
+    text-transform: uppercase
+    &_active
+        color: var(--primary-500)
+    h3
+        font-size: 20px
+        line-height: 120%
+        font-weight: 400
+        margin-right: 24px
+
+.circle
+    margin-top: -4px
+
+.description
+    color: var(--grey-600)
+    font-size: 16px
+    line-height: 137.5%
+    max-width: 492px
+    padding-top: 12px
+    
+.type
+    color: var(--primary-500)
+    font-size: 12px
+    line-height: 133.333%
+    text-transform: uppercase
+
+.hidden
+    animation:  hidden .5s linear 1 forwards
+    @keyframes hidden
+        0%
+            margin-top: 0px
+            opacity: 1
+        50%
+            opacity: 0
+        100%
+            margin-top: -100px
+            opacity: 0
+            visibility: hidden
+            
+.active
+    display: block
+    margin-top: -100px
+    opacity: 0
+    animation:  visible .5s linear 1 forwards
+    @keyframes visible 
+        0%
+            margin-top: -100px
+            opacity: 0
+        50%
+            opacity: 0
+        100%
+            margin-top: 0px
+            opacity: 1
+           

@@ -9,9 +9,9 @@ import 'swiper/css';
 
 const Categories: FC = () => {
   return (
-    <section className="wrap">
+    <section>
       <div className={style.categories + ' categories'}>
-        <h2 className={style.title}>Категории</h2>
+        <h2 className={'wrap ' + style.title}>Категории</h2>
         <div className={style.products}>
           <Swiper
             slidesPerView={3}
