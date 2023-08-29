@@ -11,7 +11,7 @@ import style from './hits.module.sass';
 
 const Hits: FC = () => {
   return (
-    <section className="wrap">
+    <section className={style.hits__wrap}>
       <div className={style.hits}>
         <h2 className={style.title}>хиты</h2>
         <div className={style.products}>
