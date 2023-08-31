@@ -1,4 +1,8 @@
 import { FC } from 'react';
+
+import arrow from './../../../../public/arrow.svg';
+import logo from './../../../../public/logo.svg';
+
 import style from './footer.module.sass';
 
 const Footer: FC = () => {
@@ -10,13 +14,13 @@ const Footer: FC = () => {
             <div>
               <h2 className={style.title}>Расслабьтесь. Мы все сделаем за вас</h2>
               <div className={style.button}>
-                Записаться на консультацию <img src="./arrow.svg" />
+                Записаться на консультацию <img src={arrow.src} />
               </div>
             </div>
             <div className={style.menu}>
               <div className={style.column}>
                 <div className={style.subtitle}>
-                  Каталог <img src="./arrow.svg" />
+                  Каталог <img src={arrow.src} />
                 </div>
                 <div className={style.item}>Акции</div>
                 <div className={style.item}>Новинки</div>
@@ -37,7 +41,7 @@ const Footer: FC = () => {
                   <a href="tel:+79280853618">+7 (928) 085-36-18</a>
                 </div>
                 <div className={style.item}>
-                  Написать в Telegram <img src="./arrow.svg" />
+                  Написать в Telegram <img src={arrow.src} />
                 </div>
               </div>
               <div className={style.column}>
@@ -48,7 +52,7 @@ const Footer: FC = () => {
             </div>
           </div>
           <div className={style.end}>
-            <img src="./logo.svg" alt="" className={style.logo} />
+            <img src={logo.src} alt="" className={style.logo} />
             <div className={style.end__text}>
               <p className={style.text}>Политика обработки персональных данных</p>
               <p className={style.text}>© 2023 — Skincare Agents</p>
