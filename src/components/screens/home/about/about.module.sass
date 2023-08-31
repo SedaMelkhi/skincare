@@ -1,26 +1,33 @@
 .about
     background: url(./../../../../../public/about/circleM.svg) top/contain no-repeat
-    margin-top: 93px    
+    margin-top: 93px  
+    position: relative  
+    min-height: 304px
     @media (min-width: 768px)
         background-image: url(./../../../../../public/about/circleT.svg)
+        min-height: 438px
+        margin-top: 120px 
     @media (min-width: 1200px)
         background-image: url(./../../../../../public/about/circle.svg)
+        min-height: 670px
+        margin-top: 160px 
 .title
     color: var(--grey-800)
     font-size: 20px
     line-height: normal 
     text-transform: uppercase
     font-style: italic
+    position: absolute
+    z-index: 1
     @media (min-width: 768px)
         font-size: 28px
+    @media (min-width: 1200px)
+        font-size: 48px
     &:nth-child(1)
-        margin-top: 20px
-        @media (min-width: 768px)
-            margin-top: -30px
+        top: -10px
     &:nth-child(3)
-        @media (min-width: 768px)
-            margin-top: 10px
-            margin-left: 150px
+        bottom: 70px
+        right: 0
     div
         &:nth-child(1)
             margin-left: 17px
@@ -43,21 +50,41 @@
     &__one
         width: 39px
         margin-top: 22px
+        position: absolute
+        left: 50px
+        top: 50px
         @media (min-width: 768px)
             width: 61px
-            margin: -10px 0 0 20px
+        @media (min-width: 1200px)
+            width: 101px
+            left: 70px
+            top: 150px
+            z-index: 0
     &__two
         width: 66px
+        position: absolute
+        right: -10px
+        top: 30px
         @media (min-width: 768px)
             width: 144px
-            margin: -200px 50px 0 0
+            top: -80px
+            right: 50px
+        @media (min-width: 1200px)
+            width: 235px
+            top: -130px
     &__three
         width: 66px
-        margin-top: -40px
+        position: absolute
+        bottom: 0
+        left: 20px
         @media (min-width: 768px)
             width: 108px
-            margin-top: -80px
-            
+            bottom: 80px
+            left: 40px
+        @media (min-width: 1200px)
+            width: 178px
+            left: 200px
+            bottom: 0
 
 .circle
     width: 66px
@@ -72,7 +99,12 @@
     margin: -10px auto 0
     img
         width: 32px                  
-
+    @media (min-width: 1200px)
+        width: 131px
+        height: 131px
+        margin: -30px auto 0
+        img
+            width: 60px
 .btn
     width: 154px
     color: var(--grey-900)
@@ -82,3 +114,7 @@
     letter-spacing: 0.64px
     text-transform: uppercase
     margin: 26px auto 0
+    @media (min-width: 1200px)
+        font-size: 24px
+        width: 220px
+        margin: 0 auto
