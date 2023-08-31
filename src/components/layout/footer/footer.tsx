@@ -49,8 +49,10 @@ const Footer: FC = () => {
           </div>
           <div className={style.end}>
             <img src="./logo.svg" alt="" className={style.logo} />
-            <p className={style.text}>Политика обработки персональных данных</p>
-            <p className={style.text}>© 2023 — Skincare Agents</p>
+            <div className={style.end__text}>
+              <p className={style.text}>Политика обработки персональных данных</p>
+              <p className={style.text}>© 2023 — Skincare Agents</p>
+            </div>
           </div>
         </div>
       </div>
