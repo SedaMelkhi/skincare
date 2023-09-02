@@ -5,8 +5,6 @@ import searchImg from './../../../../../public/search.svg';
 import arrowImg from './../../../../../public/arrow.svg';
 
 const Search: FC = () => {
-  console.log(searchImg);
-
   return (
     <div className={style.search}>
       <input type="text" className={style.input} placeholder="Поиск" />
