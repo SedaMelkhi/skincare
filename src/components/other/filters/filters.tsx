@@ -2,6 +2,9 @@ import { FC } from 'react';
 
 import filtersSvg from './../../../../public/catalog/filters.svg';
 
+import RangeSlider from '../rangeSlider/rangeSlider';
+import { StyledEngineProvider } from '@mui/material';
+
 import style from './filters.module.sass';
 
 const Filters: FC = () => {
@@ -19,6 +22,11 @@ const Filters: FC = () => {
             <span className={`${style.slider} ${style.round}`}></span>
           </label>
         </div>
+        <div className={`${style.title} ${style.title_grey}`}>Цена</div>
+
+        <StyledEngineProvider injectFirst>
+          <RangeSlider />
+        </StyledEngineProvider>
       </aside>
     </div>
   );
