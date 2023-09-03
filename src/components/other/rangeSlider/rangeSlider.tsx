@@ -17,7 +17,7 @@ export default function RangeSlider() {
         <span>От {value[0]}₽</span>
         <span>до {value[1]}₽</span>
       </div>
-      <Box sx={{ width: 299 }} className={style.slider}>
+      <Box sx={{ width: 278 }} className={style.slider}>
         <Slider
           getAriaLabel={() => 'Temperature range'}
           value={value}

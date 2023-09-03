@@ -26,8 +26,8 @@ const Catalog: NextPage = () => {
           </div>
         </div>
         <div className={style.top}>
-          <div className={`${style.flex} ${style.flex_long}`}>
-            <h2 className={style.title}>Основной уход</h2>
+          <div className={`${style.flex}`}>
+            <h2 className={style.title}>Лицо</h2>
           </div>
         </div>
         <div className={style.params}>

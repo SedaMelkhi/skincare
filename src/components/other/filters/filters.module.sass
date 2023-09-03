@@ -1,26 +1,32 @@
 .wrap
-    display: flex
-    align-items: center
-    gap: 4px
-    @media (min-width: 1200px)
-        gap: 8px
+  display: flex
+  align-items: center
+  gap: 4px
+  @media (min-width: 1200px)
+    gap: 8px
+
 .text
-    display: none
-    color: var(--grey-900)
-    font-size: 14px
-    line-height: normal
-    text-transform: uppercase
-    @media (min-width: 768px)
-        display: inline
+  display: none
+  color: var(--grey-900)
+  font-size: 14px
+  line-height: normal
+  text-transform: uppercase
+  cursor: pointer
+  & + img
+    cursor: pointer
+    position: relative
+    top: -2px
+  @media (min-width: 768px)
+    display: inline
 
 .aside
-    display: none
-    @media (min-width: 1200px)
-        display: block
-        width: 325px
-        padding-top: 32px
-        font-size: 14px
-        color: var(--grey-800)
+  display: none
+  @media (min-width: 1200px)
+    display: block
+    width: 303px
+    padding-top: 32px
+    font-size: 14px
+    color: var(--grey-800)
 
 .switch 
   position: relative
@@ -30,7 +36,7 @@
 
 
 .switch .input 
-    display: none
+  display: none
 
 .slider 
   position: absolute

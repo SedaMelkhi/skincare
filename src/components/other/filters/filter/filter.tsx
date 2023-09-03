@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import minusSvg from './../../../../../public/catalog/minus.svg';
 
@@ -6,9 +6,12 @@ import style from './filter.module.sass';
 
 const Filter: FC<{ name: string; items: string[] }> = ({ name, items }) => {
   const [show, setShow] = useState(false);
-
+  const [firstLoad, setFirstLoad] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setFirstLoad(false), 600);
+  }, []);
   return (
-    <div className={style.filter}>
+    <div className={firstLoad ? style.load : ''}>
       <input type="checkbox" className={style.title__input} id={name} />
       <label className={style.title} htmlFor={name} onClick={() => setShow(true)}>
         <span>{name} </span>
