@@ -49,9 +49,7 @@ const Catalog: NextPage = () => {
         </div>
         <div className={style.wrap}>
           <Filters />
-          <div className={style.products}>
-            <Products />
-          </div>
+          <Products />
         </div>
       </div>
     </Layout>
