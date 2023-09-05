@@ -2,15 +2,37 @@
     padding-top: 32px
     @media (min-width: 1200px)
         padding-top: 56px 
+
+.empty
+    display: none
+    @media (min-width: 1200px)
+        display: flex
+        width: 303px
+        flex-shrink: 0
+
 .top
     display: flex
-    justify-content: flex-end
+    @media (min-width: 1200px)
+        justify-content: flex-end
+    &__wrap
+        display: flex
+        justify-content: space-between
+        @media (min-width: 1200px)
+            gap: 32px
+            
+
+.wrap
+    display: flex
+    justify-content: space-between
+    gap: 32px
+    
 
 .flex
-    width: 1015px
     display: flex
     justify-content: space-between 
     align-items: center
+    @media (min-width: 1200px)
+        width: 1015px
 
 .title
     margin: 16px 0 24px
@@ -33,3 +55,26 @@
 .sort
     @media (min-width: 1200px)
         width: 1015px
+
+.filter_wrap
+  display: flex
+  align-items: center
+  gap: 4px
+  width: 303px
+  @media (min-width: 1200px)
+    gap: 8px
+    flex-shrink: 0
+
+.text
+  display: none
+  color: var(--grey-900)
+  font-size: 14px
+  line-height: normal
+  text-transform: uppercase
+  cursor: pointer
+  & + img
+    cursor: pointer
+    position: relative
+    top: -2px
+  @media (min-width: 768px)
+    display: inline
