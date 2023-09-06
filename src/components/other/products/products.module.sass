@@ -3,21 +3,37 @@
     margin-top: 16px
     display: flex
     flex-wrap: wrap
-    gap: 64px 20px 
+    gap: 32px 16px
+    @media (min-width: 1200px)
+        gap: 64px 20px 
 
 .cart_big
-    width: 670px
+    width: 100%
+    @media (min-width: 768px)
+        width: 65%
     .image
-        height: 466px
+        height: 247px
+        @media (min-width: 768px)
+            height: 320px
+        @media (min-width: 1200px)
+            height: 466px
 
 .cart
-    width: 325px
+    width: calc(50% - 8px)
+    @media (min-width: 768px)
+        width: 31%
     .image
-        height: 325px
+        height: 164px
         background: url('./../../../../public/products/2.png') lightgray center/cover no-repeat
+        @media (min-width: 768px)
+            height: 229px
+        @media (min-width: 1200px)
+            height: 325px
     .name
-        font-size: 20px
+        font-size: 16px
         line-height: 120%
+        @media (min-width: 1200px)
+            font-size: 20px
 .image
     border: 1px solid var(--grey-300)
     background: url('./../../../../public/products/1.png') lightgray center/cover no-repeat
@@ -40,15 +56,22 @@
     gap: 8px
     align-items: center
     img
-        width: 24px
+        display: none
+        @media (min-width: 1200px)
+            width: 24px
+            display: block
 
 .new
     color: var(--grey-800)
-    font-size: 20px
+    font-size: 18px
     line-height: normal
+    @media (min-width: 1200px)
+        font-size: 20px
 
 .old
-    color: var(--grey-500)
-    font-size: 14px
-    line-height: normal
-    text-decoration: line-through
+    display: none
+    @media (min-width: 1200px)
+        color: var(--grey-500)
+        font-size: 14px
+        line-height: normal
+        text-decoration: line-through
