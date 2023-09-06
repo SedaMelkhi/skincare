@@ -3,11 +3,12 @@ import infoSvg from './../../../../public/info.svg';
 import { FC } from 'react';
 
 import style from './products.module.sass';
+import Link from 'next/link';
 
 const Products: FC = () => {
   return (
     <div className={style.products}>
-      <div className={style.cart_big}>
+      <Link href="/product/1" className={style.cart_big}>
         <div className={style.image}></div>
         <div className={style.name}>SKIN&LAB Porebarrier Clear Pad очищающие пэды</div>
         <div className={style.size}>20 мл</div>
@@ -18,7 +19,7 @@ const Products: FC = () => {
             <img src={infoSvg.src} alt="" />
           </div>
         </div>
-      </div>
+      </Link>
       <div className={style.cart}>
         <div className={style.image}></div>
         <div className={style.name}>SKIN&LAB Porebarrier Clear Pad очищающие пэды</div>
