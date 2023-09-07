@@ -1,7 +1,8 @@
 import { FC, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Thumbs } from 'swiper/modules';
+import { FreeMode, Thumbs, Pagination } from 'swiper/modules';
+import { Swiper as SwiperType } from 'swiper/types';
 
 import image1 from './../../../../public/products/1.png';
 import image2 from './../../../../public/products/2.png';
@@ -11,20 +12,26 @@ import 'swiper/css';
 import 'swiper/css/free-mode';
 import 'swiper/css/navigation';
 import 'swiper/css/thumbs';
+import 'swiper/css/pagination';
 
 import style from './slider.module.sass';
-import { Swiper as SwiperType } from 'swiper/types';
 
 const Slider: FC = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
-    <div className={style.slider}>
+    <div className={style.slider + ' productSlider'}>
       <Swiper
         style={{}}
+        pagination={true}
         thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
-        modules={[FreeMode, Thumbs]}
-        className={style.swiper}>
+        modules={[FreeMode, Thumbs, Pagination]}
+        className={style.swiper}
+        breakpoints={{
+          768: {
+            pagination: false,
+          },
+        }}>
         <SwiperSlide>
           <div className={style.image} style={{ backgroundImage: `url(${image1.src})` }}></div>
         </SwiperSlide>

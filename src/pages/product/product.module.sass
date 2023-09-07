@@ -4,21 +4,32 @@
 .product
     display: flex
     justify-content: space-between 
-    gap: 32px
-    margin-top: 48px
+    flex-direction: column
+    gap: 15px
+    margin-top: 16px
     color: var(--grey-900)
     font-size: 14px
     line-height: normal
-
+    @media (min-width: 768px)
+        gap: 32px
+    @media (min-width: 1200px)
+        margin-top: 48px
+        flex-direction: row
+.text
+    display: flex
+    flex-direction: column
+     
 .title
-    font-size: 32px
+    font-size: 24px
     font-weight: 400
     line-height: 112%
-
+    @media (min-width: 768px)
+        font-size: 32px
 .actions
     margin: 24px 0
     display: flex
     gap: 35px
+    
 
 .action
     display: flex
@@ -31,7 +42,9 @@
         height: 42px
 
 .description
-    margin-bottom: 42px
+    margin-bottom: 24px
+    @media (min-width: 768px)
+        margin-bottom: 42px 
 
 .subtitle
     opacity: .7
@@ -84,16 +97,18 @@
 
 
 .oldPrice
-    display: flex
-    align-items: center
-    font-style: italic
-    gap: 12px
-    color: var(--grey-500)
-    text-decoration: line-through
-    img
-        width: 20px
-        display: block
-        margin-top: -2px
+    display: none
+    @media (min-width: 1200px)
+        display: flex
+        align-items: center
+        font-style: italic
+        gap: 12px
+        color: var(--grey-500)
+        text-decoration: line-through
+        img
+            width: 20px
+            display: block
+            margin-top: -2px
 
 .price
     font-size: 32px
@@ -105,6 +120,11 @@
     display: flex
     gap: 16px
     margin-bottom: 24px
+    order: -1
+    margin-top: 12px
+    @media (min-width: 768px) 
+        order: 0
+        margin-top: 0
 
 .btn
     display: flex
@@ -118,6 +138,9 @@
     line-height: 112.5%
     letter-spacing: 0.64px
     text-transform: uppercase
+    width: calc(100% - 44px)
+    @media (min-width: 768px)
+        width: auto
     
 .date
     font-size: 12px
