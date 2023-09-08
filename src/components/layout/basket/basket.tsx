@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useRef } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
@@ -10,6 +10,13 @@ interface BasketProps {
 }
 
 const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
+  const basketBlock = useRef(null);
+
+  const closeBasket = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (e.target !== basketBlock.current) {
+      setBasketOpen(false);
+    }
+  };
   return (
     <CSSTransition
       in={basketOpen}
@@ -22,7 +29,8 @@ const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
       }}
       unmountOnExit>
       <div className={style.basket__wrap}>
-        <div className={style.basket}>
+        <div className={style.empty} onClick={closeBasket}></div>
+        <div className={style.basket} ref={basketBlock}>
           <span onClick={() => setBasketOpen(false)}>close</span>
         </div>
       </div>
