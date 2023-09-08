@@ -32,7 +32,7 @@ const CatalogPage: FC = () => {
             </div>
             <div className={style.top}>
               <div className={`${style.flex}`}>
-                <h2 className={style.title}>Лицо</h2>
+                <h2 className={style.title}>Лицо чваыва</h2>
               </div>
             </div>
           </div>
