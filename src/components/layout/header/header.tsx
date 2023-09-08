@@ -10,7 +10,12 @@ import Basket from './basket/basket';
 import style from './header.module.sass';
 import DropDownMenu from './dropDownMenu/dropDownMenu';
 
-const Header: FC = () => {
+interface HeaderProps {
+  basketOpen: boolean;
+  setBasketOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+const Header: FC<HeaderProps> = ({ basketOpen, setBasketOpen }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <div className={style.header__wrap}>
@@ -26,7 +31,9 @@ const Header: FC = () => {
           <div className={style.group + ' ' + style.group_right}>
             <Profile />
             <Save />
-            <Basket />
+            <div onClick={() => setBasketOpen(!basketOpen)}>
+              <Basket />
+            </div>
           </div>
         </header>
         <div className={style.menu}>{menuOpen && <DropDownMenu />}</div>

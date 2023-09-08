@@ -11,9 +11,9 @@ const Basket: FC = () => {
       <div className={style.basket}>
         <img src={basket.src} alt="" />
       </div>
-      <Link href="/basket" className={style.basket__text}>
+      <div href="/basket" className={style.basket__text}>
         cумочка (<span className={style.count}>3</span>)
-      </Link>
+      </div>
     </div>
   );
 };
