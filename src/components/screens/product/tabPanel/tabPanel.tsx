@@ -2,7 +2,7 @@ import { FC, useState } from 'react';
 
 import Details from '../details/details';
 
-import arrowSvg from './../../../../public/arr.svg';
+import arrowSvg from './../../../../../public/arr.svg';
 
 import style from './tabPanel.module.sass';
 

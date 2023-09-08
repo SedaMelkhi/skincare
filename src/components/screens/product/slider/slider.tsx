@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode, Thumbs, Pagination } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper/types';
 
-import image1 from './../../../../public/products/1.png';
-import image2 from './../../../../public/products/2.png';
-import image3 from './../../../../public/products/3.png';
+import image1 from './../../../../../public/products/1.png';
+import image2 from './../../../../../public/products/2.png';
+import image3 from './../../../../../public/products/3.png';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';

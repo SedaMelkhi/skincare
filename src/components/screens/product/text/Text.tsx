@@ -1,11 +1,11 @@
 import { FC, useState } from 'react';
 
 import ArrowIcon from './../arrowIcon/arrowIcon';
-import actionSvg1 from './../../../../public/action1.svg';
-import actionSvg2 from './../../../../public/action2.svg';
-import actionSvg3 from './../../../../public/action3.svg';
-import infoSvg from './../../../../public/info.svg';
-import saveSvg from './../../../../public/save.svg';
+import actionSvg1 from './../../../../../public/action1.svg';
+import actionSvg2 from './../../../../../public/action2.svg';
+import actionSvg3 from './../../../../../public/action3.svg';
+import infoSvg from './../../../../../public/info.svg';
+import saveSvg from './../../../../../public/save.svg';
 
 import style from './text.module.sass';
 

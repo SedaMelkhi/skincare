@@ -1,0 +1,80 @@
+.catalog
+    padding-top: 32px
+    @media (min-width: 1200px)
+        padding-top: 56px 
+
+.empty
+    display: none
+    @media (min-width: 1200px)
+        display: flex
+        width: 303px
+        flex-shrink: 0
+
+.top
+    display: flex
+    @media (min-width: 1200px)
+        justify-content: flex-end
+    &__wrap
+        display: flex
+        justify-content: space-between
+        @media (min-width: 1200px)
+            gap: 32px
+            
+
+.wrap
+    display: flex
+    justify-content: space-between
+    gap: 32px
+    
+
+.flex
+    display: flex
+    justify-content: space-between 
+    align-items: center
+    @media (min-width: 1200px)
+        width: 1015px
+
+.title
+    margin: 16px 0 24px
+    color: var(--grey-900)
+    font-size: 32px
+    font-weight: 400
+    line-height: 100%
+    text-transform: uppercase
+    @media (min-width: 768px)
+        margin: 16 0 34px
+    @media (min-width: 1200px)
+        font-size: 72px
+        margin: 16 0 40px
+
+.params
+    display: flex
+    justify-content: space-between  
+    gap: 32px 
+
+.sort
+    @media (min-width: 1200px)
+        width: 1015px
+
+.filter_wrap
+  display: flex
+  align-items: center
+  gap: 4px
+  width: 303px
+  @media (min-width: 1200px)
+    gap: 8px
+    flex-shrink: 0
+
+.text
+  display: none
+  color: var(--grey-900)
+  font-size: 14px
+  line-height: normal
+  text-transform: uppercase
+  cursor: pointer
+  & + img
+    cursor: pointer
+    position: relative
+    top: -2px
+  @media (min-width: 768px)
+    display: inline
