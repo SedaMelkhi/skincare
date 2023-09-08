@@ -1,7 +1,8 @@
 import { useState, FC } from 'react';
 
-import style from './accordion.module.sass';
 import CircleArrow from '@/components/other/circleArrow/circleArrow';
+
+import style from './accordion.module.sass';
 
 interface AccordionItem {
   title: string;

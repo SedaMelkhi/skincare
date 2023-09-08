@@ -1,23 +1,103 @@
 .tabPanel
     margin-top: 58px
-    width: 670px
+    max-width: 670px
+    .tabs
+        display: none
+        flex-direction: column
+        color: var(--grey-600)
+        font-size: 14px
+        text-transform: uppercase
+        gap: 39px
+        transition: .3s
+        cursor: pointer
+        padding-bottom: 24px
+        border-bottom: 1px solid var(--grey-400)
+        margin-bottom: 24px
+        @media (min-width: 768px)
+            display: flex
+            flex-direction: row
 
-.tabs
-    display: flex
-    color: var(--grey-600)
+    .active
+        color: var(--grey-900)
+
+    .text
+        display: none
+        color: var(--grey-900)
+        font-size: 14px
+        @media (min-width: 768px)
+            display: block
+        
+
+.accordion
+    margin-top: 40px
     font-size: 14px
-    text-transform: uppercase
-    gap: 39px
-    transition: .3s
-    cursor: pointer
-    padding-bottom: 24px
-    border-bottom: 1px solid var(--grey-400)
+    line-height: normal
+    padding: 0
+    @media (min-width: 768px)
+        display: none
+    .item
+        display: flex
+        justify-content: space-between
+        border-top: 1px solid var(--grey-400)
+        padding: 12px 0
+        gap: 50px
+        cursor: pointer
+        overflow: hidden  
+        img
+            transform: rotate(90deg)  
+            transition: .3s     
+    .title
+        color: var(--grey-600)
+        display: flex
+        justify-content: space-between
+        text-transform: uppercase
+    .column
+        width: 100%
+        &:nth-child(2)
+            order: 0
+    .rotate
+        transform: rotate(-90deg) !important
+                        
+            
+    .description
+        color: var(--grey-900)
+        font-size: 14px
+        line-height: 150%
+        max-width: 492px
+        text-transform: none
+        padding-top: 15px    
+            
+    .hidden
+        display: none
+        opacity: 1
+        animation:  hidden .5s linear 1 forwards
+        @keyframes hidden
+            0%
+                margin-top: 0px
+                opacity: 1
+            50%
+                opacity: 0
+            100%
+                margin-top: -150px
+                opacity: 0
+                visibility: hidden
+                
+    .active
+        display: block
+        margin-top: -150px
+        opacity: 0
+        animation:  visible .5s linear 1 forwards
+        @keyframes visible 
+            0%
+                margin-top: -150px
+                opacity: 0
+            50%
+                opacity: 0
+            100%
+                margin-top: 0px
+                opacity: 1  
+
+.details
+    margin-top: 16px  
+.detailItem
     margin-bottom: 24px
-
-.active
-    color: var(--grey-900)
-
-.text
-    color: var(--grey-900)
-    font-size: 14px
-    
