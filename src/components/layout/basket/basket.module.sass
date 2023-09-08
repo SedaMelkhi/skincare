@@ -8,26 +8,8 @@
         z-index: 4
         background: rgba(72, 59, 81, 0.40)
         backdrop-filter: blur(0px)
-        &_show
-            .basket
-                animation: show .5s forwards
-                @keyframes show
-                    0%
-                        transform: translateX(70%)
-                    100%
-                        transform: translateX(0)
-        &_hidden
-            animation: hiddenWrap .1s .4s forwards
-            @keyframes hiddenWrap
-                100%
-                    display: none
-            .basket
-                animation: hidden .5s forwards
-                @keyframes hidden
-                    0%
-                        transform: translateX(0)
-                    100%
-                        transform: translateX(100%)
+        transition: .3s
+       
             
 .basket
     width: 50%
@@ -36,5 +18,31 @@
     right: 0
     min-height: 100%
     background-color: var(--grey-25)
-    transform: translateX(100%)
-    
+    // transform: translateX(100%)
+    // animation: show .5s forwards
+    // @keyframes show
+    //     0%
+    //         transform: translateX(70%)
+    //     100%
+    //         transform: translateX(0)
+
+.slideEnter
+    .basket
+        right: -100vw
+        
+.slideEnterActive
+    .basket
+        transition: .5s
+        right: 0
+
+
+.slideExit 
+    .basket
+        right: 0
+
+.slideExitActive
+    .basket
+        transition: .8s
+        right: -100vw
+
+
