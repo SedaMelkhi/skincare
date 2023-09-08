@@ -1,6 +1,7 @@
 import { FC } from 'react';
 
 import style from './about.module.sass';
+import Link from 'next/link';
 
 const About: FC = () => {
   return (
@@ -30,10 +31,12 @@ const About: FC = () => {
         </div>
       </div>
       <div className={style.btn}>
-        <span>познакомимся поближе?</span>
-        <div className={style.circle}>
-          <img src="./arrowCircle.svg" alt="" />
-        </div>
+        <Link href="./aboutUs">
+          <span>познакомимся поближе?</span>
+          <div className={style.circle}>
+            <img src="./arrowCircle.svg" alt="" />
+          </div>
+        </Link>
       </div>
     </div>
   );
