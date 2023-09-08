@@ -9,8 +9,15 @@ interface BasketProps {
 
 const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
   return (
-    <div className={style.basket__wrap} style={{ display: basketOpen ? 'block' : 'none' }}>
-      <div className={style.basket}></div>
+    <div
+      className={
+        style.basket__wrap +
+        ' ' +
+        (basketOpen ? style.basket__wrap_show : style.basket__wrap_hidden)
+      }>
+      <div className={style.basket}>
+        <span onClick={() => setBasketOpen(false)}>close</span>
+      </div>
     </div>
   );
 };

@@ -5,7 +5,7 @@ import Search from './search/search';
 import Logo from './logo/logo';
 import Profile from './profile/profile';
 import Save from './save/save';
-import Basket from './basket/basket';
+import Basket from './basket/basketBtn';
 
 import style from './header.module.sass';
 import DropDownMenu from './dropDownMenu/dropDownMenu';

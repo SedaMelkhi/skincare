@@ -7,11 +7,34 @@
         min-height: 100vh
         z-index: 4
         background: rgba(72, 59, 81, 0.40)
-        backdrop-filter: blur(8px)
+        backdrop-filter: blur(0px)
+        &_show
+            .basket
+                animation: show .5s forwards
+                @keyframes show
+                    0%
+                        transform: translateX(70%)
+                    100%
+                        transform: translateX(0)
+        &_hidden
+            animation: hiddenWrap .1s .4s forwards
+            @keyframes hiddenWrap
+                100%
+                    display: none
+            .basket
+                animation: hidden .5s forwards
+                @keyframes hidden
+                    0%
+                        transform: translateX(0)
+                    100%
+                        transform: translateX(100%)
+            
+.basket
     width: 50%
     position: absolute
     top: 0
     right: 0
     min-height: 100%
     background-color: var(--grey-25)
+    transform: translateX(100%)
     
