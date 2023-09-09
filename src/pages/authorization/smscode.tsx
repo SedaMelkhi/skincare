@@ -22,7 +22,7 @@ const SmsCode: NextPage = () => {
           Проверьте ваши SMS и введите код:
         </p>
         <form action="">
-          <input className={style.input_field} type="password" placeholder="Код &ast;" required />
+          <input className={style.input_field} type="password" placeholder="Код *" required />
         </form>
         <Link href="newpassword" className={style.btn}>
           подтвердить

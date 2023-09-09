@@ -16,13 +16,13 @@ const Authorization: NextPage = () => {
           <input
             className={style.input_field}
             type="password"
-            placeholder="Придумайте пароль &ast;"
+            placeholder="Придумайте пароль *"
             required
           />
           <input
             className={style.input_field}
             type="password"
-            placeholder="Подтвердите пароль &ast;"
+            placeholder="Подтвердите пароль *"
             required
           />
         </form>

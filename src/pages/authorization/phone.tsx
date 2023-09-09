@@ -22,12 +22,7 @@ const Phone: NextPage = () => {
           Мы отправим вам код для восстановления пароля через SMS.
         </p>
         <form action="">
-          <input
-            className={style.input_field}
-            type="tel"
-            placeholder="Номер телефона *;"
-            required
-          />
+          <input className={style.input_field} type="tel" placeholder="Номер телефона *" required />
         </form>
         <Link href="smscode" className={style.btn}>
           Отправить

@@ -17,7 +17,7 @@ interface BasketProps {
 
 const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
   const basketBlock = useRef(null);
-  const arr = new Array(0);
+  const arr = new Array(3);
   // const closeBasket = (e: React.MouseEvent<HTMLDivElement>) => {
   //   if (e.target !== basketBlock.current) {
   //     setBasketOpen(false);

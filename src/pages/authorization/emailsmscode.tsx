@@ -22,7 +22,7 @@ const EmailSmsCode: NextPage = () => {
           Проверьте ваши письма и введите код. Проверьте папку "Спам", если письмо не найдено:
         </p>
         <form action="">
-          <input className={style.input_field} type="password" placeholder="Код &ast;" required />
+          <input className={style.input_field} type="password" placeholder="Код *" required />
         </form>
         <Link href="newpassword" className={style.btn}>
           подтвердить
