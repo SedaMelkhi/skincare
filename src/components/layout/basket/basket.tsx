@@ -28,8 +28,7 @@ const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
         exitActive: style.slideExitActive,
       }}
       unmountOnExit>
-      <div className={style.basket__wrap}>
-        <div className={style.empty} onClick={closeBasket}></div>
+      <div className={style.basket__wrap} onClick={closeBasket}>
         <div className={style.basket} ref={basketBlock}>
           <span onClick={() => setBasketOpen(false)}>close</span>
         </div>
