@@ -67,7 +67,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       },
                     }}>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_one}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -75,7 +75,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_two}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -83,7 +83,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_three}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -91,7 +91,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_four}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -99,7 +99,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_three}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -107,7 +107,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_one}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -147,7 +147,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       },
                     }}>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_three}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -155,7 +155,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_one}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -163,7 +163,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_two}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -171,7 +171,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_four}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -179,7 +179,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_three}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>
@@ -187,7 +187,7 @@ const Sets: FC<SetsProps> = ({ isVisible }) => {
                       </Link>
                     </SwiperSlide>
                     <SwiperSlide>
-                      <Link href="/catalog" className={style.card}>
+                      <Link href="/product/1" className={style.card}>
                         <div className={style.img + ' img ' + style.img_one}></div>
                         <div className={style.size}>20 мл</div>
                         <h3 className={style.description}>Porebarrier Clear Pad очищающие пэды</h3>

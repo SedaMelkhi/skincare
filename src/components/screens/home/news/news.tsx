@@ -47,7 +47,7 @@ const News: FC = () => {
               },
             }}>
             <SwiperSlide>
-              <Link href="/catalog" className={style.card}>
+              <Link href="/product/1" className={style.card}>
                 <div className={style.img + ' img ' + style.img_one}></div>
                 <h3 className={style.subtitle}>SKIN&LAB</h3>
                 <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
@@ -55,7 +55,7 @@ const News: FC = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Link href="/catalog" className={style.card}>
+              <Link href="/product/1" className={style.card}>
                 <div className={style.img + ' img ' + style.img_two}></div>
                 <h3 className={style.subtitle}>SKIN&LAB</h3>
                 <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
@@ -63,7 +63,7 @@ const News: FC = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Link href="/catalog" className={style.card}>
+              <Link href="/product/1" className={style.card}>
                 <div className={style.img + ' img ' + style.img_three}></div>
                 <h3 className={style.subtitle}>SKIN&LAB</h3>
                 <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
@@ -71,7 +71,7 @@ const News: FC = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Link href="/catalog" className={style.card}>
+              <Link href="/product/1" className={style.card}>
                 <div className={style.img + ' img ' + style.img_two}></div>
                 <h3 className={style.subtitle}>SKIN&LAB</h3>
                 <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
@@ -79,7 +79,7 @@ const News: FC = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Link href="/catalog" className={style.card}>
+              <Link href="/product/1" className={style.card}>
                 <div className={style.img + ' img ' + style.img_three}></div>
                 <h3 className={style.subtitle}>SKIN&LAB</h3>
                 <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
@@ -87,7 +87,7 @@ const News: FC = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Link href="/catalog" className={style.card}>
+              <Link href="/product/1" className={style.card}>
                 <div className={style.img + ' img ' + style.img_one}></div>
                 <h3 className={style.subtitle}>SKIN&LAB</h3>
                 <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>

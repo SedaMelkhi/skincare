@@ -1,0 +1,54 @@
+.card   
+    width: 182px
+    @media (min-width: 768px)
+        width: 229px
+    @media (min-width: 1200px)
+        width: 325px
+
+.img
+    height: 182px
+    border: 1px solid var(--grey-300)
+    @media (min-width: 768px)
+        height: 229px
+    @media (min-width: 1200px)
+        height: 325px
+    &_one
+        background: url(./../../../../public/hits/1.png) lightgray center/cover no-repeat
+   
+
+
+
+.size
+    margin-bottom: 8px
+    color: var(--grey-500)
+    font-size: 12px
+    line-height: 16px
+    @media (min-width: 768px)
+        margin-bottom: 4px
+
+.description
+    color: var(--grey-700) 
+    font-size: 16px
+    line-height: 18px
+    margin: 23px 0 8px
+    font-weight: 400
+    @media (min-width: 768px)
+        font-size: 20px
+        line-height: 24px 
+    @media (min-width: 1200px)
+        margin: 16px 0 4px 
+
+.price
+    color: var(--grey-900)
+    font-size: 18px
+    line-height: normal
+    @media (min-width: 768px)
+        font-size: 20px
+    &__old
+        display: none
+        @media (min-width: 768px)
+            display: inline
+            color: var(--grey-500)
+            font-size: 14px
+            line-height: normal
+            text-decoration: line-through
