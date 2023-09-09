@@ -7,7 +7,6 @@ import Categories from './categories/categories';
 
 import News from './news/news';
 import Sets from './sets/sets';
-import PinkMarquee from './pinkMarquee/pinkMarquee';
 
 import style from './Home.module.sass';
 import Hits from './hits/Hits';

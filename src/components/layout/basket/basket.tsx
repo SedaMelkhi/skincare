@@ -3,6 +3,7 @@ import { FC, useRef } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 import CircleArrow from '@/components/other/circleArrow/circleArrow';
+import NewProductsSwiper from './newProducts/newProductsSwiper';
 
 import closeSvg from './../../../../public/close.svg';
 import basketSvg from './../../../../public/basket2.svg';
@@ -33,31 +34,41 @@ const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
         exitActive: style.slideExitActive,
       }}
       unmountOnExit>
-      <div className={style.basket__wrap} /**onClick={closeBasket}*/>
-        <div className={style.basket} ref={basketBlock}>
-          <div className={style.close}>
-            <img src={closeSvg.src} alt="" onClick={() => setBasketOpen(false)} />
-          </div>
-          <div className={style.bag}>
-            <img src={basketSvg.src} alt="" />
-            <div className={style.bag__text}>
-              Сумочка <span>(0)</span>
+      <div>
+        <div className={style.basket__wrap} /**onClick={closeBasket}*/>
+          <div className={style.basket} ref={basketBlock}>
+            <div className={style.padding}>
+              <div className={style.close}>
+                <img src={closeSvg.src} alt="" onClick={() => setBasketOpen(false)} />
+              </div>
+              <div className={style.bag}>
+                <img src={basketSvg.src} alt="" />
+                <div className={style.bag__text}>
+                  Сумочка <span>(0)</span>
+                </div>
+              </div>
+              {arr.length === 0 ? (
+                <p className={style.description}>
+                  Похоже, ваша сумочка пуста. Давайте изменим это.
+                </p>
+              ) : (
+                ''
+              )}
+              <div className={style.search}>
+                <span className={style.text}>поиск</span>
+                <div className={style.circle}>
+                  <CircleArrow
+                    sizeCircle="66px"
+                    sizeImg="32px"
+                    color="var(--grey-400)"
+                    colorImg="var(--grey-900)"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-          {arr.length === 0 ? (
-            <p className={style.description}>Похоже, ваша сумочка пуста. Давайте изменим это.</p>
-          ) : (
-            ''
-          )}
-          <div className={style.search}>
-            <span>поиск</span>
-            <div className={style.circle}>
-              <CircleArrow
-                sizeCircle="66px"
-                sizeImg="32px"
-                color="var(--grey-400)"
-                colorImg="var(--grey-900)"
-              />
+            <div className={style.products}>
+              <div className={style.text}>новинки</div>
+              <NewProductsSwiper />
             </div>
           </div>
         </div>
