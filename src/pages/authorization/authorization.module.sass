@@ -1,0 +1,265 @@
+.registration_page
+  display: flex
+  flex-direction: column
+  gap: 55px
+  padding: 140px 15px 50px
+  @media (min-width: 768px)
+    max-width: 500px
+    margin: 0 auto
+  @media (min-width: 1200px)
+    max-width: 700px
+    margin: 0 auto
+  &__swatch
+    max-width: 200px
+    margin: 0 auto
+    margin-bottom: -65px
+    @media (min-width: 768px)
+      max-width: 400px
+
+.title
+  text-align: center
+  font-size: 2rem
+  font-weight: 400
+  line-height: 1
+  text-transform: uppercase
+
+.subtitle
+  text-align: center
+  line-height: 1.3
+  &_margin
+    margin-bottom: -30px
+
+.btns
+  display: flex
+  flex-direction: column
+  gap: 15px
+
+.btn
+  display: inline-block
+  text-decoration: none
+  text-transform: uppercase
+  text-align: center
+  background-color: #19171A
+  color: #FDFCFD
+  font-family: 'Evolventa', sans-serif
+  padding: 16px 32px
+  border-radius: 70px
+  border: 1px solid #19171A
+  letter-spacing: 1px
+  &_bg_white
+    background-color: transparent
+    color: #19171A
+  &_margin
+    margin-top: 40px
+
+.login_page
+  display: flex
+  flex-direction: column
+  gap: 55px
+  padding: 140px 15px 50px
+  @media (min-width: 768px)
+    max-width: 500px
+    margin: 0 auto
+  @media (min-width: 1200px)
+    max-width: 666px
+    margin: 0 auto
+  &__links
+    display: flex
+    flex-direction: column
+    gap: 15px
+    align-items: center
+    text-underline-offset: 2px
+    margin-top: -40px
+    @media (min-width: 1200px)
+      flex-direction: row
+      justify-content: space-between
+      margin-top: -25px
+
+
+.sign_up_page
+  display: flex
+  flex-direction: column
+  gap: 55px
+  padding: 140px 15px 50px
+  @media (min-width: 768px)
+    max-width: 500px
+    margin: 0 auto
+  @media (min-width: 1200px)
+    max-width: 700px
+    margin: 0 auto
+  &__cta
+    text-align: center
+    margin-top: -40px
+
+.confirmation_page
+  margin-top: 40px
+  &__swatch
+    height: 150px
+    margin-bottom: -10px
+    @media (min-width: 768px)
+      height: 200px
+    @media (min-width: 1200px)
+      height: 200px
+    img
+      width: 100%
+      height: 100%
+      object-fit: cover
+
+.cta
+  text-align: center
+  line-height: 1.3
+  text-underline-offset: 2px
+  @media (min-width: 768px)
+    width: 385px
+    margin: 0 auto
+  @media (min-width: 1200px)
+    width: 385px
+    margin: 0 auto
+  &_margin
+    margin-top: -35px
+
+.input_field
+  font-family: 'Evolventa', sans-seriff
+  font-size: 1rem
+  width: 100%
+  border: none
+  border-bottom: 0.5px solid #8A7E8F
+  padding: 16px 15px 8px
+  background-color: transparent
+  &__label_text
+    color: #8A7E8F
+    font-size: 0.75rem
+    padding-left: 15px
+  &_visibility_on
+    background: url('./../../../public/images/visibility-on.svg') no-repeat
+    background-size: 25px 25px
+    background-position: right center
+  &_visibility_off
+    background: url('./../../../public/images/visibility-off.svg') no-repeat
+    background-size: 25px 25px
+    background-position: right center
+  &::placeholder
+    color: #8A7E8F
+  &:focus
+    outline: none
+  &:not(&:first-child)
+    margin-top: 10px
+    
+
+.input_field_inner input[type=password]
+  font: large Verdana, sans-serif
+  letter-spacing: -2px
+  color: #8A7E8F
+  font-weight: bolder
+
+.wrapper
+  display: flex
+  flex-direction: column
+  gap: 35px
+  padding: 0 15px
+  @media (min-width: 768px)
+    max-width: 500px
+    margin: 0 auto
+  @media (min-width: 1200px)
+    max-width: 700px
+    margin: 0 auto
+
+.form
+  display: flex
+  flex-direction: column
+  gap: 15px
+  width: 100%
+
+.tel_confirmed_page
+  display: flex
+  flex-direction: column
+  gap: 15px
+  padding: 140px 15px 50px
+  @media (min-width: 768px)
+    max-width: 500px
+    margin: 0 auto
+  @media (min-width: 1200px)
+    max-width: 700px
+    margin: 0 auto
+  &__swatch
+    max-width: 255px
+    margin: 0 auto
+    margin-bottom: -20px
+    @media (min-width: 768px)
+      max-width: 400px
+
+.restore_password_page
+  display: flex
+  flex-direction: column
+  gap: 55px
+  padding: 140px 15px 50px
+  @media (min-width: 768px)
+    max-width: 500px
+    margin: 0 auto
+  @media (min-width: 1200px)
+    max-width: 700px
+    margin: 0 auto
+
+.title2
+  text-align: center
+  font-size: 1.5rem
+  font-weight: 400
+  line-height: 1
+  text-transform: uppercase
+  @media (min-width: 768px)
+    font-size: 2rem
+  @media (min-width: 1200px)
+    font-size: 2rem
+
+.btns2
+  display: flex
+  gap: 15px
+  justify-content: center
+  
+
+
+.btn2
+  display: flex
+  align-items: center
+  justify-content: center
+  text-decoration: none
+  color: #8A7E8F
+  text-align: center
+  border: 1px solid #8A7E8F
+  padding: 15px 20px
+  width: 325px
+  height: 75px
+  transition: .3s 
+  &:active
+    color: #19171A
+    border: 1px solid #504655
+  &:hover
+    color: #19171A
+    border: 1px solid #504655
+  @media (min-width: 768px)
+    padding: 25px 20px
+  @media (min-width: 1200px)
+  &_active
+    color: #19171A
+    border: 1px solid #504655
+
+.link_btn
+  text-decoration: underline
+
+.password_updated_page
+  display: flex
+  flex-direction: column
+  gap: 55px
+  padding: 140px 15px 50px
+  @media (min-width: 768px)
+    max-width: 500px
+    margin: 0 auto
+  @media (min-width: 1200px)
+    max-width: 700px
+    margin: 0 auto
+  &__swatch
+    max-width: 230px
+    margin: 0 auto
+    margin-bottom: -60px
+    @media (min-width: 768px)
+      max-width: 400px

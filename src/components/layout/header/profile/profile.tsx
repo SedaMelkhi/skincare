@@ -7,7 +7,7 @@ import style from './profile.module.sass';
 
 const Profile: FC = () => {
   return (
-    <Link href="/profile" className={style.profile}>
+    <Link href="/authorization" className={style.profile}>
       <img src={user.src} alt="" />
     </Link>
   );
