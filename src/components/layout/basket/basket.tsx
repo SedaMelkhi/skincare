@@ -2,6 +2,8 @@ import { FC, useRef } from 'react';
 
 import { CSSTransition } from 'react-transition-group';
 
+import CircleArrow from '@/components/other/circleArrow/circleArrow';
+
 import closeSvg from './../../../../public/close.svg';
 import basketSvg from './../../../../public/basket2.svg';
 
@@ -47,6 +49,17 @@ const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
           ) : (
             ''
           )}
+          <div className={style.search}>
+            <span>поиск</span>
+            <div className={style.circle}>
+              <CircleArrow
+                sizeCircle="66px"
+                sizeImg="32px"
+                color="var(--grey-400)"
+                colorImg="var(--grey-900)"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </CSSTransition>
