@@ -9,6 +9,7 @@ import closeSvg from './../../../../public/close.svg';
 import basketSvg from './../../../../public/basket2.svg';
 
 import style from './basket.module.sass';
+import ProductsTable from './productsTable/productsTable';
 
 interface BasketProps {
   basketOpen: boolean;
@@ -48,28 +49,34 @@ const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
                 </div>
               </div>
               {arr.length === 0 ? (
-                <p className={style.description}>
-                  Похоже, ваша сумочка пуста. Давайте изменим это.
-                </p>
+                <>
+                  <p className={style.description}>
+                    Похоже, ваша сумочка пуста. Давайте изменим это.
+                  </p>
+                  <div className={style.search}>
+                    <span className={style.text}>поиск</span>
+                    <div className={style.circle}>
+                      <CircleArrow
+                        sizeCircle="66px"
+                        sizeImg="32px"
+                        color="var(--grey-400)"
+                        colorImg="var(--grey-900)"
+                      />
+                    </div>
+                  </div>
+                </>
               ) : (
-                ''
+                <ProductsTable />
               )}
-              <div className={style.search}>
-                <span className={style.text}>поиск</span>
-                <div className={style.circle}>
-                  <CircleArrow
-                    sizeCircle="66px"
-                    sizeImg="32px"
-                    color="var(--grey-400)"
-                    colorImg="var(--grey-900)"
-                  />
-                </div>
+            </div>
+            {arr.length === 0 ? (
+              <div className={style.products}>
+                <div className={style.text}>новинки</div>
+                <NewProductsSwiper />
               </div>
-            </div>
-            <div className={style.products}>
-              <div className={style.text}>новинки</div>
-              <NewProductsSwiper />
-            </div>
+            ) : (
+              ''
+            )}
           </div>
         </div>
       </div>
