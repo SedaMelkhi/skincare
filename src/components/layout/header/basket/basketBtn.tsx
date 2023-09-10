@@ -12,7 +12,7 @@ const BasketBtn: FC = () => {
         <img src={basket.src} alt="" />
       </div>
       <div className={style.basket__text}>
-        cумочка (<span className={style.count}>3</span>)
+        cумочка (<span className={style.count}>7</span>)
       </div>
     </div>
   );

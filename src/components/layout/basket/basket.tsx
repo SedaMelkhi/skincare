@@ -18,7 +18,7 @@ interface BasketProps {
 }
 
 const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
-  const arr = new Array(3);
+  const arr = new Array(7);
   const closeBasket = () => {
     setBasketOpen(false);
   };
@@ -45,7 +45,7 @@ const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
                 <div className={style.bag}>
                   <img src={basketSvg.src} alt="" />
                   <div className={style.bag__text}>
-                    Сумочка <span>(0)</span>
+                    Сумочка <span>({arr.length})</span>
                   </div>
                 </div>
               </div>
