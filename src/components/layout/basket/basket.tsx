@@ -68,9 +68,7 @@ const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
                     </div>
                   </>
                 ) : (
-                  <>
-                    <ProductsTable />
-                  </>
+                  <ProductsTable />
                 )}
               </div>
             </div>
