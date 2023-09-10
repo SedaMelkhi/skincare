@@ -7,8 +7,9 @@ import Basket from './basket/basket';
 
 const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) => {
   const [basketOpen, setBasketOpen] = useState(false);
+  const stopScrollStyle = { height: '100vh', overflow: 'hidden' };
   return (
-    <>
+    <div style={basketOpen ? stopScrollStyle : {}}>
       <Meta
         title={title.length > 15 ? title.substring(0, 15) + '...' : title}
         description={description}
@@ -17,7 +18,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) 
       <Basket setBasketOpen={setBasketOpen} basketOpen={basketOpen} />
       {children}
       <Footer />
-    </>
+    </div>
   );
 };
 export default Layout;
