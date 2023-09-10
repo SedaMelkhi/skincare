@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 
 import Layout from '@/components/layout/Layout';
 
@@ -23,14 +24,14 @@ const Journal: NextPage = () => {
                 кожу, не стоит недооценивать простоту и силу естественных элементов, таких как вода.
               </p>
             </div>
-            <a href="#" className={style.journal__btn}>
+            <Link href="/article/1" className={style.journal__btn}>
               <span className={style.journal__btnText}>Читать</span>
               <img
                 className={style.journal__btnArrow}
                 src="./journal/right-arrow .svg"
                 alt="Right arrow icon"
               />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -40,34 +41,34 @@ const Journal: NextPage = () => {
           <div className={style.dropdownHolder}>
             <ul className={style.dropdown}>
               <li className={style.dropdown__item + ' ' + style.dropdown__item_active}>
-                <a href="#" className={style.dropdown__link + ' ' + style.dropdown__link_active}>
+                <Link href="#" className={style.dropdown__link + ' ' + style.dropdown__link_active}>
                   Секреты, советы
-                </a>
+                </Link>
               </li>
               <li className={style.dropdown__item + ' ' + style.dropdown__item_hidden}>
-                <a href="#" className={style.dropdown__link}>
+                <Link href="#" className={style.dropdown__link}>
                   Ингредиенты
-                </a>
+                </Link>
               </li>
               <li className={style.dropdown__item + ' ' + style.dropdown__item_hidden}>
-                <a href="#" className={style.dropdown__link}>
+                <Link href="#" className={style.dropdown__link}>
                   Проблемы кожи
-                </a>
+                </Link>
               </li>
               <li className={style.dropdown__item + ' ' + style.dropdown__item_hidden}>
-                <a href="#" className={style.dropdown__link}>
+                <Link href="#" className={style.dropdown__link}>
                   Органические подходы
-                </a>
+                </Link>
               </li>
               <li className={style.dropdown__item + ' ' + style.dropdown__item_hidden}>
-                <a href="#" className={style.dropdown__link}>
+                <Link href="#" className={style.dropdown__link}>
                   Обзоры
-                </a>
+                </Link>
               </li>
               <li className={style.dropdown__item + ' ' + style.dropdown__item_hidden}>
-                <a href="#" className={style.dropdown__link}>
+                <Link href="#" className={style.dropdown__link}>
                   Образ жизни
-                </a>
+                </Link>
               </li>
             </ul>
             <img className={style.dropdown__img} src="./journal/up-arrow.svg" alt="Up arrow ucon" />
@@ -75,23 +76,23 @@ const Journal: NextPage = () => {
         </div>
         <div className={style.articleColumns}>
           <div className={style.articleRow}>
-            <div className={style.articleColumn}>
+            <Link href="/article/1" className={style.articleColumn}>
               <div className={style.articleColumn__img}></div>
               <p className={style.category}>Уход</p>
               <h3 className={style.articleColumn__title}>Как составить уход?</h3>
-            </div>
-            <div className={style.articleColumn}>
+            </Link>
+            <Link href="/article/1" className={style.articleColumn}>
               <div
                 className={style.articleColumn__img + ' ' + style.articleColumn__img_second}></div>
               <p className={style.category}>Уход</p>
               <h3 className={style.articleColumn__title}>Лучшая ткань для хиджаба</h3>
-            </div>
-            <div className={style.articleColumn}>
+            </Link>
+            <Link href="/article/1" className={style.articleColumn}>
               <div
                 className={style.articleColumn__img + ' ' + style.articleColumn__img_third}></div>
               <p className={style.category}>Уход</p>
               <h3 className={style.articleColumn__title}>Что такое ко-вошинг?</h3>
-            </div>
+            </Link>
           </div>
           <div className={style.article2}>
             <div className={style.article2__imgCol}>
@@ -104,7 +105,7 @@ const Journal: NextPage = () => {
                 />
               </picture>
             </div>
-            <div className={style.article2__textCol}>
+            <Link href="/article/1" className={style.article2__textCol}>
               <p className={style.category}>Уход</p>
               <h2 className={style.article2__title}>Вода для потрясающей кожи</h2>
               <p className={style.article2__paragraph}>
@@ -112,30 +113,36 @@ const Journal: NextPage = () => {
                 существует множество продуктов и процедур, которые обещают подарить нам идеальную
                 кожу, не стоит недооценивать простоту и силу естественных элементов, таких как вода.
               </p>
-            </div>
+            </Link>
           </div>
 
           <div className={style.articleColumns}>
             <div className={style.articleRow}>
-              <div className={style.articleColumn + ' ' + style.articleColumn_order3}>
+              <Link
+                href="/article/1"
+                className={style.articleColumn + ' ' + style.articleColumn_order3}>
                 <div className={style.articleColumn__img}></div>
                 <p className={style.category}>Уход</p>
                 <h3 className={style.articleColumn__title}>Как составить уход?</h3>
-              </div>
-              <div className={style.articleColumn + ' ' + style.article_column_order2}>
+              </Link>
+              <Link
+                href="/article/1"
+                className={style.articleColumn + ' ' + style.article_column_order2}>
                 <div
                   className={
                     style.articleColumn__img + ' ' + style.articleColumn__img_second
                   }></div>
                 <p className={style.category}>Уход</p>
                 <h3 className={style.articleColumn__title}>Лучшая ткань для хиджаба</h3>
-              </div>
-              <div className={style.articleColumn + ' ' + style.articleColumn_order1}>
+              </Link>
+              <Link
+                href="/article/1"
+                className={style.articleColumn + ' ' + style.articleColumn_order1}>
                 <div
                   className={style.articleColumn__img + ' ' + style.articleColumn__img_third}></div>
                 <p className={style.category}>Уход</p>
                 <h3 className={style.articleColumn__title}>Что такое ко-вошинг?</h3>
-              </div>
+              </Link>
             </div>
 
             <div className={style.article2 + ' ' + style.article2_reversed}>
@@ -149,7 +156,7 @@ const Journal: NextPage = () => {
                   />
                 </picture>
               </div>
-              <div className={style.article2__textCol}>
+              <Link href="/article/1" className={style.article2__textCol}>
                 <p className={style.category}>Уход</p>
                 <h2 className={style.article2__title}>Вода для потрясающей кожи</h2>
                 <p className={style.article2__paragraph}>
@@ -158,7 +165,7 @@ const Journal: NextPage = () => {
                   кожу, не стоит недооценивать простоту и силу естественных элементов, таких как
                   вода.
                 </p>
-              </div>
+              </Link>
             </div>
           </div>
         </div>
