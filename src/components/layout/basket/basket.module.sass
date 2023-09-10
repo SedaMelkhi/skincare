@@ -1,10 +1,13 @@
 .basket
     &__wrap
+        display: flex
+        justify-content: flex-end
+        overflow: hidden
         width: 100%
         position: fixed
+        height: 100vh
         top: 0
         right: 0
-        min-height: 100vh
         z-index: 4
         background: rgba(72, 59, 81, 0.40)
         backdrop-filter: blur(0px)
@@ -12,41 +15,90 @@
         font-size: 16px
         line-height: 112.5%
         color: var(--grey-900)
-            
+
+.empty
+    min-height: 100vh
+    position: fixed
+    left: 0
+    top: 0
+    width: 0
+    @media (min-width: 1200px)
+        width: calc(100% - 720px)
+
 .basket
     width: 100%
-    position: absolute
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    min-height: 100vh
+    background-color: var(--grey-25)
+    padding: 85px 10px 0 0
+    @media (min-width: 768px)
+        padding-top: 112px
+    @media (min-width: 1200px)
+        width: 720px
+        &:hover 
+            .padding
+                &::-webkit-scrollbar-thumb
+                    background: var(--grey-300)
+
+.header
+    position: fixed
+    width: 100%
+    padding: 16px
     top: 0
     right: 0
-    min-height: 100%
-    background-color: var(--grey-25)
+    background: var(--grey-25)
+    @media (min-width: 768px)
+        padding: 24px
     @media (min-width: 1200px)
         width: 720px
 
+
+    
 .padding
     padding: 16px
+    overflow-y: scroll
+    height: calc(100% - 240px)
+    &::-webkit-scrollbar 
+        width: 5px 
+        @media (min-width: 768px)
+            width: 8px
+    &::-webkit-scrollbar-track 
+        background: var(--grey-25) 
+    &::-webkit-scrollbar-thumb 
+        border-radius: 10px
+        margin-right: 5px
+        background: var(--grey-25)         
     @media (min-width: 768px)
         padding: 24px
     
 
 .slideEnter
     .basket
-        right: -100vw
+        transform: translateX(100vw)
+    .empty
+        opacity: 1
         
 .slideEnterActive
     .basket
         transition: .5s
-        right: 0
-
+        transform: translateX(0)
+    .empty
+        opacity: 0
 
 .slideExit 
     .basket
-        right: 0
+        transform: translateX(0)
+    .empty
+        opacity: 0
 
 .slideExitActive
     .basket
         transition: .8s
-        right: -100vw
+        transform: translateX(100vw)
+    .empty
+        opacity: 1
 
 .close
     display: flex
@@ -101,3 +153,73 @@
     padding: 0 0 0 16px
     @media (min-width: 768px)
         padding: 24px
+
+.footer
+    position: absolute
+    width: 100%
+    bottom: 0
+    padding: 16px
+    background-color: var(--grey-100)
+    @media (min-width: 1200px)
+        width: 720px
+
+.btn
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: 8px
+    width: 100%
+    padding: 16px 32px
+    background-color: var(--grey-900)
+    border-radius: 70px
+    color: var(--grey-25)
+    font-size: 16px
+    font-weight: 400
+    line-height: 112.5%
+    letter-spacing: 0.64px
+    text-transform: uppercase
+
+
+.promocode
+    color: var(--grey-500)
+    font-size: 14px
+    border-top: 1px solid var(--grey-300)
+    padding-top: 8px
+    margin-bottom: 16px
+    @media (min-width: 768px)
+        font-size: 16px
+        border-top: none
+
+.table
+    width: 100% 
+    margin-bottom: 16px    
+    gap: 8px
+    display: flex
+    flex-direction: column
+    text-align: right
+    @media (min-width: 768px)
+        flex-direction: row
+        justify-content: space-between
+        margin-bottom: 24px   
+    &__row
+        display: flex
+        justify-content: space-between
+        @media (min-width: 768px)
+            flex-direction: column
+            gap: 12px
+
+.discount
+    color: var(--primary-600)
+
+.price
+    @media (min-width: 768px)
+        font-size: 20px
+
+.old_price
+    color: var(--grey-400)
+    text-decoration: line-through
+
+.allPrice
+    font-size: 20px
+    @media (min-width: 768px)
+        font-size: 32px
