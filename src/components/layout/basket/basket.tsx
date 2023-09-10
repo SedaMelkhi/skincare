@@ -25,7 +25,7 @@ const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
   return (
     <CSSTransition
       in={basketOpen}
-      timeout={700}
+      timeout={400}
       classNames={{
         enter: style.slideEnter,
         enterActive: style.slideEnterActive,

@@ -10,8 +10,7 @@
         right: 0
         z-index: 4
         background: rgba(72, 59, 81, 0.40)
-        backdrop-filter: blur(0px)
-        transition: .3s
+        backdrop-filter: blur(8px)
         font-size: 16px
         line-height: 112.5%
         color: var(--grey-900)
@@ -73,29 +72,26 @@
 
 .slideEnter
     .basket
+       
         transform: translateX(100vw)
-    .empty
-        opacity: 1
         
 .slideEnterActive
     .basket
+       
         transition: .5s
         transform: translateX(0)
-    .empty
-        opacity: 0
 
 .slideExit 
     .basket
+       
         transform: translateX(0)
-    .empty
-        opacity: 0
 
 .slideExitActive
     .basket
-        transition: .8s
+        transition: .5s
         transform: translateX(100vw)
-    .empty
-        opacity: 1
+        @media (min-width: 1200px)
+            transition: 1.2s
 
 .close
     display: flex

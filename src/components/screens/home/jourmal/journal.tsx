@@ -5,12 +5,15 @@ import Header from './header/header';
 import Accordion from './accordion/accordion';
 
 import style from './journal.module.sass';
+import Link from 'next/link';
 
 const Journal: FC = () => {
   return (
     <section className={style.journal}>
       <div className={style.title}>
-        <Title text="журнал" />
+        <Link href="/journal">
+          <Title text="журнал" />
+        </Link>
       </div>
       <div className={style.left__wrap}>
         <div className={style.left}>
