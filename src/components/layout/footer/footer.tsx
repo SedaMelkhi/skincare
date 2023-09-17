@@ -1,11 +1,13 @@
 import { FC } from 'react';
 
+import { ContactsArray } from '@/interfaces/contact.interface';
+
 import arrow from './../../../../public/arrow.svg';
 import logo from './../../../../public/logo.svg';
 
 import style from './footer.module.sass';
 
-const Footer: FC = () => {
+const Footer: FC<{ data: ContactsArray }> = ({ data }) => {
   return (
     <footer className={style.footer__wrap}>
       <div className="wrap">

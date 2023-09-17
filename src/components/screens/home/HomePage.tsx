@@ -14,8 +14,10 @@ import Experts from './experts/experts';
 import Journal from './jourmal/journal';
 import Present from './present/presemt';
 import About from './about/about';
+import Footer from '@/components/layout/footer/footer';
+import { ContactsArray } from '@/interfaces/contact.interface';
 
-const HomePage: FC = () => {
+const HomePage: FC<{ data: ContactsArray }> = ({ data }) => {
   const [isVisible, setIsVisible] = useState(false);
   const section = useRef<HTMLDivElement | null>(null);
 
@@ -42,26 +44,29 @@ const HomePage: FC = () => {
     };
   }, []);
   return (
-    <Layout title="Главная" description="Онлайн магазин косметики">
-      <Header />
-      <main>
-        <Categories />
-        <div className="wrap">
-          <Link href="/" className={style.sticker__wrap}>
-            <img src="./sticker.png" alt="" className={style.sticker} />
-          </Link>
-        </div>
-        <News />
-        <div ref={section} className={style.pinkMarqueeWrap}>
-          <Sets isVisible={isVisible} />
-          <Hits />
-        </div>
-        <Experts />
-        <Journal />
-        <Present />
-        <About />
-      </main>
-    </Layout>
+    <>
+      <Layout title="Главная" description="Онлайн магазин косметики">
+        <Header />
+        <main>
+          <Categories />
+          <div className="wrap">
+            <Link href="/" className={style.sticker__wrap}>
+              <img src="./sticker.png" alt="" className={style.sticker} />
+            </Link>
+          </div>
+          <News />
+          <div ref={section} className={style.pinkMarqueeWrap}>
+            <Sets isVisible={isVisible} />
+            <Hits />
+          </div>
+          <Experts />
+          <Journal />
+          <Present />
+          <About />
+        </main>
+      </Layout>
+      <Footer data={data} />
+    </>
   );
 };
 

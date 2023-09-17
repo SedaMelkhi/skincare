@@ -2,7 +2,6 @@ import { FC, PropsWithChildren, useState } from 'react';
 import Meta from '../seo/Meta';
 import { IMeta } from '../seo/meta.interface';
 import Header from './header/header';
-import Footer from './footer/footer';
 import Basket from './basket/basket';
 
 const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) => {
@@ -17,7 +16,6 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) 
       <Header setBasketOpen={setBasketOpen} basketOpen={basketOpen} />
       <Basket setBasketOpen={setBasketOpen} basketOpen={basketOpen} />
       {children}
-      <Footer />
     </div>
   );
 };
