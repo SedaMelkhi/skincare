@@ -1,7 +1,8 @@
-import { NextPage } from 'next';
-import { FC, PropsWithChildren } from 'react';
+import { FC } from 'react';
 import { IMeta } from './meta.interface';
+
 import Head from 'next/head';
+
 const getTitle = (title: string) => `${title} | Skincare`;
 const Meta: FC<IMeta> = ({ title, description }) => {
   return (

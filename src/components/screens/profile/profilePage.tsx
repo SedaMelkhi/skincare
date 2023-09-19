@@ -8,7 +8,7 @@ import ProfileData from './profileData/profileData';
 import style from './profile.module.sass';
 
 const ProfilePage: FC = () => {
-  const [activeProfileData, setActiveProfileData] = useState(false);
+  const [activeProfileData, setActiveProfileData] = useState(true);
   return (
     <Layout title="Личный кабинет">
       <div className={style.profile__wrap}>

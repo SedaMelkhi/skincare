@@ -23,8 +23,8 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
             xmlns="http://www.w3.org/2000/svg">
             <path
               opacity="0.8"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
+              fillRule="evenodd"
+              clipRule="evenodd"
               d="M13.9091 5.46875L7.37874 11.9991L13.9091 18.5294L14.9697 17.4688L9.50006 11.9991L14.9697 6.52941L13.9091 5.46875Z"
               fill="#19171A"
             />
