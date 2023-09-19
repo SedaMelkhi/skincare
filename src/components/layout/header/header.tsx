@@ -3,7 +3,7 @@ import { FC, useState } from 'react';
 import Catalog from './catalog/catalog';
 import Search from './search/search';
 import Logo from './logo/logo';
-import Profile from './profile/profile';
+import ProfileLogo from './profileLogo/profileLogo';
 import Save from './save/save';
 import Basket from './basket/basketBtn';
 
@@ -29,7 +29,7 @@ const Header: FC<HeaderProps> = ({ basketOpen, setBasketOpen }) => {
             <Logo />
           </div>
           <div className={style.group + ' ' + style.group_right}>
-            <Profile />
+            <ProfileLogo />
             <Save />
             <div onClick={() => setBasketOpen(!basketOpen)}>
               <Basket />

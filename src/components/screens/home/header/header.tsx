@@ -1,16 +1,16 @@
 import { FC, useCallback, useEffect } from 'react';
 import Link from 'next/link';
 
-import Marquee from 'react-fast-marquee';
-
 import { Pagination, Navigation, EffectFade, Autoplay, Parallax } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+
+import Marquee from 'react-fast-marquee';
+import Arrows from '@/components/other/arrows/arrows';
 
 import 'swiper/css';
 import 'swiper/css/effect-fade';
 
 import style from './header.module.sass';
-import Arrows from '@/components/other/arrows/arrows';
 
 const Header: FC = () => {
   const documentHeight = useCallback((document: Document) => {

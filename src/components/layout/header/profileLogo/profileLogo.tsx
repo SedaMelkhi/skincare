@@ -5,11 +5,11 @@ import user from './../../../../../public/user.svg';
 
 import style from './profile.module.sass';
 
-const Profile: FC = () => {
+const ProfileLogo: FC = () => {
   return (
     <Link href="/authorization" className={style.profile}>
       <img src={user.src} alt="" />
     </Link>
   );
 };
-export default Profile;
+export default ProfileLogo;
