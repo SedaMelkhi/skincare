@@ -89,7 +89,7 @@ const Present: FC = () => {
             </div>
           </div>
           <div className={style.btn__wrap}>
-            <div className={style.btn}>
+            <Link  href="/certificate" className={style.btn}>
               Выбрать
               <div className={style.circle}>
                 <span>
@@ -107,7 +107,7 @@ const Present: FC = () => {
                   </svg>
                 </span>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

@@ -1,0 +1,155 @@
+.bg
+  background-color: #FBFAFF
+.top
+  @media (min-width: 768px)
+    display: flex
+    align-items: flex-end
+  @media (min-width: 1200px)
+    justify-content: flex-start
+.present
+  display: flex
+  flex-direction: column
+  margin-top: 10px
+  margin-top: 59px
+  @media (min-width: 768px)
+    margin-top: 120px
+  @media (min-width: 1200px)
+    justify-content: space-between
+    gap: 20px
+  &__wrap
+    @media (min-width: 1200px)
+      max-width: var(--max-width)
+      margin: 143px auto 0
+      padding: 0 40px
+      box-sizing: content-box
+.products
+  padding-left: 16px
+  @media (min-width: 768px)
+    padding-left: 24px
+  @media (min-width: 1200px)
+    width: 1015px
+    padding-left: 0
+  &__wrap
+    @media (min-width: 1200px)
+      width: 100%
+      display: flex
+      justify-content: flex-end
+
+
+.title
+  width: 241px
+  padding: 0 16px
+  @media (min-width: 768px)
+    padding: 0 24px
+    width: auto
+
+
+.description
+  color: var(--grey-900)
+  font-size: 16px
+  line-height: 137.5%
+  padding: 0 16px
+  margin: -24px 0 32px
+  @media (min-width: 768px)
+    padding: 0 0 40px
+    margin: 0
+  @media (min-width: 1200px)
+    width: 462px
+    margin-left: -250px
+
+.card
+  width: 240px
+  @media (min-width: 768px)
+    width: 229px
+  @media (min-width: 1200px)
+    width: 325px
+
+.img
+  height: 296px
+  border-radius: 20px
+  @media (min-width: 768px)
+    height: 229px
+  @media (min-width: 1200px)
+    height: 325px
+  &_one
+    background: url(./../../../../../public/present/1.png) lightgray center/cover no-repeat
+  &_two
+    background: url(./../../../../../public/present/2.png) lightgray center/cover no-repeat
+  &_three
+    background: url(./../../../../../public/present/3.png) lightgray center/cover no-repeat
+  &_four
+    background: url(./../../../../../public/present/4.png) lightgray center/cover no-repeat
+
+.subtitle
+  color: var(--grey-700)
+  font-size: 16px
+  font-style: normal
+  font-weight: 400
+  line-height: 137.5%
+  margin: 12px 0 8px
+
+.price
+  color: var(--grey-900)
+  font-size: 18px
+  line-height: normal
+  font-style: italic
+  @media (min-width: 768px)
+    font-size: 20px
+  &__old
+    display: none
+    @media (min-width: 768px)
+      display: inline
+      color: var(--grey-500)
+      font-size: 14px
+      line-height: normal
+      text-decoration: line-through
+
+.btn
+  display: flex
+  align-items: center
+  color: var(--grey-900)
+  font-size: 16px
+  line-height: 112.5%
+  letter-spacing: 0.64px
+  text-transform: uppercase
+  padding: 0 16px
+  margin-top: 40px
+  width: 1015px
+  @media (min-width: 768px)
+    padding-left: 24px
+  @media (min-width: 1200px)
+    padding-left: 0
+    font-size: 24px
+  &__wrap
+    width: 100%
+    display: flex
+    justify-content: flex-end
+
+.circle
+  margin-left: -12px
+  height: 66px
+  width: 66px
+  border-radius: 50%
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-shrink: 0
+  border: 1px solid var(--grey-400)
+  cursor: pointer
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  @media (min-width: 1200px)
+    width: 131px
+    height: 131px
+  span
+    display: flex
+    align-items: center
+    justify-content: center
+    width: 32px
+    @media (min-width: 1200px)
+      width: 66px
+  svg
+    width: 100%
+
+.dots
+  width: 32px
+  height: 32px
