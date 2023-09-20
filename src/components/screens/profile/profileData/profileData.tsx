@@ -5,6 +5,7 @@ import Input from '@/components/other/input/input';
 import Button from '@/components/other/button/button';
 
 import style from './profileData.module.sass';
+import ProfileTitle from '../profileTitle/Title';
 
 interface ProfileAsideProps {
   setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>>;
@@ -32,7 +33,7 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
         </span>{' '}
         мой профиль
       </div>
-      <div className={style.title}>привет, Мария</div>
+      <ProfileTitle title="привет, Мария" />
       <form className={style.form}>
         <div className={style.input}>
           <Input value="Мария" />
