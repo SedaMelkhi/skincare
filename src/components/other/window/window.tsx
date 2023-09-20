@@ -1,22 +1,33 @@
-import { FC, PropsWithChildren } from 'react';
+import { Dispatch, FC, PropsWithChildren, SetStateAction } from 'react';
+
+import Button from '../button/button';
 
 import circleSvg from './../../../../public/circleDots.svg';
 import circleCheckSvg from './../../../../public/circleCheck.svg';
 
 import style from './Window.module.sass';
-import Button from '../button/button';
 
 interface WindowProps {
   title: string;
   price: number;
   status?: 'waiting' | 'paid';
   date?: string;
+  isLoad: boolean;
+  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
-const Window: FC<PropsWithChildren<WindowProps>> = ({ children, title, price, status, date }) => {
+const Window: FC<PropsWithChildren<WindowProps>> = ({
+  children,
+  title,
+  price,
+  status,
+  date,
+  isLoad,
+  setIsOpen,
+}) => {
   return (
-    <section className={style.window}>
-      <div className={style.top}>
+    <section className={style.window} style={!isLoad ? { pointerEvents: 'none' } : {}}>
+      <div className={style.top} onClick={() => setIsOpen((prev) => !prev)}>
         <div className={style.start}>
           <div className={style.title}>{title}</div>
           {date && <div className={style.date}>Доставлено {date}</div>}

@@ -1,4 +1,7 @@
 import { FC } from 'react';
+import Link from 'next/link';
+
+import arrowSvg from './../../../../../public/arrowLeft.svg';
 
 import style from './profileTitle.module.sass';
 
@@ -7,7 +10,12 @@ interface ProfileTitleProps {
 }
 
 const ProfileTitle: FC<ProfileTitleProps> = ({ title }) => {
-  return <div className={style.title}>{title}</div>;
+  return (
+    <Link href="/profile" className={style.title}>
+      <img src={arrowSvg.src} alt="" />
+      {title}
+    </Link>
+  );
 };
 
 export default ProfileTitle;
