@@ -46,21 +46,25 @@ const CertificateForm: FC = () => {
                     <h3 className={style.title}>Напиши добрые слова </h3>
                 </div>
                 <textarea className={style.message} name="text" placeholder="Дорогая..."></textarea>
-                <label htmlFor="myCheckbox">Упомянуть от кого</label>
-                <input type="checkbox" id="myCheckbox" name="myCheckbox" value="1"/>
+                <label className={style.checkbox} htmlFor="myCheckbox">Упомянуть от кого</label>
+                <input className={style.checkbox__box} type="checkbox" id="myCheckbox" name="myCheckbox" value="1"/>
+                <input type='text' className={style.sender} placeholder="Tвоя красивая сестра :)" />
 
                 <div>
-                    <div className={style.num}>4/4</div>
+                    <div className={style.num4}>4/4</div>
                     <h3 className={style.title}>Дата получения </h3>
-                </div>
+                </div >
+                <div className={style.date}>
                 <DatePicker
                     selected={selectedDate}
                     onChange={handleDateChange}
                     className={style.form__airDatepicker}
-                    placeholderText="Выбрать дату*"
+                    placeholderText="Выбрать дату"
                     dateFormat='dd.MM.yyyy'
                     locale="ru"
-                />
+
+                /></div>
+                <button className={style.pay}>оплатить</button>
             </form>
         </div>
 
