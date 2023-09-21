@@ -12,7 +12,6 @@ interface WindowProps {
   price: number;
   status?: 'waiting' | 'paid';
   date?: string;
-  isLoad: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
@@ -22,11 +21,10 @@ const Window: FC<PropsWithChildren<WindowProps>> = ({
   price,
   status,
   date,
-  isLoad,
   setIsOpen,
 }) => {
   return (
-    <section className={style.window} style={!isLoad ? { pointerEvents: 'none' } : {}}>
+    <section className={style.window}>
       <div className={style.top} onClick={() => setIsOpen((prev) => !prev)}>
         <div className={style.start}>
           <div className={style.title}>{title}</div>

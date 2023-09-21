@@ -4,7 +4,7 @@ import Layout from '@/components/layout/Layout';
 import ProfileTitle from '../profile/profileTitle/Title';
 import ProfileAside from '../profile/profileAside/profileAside';
 import Tab from '@/components/other/tab/tab';
-import PurchasesWindow from './purchasesWindow/purchasesWindow';
+import PurchasesWindow from './accordion/accordion';
 
 import style from './purchases.module.sass';
 

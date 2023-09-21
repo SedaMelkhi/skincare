@@ -1,14 +1,14 @@
-.address
-    margin-bottom: 16px
-
 .flex
     display: flex
+    flex-direction: column
     justify-content: space-between
-    
-.text
-    height: 0
-    transition: .3s
-    overflow: hidden
+    gap: 48px
+    position: relative
+    @media (min-width: 1200px)
+        flex-direction: row
+
+.address
+    margin-bottom: 16px
 
 .left
     transition: .3s
@@ -21,5 +21,7 @@
     transition: .2s
     opacity: 1
     &_hidden
-        transition: .2s
         opacity: 0
+        position: absolute
+        top: 0
+        z-index: -1

@@ -2,11 +2,13 @@
     margin-top: 32px 
     
 .line
-    display: flex
-    justify-content: space-between
-    align-items: center
     border-top: 1px solid var(--Grey-300)
     padding: 20px 0
+    @media (min-width: 1200px)
+        a
+            display: flex
+            justify-content: space-between
+            align-items: center
 
 .image
     width: 77px
@@ -19,8 +21,10 @@
 
 .title
     color: var(--Grey-700)
-    font-size: 20px
+    font-size: 16px
     margin-bottom: 16px
+    @media (min-width: 1200px)
+        font-size: 20px
 
 .details
     display: flex
@@ -31,4 +35,9 @@
 .price
     color: var(--Grey-900)
     text-align: right
-    font-size: 20px
+    font-size: 16px
+    margin-top: -22px
+    @media (min-width: 1200px)
+        font-size: 20px
+        margin-top: 0
+        
