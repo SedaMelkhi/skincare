@@ -1,0 +1,112 @@
+.modal
+  height: 100vw
+  width: 100vw
+  background-color: rgba(0, 0, 0, 4)
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  transform: scale(0)
+  .active
+    transform: scale(1)
+.main
+  padding: 20px
+  border-radius: 8px
+  background-color:  rgba(251, 250, 255, 1)
+  @media ( min-width: 768px )
+    padding: 124px 113px 59px 115px
+.close
+  position: relative
+.closeImg
+  position: absolute
+  right: 4px
+  top: 4px
+  width: 14px
+  height: 14px
+  @media ( min-width: 768px )
+    right: 24px
+
+.title
+  font-size: 32px
+  line-height: 33.28px
+  font-weight: 400
+  color: var(--grey-900)
+  text-transform: uppercase
+  margin-top: 42px
+  text-align: center
+  margin-bottom: 32px
+  @media ( min-width: 768px )
+    margin-top: 124px
+    margin-bottom: 56px
+.text
+  font-size: 14px
+  line-height: 18.62px
+  font-weight: 400
+  color: var(--grey-900)
+  text-transform: uppercase
+  text-align: center
+  margin-bottom: 16px
+
+.payMain
+  display: flex
+  justify-content: center
+.position
+  position: relative
+.visa
+  position: absolute
+  width: 41.74px
+  height: 13.24px
+  top: 60px
+  z-index: 111
+  right: 130px
+  @media ( min-width: 768px )
+    right: 145px
+
+.plus
+  position: absolute
+  top: 60px
+  right: 140px
+  @media ( min-width: 768px )
+    right: 150px
+.spb
+  position: absolute
+  top: 60px
+  right: 137px
+  @media ( min-width: 768px )
+    right: 150px
+
+.pay
+  border-radius: 16px
+  border: 1px solid var(--grey-400)
+  width: 300px
+  height: 99px
+  padding: 15px 24px 24px 24px
+  text-align: center
+  margin-bottom: 12px
+  @media ( min-width: 768px )
+    width: 324px
+    margin-bottom: 20px
+
+.payBtnMain
+  display: flex
+  justify-content: center
+  margin-top: 20px
+  @media ( min-width: 768px )
+    margin-top: 36px
+.payBtn
+  border: 1px solid var(--grey-900)
+  width: 300px
+  height: 50px
+  border-radius: 70px
+  padding: 16px 32px
+  color: var(--grey-900)
+  text-transform: uppercase
+  font-size: 16px
+  line-height: 18px
+  @media ( min-width: 768px )
+    width: 324px
+
+
+
