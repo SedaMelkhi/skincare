@@ -1,5 +1,5 @@
 import {FC, useState} from 'react';
-import {registerLocale, setDefaultLocale} from 'react-datepicker';
+import {registerLocale} from 'react-datepicker';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -8,11 +8,11 @@ import ru from 'date-fns/locale/ru';
 registerLocale('ru', ru)
 
 import style from './CertificateForm.module.sass'
-import {getDate} from "date-fns";
+
 import CertificateModalWindow from "@/components/screens/certificate/certificateModalWindow/certificateModalWindow";
 
 const CertificateForm: FC = () => {
-    const [modalActive, setModelActive]=useState(false)
+    const [modalActive, setModalActive]=useState(false)
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
     const handleDateChange = (date: Date | null) => {
@@ -75,9 +75,9 @@ const CertificateForm: FC = () => {
                         minDate={new Date()}
 
                     /></span>
-                <button className={style.pay} onClick={()=>setModelActive(true)}>оплатить</button>
+                <button className={style.pay} onClick={()=>setModalActive(true)}>оплатить</button>
             </form>
-            {modalActive && <CertificateModalWindow active={modalActive} setActive={setModelActive} />}
+            {modalActive && <CertificateModalWindow active={modalActive} setActive={setModalActive} />}
         </div>
 
 
