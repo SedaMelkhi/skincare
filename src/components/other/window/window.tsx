@@ -54,6 +54,15 @@ const Window: FC<PropsWithChildren<WindowProps>> = ({
         </div>
       </div>
       <div className={style.content}>{children}</div>
+      {!status ? (
+        <div className={style.btn__wrap}>
+          <div className={style.btn_mobile}>
+            <Button text="повторить заказ" />
+          </div>
+        </div>
+      ) : (
+        ''
+      )}
     </section>
   );
 };

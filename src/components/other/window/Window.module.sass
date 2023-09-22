@@ -55,3 +55,18 @@
 
 .center
     align-items: center
+
+.btn
+    display: none
+    &__wrap
+        display: flex
+        justify-content: flex-end
+    &_mobile
+        width: 203px
+        margin-bottom: 24px
+        margin-right: 16px
+        display: block
+        @media (min-width: 768px)
+            display: none
+    @media (min-width: 768px)
+        display: block

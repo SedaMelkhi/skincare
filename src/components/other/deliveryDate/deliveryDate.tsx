@@ -10,7 +10,7 @@ interface DeliveryDateProps {
 const DeliveryDate: FC<DeliveryDateProps> = ({ text }) => {
   return (
     <div className={style.data}>
-      <div className={style.grey}>Адрес доставки</div>
+      <div className={style.grey}>Дата доставки</div>
       <div>{text}</div>
     </div>
   );

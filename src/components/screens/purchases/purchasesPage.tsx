@@ -24,10 +24,14 @@ const PurchasesPage: FC = () => {
               <Tab text="история покупок" link="historyPurchases" active={false} />
             </div>
             <div className={style.window}>
-              <PurchasesWindow title="заказ #3123" price={5000} status="waiting"></PurchasesWindow>
+              <PurchasesWindow
+                title="заказ #3123"
+                price={5000}
+                status="waiting"
+                type="purchases"></PurchasesWindow>
             </div>
             <div className={style.window}>
-              <PurchasesWindow title="заказ #3124" price={2500} status="paid" />
+              <PurchasesWindow title="заказ #3124" price={2500} status="paid" type="purchases" />
             </div>
           </div>
         </div>

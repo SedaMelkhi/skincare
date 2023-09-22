@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import Layout from '@/components/layout/Layout';
 import ProfileTitle from '../profile/profileTitle/Title';
@@ -24,10 +24,19 @@ const HistoryPurchasesPage: FC = () => {
               <Tab text="история покупок" link="historyPurchases" active={true} />
             </div>
             <div className={style.window}>
-              <PurchasesWindow title="заказ #3123" price={5000} date="12 июля 2023" />
+              <PurchasesWindow
+                title="заказ #3123"
+                price={5000}
+                date="12 июля 2023"
+                type="history"></PurchasesWindow>
             </div>
             <div className={style.window}>
-              <PurchasesWindow title="заказ #3124" price={2500} date="12 июля 2023" />
+              <PurchasesWindow
+                title="заказ #3124"
+                price={2500}
+                date="12 июля 2023"
+                type="history"
+              />
             </div>
           </div>
         </div>

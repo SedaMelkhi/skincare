@@ -11,9 +11,10 @@ interface AccordionProps {
   price: number;
   status?: 'waiting' | 'paid';
   date?: string;
+  type: string;
 }
 
-const Accordion: FC<AccordionProps> = ({ title, price, status, date }) => {
+const Accordion: FC<AccordionProps> = ({ title, price, status, date, type }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [height, setHeight] = useState('0');
   const [overflow, setOverflow] = useState<'hidden' | 'visible'>('hidden');
@@ -43,7 +44,7 @@ const Accordion: FC<AccordionProps> = ({ title, price, status, date }) => {
   return (
     <Window title={title} price={price} status={status} setIsOpen={setIsOpen} date={date}>
       <div className={style.content}>
-        <AccordionHeader isOpen={isOpen} setIsOpen={setIsOpen} />
+        <AccordionHeader isOpen={isOpen} setIsOpen={setIsOpen} type={type} />
         <AccordionBody bodyElement={bodyElement} overflow={overflow} height={height} />
       </div>
     </Window>

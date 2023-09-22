@@ -11,9 +11,10 @@ import style from './accordionHeader.module.sass';
 interface AccordionHeaderProps {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
+  type: string;
 }
 
-const AccordionHeader: FC<AccordionHeaderProps> = ({ isOpen, setIsOpen }) => {
+const AccordionHeader: FC<AccordionHeaderProps> = ({ isOpen, setIsOpen, type }) => {
   const products = [
     {
       image: image.src,
@@ -63,17 +64,23 @@ const AccordionHeader: FC<AccordionHeaderProps> = ({ isOpen, setIsOpen }) => {
   ];
   return (
     <div className={style.flex}>
-      <div className={isOpen ? style.left_flex : style.left}>
-        <div className={style.address}>
-          <Address
-            link="https://maps.app. goo.gl/9f6feVpgEker5Rh87"
-            text="г. Грозный, проспект Мухаммеда Али, д 2А"
-          />
+      {type === 'purchases' && (
+        <div className={isOpen ? style.left_flex : style.left}>
+          <div className={style.address}>
+            <Address
+              link="https://maps.app. goo.gl/9f6feVpgEker5Rh87"
+              text="г. Грозный, проспект Мухаммеда Али, д 2А"
+            />
+          </div>
+          <DeliveryDate text="с 16 по 18 июля включительно" />
         </div>
-        <DeliveryDate text="с 16 по 18 июля включительно" />
-      </div>
+      )}
       <div className={isOpen ? style.right_hidden : style.right}>
-        <SmallProducts products={products} setIsOpen={setIsOpen} />
+        <SmallProducts
+          products={products}
+          setIsOpen={setIsOpen}
+          size={type === 'history' ? 'big' : 'small'}
+        />
       </div>
     </div>
   );
