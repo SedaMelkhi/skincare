@@ -17,13 +17,13 @@ const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu 
   const [menu, setMenu] = useState([
     {
       text: 'покупки',
-      link: 'profile/purchases',
+      link: '/profile/purchases',
       active: activeMenu === 0 ? true : false,
       id: 0,
     },
     {
       text: 'фавориты',
-      link: '/',
+      link: '/profile/favorites',
       active: activeMenu === 1 ? true : false,
       id: 1,
     },
