@@ -5,16 +5,16 @@ import ProductLine from '@/components/other/productLine/productLine';
 import style from './accordionBody.module.sass';
 
 interface AccordionBodyProps {
-  contentHeight: LegacyRef<HTMLDivElement> | null;
+  bodyElement: LegacyRef<HTMLDivElement> | null;
   overflow: 'hidden' | 'visible';
   height: string;
 }
 
-const AccordionBody: FC<AccordionBodyProps> = ({ contentHeight, overflow, height }) => {
+const AccordionBody: FC<AccordionBodyProps> = ({ bodyElement, overflow, height }) => {
   return (
     <div
       className={style.text}
-      ref={contentHeight && contentHeight}
+      ref={bodyElement && bodyElement}
       style={{
         height: overflow === 'hidden' ? height : 'auto',
         overflow: overflow,

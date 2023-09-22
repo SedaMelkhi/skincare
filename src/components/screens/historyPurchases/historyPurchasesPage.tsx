@@ -4,11 +4,11 @@ import Layout from '@/components/layout/Layout';
 import ProfileTitle from '../profile/profileTitle/Title';
 import ProfileAside from '../profile/profileAside/profileAside';
 import Tab from '@/components/other/tab/tab';
-import PurchasesWindow from './accordion/accordion';
+import PurchasesWindow from './../purchases/accordion/accordion';
 
-import style from './purchases.module.sass';
+import style from './historyPurchases.module.sass';
 
-const PurchasesPage: FC = () => {
+const HistoryPurchasesPage: FC = () => {
   return (
     <Layout title={'Мои покупки'}>
       <section className={style.wrap}>
@@ -20,14 +20,14 @@ const PurchasesPage: FC = () => {
             <ProfileTitle title="покупки" />
 
             <div className={style.tabs}>
-              <Tab text="В пути" link="purchases" active={true} />
-              <Tab text="история покупок" link="historyPurchases" active={false} />
+              <Tab text="В пути" link="purchases" active={false} />
+              <Tab text="история покупок" link="historyPurchases" active={true} />
             </div>
             <div className={style.window}>
-              <PurchasesWindow title="заказ #3123" price={5000} status="waiting"></PurchasesWindow>
+              <PurchasesWindow title="заказ #3123" price={5000} date="12 июля 2023" />
             </div>
             <div className={style.window}>
-              <PurchasesWindow title="заказ #3124" price={2500} status="paid" />
+              <PurchasesWindow title="заказ #3124" price={2500} date="12 июля 2023" />
             </div>
           </div>
         </div>
@@ -36,4 +36,4 @@ const PurchasesPage: FC = () => {
   );
 };
 
-export default PurchasesPage;
+export default HistoryPurchasesPage;

@@ -9,21 +9,22 @@ import style from './accordion.module.sass';
 interface AccordionProps {
   title: string;
   price: number;
-  status: 'waiting' | 'paid';
+  status?: 'waiting' | 'paid';
+  date?: string;
 }
 
-const Accordion: FC<AccordionProps> = ({ title, price, status }) => {
+const Accordion: FC<AccordionProps> = ({ title, price, status, date }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [height, setHeight] = useState('0');
   const [overflow, setOverflow] = useState<'hidden' | 'visible'>('hidden');
-  const contentHeight = useRef<HTMLDivElement | null>(null);
+  const bodyElement = useRef<HTMLDivElement | null>(null);
   const timerId = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    if (contentHeight.current && isOpen) {
-      setHeight(isOpen ? `${contentHeight.current.scrollHeight}px` : '0px');
+    if (bodyElement.current && isOpen) {
+      setHeight(isOpen ? `${bodyElement.current.scrollHeight}px` : '0px');
 
-      let time = contentHeight.current.scrollHeight * 1.5;
+      let time = bodyElement.current.scrollHeight * 1.5;
       timerId.current = setTimeout(() => {
         setOverflow('visible');
       }, time);
@@ -40,10 +41,10 @@ const Accordion: FC<AccordionProps> = ({ title, price, status }) => {
   }, [isOpen]);
 
   return (
-    <Window title={title} price={price} status={status} setIsOpen={setIsOpen}>
+    <Window title={title} price={price} status={status} setIsOpen={setIsOpen} date={date}>
       <div className={style.content}>
         <AccordionHeader isOpen={isOpen} setIsOpen={setIsOpen} />
-        <AccordionBody contentHeight={contentHeight} overflow={overflow} height={height} />
+        <AccordionBody bodyElement={bodyElement} overflow={overflow} height={height} />
       </div>
     </Window>
   );
