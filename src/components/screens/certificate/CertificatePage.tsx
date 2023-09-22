@@ -14,8 +14,10 @@ const CertificatePage: FC<{ data: ContactsArray }> = ({data}) => {
                 <div className="wrap">
                     <CertificateTitle/>
                     <div className={style.container}>
-                        <CertificateImg/>
-                        <CertificateForm/>
+                        <div className={style.row1}>
+                            <CertificateImg/></div>
+                        <div className={style.row2}>
+                            <CertificateForm/></div>
                     </div>
                 </div>
 

@@ -12,7 +12,7 @@ import style from './CertificateForm.module.sass'
 import CertificateModalWindow from "@/components/screens/certificate/certificateModalWindow/certificateModalWindow";
 
 const CertificateForm: FC = () => {
-    const [modalActive, setModalActive]=useState(false)
+    const [modalActive, setModalActive] = useState(false)
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
 
     const handleDateChange = (date: Date | null) => {
@@ -57,7 +57,8 @@ const CertificateForm: FC = () => {
                     <textarea className={style.message} name="text" placeholder="Дорогая..."></textarea></div>
                 <label className={style.checkbox} htmlFor="myCheckbox">Упомянуть от кого</label>
                 <input className={style.checkbox__box} type="checkbox" id="myCheckbox" name="myCheckbox" value="1"/>
-                <input type='text' className={style.sender} placeholder="Tвоя красивая сестра :)"/>
+                <div>
+                    <input type='text' className={style.sender} placeholder="Tвоя красивая сестра :)"/></div>
 
                 <div className={style.titleMain}>
                     <div className={style.num4}>4/4</div>
@@ -75,9 +76,16 @@ const CertificateForm: FC = () => {
                         minDate={new Date()}
 
                     /></span>
-                <button className={style.pay} onClick={()=>setModalActive(true)}>оплатить</button>
+                <button
+                    className={style.pay}
+                    onClick={(event) => {
+                        event.preventDefault();
+                        setModalActive(true);
+                    }}>
+                    оплатить
+                </button>
             </form>
-            {modalActive && <CertificateModalWindow active={modalActive} setActive={setModalActive} />}
+            {modalActive && <CertificateModalWindow active={modalActive} setActive={setModalActive}/>}
         </div>
 
 

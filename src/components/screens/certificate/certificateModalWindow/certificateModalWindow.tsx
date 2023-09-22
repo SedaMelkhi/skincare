@@ -13,13 +13,15 @@ const CertificateModalWindow: FC<CertificateModalWindowProps> = ({active, setAct
 
     return (
         <div className={active ? style.active : style.modal} onClick={() =>
-                setActive(false)
+            setActive(false)
         }>
             <div className={style.main} onClick={e => {
                 e.stopPropagation()
             }}>
-                <div className={style.close}><img alt="close" src={'./certificate/close.png'}
-                                                  className={style.closeImg}/></div>
+                <div className={style.close} onClick={() =>
+                    setActive(false)
+                }><img alt="close" src={'./certificate/close.png'}
+                       className={style.closeImg}/></div>
                 <h3 className={style.title}>оплата </h3>
                 <p className={style.text}>Способ оплаты</p>
 
