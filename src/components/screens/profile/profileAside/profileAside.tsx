@@ -29,13 +29,13 @@ const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu 
     },
     {
       text: 'баллы и сертификаты',
-      link: '/',
+      link: '/profile/points',
       active: activeMenu === 2 ? true : false,
       id: 2,
     },
     {
       text: 'адреса и карты',
-      link: '/',
+      link: '/profile/maps',
       active: activeMenu === 3 ? true : false,
       id: 3,
     },
