@@ -130,16 +130,19 @@
     width: 494px
     height: 274px
 .checkbox
-  color: var(--grey-900)
-  text-transform: uppercase
-  font-size: 20px
-  line-height: 24px
-  font-weight: 400
-  @media ( min-width: 768px )
-    margin-left: 71px
-  @media ( min-width: 1200px )
+  display: flex
+  align-items: center
+  &__text
+    color: var(--grey-900)
+    text-transform: uppercase
+    font-size: 20px
+    line-height: 24px
+    font-weight: 400
+    @media ( min-width: 768px )
+      margin-left: 71px
+    @media ( min-width: 1200px )
 
-  &__box
+  &__input
     width: 18px
     height: 18px
     margin-left: 16px
@@ -177,14 +180,11 @@
   height: 56px
   display: inline-block
   z-index: 1
-
+  position: relative
   @media ( min-width: 768px )
     margin-left: 71px
     width: 494px
-
-
-.form
-  &__airDatepickerl
+  &__picker
     border: 1px solid var(--grey-400)
     background-color: var(--grey-25)
     padding: 16px 20px 16px 20px
@@ -193,13 +193,22 @@
     display: block
     @media ( min-width: 768px )
       width: 494px
-
-
     &::placeholder
       color: var(--grey-500)
       font-size: 16px
       line-height: 20px
       font-weight: 400
+      padding-left: 30px
+  &__icon
+    position: absolute
+    left: 20px
+    top: 16px
+    z-index: 2
+  &__arrow
+    position: absolute
+    top: 25px
+    right: 36px
+
 
 .pay
   margin-top: 32px

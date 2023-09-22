@@ -7,6 +7,7 @@ import CertificateForm from "@/components/screens/certificate/certificateForm/ce
 import CertificateImg from "@/components/screens/certificate/certificateImg/certificateImg";
 import CertificateTitle from "@/components/screens/certificate/certificateTitle/CertificateTitle";
 
+
 const CertificatePage: FC<{ data: ContactsArray }> = ({data}) => {
     return (
         <>
@@ -18,6 +19,7 @@ const CertificatePage: FC<{ data: ContactsArray }> = ({data}) => {
                             <CertificateImg/></div>
                         <div className={style.row2}>
                             <CertificateForm/></div>
+
                     </div>
                 </div>
 

@@ -12,10 +12,10 @@ const CertificateModalWindow: FC<CertificateModalWindowProps> = ({active, setAct
 
 
     return (
-        <div className={active ? style.active : style.modal} onClick={() =>
+        <div className={active ?`${style.active} ${style.modal}`  : style.modal} onClick={() =>
             setActive(false)
         }>
-            <div className={style.main} onClick={e => {
+            <div className={style.modal__content} onClick={e => {
                 e.stopPropagation()
             }}>
                 <div className={style.close} onClick={() =>

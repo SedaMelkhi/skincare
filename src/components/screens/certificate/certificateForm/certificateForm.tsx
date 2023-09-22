@@ -1,10 +1,11 @@
 import {FC, useState} from 'react';
+
 import {registerLocale} from 'react-datepicker';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-
+import icon from "./../../../../../public/certificate/calendar.svg"
+import arrow from "./../../../../../public/certificate/arrow.svg"
 import ru from 'date-fns/locale/ru';
-
 registerLocale('ru', ru)
 
 import style from './CertificateForm.module.sass'
@@ -20,7 +21,7 @@ const CertificateForm: FC = () => {
 
     }
     return (
-        <div className={style.main}>
+        <div className={style.main} >
             <div className={style.titleMain}>
                 <div className={style.num}>1/4</div>
                 <h3 className={style.title}>данные получателя карты </h3>
@@ -55,8 +56,8 @@ const CertificateForm: FC = () => {
                 </div>
                 <div>
                     <textarea className={style.message} name="text" placeholder="Дорогая..."></textarea></div>
-                <label className={style.checkbox} htmlFor="myCheckbox">Упомянуть от кого</label>
-                <input className={style.checkbox__box} type="checkbox" id="myCheckbox" name="myCheckbox" value="1"/>
+                <div className={style.checkbox}><label className={style.checkbox__text} htmlFor="myCheckbox">Упомянуть от кого</label>
+                    <input className={style.checkbox__input} type="checkbox" id="myCheckbox" name="myCheckbox" value="1"/></div>
                 <div>
                     <input type='text' className={style.sender} placeholder="Tвоя красивая сестра :)"/></div>
 
@@ -69,13 +70,15 @@ const CertificateForm: FC = () => {
                         showIcon
                         selected={selectedDate}
                         onChange={handleDateChange}
-                        className={style.form__airDatepicker}
+                        className={style.date__picker}
                         placeholderText="Выбрать дату"
                         dateFormat='dd.MM.yyyy'
                         locale="ru"
                         minDate={new Date()}
+                    /><img className={style.date__icon} alt="icon" src={icon.src}/>
+                    <img className={style.date__arrow} alt="arrow" src={arrow.src}/>
+                </span>
 
-                    /></span>
                 <button
                     className={style.pay}
                     onClick={(event) => {

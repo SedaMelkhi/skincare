@@ -13,42 +13,38 @@ import {FreeMode, Navigation, Thumbs} from 'swiper/modules';
 
 import image1 from "./../../../../../public/present/1.png"
 import image2 from "./../../../../../public/present/3.png"
-import image3 from "./../../../../../public/present/4.png"
+import image3 from "./../../../../../public/certificate/path-to-image-3.svg"
 import image4 from "./../../../../../public/present/2.png"
 import image5 from "./../../../../../public/certificate/path-to-image-5.svg"
-import image6 from "./../../../../../public/certificate/path-to-image-6.svg"
-import image7 from "./../../../../../public/certificate/path-to-image-6.svg"
-import image8 from "./../../../../../public/certificate/path-to-image-6.svg"
+import image6 from "./../../../../../public/present/4.png"
+
+
 import {Swiper as SwiperType} from "swiper/types";
 
 const CertificateImg: FC = () => {
     const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
     const sliders = [{
         image: image1.src,
+        id:0
 
     },
         {
             image: image2.src,
-
+            id:1
         }, {
             image: image3.src,
-
+            id:2
         }, {
             image: image4.src,
-
+            id:3
         }, {
             image: image5.src,
-
+            id:4
         }, {
             image: image6.src,
-
-        }, {
-            image: image7.src,
-
-        }, {
-            image: image8.src,
-
-        }]
+            id:5
+        },
+           ]
 
 
     return (
@@ -64,10 +60,10 @@ const CertificateImg: FC = () => {
 
 
             >
-                {sliders.map(({image,}) => (
-                    <SwiperSlide>
-                        <div className={style.top}>
-                            <div className={style.image} style={{backgroundImage: `url(${image})`}}></div>
+                {sliders.map(({image,id}) => (
+                    <SwiperSlide key={id}>
+                        <div className={style.swiper__conteiner}>
+                            <div className={style.swiper__image} style={{backgroundImage: `url(${image})`}}></div>
                         </div>
                     </SwiperSlide>
                 ))}
@@ -77,17 +73,18 @@ const CertificateImg: FC = () => {
                 onSwiper={setThumbsSwiper}
                 spaceBetween={8}
                 slidesPerView={6}
-                freeMode={true}
+
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className={style.swiper2}
+
             >
 
-                {sliders.map(({image,}) => (
-                    <SwiperSlide>
-                        <div className={style.bottom}>
-                            <div className={style.dot} style={{backgroundImage: `url(${image})`}}></div>
-                        </div>
+                {sliders.map(({image, id}) => (
+                    <SwiperSlide key={id}>
+
+                            <div className={style.swiper2__dots} style={{backgroundImage: `url(${image})`}}></div>
+
                     </SwiperSlide>
                 ))}
 

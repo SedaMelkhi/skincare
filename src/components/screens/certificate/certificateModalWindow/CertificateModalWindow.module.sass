@@ -1,7 +1,8 @@
 .modal
   height: 100vw
   width: 100vw
-  background-color: rgba(0, 0, 0, 4)
+  background: rgba(72, 59, 81, 0.4)
+  backdrop-filter: blur(8px)
   position: fixed
   top: 0
   left: 0
@@ -9,14 +10,16 @@
   align-items: center
   justify-content: center
   transform: scale(0)
-  .active
+  z-index: 1000
+  &__content
+    padding: 20px
+    border-radius: 8px
+    background-color:  rgba(251, 250, 255, 1)
+    @media ( min-width: 768px )
+      padding: 124px 113px 59px 115px
+.modal.active
     transform: scale(1)
-.main
-  padding: 20px
-  border-radius: 8px
-  background-color:  rgba(251, 250, 255, 1)
-  @media ( min-width: 768px )
-    padding: 124px 113px 59px 115px
+
 .close
   position: relative
 .closeImg
