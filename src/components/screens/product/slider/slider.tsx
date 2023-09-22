@@ -24,7 +24,7 @@ const Slider: FC = () => {
       <Swiper
         style={{}}
         pagination={true}
-        thumbs={thumbsSwiper ? { swiper: thumbsSwiper } : undefined}
+        thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Thumbs, Pagination]}
         className={style.swiper}
         breakpoints={{

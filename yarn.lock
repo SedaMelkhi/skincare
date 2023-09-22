@@ -1283,10 +1283,10 @@
   "resolved" "https://registry.npmjs.org/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz"
   "version" "1.0.0"
 
-"swiper@^10.2.0":
-  "integrity" "sha512-nktQsOtBInJjr3f5DicxC8eHYGcLXDVIGPSon0QoXRaO6NjKnATCbQ8SZsD3dN1Ph1RH4EhVPwSYCcuDRFWHGQ=="
-  "resolved" "https://registry.npmjs.org/swiper/-/swiper-10.2.0.tgz"
-  "version" "10.2.0"
+"swiper@^10.3.0":
+  "integrity" "sha512-o81KZH4phL/dJxKFWpZ/zf78QxOyFMood+c86vJJO0ZeSOoniyzV8HWDsw12KOlQdm4WRxrc/6kfGImAcxcS3w=="
+  "resolved" "https://registry.npmjs.org/swiper/-/swiper-10.3.0.tgz"
+  "version" "10.3.0"
 
 "to-fast-properties@^2.0.0":
   "integrity" "sha512-/OaKK0xYrs3DmxRYqL/yDc+FxFUVYhDlXMhRmv3z915w2HF1tnN1omB354j8VUGO/hbRzyD6Y3sA7v7GS/ceog=="
