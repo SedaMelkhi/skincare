@@ -7,7 +7,7 @@ import style from './save.module.sass';
 
 const Save: FC = () => {
   return (
-    <Link href="/save" className={style.save}>
+    <Link href="/profile/favorites" className={style.save}>
       <img src={save.src} alt="" />
     </Link>
   );
