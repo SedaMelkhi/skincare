@@ -6,9 +6,9 @@ import ProfileAside from '../profile/profileAside/profileAside';
 import CardProduct from '@/components/other/cardProduct/cardProduct';
 import Tab from '@/components/other/tab/tab';
 
-import style from './favorite.module.sass';
+import style from './waitingList.module.sass';
 
-const FavoritePage: FC = () => {
+const WaitingListPage: FC = () => {
   return (
     <Layout title={'Фавориты'}>
       <section className={style.wrap}>
@@ -19,21 +19,21 @@ const FavoritePage: FC = () => {
           <div className={style.width}>
             <ProfileTitle title="фавориты" />
             <div className={style.tabs}>
-              <Tab text="в наличии" link="/profile/favorites" active={true} />
-              <Tab text="лист ожидания" link="/profile/waitingList" active={false} />
+              <Tab text="в наличии" link="/profile/favorites" active={false} />
+              <Tab text="лист ожидания" link="/profile/waitingList" active={true} />
             </div>
             <div className={style.cards}>
               <div className={style.card}>
-                <CardProduct available={true} />
+                <CardProduct available={false} />
               </div>
               <div className={style.card}>
-                <CardProduct available={true} />
+                <CardProduct available={false} />
               </div>
               <div className={style.card}>
-                <CardProduct available={true} />
+                <CardProduct available={false} />
               </div>
               <div className={style.card}>
-                <CardProduct available={true} />
+                <CardProduct available={false} />
               </div>
             </div>
           </div>
@@ -43,4 +43,4 @@ const FavoritePage: FC = () => {
   );
 };
 
-export default FavoritePage;
+export default WaitingListPage;

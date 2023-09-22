@@ -47,7 +47,7 @@ const HitsSwiper: FC<HitsSwiperProps> = ({ slidesPerView }) => {
       }}>
       {[...new Array(6)].map((item, i) => (
         <SwiperSlide key={i}>
-          <CardProduct />
+          <CardProduct available={true} />
         </SwiperSlide>
       ))}
     </Swiper>

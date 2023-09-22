@@ -13,17 +13,24 @@
     border-top-right-radius: 16px
     border-top-left-radius: 16px
     color: var(--Grey-900)
-    font-size: 20px
+    font-size: 16px
+    gap: 16px
     line-height: 104%
     letter-spacing: 0.48px
+    @media (min-width: 768px)
+        font-size: 20px
     @media (min-width: 1200px)
         font-size: 24px
         padding: 24px
         
 .end
     display: flex
-    align-items: flex-end
-    gap: 16px
+    align-items: center
+    gap: 8px
+    @media (min-width: 370px)
+        align-items: flex-end
+    @media (min-width: 768px)
+        gap: 16px
 
 .content
     position: relative
@@ -36,6 +43,12 @@
 .status
     display: flex
     gap: 4px
+    flex-direction: column
+    align-items: center
+    text-align: center
+    @media (min-width: 370px)
+        align-items: stretch
+        flex-direction: row
     &__text
         color: var(--Primary-800)
         font-size: 12px
@@ -44,6 +57,9 @@
 .title, .price
     text-transform: uppercase
 
+.price
+    flex-shrink: 0
+    
 .btn
     width: 219px
 
