@@ -1,6 +1,6 @@
-import { FC, useState } from 'react';
+import { FC } from 'react';
 
-import { StyledEngineProvider } from '@mui/material';
+import { styled } from '@mui/material';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 
@@ -8,34 +8,36 @@ import starSvg from './../../../../../public/violetStar.svg';
 
 import style from './pointsCard.module.sass';
 
-const PointsCard: FC = () => {
-  const [value, setValue] = useState<number[]>([0, 50000]);
+const PrettoSlider = styled(Slider)({
+  color: '#52af77',
+  height: 8,
+  '& .MuiSlider-valueLabel': {
+    fontSize: 14,
+    padding: '8px 11px',
+    borderRadius: '8px',
+    backgroundColor: '#504655',
+    textTransform: 'none',
+  },
+});
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
-    setValue(newValue as number[]);
-  };
+const PointsCard: FC = () => {
   const marks = [
     {
-      value: 3,
-      label: '3%',
+      value: 1,
+      label: '1%',
     },
     {
-      value: 6,
-      label: '6%',
+      value: 25000,
+      label: '5%',
     },
     {
-      value: 10,
+      value: 50000,
       label: '10%',
     },
   ];
-
-  function valuetext(value: number) {
-    return `${value}°C`;
-  }
-
-  function valueLabelFormat(value: number) {
-    return marks.findIndex((mark) => mark.value === value) + 1;
-  }
+  const valueLabelFormat = (value: number) => {
+    return `Ваша сумма покупок составляет  ${value} ₽`;
+  };
   return (
     <div className={style.wrap}>
       <div className={style.card}>
@@ -50,19 +52,32 @@ const PointsCard: FC = () => {
           <div className={style.text}>Баллы сгорят через 7 дней</div>
         </div>
         <div className={style.bottom}>
-          <Box sx={{ width: 300 }}>
-            <Slider
-              aria-label="Restricted values"
-              defaultValue={0}
-              min={3}
-              max={10}
-              valueLabelFormat={valueLabelFormat}
-              getAriaValueText={valuetext}
-              step={1}
-              valueLabelDisplay="auto"
-              marks={marks}
-            />
-          </Box>
+          <div className={style.slider}>
+            <Box sx={{ width: '100%' }}>
+              <PrettoSlider
+                //disabled
+                aria-label="Restricted values"
+                defaultValue={10000}
+                min={0}
+                max={50000}
+                getAriaValueText={valueLabelFormat}
+                valueLabelFormat={valueLabelFormat}
+                step={1}
+                valueLabelDisplay="auto"
+                marks={marks}
+                color="secondary"
+                classes={{
+                  rail: style.rail, //цвет линии
+                  track: style.track, //активная линия
+                  thumb: style.thumb, //активная точка ползунка
+                  mark: style.mark, //точки
+                  markActive: style.mark_active,
+                  markLabel: style.mark_label,
+                  markLabelActive: style.mark_label_active,
+                }}
+              />
+            </Box>
+          </div>
           <div className={style.question}>Как получить баллы?</div>
         </div>
       </div>

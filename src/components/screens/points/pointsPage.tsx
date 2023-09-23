@@ -13,7 +13,7 @@ const PointsPage: FC = () => {
       <section className={style.wrap}>
         <div className={'wrap ' + style.content}>
           <div className={style.aside}>
-            <ProfileAside activeMenu={3} setActiveProfileData={null} />
+            <ProfileAside activeMenu={2} setActiveProfileData={null} />
           </div>
           <div className={style.width}>
             <ProfileTitle title="баллы" />
