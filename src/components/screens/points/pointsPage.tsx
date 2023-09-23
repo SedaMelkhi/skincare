@@ -3,8 +3,7 @@ import { FC } from 'react';
 import Layout from '@/components/layout/Layout';
 import ProfileTitle from '../profile/profileTitle/Title';
 import ProfileAside from '../profile/profileAside/profileAside';
-import CardProduct from '@/components/other/cardProduct/cardProduct';
-import Tab from '@/components/other/tab/tab';
+import PointsCard from './pointsCard/pointsCard';
 
 import style from './points.module.sass';
 
@@ -18,6 +17,7 @@ const PointsPage: FC = () => {
           </div>
           <div className={style.width}>
             <ProfileTitle title="баллы" />
+            <PointsCard />
             <ProfileTitle title="подарочные сертификаты" />
           </div>
         </div>
