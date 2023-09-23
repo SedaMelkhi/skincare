@@ -33,7 +33,7 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
         </span>{' '}
         мой профиль
       </div>
-      <ProfileTitle title="привет, Мария" />
+      <ProfileTitle title="привет, Мария" link={false} />
       <form className={style.form}>
         <div className={style.input}>
           <Input value="Мария" />

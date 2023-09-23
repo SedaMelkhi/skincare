@@ -17,7 +17,7 @@ const HistoryPurchasesPage: FC = () => {
             <ProfileAside activeMenu={0} setActiveProfileData={null} />
           </div>
           <div className={style.width}>
-            <ProfileTitle title="покупки" />
+            <ProfileTitle title="покупки" link={true} />
 
             <div className={style.tabs}>
               <Tab text="В пути" link="purchases" active={false} />

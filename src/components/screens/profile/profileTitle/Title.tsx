@@ -7,14 +7,17 @@ import style from './profileTitle.module.sass';
 
 interface ProfileTitleProps {
   title: string;
+  link: boolean;
 }
 
-const ProfileTitle: FC<ProfileTitleProps> = ({ title }) => {
-  return (
+const ProfileTitle: FC<ProfileTitleProps> = ({ title, link }) => {
+  return link ? (
     <Link href="/profile" className={style.title}>
       <img src={arrowSvg.src} alt="" />
       {title}
     </Link>
+  ) : (
+    <div className={style.title}>{title}</div>
   );
 };
 

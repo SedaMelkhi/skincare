@@ -4,9 +4,11 @@ import Layout from '@/components/layout/Layout';
 import ProfileTitle from '../profile/profileTitle/Title';
 import ProfileAside from '../profile/profileAside/profileAside';
 import PointsCard from './pointsCard/pointsCard';
+import CertificateCard from './certificateCard/certificateCard';
 
 import style from './points.module.sass';
-import CertificateCard from './pointsCard/certificateCard/certificateCard';
+import AddCertificate from './addCertificate/addCertificate';
+import Footer from '@/components/layout/footer/footer';
 
 const PointsPage: FC = () => {
   return (
@@ -17,13 +19,16 @@ const PointsPage: FC = () => {
             <ProfileAside activeMenu={2} setActiveProfileData={null} />
           </div>
           <div className={style.width}>
-            <ProfileTitle title="баллы" />
+            <ProfileTitle title="баллы и сертификаты" link={true} />
+            <ProfileTitle title="баллы" link={false} />
             <PointsCard />
-            <ProfileTitle title="подарочные сертификаты" />
+            <ProfileTitle title="подарочные сертификаты" link={false} />
             <CertificateCard />
+            <AddCertificate />
           </div>
         </div>
       </section>
+      <Footer data={[]} />
     </Layout>
   );
 };

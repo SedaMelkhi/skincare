@@ -1,0 +1,37 @@
+.flex
+    display: flex
+    flex-direction: column
+    align-items: center
+    gap: 32px
+    margin-top: 120px
+    @media (min-width: 768px)
+        flex-direction: row
+        gap: 20px
+    @media (min-width: 1200px)
+        gap: 62px
+
+.desc
+    color: var(--Grey-700)
+    font-size: 20px
+    margin-bottom: 40px
+    text-align: center
+    @media (min-width: 768px)
+        text-align: left
+
+.btns
+    display: flex
+    flex-wrap: wrap
+    gap: 10px 16px
+    justify-content: center
+    @media (min-width: 768px)
+        justify-content: flex-start
+
+.btn
+    width: 100%
+    @media (min-width: 380px)
+        width: 155px
+    &_white 
+        button
+            background-color: transparent
+            color: var(--Grey-800)
+            border: 1px solid var(--Grey-900)

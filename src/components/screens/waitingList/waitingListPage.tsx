@@ -17,7 +17,7 @@ const WaitingListPage: FC = () => {
             <ProfileAside activeMenu={1} setActiveProfileData={null} />
           </div>
           <div className={style.width}>
-            <ProfileTitle title="фавориты" />
+            <ProfileTitle title="фавориты" link={true} />
             <div className={style.tabs}>
               <Tab text="в наличии" link="/profile/favorites" active={false} />
               <Tab text="лист ожидания" link="/profile/waitingList" active={true} />
