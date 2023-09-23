@@ -6,6 +6,7 @@ import ProfileAside from '../profile/profileAside/profileAside';
 import PointsCard from './pointsCard/pointsCard';
 
 import style from './points.module.sass';
+import CertificateCard from './pointsCard/certificateCard/certificateCard';
 
 const PointsPage: FC = () => {
   return (
@@ -19,6 +20,7 @@ const PointsPage: FC = () => {
             <ProfileTitle title="баллы" />
             <PointsCard />
             <ProfileTitle title="подарочные сертификаты" />
+            <CertificateCard />
           </div>
         </div>
       </section>
