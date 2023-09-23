@@ -8,18 +8,6 @@ import starSvg from './../../../../../public/violetStar.svg';
 
 import style from './pointsCard.module.sass';
 
-const PrettoSlider = styled(Slider)({
-  color: '#52af77',
-  height: 8,
-  '& .MuiSlider-valueLabel': {
-    fontSize: 14,
-    padding: '8px 11px',
-    borderRadius: '8px',
-    backgroundColor: '#504655',
-    textTransform: 'none',
-  },
-});
-
 const PointsCard: FC = () => {
   const marks = [
     {
@@ -38,6 +26,17 @@ const PointsCard: FC = () => {
   const valueLabelFormat = (value: number) => {
     return `Ваша сумма покупок составляет  ${value} ₽`;
   };
+  const PrettoSlider = styled(Slider)({
+    color: '#52af77',
+    height: 8,
+    '& .MuiSlider-valueLabel': {
+      fontSize: 14,
+      padding: '8px 11px',
+      borderRadius: '8px',
+      backgroundColor: '#504655',
+      textTransform: 'none',
+    },
+  });
   return (
     <div className={style.wrap}>
       <div className={style.card}>
