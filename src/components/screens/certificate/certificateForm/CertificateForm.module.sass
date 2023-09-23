@@ -1,0 +1,230 @@
+.main
+  margin-top: 96px
+  @media ( min-width: 768px )
+    margin-top: 8px
+
+
+.titleMain
+  @media ( min-width: 768px )
+    display: flex
+    align-items: center
+    margin-top: 92px
+  @media ( min-width: 1200px )
+    &:first-child
+      margin-top: 0
+
+.num
+  color: var(--grey-500)
+  font-weight: 400
+  font-style: italic
+  line-height: 26.6px
+  font-size: 20px
+  margin-bottom: 12px
+  @media ( min-width: 768px )
+    margin-right: 40px
+  @media ( min-width: 1200px )
+    margin-top: 0
+.title
+  color: var(--grey-900)
+  text-transform: uppercase
+  font-size: 24px
+  line-height: 25px
+  font-weight: 400
+  @media ( min-width: 768px )
+    font-size: 32px
+    line-height: 38.4px
+    text-align: center
+.payee
+  width: 100%
+  border: none
+  border-bottom:  0.5px solid var(--grey-900)
+  padding: 16px 0 8px 16px
+  background-color: transparent
+  margin-top: 16px
+  @media ( min-width: 768px )
+    padding: 16px 4px 8px 16px
+    max-width: 494px
+    height: 44px
+    margin-left: 71px
+  &::placeholder
+    color: var(--grey-500)
+    font-size: 16px
+    line-height: 20px
+    font-weight: 400
+
+.num2
+  color: var(--grey-500)
+  font-weight: 400
+  font-style: italic
+  line-height: 26.6px
+  font-size: 20px
+  margin-top: 56px
+  margin-bottom: 12px
+  @media ( min-width: 768px )
+    margin-right: 40px
+    margin-top: 0
+.container
+  margin-top: 20px
+  @media ( min-width: 768px )
+    margin-top: 32px
+
+.row
+  display: flex
+  gap: 8px
+  margin-bottom: 16px
+  @media ( min-width: 768px )
+    margin-left: 71px
+.btn
+  border:  1px solid var(--grey-500)
+  text-align: center
+  width: 109px
+  height: 44px
+  color: var(--grey-500)
+  @media ( min-width: 768px )
+    width: 151px
+
+
+.sum
+  width: 100%
+  border: none
+  border-bottom:  0.5px solid var(--grey-900)
+  padding: 16px 0 8px 16px
+  background-color: transparent
+  margin-top: 16px
+  &::placeholder
+    color: var(--grey-500)
+    font-size: 16px
+    line-height: 20px
+    font-weight: 400
+  @media ( min-width: 768px )
+    max-width: 494px
+    margin-left: 71px
+
+.num3
+  margin-top: 56px
+  color: var(--grey-500)
+  font-weight: 400
+  font-style: italic
+  line-height: 26.6px
+  font-size: 20px
+  margin-bottom: 12px
+  @media ( min-width: 768px )
+    margin-right: 40px
+    margin-top: 0
+.message
+  margin-top: 32px
+  padding: 24px 32px 24px 32px
+  width: 100%
+  height: 274px
+  outline: none
+  background-color: var(--grey-25)
+  border: 1px solid var(--grey-400)
+  color: var(--grey-500)
+  font-size: 16px
+  font-weight: 400
+  line-height: 20px
+  font-family: "Evolventa"
+  margin-bottom: 32px
+  @media ( min-width: 768px )
+    margin-left: 71px
+    width: 494px
+    height: 274px
+.checkbox
+  display: flex
+  align-items: center
+  &__text
+    color: var(--grey-900)
+    text-transform: uppercase
+    font-size: 20px
+    line-height: 24px
+    font-weight: 400
+    @media ( min-width: 768px )
+      margin-left: 71px
+    @media ( min-width: 1200px )
+
+  &__input
+    width: 18px
+    height: 18px
+    margin-left: 16px
+    accent-color: var(--grey-900)
+
+.sender
+  width: 100%
+  border: none
+  border-bottom:  0.5px solid var(--grey-900)
+  padding: 16px 0 8px 16px
+  background-color: transparent
+  margin-top: 12px
+  &::placeholder
+    color: var(--grey-500)
+    font-size: 16px
+    line-height: 20px
+    font-weight: 400
+  @media ( min-width: 768px )
+    margin-left: 71px
+    max-width: 494px
+.num4
+  margin-top: 56px
+  color: var(--grey-500)
+  font-weight: 400
+  font-style: italic
+  line-height: 26.6px
+  font-size: 20px
+  margin-bottom: 12px
+  @media ( min-width: 768px )
+    margin-right: 40px
+    margin-top: 0
+.date
+  margin-top: 32px
+  width: 100%
+  height: 56px
+  display: inline-block
+  z-index: 1
+  position: relative
+  @media ( min-width: 768px )
+    margin-left: 71px
+    width: 494px
+  &__picker
+    border: 1px solid var(--grey-400)
+    background-color: var(--grey-25)
+    padding: 16px 20px 16px 20px
+    width: 343px
+    height: 56px
+    display: block
+    @media ( min-width: 768px )
+      width: 494px
+    &::placeholder
+      color: var(--grey-500)
+      font-size: 16px
+      line-height: 20px
+      font-weight: 400
+      padding-left: 30px
+  &__icon
+    position: absolute
+    left: 20px
+    top: 16px
+    z-index: 2
+  &__arrow
+    position: absolute
+    top: 25px
+    right: 36px
+
+
+.pay
+  margin-top: 32px
+  width: 100%
+  height: 50px
+  background: linear-gradient(77.97deg, #020202 11.66%, #8F8D9F 44.62%, #020101 100.53%)
+  border-radius: 70px
+  color: var(--grey-25)
+  text-transform: uppercase
+  font-size: 16px
+  font-weight: 400
+  line-height: 18px
+  @media ( min-width: 768px )
+    margin-left: 71px
+    max-width: 494px
+
+
+
+
