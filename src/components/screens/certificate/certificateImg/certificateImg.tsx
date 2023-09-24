@@ -52,7 +52,7 @@ const CertificateImg: FC = () => {
       <Swiper
         style={{}}
         pagination={true}
-        spaceBetween={8}
+
         thumbs={{ swiper: thumbsSwiper }}
         modules={[FreeMode, Navigation, Thumbs]}
         className={style.swiper}>
@@ -69,7 +69,6 @@ const CertificateImg: FC = () => {
 
       <Swiper
         onSwiper={setThumbsSwiper}
-        spaceBetween={8}
         slidesPerView={6}
         watchSlidesProgress={true}
         modules={[FreeMode, Navigation, Thumbs]}
