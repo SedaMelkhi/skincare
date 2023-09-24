@@ -8,18 +8,6 @@ import starSvg from './../../../../../public/violetStar.svg';
 
 import style from './pointsCard.module.sass';
 
-const PrettoSlider = styled(Slider)({
-  color: '#52af77',
-  height: 8,
-  '& .MuiSlider-valueLabel': {
-    fontSize: 14,
-    padding: '8px 11px',
-    borderRadius: '8px',
-    backgroundColor: '#504655',
-    textTransform: 'none',
-  },
-});
-
 const valueLabelFormat = (value: number) => {
   return `Ваша сумма покупок составляет  ${value} ₽`;
 };
@@ -55,7 +43,7 @@ const PointsCard: FC = () => {
         <div className={style.bottom}>
           <div className={style.slider}>
             <Box sx={{ width: '100%' }}>
-              <PrettoSlider
+              <Slider
                 //disabled
                 aria-label="Restricted values"
                 defaultValue={10000}
@@ -75,6 +63,7 @@ const PointsCard: FC = () => {
                   markActive: style.mark_active,
                   markLabel: style.mark_label,
                   markLabelActive: style.mark_label_active,
+                  valueLabel: style.label,
                 }}
               />
             </Box>
