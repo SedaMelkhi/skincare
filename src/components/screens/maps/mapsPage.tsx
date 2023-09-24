@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 
 import Layout from '@/components/layout/Layout';
 import ProfileTitle from '../profile/profileTitle/Title';
@@ -6,11 +6,21 @@ import ProfileAside from '../profile/profileAside/profileAside';
 import Footer from '@/components/layout/footer/footer';
 import Tab from '@/components/other/tab/tab';
 import InfoBlock from './infoBlock/infoBlock';
-
-import style from './maps.module.sass';
 import Button from '@/components/other/button/button';
 
+import visaSvg from './../../../../public/certificate/visa.svg';
+import sbpPng from './../../../../public/certificate/сбп.png';
+import plusSvg from './../../../../public/certificate/plus.svg';
+import violetPlusSvg from './../../../../public/violetPlus.svg';
+
+import style from './maps.module.sass';
+import PayCard from './payCard/payCard';
+import BasicPayCard from './basicPayCard/basicPayCard';
+
 const MapsPage: FC = () => {
+  const [activeEl, setActiveEl] = useState(0);
+  console.log(1);
+
   return (
     <Layout title={'баллы и сертификаты'}>
       <section className={style.wrap}>
@@ -44,6 +54,21 @@ const MapsPage: FC = () => {
             </div>
             <div className={style.pay}>
               <ProfileTitle title="способ оплаты" link={false} />
+              <div className={style.items}>
+                <PayCard activeEl={activeEl} setActiveEl={setActiveEl} />
+                <BasicPayCard
+                  activeEl={activeEl}
+                  setActiveEl={setActiveEl}
+                  number={1}
+                  image={plusSvg.src}
+                />
+                <BasicPayCard
+                  activeEl={activeEl}
+                  setActiveEl={setActiveEl}
+                  number={2}
+                  image={sbpPng.src}
+                />
+              </div>
             </div>
           </div>
         </div>
