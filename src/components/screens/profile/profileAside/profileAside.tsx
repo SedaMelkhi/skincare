@@ -87,7 +87,9 @@ const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu 
         ))}
       </div>
       <div className={style.line}></div>
-      <div className={style.logOut}>выйти</div>
+      <div className={style.logOut}>
+        <Link href="/authorization">выйти</Link>
+      </div>
     </aside>
   );
 };
