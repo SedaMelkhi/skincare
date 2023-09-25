@@ -12,7 +12,7 @@ const CertificatePage: FC<{ data: ContactsArray }> = ({data}) => {
     return (
         <>
             <Layout title="сертификат">
-                <div className="wrap">
+                <div className="wrap certificate">
                     <CertificateTitle/>
                     <div className={style.container}>
                         <div className={style.row1}>

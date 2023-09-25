@@ -48,39 +48,46 @@ const CertificateImg: FC = () => {
   ];
 
   return (
-    <div className={style.main}>
-      <Swiper
-        style={{}}
-        pagination={true}
-        spaceBetween={8}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className={style.swiper}>
-        {sliders.map(({ image, id }) => (
-          <SwiperSlide key={id}>
-            <div className={style.swiper__conteiner}>
-              <div
-                className={style.swiper__image}
-                style={{ backgroundImage: `url(${image})` }}></div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+      <div className={style.main}>
+        <div className={style.container}>
+          <Swiper
 
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={8}
-        slidesPerView={6}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className={style.swiper2}>
-        {sliders.map(({ image, id }) => (
-          <SwiperSlide key={id}>
-            <div className={style.swiper2__dots} style={{ backgroundImage: `url(${image})` }}></div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </div>
+              style={{}}
+              pagination={true}
+              thumbs={{ swiper: thumbsSwiper }}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className={style.swiper}
+          >
+            {sliders.map(({ image, id }) => (
+                <SwiperSlide key={id}>
+                  <div className={style.swiper__conteiner}>
+                    <div
+                        className={style.swiper__image}
+                        style={{ backgroundImage: `url(${image})` }}
+                    ></div>
+                  </div>
+                </SwiperSlide>
+            ))}
+          </Swiper>
+
+          <Swiper
+              onSwiper={setThumbsSwiper}
+              slidesPerView={6}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              className={style.swiper2}
+          >
+            {sliders.map(({ image, id }) => (
+                <SwiperSlide key={id}>
+                  <div
+                      className={style.swiper2__dots}
+                      style={{ backgroundImage: `url(${image})` }}
+                  ></div>
+                </SwiperSlide>
+            ))}
+          </Swiper>
+        </div>
+      </div>
   );
 };
 

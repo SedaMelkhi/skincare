@@ -1,11 +1,25 @@
 
 .container
+
   @media ( min-width: 1200px )
     display: flex
-    width: 1360px
+    max-width: 1360px
     justify-content: center
 .row1
+  @media ( min-width: 768px )
+    padding-left: 40px
   @media ( min-width: 1200px )
-    width: 640px
+    max-width: 640px
+    padding-left: 0
+
+
+.row2
+  @media ( min-width: 768px )
+    display: flex
+    justify-content: center
+    padding-left: 40px
+    @media ( min-width: 1200px )
+      padding-left: 0
+
 
 
