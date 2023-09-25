@@ -1,19 +1,29 @@
 import { FC, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Link from 'next/link';
 
 import MenuItem from './menuItem/menuItem';
+import { setIsNotifications } from '@/redux/basketSlice/basketSlice';
 
 import notificationsSvg from './../../../../../public/notifications.svg';
 import arrowSvg from './../../../../../public/arrowCircle.svg';
 
 import style from './profileAside.module.sass';
-import Link from 'next/link';
 
 interface ProfileAsideProps {
   setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>> | null;
   activeMenu?: number;
 }
 
+interface RootState {
+  basket: {
+    isNotifications: boolean;
+  };
+}
+
 const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu }) => {
+  const isBasketOpen = useSelector((state: RootState) => state.basket.isNotifications);
+  const dispatch = useDispatch();
   const [menu, setMenu] = useState([
     {
       text: 'покупки',
@@ -53,7 +63,7 @@ const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu 
     <aside className={style.aside}>
       <div className={style.row}>
         <div className={style.img}></div>
-        <div className={style.notifications}>
+        <div className={style.notifications} onClick={() => dispatch(setIsNotifications(true))}>
           <img src={notificationsSvg.src} alt="" />
         </div>
       </div>

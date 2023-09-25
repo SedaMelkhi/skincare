@@ -1,4 +1,5 @@
 import { FC, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Catalog from './catalog/catalog';
 import Search from './search/search';
@@ -6,17 +7,21 @@ import Logo from './logo/logo';
 import ProfileLogo from './profileLogo/profileLogo';
 import Save from './save/save';
 import Basket from './basket/basketBtn';
-
-import style from './header.module.sass';
+import { setIsBasketOpen, setIsNotifications } from '@/redux/basketSlice/basketSlice';
 import DropDownMenu from './dropDownMenu/dropDownMenu';
 
-interface HeaderProps {
-  basketOpen: boolean;
-  setBasketOpen: React.Dispatch<React.SetStateAction<boolean>>;
+import style from './header.module.sass';
+
+interface RootState {
+  basket: {
+    isBasketOpen: boolean;
+  };
 }
 
-const Header: FC<HeaderProps> = ({ basketOpen, setBasketOpen }) => {
+const Header: FC = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const isBasketOpen = useSelector((state: RootState) => state.basket.isBasketOpen);
+  const dispatch = useDispatch();
   return (
     <div className={style.header__wrap}>
       <div className="wrap">
@@ -31,7 +36,11 @@ const Header: FC<HeaderProps> = ({ basketOpen, setBasketOpen }) => {
           <div className={style.group + ' ' + style.group_right}>
             <ProfileLogo />
             <Save />
-            <div onClick={() => setBasketOpen(!basketOpen)}>
+            <div
+              onClick={() => {
+                dispatch(setIsBasketOpen(!isBasketOpen));
+                dispatch(setIsNotifications(false));
+              }}>
               <Basket />
             </div>
           </div>

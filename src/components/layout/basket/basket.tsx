@@ -1,10 +1,11 @@
 import { FC } from 'react';
-
+import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 
 import CircleArrow from '@/components/other/circleArrow/circleArrow';
 import NewProductsSwiper from './newProducts/newProductsSwiper';
 import ProductsTable from './productsTable/productsTable';
+import { setIsBasketOpen } from '@/redux/basketSlice/basketSlice';
 
 import closeSvg from './../../../../public/close.svg';
 import basketSvg from './../../../../public/basket2.svg';
@@ -12,19 +13,21 @@ import whiteArrowSvg from './../../../../public/whiteArrow.svg';
 
 import style from './basket.module.sass';
 
-interface BasketProps {
-  basketOpen: boolean;
-  setBasketOpen: React.Dispatch<React.SetStateAction<boolean>>;
+interface RootState {
+  basket: {
+    isBasketOpen: boolean;
+  };
 }
-
-const Basket: FC<BasketProps> = ({ basketOpen, setBasketOpen }) => {
+const Basket: FC = () => {
   const arr = new Array(7);
+  const isBasketOpen = useSelector((state: RootState) => state.basket.isBasketOpen);
+  const dispatch = useDispatch();
   const closeBasket = () => {
-    setBasketOpen(false);
+    dispatch(setIsBasketOpen(false));
   };
   return (
     <CSSTransition
-      in={basketOpen}
+      in={isBasketOpen}
       timeout={400}
       classNames={{
         enter: style.slideEnter,

@@ -12,7 +12,7 @@ import style from './points.module.sass';
 
 const PointsPage: FC = () => {
   return (
-    <Layout title={'баллы и сертификаты'}>
+    <Layout title={'Баллы и сертификаты'}>
       <section className={style.wrap}>
         <div className={'wrap ' + style.content}>
           <div className={style.aside}>

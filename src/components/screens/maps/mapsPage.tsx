@@ -8,10 +8,8 @@ import Tab from '@/components/other/tab/tab';
 import InfoBlock from './infoBlock/infoBlock';
 import Button from '@/components/other/button/button';
 
-import visaSvg from './../../../../public/certificate/visa.svg';
 import sbpPng from './../../../../public/certificate/сбп.png';
 import plusSvg from './../../../../public/certificate/plus.svg';
-import violetPlusSvg from './../../../../public/violetPlus.svg';
 
 import style from './maps.module.sass';
 import PayCard from './payCard/payCard';
@@ -22,7 +20,7 @@ const MapsPage: FC = () => {
   console.log(1);
 
   return (
-    <Layout title={'баллы и сертификаты'}>
+    <Layout title={'Адреса'}>
       <section className={style.wrap}>
         <div className={'wrap ' + style.content}>
           <div className={style.aside}>
@@ -32,7 +30,7 @@ const MapsPage: FC = () => {
             <div className={style.title}>
               <ProfileTitle title="адреса и карты " link={true} />
             </div>
-            <ProfileTitle title="адреса" link={true} />
+            <ProfileTitle title="адреса" link={false} />
             <div className={style.tabs}>
               <Tab text="пункт выдачи" link="maps" active={true} />
               <Tab text="курьером" link="byCourier" active={false} />

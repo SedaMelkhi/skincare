@@ -6,6 +6,7 @@ import Slider from '@mui/material/Slider';
 import starSvg from './../../../../../public/violetStar.svg';
 
 import style from './pointsCard.module.sass';
+import BasicModal from '@/components/other/basicModal/basicModal';
 
 const valueLabelFormat = (value: number) => {
   return `Ваша сумма покупок составляет  ${value} ₽`;
@@ -67,7 +68,9 @@ const PointsCard: FC = () => {
               />
             </Box>
           </div>
-          <div className={style.question}>Как получить баллы?</div>
+          <BasicModal>
+            <div className={style.question}>Как получить баллы?</div>
+          </BasicModal>
         </div>
       </div>
     </div>

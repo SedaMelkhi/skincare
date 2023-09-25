@@ -1,23 +1,10 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
 
 import style from './basicModal.module.sass';
 
-const btnStyle = {
-  width: '100%',
-  justifyContent: 'start',
-  padding: '0',
-  textTransform: 'none',
-  color: '#504655',
-  '&:hover': {
-    color: 'blue',
-    backgroundColor: '#F0EAF2',
-    borderRadius: '8px',
-  },
-};
 const BasicModal: React.FC<React.PropsWithChildren> = ({ children }) => {
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -25,9 +12,7 @@ const BasicModal: React.FC<React.PropsWithChildren> = ({ children }) => {
 
   return (
     <div>
-      <Button onClick={handleOpen} sx={btnStyle}>
-        {children}
-      </Button>
+      <div onClick={handleOpen}>{children}</div>
       <Modal
         open={open}
         onClose={handleClose}

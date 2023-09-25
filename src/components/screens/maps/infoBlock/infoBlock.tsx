@@ -3,7 +3,6 @@ import { FC } from 'react';
 import MenuBlock from '@/components/other/menuBlock/menuBlock';
 
 import style from './infoBlock.module.sass';
-import BasicModal from '@/components/other/basicModal/basicModal';
 
 interface InfoBlockProps {
   title: string;
@@ -17,7 +16,6 @@ const InfoBlock: FC<InfoBlockProps> = ({ title, text }) => {
         <div className={style.title}>{title}</div>
         <div className={style.menu}>
           <MenuBlock />
-          <BasicModal />
         </div>
       </div>
       <div className={style.address}>{text}</div>

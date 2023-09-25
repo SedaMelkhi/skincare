@@ -4,9 +4,10 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
+import BasicModal from '../basicModal/basicModal';
+import { Button } from '@mui/material';
 
 import style from './menuBlock.module.sass';
-import BasicModal from '../basicModal/basicModal';
 
 const options = ['Удалить', 'Показать на карте'];
 
@@ -52,12 +53,14 @@ const MenuBlock: FC = () => {
           },
         }}>
         <BasicModal>
-          <MenuItem
-            onClick={handleClose}
-            classes={{ gutters: style.selected, disabled: style.selected }}
-            disabled>
-            Удалить
-          </MenuItem>
+          <Button className={style.btnStyle}>
+            <MenuItem
+              onClick={handleClose}
+              classes={{ gutters: style.selected, disabled: style.selected }}
+              disabled>
+              Удалить
+            </MenuItem>
+          </Button>
         </BasicModal>
 
         <MenuItem onClick={handleClose} classes={{ gutters: style.selected }}>

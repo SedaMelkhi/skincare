@@ -1,0 +1,146 @@
+.product
+    border-top: 1px solid var(--Grey-300)
+    padding: 24px 0
+    font-size: 14px
+    
+.title
+    font-size: 20px
+    line-height: 130%
+    letter-spacing: 0.48px
+    text-transform: uppercase
+    @media (min-width: 768px)
+        font-size: 24px
+
+
+.flex
+    display: flex
+    justify-content: space-between
+    flex-direction: column
+    @media (min-width: 768px)
+        flex-direction: row
+
+.date 
+    color: var(--Grey-500)
+    margin-top: 24px
+    flex-shrink: 0
+    @media (min-width: 768px)
+        margin-top: 0
+
+.flex_gap
+    display: flex
+    gap: 17px  
+    margin-top: 24px
+.image
+    width: 100px
+    height: 74px
+    background: lightgrey center/cover no-repeat  
+    flex-shrink: 0
+    @media (min-width: 768px)
+        width: 148px
+        height: 96px
+    &_big
+        width: 100px
+        height: 100px
+        @media (min-width: 768px)
+            width: 148px
+            height: 148px
+        
+.desc
+    font-size: 16px
+    color: var(--Grey-700)
+    line-height: 125%
+    margin-bottom: 16px
+
+.upper
+    text-transform: uppercase
+    margin-bottom: 8px
+
+.points
+    color: var(--Grey-600)
+    &_flex
+        display: flex
+        gap: 3px
+        margin-bottom: 4px
+    &:not(&:last-child)
+        margin-bottom: 4px
+    span
+        color: var(--Primary-500)
+
+.border
+    width: 26px
+    height: 15px
+    display: flex
+    align-items: center
+    justify-content: center
+    border-radius: 8px
+    border: .5px solid var(--Primary-500)
+
+
+.work
+    color: var(--Grey-600)
+    text-transform: uppercase
+    display: flex
+    gap: 4px
+    align-items: start
+    cursor: pointer
+
+.arrow
+    display: block
+    width: 16px
+    height: 20px
+    margin-top: -6px
+    margin-left: 4px
+
+
+.day
+    color: var(--Grey-500)
+    padding-right: 26px
+
+.box
+    padding-bottom: 8px
+
+.timetable
+    margin-top: 8px
+
+
+.accordion
+    > div
+        border: none
+        background: transparent
+        border-radius: 0!important
+        box-shadow: none
+
+
+.processed
+    margin-top: 61px
+
+.link
+    color: var(--Grey-600)
+    display: flex
+    align-items: center
+    text-transform: uppercase
+    margin-top: 32px
+    img
+        transform: rotate(-90deg)
+
+.btn
+    max-width: 207px
+    margin-top: 16px
+
+.price
+    color: var(--Grey-900)
+    font-size: 20px
+    margin-top: 16px
+
+.red
+    color: var(--ff-4253)
+
+.green
+    color: var(--success-600)
+
+.black
+    color: var(--Grey-900)
+
+.violet
+    color: var(--Primary-600)
+
