@@ -87,7 +87,6 @@ const HomePage: FC<{ data: ContactsArray }> = ({ data }) => {
           <About />
         </main>
       </Layout>
-      <Footer data={data} />
     </>
   );
 };

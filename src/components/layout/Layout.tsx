@@ -5,6 +5,7 @@ import Header from './header/header';
 import Basket from './basket/basket';
 import { useSelector } from 'react-redux';
 import Notifications from './notifications/notifications';
+import Footer from './footer/footer';
 
 interface RootState {
   basket: {
@@ -30,6 +31,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) 
       <Basket />
       <Notifications />
       {children}
+      <Footer />
     </div>
   );
 };

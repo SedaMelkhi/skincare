@@ -1,12 +1,12 @@
 .journal
-  padding: 32px 16px 90px
+  margin: 32px 0 90px
   box-sizing: content-box
   @media (min-width: 768px)
-    padding: 27px 24px 66px
+    margin: 27px 0 66px
   @media (min-width: 1200px)
     max-width: 1360px
     margin: 0 auto
-    padding: 56px 44px 0
+    margin: 56px 0px
   &__title
     font-size: 2rem
     font-weight: 400
@@ -74,16 +74,15 @@
   letter-spacing: 1px
 
 .categories
-  padding: 0px 16px
   box-sizing: content-box
   @media (min-width: 768px)
-    padding: 25px 25px
+    margin: 25px 0
   @media (min-width: 1200px)
     display: flex
     gap: 20px
     max-width: 1360px
-    margin: 0 auto
-    padding: 216px 45px 0
+    margin: 216px auto 0
+   
   &__leftCol
     @media (min-width: 1200px)
       width: 323px
@@ -224,24 +223,25 @@
 .article2
   display: flex
   gap: 16px
+  justify-content: space-between
   @media (min-width: 1200px)
     gap: 20px
   &__imgCol
-    width: 50%
+    width: calc(50% - 16px)
     @media (min-width: 768px)
       width: 85%
     @media (min-width: 1200px)
       width: 126%
     img
       width: 100%
-      height: 100%
+      height: 95%
       object-fit: cover
       object-position: left
   &__textCol
     display: flex
     flex-direction: column
     gap: 16px
-    width: 50%
+    width: calc(50% - 16px)
     @media (min-width: 1200px)
       width: 75%
   &__title

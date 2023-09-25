@@ -30,7 +30,6 @@ const PointsPage: FC = () => {
           </div>
         </div>
       </section>
-      <Footer data={[]} />
     </Layout>
   );
 };
