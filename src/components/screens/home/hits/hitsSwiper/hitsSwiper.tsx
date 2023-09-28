@@ -2,11 +2,10 @@ import { FC } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
+import CardProduct from '@/components/other/cardProduct/cardProduct';
 
 import 'swiper/css';
-
 import style from './../hits.module.sass';
-import CardProduct from '@/components/other/cardProduct/cardProduct';
 
 type HitsSwiperProps = {
   slidesPerView: number;

@@ -1,9 +1,19 @@
 .card   
     width: 182px
+    position: relative
     @media (min-width: 768px)
         width: 229px
     @media (min-width: 1200px)
         width: 325px
+.padding
+    padding-top: 10px
+.bonus
+    display: flex
+    gap: 4px
+    position: absolute
+    top: 0
+    left: 8px
+
 
 .img
     height: 182px
@@ -39,6 +49,7 @@
     color: var(--grey-900)
     font-size: 18px
     line-height: normal
+    font-style: italic
     @media (min-width: 768px)
         font-size: 20px
     &__old

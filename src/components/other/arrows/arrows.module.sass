@@ -1,9 +1,17 @@
 .arrows
     display: flex
-    img
-        width: 26px
+    svg
+        width: 32px
+        display: block
+        rect
+            transition: .2s 
+            stroke-dasharray: 110.8px
+            stroke-dashoffset: 110.8px
+        &:hover
+            rect
+                stroke-dashoffset: 0
         @media ( min-width: 768px )
-            width: 24px
+            width: 36px
 .arrow
     &__right
         cursor: pointer
@@ -11,7 +19,9 @@
         margin-left: 2px
         @media ( min-width: 1200px )
             margin-left: 8px
+        
     &__left
         cursor: pointer
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
         transform: rotate(180deg)
+
