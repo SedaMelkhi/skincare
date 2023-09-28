@@ -36,19 +36,26 @@ const Categories: FC = () => {
             }}>
             <SwiperSlide>
               <Link href="/catalog/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_one}></div>
+                <div className={style.img + ' ' + style.img_one}>
+                  <div className={'img ' + style.bg_one}></div>
+                </div>
                 <h3 className={style.subtitle}>Лицо</h3>
               </Link>
             </SwiperSlide>
             <SwiperSlide>
               <Link href="/catalog/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_two}></div>
+                <div className={style.img + ' ' + style.img_two}>
+                  <div className={'img ' + style.bg_two}></div>
+                </div>
+
                 <h3 className={style.subtitle}>Волосы</h3>
               </Link>
             </SwiperSlide>
             <SwiperSlide>
               <Link href="/catalog/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_three}></div>
+                <div className={style.img + ' ' + style.img_three}>
+                  <div className={'img ' + style.bg_three}></div>
+                </div>
                 <h3 className={style.subtitle}>Тело </h3>
               </Link>
             </SwiperSlide>
