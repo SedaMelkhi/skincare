@@ -44,7 +44,6 @@ const SmallProducts: FC<SmallProductPropsArr> = ({ products, setIsOpen, size }) 
       }
     };
     handleResize();
-    console.log(1);
 
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);

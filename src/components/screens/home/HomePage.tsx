@@ -45,9 +45,9 @@ const HomePage: FC<{ data: ContactsArray }> = ({ data }) => {
         const rect = sticker.current.getBoundingClientRect();
         // const halfHeight = sticker.current.offsetHeight;
         // console.log(rect.top, window.innerHeight - halfHeight);
-        console.log(rect.top);
+        console.log(window.document.body.scrollHeight - rect.top);
 
-        if (rect.top < 600) {
+        if (rect.top < 600 && window.document.body.scrollHeight + rect.top > 3000) {
           setIsVisibleSticker(true);
           if (img.current) {
             img.current.style.transform = `rotate(${rotate.current}deg)`;

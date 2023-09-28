@@ -6,8 +6,6 @@ import { ContactsArray } from '@/interfaces/contact.interface';
 import { ContactsService } from '@/services/contacts.service';
 
 const Home: NextPage<{ data: ContactsArray }> = ({ data }) => {
-  console.log(data);
-
   return <HomePage data={data} />;
 };
 
