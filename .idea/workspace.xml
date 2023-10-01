@@ -1,11 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment="" />
+    <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment=".">
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/after.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/before.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/elipse.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/elipseSmall.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/line.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineOne.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineOneM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineOneT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineTwo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineTwoM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineTwoT.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/square.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/star.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/swatch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/swatchGray.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/DescriptionRecord.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/descriptionRecord.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/FAQ.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/FAQ.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingPage.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/reviews/Reviews.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/reviews/Reviews.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/paidRecording/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/certificate/CertificatePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/certificate/CertificatePage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/certificate/certificateModalWindow/CertificateModalWindow.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/certificate/certificateModalWindow/CertificateModalWindow.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/home/about/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/home/about/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.sass" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/swiper/swiper.css" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -15,9 +68,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "paid__recording",
+    "last_opened_file_path": "C:/Users/Makka/WebstormProjects/skincare/src/components/screens/paidRecording",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "yarn",
+    "ts.external.directory.path": "C:\\Users\\Makka\\WebstormProjects\\skincare\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\paidRecording" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\public\paidRecording" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\certificate\111" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\certificate\certificateImg" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -27,7 +121,61 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695405507910</updated>
+      <workItem from="1695630446718" duration="2168000" />
+      <workItem from="1695741548706" duration="14000" />
+      <workItem from="1695899719346" duration="5000" />
+      <workItem from="1695927270333" duration="598000" />
+      <workItem from="1695976503969" duration="58000" />
+      <workItem from="1695976570848" duration="372000" />
+      <workItem from="1695976955438" duration="28000" />
+      <workItem from="1695976995645" duration="8187000" />
+      <workItem from="1695997574229" duration="38232000" />
     </task>
+    <task id="LOCAL-00001" summary=".">
+      <created>1695579867596</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695579867596</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".">
+      <created>1695584756311</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695584756311</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/true_about" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="." />
+    <option name="LAST_COMMIT_MESSAGE" value="." />
   </component>
 </project>

@@ -1,0 +1,77 @@
+.mainTitle
+  @media (min-width: 768px)
+    display: flex
+    gap: 27px
+    align-items: center
+.star
+  background: url("./../../../../../public/paidRecording/star.png") center/contain no-repeat
+  margin: 0 auto
+  position: relative
+  width: 46px
+  height: 46px
+.titleStar
+  width: 34.5px
+  height: 34.5px
+.title
+  color: var(--grey-900)
+  font-size: 26px
+  line-height: 26px
+  text-transform: uppercase
+  font-weight: 400
+  text-align: center
+  margin-bottom: 32px
+  margin-top: 12px
+  @media (min-width: 768px)
+    font-size: 48px
+    line-height: 48px
+    text-align: start
+  @media (min-width: 1200px)
+    text-align: start
+    margin-left: 90px
+    margin-top: -30px
+.borders
+  .border:nth-child(even)
+    background-color: var(--purple-50)
+    @media (min-width: 768px)
+      display: flex
+      flex-wrap: wrap
+
+  .border
+    background-color: var(--purple-100)
+    padding: 20px 24px 20px 24px
+    border: 1px solid
+    border-radius: 100px
+    display: flex
+    align-items: center
+    @media (min-width: 768px)
+      width: 360px
+      padding: 24px 36px 24px 36px
+    &__number
+      border: 1px solid var(--grey-900)
+      transform: rotate(45deg) translateX(-13px)
+      box-shadow: none
+      width: 31px
+      height: 31px
+      padding: 20px
+      background-color: var(--grey-25)
+      display: flex
+      justify-content: center
+      align-items: center
+      margin-top: 20px
+      span
+        transform: rotate(-45deg)
+        display: inline-block
+        color: var(--grey-900)
+
+    &__text
+      font-size: 12px
+      line-height: 16px
+      font-weight: 400
+      margin-left: 16px
+
+
+
+
+
+
+

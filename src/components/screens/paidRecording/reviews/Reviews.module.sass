@@ -1,0 +1,67 @@
+.main
+  margin-top: 122px
+  margin-bottom: 1000px /*временный отступ*/
+  @media (min-width: 768px)
+    margin-top: 164px
+  @media (min-width: 1200px)
+    margin-top: 252px
+.title
+  color: var(--grey-800)
+  font-size: 26px
+  line-height: 26px
+  text-transform: uppercase
+  font-weight: 400
+  text-align: center
+  @media (min-width: 768px)
+    font-size: 48px
+    line-height: 50px
+  @media (min-width: 1200px)
+    font-size: 56px
+    line-height: 65px
+.gradientMain
+  position: relative
+.gradient
+  //background-image: url("./../../../../../public/aboutUs/gradientReviewsM.svg")
+  background-size: 100% auto
+  background-repeat: no-repeat
+  background-position: 0 0
+  width: 120%
+  height: 482px
+  position: absolute
+  left: -30px
+  top: -10px
+  z-index: -1
+  @media (min-width: 768px)
+    top: -20px
+  @media (min-width: 1200px)
+    //background-image: url("./../../../../../public/aboutUs/gradientReviews.svg")
+    width: 150%
+    left: -50px
+    min-height: 900px
+
+.borderMain
+  padding: 64px 44px 104px 45px
+.border
+  background-color: var( --grey-25)
+  width: 286px
+  height: 305px
+  border-radius: 16px
+  padding: 32px
+  &__title
+    color: var(--purple)
+    font-size: 24px
+    line-height: 28px
+
+  &__text
+    color: var(--grey-500)
+    font-size: 16px
+    line-height: 20px
+    margin: 12px 0
+.sender
+  font-size: 16px
+  font-weight: 700
+  line-height: 21px
+  color: var(--grey-600)
+
+
+

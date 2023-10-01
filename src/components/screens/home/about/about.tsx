@@ -31,7 +31,7 @@ const About: FC = () => {
         </div>
       </div>
       <div className={style.btn}>
-        <Link href="./aboutUs">
+        <Link href="./paidRecording">
           <span>познакомимся поближе?</span>
           <div className={style.circle}>
             <img src="./arrowCircle.svg" alt="" />
