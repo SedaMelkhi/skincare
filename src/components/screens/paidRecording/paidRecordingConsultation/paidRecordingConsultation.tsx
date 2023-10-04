@@ -6,11 +6,11 @@ const PaidRecordingConsultation: FC = () => {
 
     return (
         <div className="wrap">
-            <div className={style.mainTitle}>
+            <div className={style.titleMain}>
                 <div className={style.star}>
                     <div className={style.titleStar}></div>
                 </div>
-                <h2 className={style.title}>Вам нужна консультация, если</h2>
+                <h2 className={style.title}>Вам нужна<br/> консультация, если</h2>
             </div>
             <div className={style.borders}>
                 <div className={style.border}>

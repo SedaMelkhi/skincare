@@ -6,6 +6,7 @@ import style from './swatchLine.module.sass';
 
 const SwatchLine: FC = () => {
     return (
+
         <div className={style.main}>
             <div >
                 <img src="./paidRecording/swatch.png" className={style.lineFirst}/>
@@ -15,9 +16,7 @@ const SwatchLine: FC = () => {
                 <div className={style.logo} >
                     <img src="./paidRecording/logo.svg"/>
                 </div>
-
             </div>
-
         </div>
     );
 };

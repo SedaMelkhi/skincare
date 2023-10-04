@@ -1,0 +1,139 @@
+.container
+  display: flex
+  flex-direction: column
+  position: relative
+  @media ( min-width: 768px )
+    flex-direction: row
+    align-items: center
+    gap: 23px
+  @media ( min-width: 1200px )
+    gap: 60px
+    align-items: start
+
+.bg
+  background-color: var(--Primary-200)
+  padding: 40px 0
+.position
+  position: relative
+.left
+  display: flex
+  justify-content: center
+.img
+  background: url("./../../../../../public/aboutUs/expertsImg.png") center/contain no-repeat
+  width: 343px
+  height: 550px
+  @media ( min-width: 768px )
+    width: 378px
+    height: 580px
+  @media ( min-width: 1200px )
+    background: url("./../../../../../public/aboutUs/1.png") center/cover no-repeat
+    width: 473px
+    height: 846px
+.right
+  position: relative
+  margin-top: 40px
+  @media ( min-width: 1200px )
+    margin-top: 282px
+.title
+  color: var(--grey-900)
+  font-size: 32px
+  line-height: 33.28px
+  font-weight: 400
+  text-transform: uppercase
+  position: absolute
+  top: 20px
+  @media ( min-width: 768px )
+    font-size: 48px
+    line-height: 49.92px
+    left: 230px
+    top: 20px
+  @media ( min-width: 1200px )
+    font-size: 56px
+    line-height: 64.96px
+    top: 120px
+    right: 150px
+
+.text
+  color: var(--grey-700)
+  font-size: 16px
+  font-weight: 400
+  line-height: 20px
+  margin-bottom: 24px
+  @media ( min-width: 768px )
+    margin-bottom: 32px
+  @media ( min-width: 1200px )
+    font-size: 20px
+    line-height: 26.6px
+    margin-bottom: 16px
+
+.block
+  display: flex
+  align-items: center
+  margin-bottom: 8px
+  &__container
+    @media ( min-width: 768px )
+      margin-top: 39px
+      display: flex
+      gap: 80px
+    @media ( min-width: 1200px )
+      position: absolute
+      bottom: 150px
+      right: 15px
+  &__row
+    @media ( min-width: 768px )
+      display: flex
+      flex-direction: column
+
+  &__text
+    color: var(--grey-900)
+    font-size: 20px
+    font-weight: 400
+    line-height: 24px
+    text-transform: uppercase
+    margin-left: 8px
+  &__icon1
+    background: url("./../../../../../public/aboutUs/icon1.png") center/contain no-repeat
+    width: 64px
+    height: 64px
+  &__icon2
+    background: url("./../../../../../public/aboutUs/icon2.png") center/contain no-repeat
+    width: 64px
+    height: 64px
+  &__icon3
+    background: url("./../../../../../public/aboutUs/icon3.png") center/contain no-repeat
+    width: 64px
+    height: 64px
+  &__icon4
+    background: url("./../../../../../public/aboutUs/icon4.png") center/contain no-repeat
+    width: 64px
+    height: 64px
+  //&::before
+  //  content: ''
+  //  position: absolute
+  //  height: 1px
+  //  background-color: var(--Primary-300)
+  //  width: 100%
+  //  top: 150px
+  //  left: 50%
+  //  transform: translate(-50%, -50%)
+  //  z-index: -1
+  //
+  //&:last-child::after
+  //  content: ''
+  //  position: absolute
+  //  height: 100%
+  //  background-color: var(--grey-900)
+  //  width: 1px
+  //  top: 50%
+  //  left: 50%
+  //  transform: translate(-50%, -50%)
+  //  z-index: -1
+  //&__line
+  //  background: url("./../../../../../public/aboutUs/divider.png")
+  //  border: 1px solid var(--Primary-300)
+  //  display: none
+
+
+
+
+

@@ -1,17 +1,27 @@
-.mainTitle
+.titleMain
+  margin-bottom: 32px
   @media (min-width: 768px)
     display: flex
-    gap: 27px
     align-items: center
+    justify-content: start
+    margin-bottom: 42px
+  @media (min-width: 1200px)
+    align-items: start
+
+
 .star
   background: url("./../../../../../public/paidRecording/star.png") center/contain no-repeat
   margin: 0 auto
   position: relative
   width: 46px
   height: 46px
-.titleStar
-  width: 34.5px
-  height: 34.5px
+  @media (min-width: 768px)
+    margin: 0
+  @media (min-width: 1200px)
+    width: 82px
+    height: 82px
+    margin-top: -15px
+
 .title
   color: var(--grey-900)
   font-size: 26px
@@ -19,22 +29,29 @@
   text-transform: uppercase
   font-weight: 400
   text-align: center
-  margin-bottom: 32px
-  margin-top: 12px
+  margin: 12px auto
   @media (min-width: 768px)
     font-size: 48px
     line-height: 48px
     text-align: start
+    margin: 0 0 0 24px
   @media (min-width: 1200px)
     text-align: start
-    margin-left: 90px
-    margin-top: -30px
+    margin-left: 26px
+    font-size: 56px
+    line-height: 64.96px
+
+
 .borders
   .border:nth-child(even)
     background-color: var(--purple-50)
-    @media (min-width: 768px)
-      display: flex
-      flex-wrap: wrap
+  @media (min-width: 768px)
+    display: flex
+    flex-wrap: wrap
+  @media (min-width: 1200px)
+    width: 1015px
+    margin: 0 auto
+
 
   .border
     background-color: var(--purple-100)
@@ -44,20 +61,20 @@
     display: flex
     align-items: center
     @media (min-width: 768px)
-      width: 360px
+      width: 50%
       padding: 24px 36px 24px 36px
     &__number
       border: 1px solid var(--grey-900)
-      transform: rotate(45deg) translateX(-13px)
+      transform: rotate(45deg) translateX(-10px) translateY(-8px)
       box-shadow: none
       width: 31px
       height: 31px
-      padding: 20px
       background-color: var(--grey-25)
       display: flex
       justify-content: center
       align-items: center
       margin-top: 20px
+
       span
         transform: rotate(-45deg)
         display: inline-block
@@ -68,7 +85,13 @@
       line-height: 16px
       font-weight: 400
       margin-left: 16px
-
+      width: 235px
+      @media (min-width: 768px)
+        width: 227px
+        font-size: 16px
+        line-height: 20px
+      @media (min-width: 1200px)
+        width: 376px
 
 
 

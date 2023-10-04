@@ -5,44 +5,63 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/after.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/before.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/elipse.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/elipseSmall.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/line.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineOne.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineOneM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineOneT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineTwo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineTwoM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineTwoT.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/square.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/star.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/swatch.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/swatchGray.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/DescriptionRecord.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/descriptionRecord.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/FAQ.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/FAQ.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingPage.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/reviews/Reviews.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/reviews/Reviews.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/paidRecording/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/Layer_x0020_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/Layer_x0020_1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/arrowDown.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/arrowRight.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/discriptionImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/discriptionImg1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/divider.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/expertsImg.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/rectangle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/shopSkinCare.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/tips1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/aboutUs/tips2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/circle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/faq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/imgBigM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/imgSmallM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineRecordingM.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/listStar.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/plus.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsDescription/AboutUsDescription.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsDescription/aboutUsDescription.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/careTips/CareTips.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/careTips/careTips.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/experts/Experts.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/experts/experts.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/mission/Mission.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/mission/mission.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/shopSkinCare/ShopSkinCare.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/shopSkinCare/shopSkinCare.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/careSkinSolution/CareSkinSolution.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/careSkinSolution/careSkinSolution.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/consultationTerms/ConsultationTerms.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/consultationTerms/consultationTerms.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecording.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/record/Record.module.sass" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/record/record.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/certificate/CertificatePage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/certificate/CertificatePage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/certificate/certificateModalWindow/CertificateModalWindow.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/certificate/certificateModalWindow/CertificateModalWindow.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/home/about/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/home/about/about.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles/globals.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsPage.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsPage.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/certificate/certificateForm/CertificateForm.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/certificate/certificateForm/CertificateForm.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/home/header/header.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/home/header/header.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/DescriptionRecord.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/DescriptionRecord.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/descriptionRecord.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/descriptionRecord.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/FAQ.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/Faq.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/FAQ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/Faq.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +77,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/@mui/material/ListItem/ListItem.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/@mui/material/ListItemButton/ListItemButton.d.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/swiper/swiper.css" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -72,7 +93,7 @@
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "paid__recording",
-    "last_opened_file_path": "C:/Users/Makka/WebstormProjects/skincare/src/components/screens/paidRecording",
+    "last_opened_file_path": "C:/Users/Makka/WebstormProjects/skincare/public/aboutUs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -92,10 +113,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\paidRecording" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\public\aboutUs" />
       <recent name="C:\Users\Makka\WebstormProjects\skincare\public\paidRecording" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\paidRecording" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\aboutUs" />
       <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\certificate\111" />
       <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\certificate\certificateImg" />
     </key>
@@ -129,7 +152,7 @@
       <workItem from="1695976570848" duration="372000" />
       <workItem from="1695976955438" duration="28000" />
       <workItem from="1695976995645" duration="8187000" />
-      <workItem from="1695997574229" duration="38232000" />
+      <workItem from="1695997574229" duration="124690000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1695579867596</created>
@@ -145,7 +168,14 @@
       <option name="project" value="LOCAL" />
       <updated>1695584756311</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary=".">
+      <created>1696166998254</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696166998254</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
