@@ -8,13 +8,11 @@ const SwatchLine: FC = () => {
     return (
 
         <div className={style.main}>
-            <div >
-                <img src="./paidRecording/swatch.png" className={style.lineFirst}/>
+            <div className={style.lineFirst} >
             </div>
-            <div className={style.fdfd}>
-                <img src="./paidRecording/swatchGray.png" className={style.lineSecond}/>
+            <div className={style.lineSecond}>
                 <div className={style.logo} >
-                    <img src="./paidRecording/logo.svg"/>
+                    <img className={style.logoImg} src="./paidRecording/logo.svg"/>
                 </div>
             </div>
         </div>

@@ -42,6 +42,10 @@
   --purple-100: #EBE9FE
   --purple-50: #F4F3FF
   --purple-400: #9B8AFB
+  --purple: #5D5DFF
+  --purple-200: #D9D6FE
+
+
 
 @font-face 
   font-family: "Evolventa"
@@ -192,6 +196,27 @@ input
 
   .react-datepicker-wrapper
     display: block
+.reviews
+  .swiper-pagination
+    position: relative
+    margin-top: 29px
+    @media (min-width: 768px)
+      margin-top: 25px
+    @media (min-width: 1200px)
+      margin-top: 45px
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    background-color: var(--Grey-300)
+    opacity: 1
+    &-active
+      background-color: var(--grey-25)
+
+
+
+
+
+
 
 
 

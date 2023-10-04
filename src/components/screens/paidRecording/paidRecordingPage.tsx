@@ -12,28 +12,31 @@ import SwatchLine from "@/components/screens/paidRecording/swatchLine/swatchLine
 import CareSkinSolution from "@/components/screens/paidRecording/careSkinSolution/careSkinSolution";
 import ConsultationTerms from "@/components/screens/paidRecording/consultationTerms/consultationTerms";
 import AboutUsPage from "@/components/screens/aboutUs/aboutUsPage";
+import OurAgents from "@/components/screens/paidRecording/ourAgents/ourAgents";
 
 
 const PaidRecordingPage: FC = () => {
     return (
 
-        // <Layout title="платная запись">
-        //     <div>
-        //         <DescriptionRecord/>
-        //     </div>
-        //     <div>
-        //         <PaidRecordingConsultation/>
-        //     </div>
-        //     <div className={style.swatch}><SwatchLine/></div>
-        //     <div><CareSkinSolution/></div>
-        //     <div><ConsultationTerms/></div>
-        //
-        //
-        //     <Faq/>
-        //     <Record/>
+        <Layout title="платная запись">
+            <div>
+                <DescriptionRecord/>
+            </div>
+            <div className={style.recording}>
+                <PaidRecordingConsultation/>
+            </div>
+            <div className={style.swatch}><SwatchLine/></div>
+            <div className={style.careSkinSolution}><CareSkinSolution/></div>
+            <div className={style.terms}><ConsultationTerms/></div>
+            <div className={style.care}><Care/></div>
+            <div className={style.reviews}><Reviews/></div>
+            <div><OurAgents/></div>
+
+
+            <Faq/>
+            <Record/>
             <AboutUsPage/>
-        //
-        // </Layout>
+        </Layout>
 
     )
         ;

@@ -46,41 +46,43 @@ const Reviews: FC = () => {
     ];
 
     return (
-        <div className={style.main}>
-            <h2 className={style.title}>Что о нас говорят</h2>
-            <div className={style.gradientMain}>
-                <div className={style.gradient}></div>
-                <div className={style.borderMain}>
-                    <Swiper
-                        spaceBetween={10}
-                        centeredSlides={true}
-                        pagination={{
-                            clickable: true,
-                        }}
-                        modules={[Pagination]}
-                        breakpoints={{
-                            768: {
-                                slidesPerView: 2,
-                            },
-                            1200: {
-                                slidesPerView: 5,
-                            },
-                        }}
-                    >
-                        {data.map((item) => (
-                            <SwiperSlide key={item.id} className={style.slide}>
-                                <div className={style.border}>
-                                    <h3 className={style.border__title}>{item.title}</h3>
-                                    <p className={style.border__text}>{item.text}</p>
-                                    <p className={style.sender}>@{item.sender}</p>
-                                </div>
-                            </SwiperSlide>
-                        ))}
-                    </Swiper>
-                </div>
+
+            <div className="wrap reviews">
+                <div className={style.titleMain}>
+                <h2 className={style.title}>Что о нас говорят</h2></div>
+
+                <Swiper
+
+                    spaceBetween={20}
+                    centeredSlides={true}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    modules={[Pagination]}
+                    breakpoints={{
+                        768: {
+                            slidesPerView: 2,
+                        },
+                        1200: {
+                            slidesPerView: 5,
+                        },
+                    }}
+                >
+                    {data.map((item) => (
+                        <SwiperSlide key={item.id} className={style.slide}>
+                            <div className={style.border}>
+                                <h3 className={style.border__title}>{item.title}</h3>
+                                <p className={style.border__text}>{item.text}</p>
+                                <p className={style.sender}>@{item.sender}</p>
+                            </div>
+                        </SwiperSlide>
+                    ))}
+                </Swiper>
             </div>
-        </div>
-    );
+
+
+)
+    ;
 };
 
 export default Reviews;

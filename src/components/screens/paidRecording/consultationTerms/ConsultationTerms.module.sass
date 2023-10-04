@@ -1,6 +1,9 @@
 .mainTitle
   display: flex
   justify-content: space-between
+  @media (min-width: 1200px)
+    position: relative
+
 .title
   color: var(--grey-900)
   font-size: 26px
@@ -10,6 +13,11 @@
   @media (min-width: 768px)
     font-size: 48px
     line-height: 49.92px
+  @media (min-width: 1200px)
+    font-size: 56px
+    line-height: 64.96px
+    margin-left: 160px
+
 .priceMain
   margin-top: -15px
   display: flex
@@ -18,6 +26,13 @@
   @media (min-width: 768px)
     flex-direction: row
     align-items: center
+  @media (min-width: 1200px)
+    flex-direction: column
+    position: absolute
+    right: -40px
+    gap: 10px
+    align-items: start
+    top: 50px
 
 
 .price
@@ -30,6 +45,8 @@
   @media (min-width: 768px)
     font-size: 24px
     line-height: 31.2px
+
+
 .sum
   color: var(--indigo-900)
   font-size: 24px
@@ -49,14 +66,28 @@
   @media (min-width: 768px)
     padding: 48px 56px
     margin: -23px 64px 43px 64px
+  @media (min-width: 1200px)
+    margin-top: -30px
+    padding: 48px 46px 39px 56px
+    max-width: 862px
+    margin-left: 100px
+.list
+  display: inline
 .text
   color: var(--grey-900)
   font-size: 16px
   line-height: 24px
+  @media (min-width: 1200px)
+    margin-top: 10px
+
+
+
 .container
   display: flex
   flex-direction: column
   align-items: center
+  @media (min-width: 1200px)
+    align-items: start
 .titleBtn
   color: var(--indigo-900)
   text-transform: uppercase
@@ -69,6 +100,8 @@
     font-size: 24px
     line-height: 31.2px
     margin-bottom: 24px
+  @media (min-width: 1200px)
+    margin-left: 180px
 .btn
   background-color: var(--indigo-900)
   padding: 12px 24px 12px 24px
@@ -79,4 +112,20 @@
   line-height: 18px
   font-weight: 400
   text-transform: uppercase
+  @media (min-width: 1200px)
+    margin-left: 180px
+    padding: 16px 32px 16px 32px
+    font-size: 20px
+    line-height: 24px
 
+.lineMain
+  @media (min-width: 1200px)
+    position: relative
+.line
+  @media (min-width: 1200px)
+    background: url("./../../../../../public/paidRecording/termsLine.png") center/contain no-repeat
+    height: 325px
+    width: 100vw
+    position: absolute
+    top: -400px
+    z-index: -1

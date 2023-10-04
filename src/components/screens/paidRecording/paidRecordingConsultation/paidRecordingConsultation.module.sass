@@ -43,15 +43,15 @@
 
 
 .borders
-  .border:nth-child(even)
-    background-color: var(--purple-50)
+
   @media (min-width: 768px)
     display: flex
     flex-wrap: wrap
   @media (min-width: 1200px)
     width: 1015px
     margin: 0 auto
-
+  .border:nth-child(even)
+    background-color: var(--purple-50)
 
   .border
     background-color: var(--purple-100)
@@ -61,7 +61,7 @@
     display: flex
     align-items: center
     @media (min-width: 768px)
-      width: 50%
+      width: 100%
       padding: 24px 36px 24px 36px
     &__number
       border: 1px solid var(--grey-900)
@@ -85,15 +85,18 @@
       line-height: 16px
       font-weight: 400
       margin-left: 16px
-      width: 235px
+      max-width: 235px
       @media (min-width: 768px)
-        width: 227px
+        max-width: 228px
         font-size: 16px
         line-height: 20px
       @media (min-width: 1200px)
-        width: 376px
+        max-width: 376px
 
-
+.row
+  @media (min-width: 768px)
+    display: flex
+    flex-direction: column
 
 
 
