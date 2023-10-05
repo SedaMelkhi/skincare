@@ -9,21 +9,25 @@ const Faq: FC = () => {
     return (
         <div className={style.bg}>
             <div className="wrap">
-                <div className={style.mainTitle}>
-                    <div>
+                <div className={style.headerTitle}>
+                    <div className={style.title}>
                         <h2 className={style.title}>остались вопросы?</h2>
-                        <p className={style.text}>Вот ответы на самые частые из них.</p>
+                        <p className={style.text}>Вот ответы на самые<br/> частые из них.</p>
                     </div>
-                    <div className={style.circle}>
+
+                    <div className={style.img}>
                         <div className={style.circle__one}></div>
                         <div className={style.circle__two}></div>
+
+                        <div className={style.titleImg}>
+
+                        </div>
                     </div>
-                    <img className={style.titleImg} src="./paidRecording/faq.png"/>
 
                 </div>
                 <div className={style.borders}>
                     <div className={style.border}>
-                        <div>
+                        <div className={style.border__main}>
                             <h3 className={style.border__title}>Что такое Skin Solution и для кого она
                                 предназначена?</h3>
                             <div className={style.border__input} onClick={handleToggle}>
@@ -39,13 +43,13 @@ const Faq: FC = () => {
                         </div>
                     </div>
                     <div className={style.border}>
-                        <div>
+                        <div className={style.border__main}>
                             <h3 className={style.border__title}>кто врачи?</h3>
                             <div className={style.border__input}></div>
                         </div>
                     </div>
                     <div className={style.border}>
-                        <div>
+                        <div className={style.border__main}>
                             <h3 className={style.border__title}>Какие выгоды в Skin Solution?</h3>
                             <div className={style.border__input} onClick={handleToggle}>
                                 {isExpanded ? (
@@ -60,7 +64,7 @@ const Faq: FC = () => {
                         </div>
                     </div>
                     <div className={style.border}>
-                        <div>
+                        <div className={style.border__main}>
                             <h3 className={style.border__title}>Как проходит консультация?</h3>
                             <div className={style.border__input} onClick={handleToggle}>
                                 {isExpanded ? (
@@ -72,7 +76,7 @@ const Faq: FC = () => {
                         </div>
                     </div>
                     <div className={style.border}>
-                        <div>
+                        <div className={style.border__main}>
                             <h3 className={style.border__title}>что она
                                 включAет?</h3>
                             <div className={style.border__input} onClick={handleToggle}>
@@ -85,7 +89,7 @@ const Faq: FC = () => {
                         </div>
                     </div>
                     <div className={style.border}>
-                        <div>
+                        <div className={style.border__main}>
                             <h3 className={style.border__title}>Какие результаты можно ожидать?</h3>
                             <div className={style.border__input} onClick={handleToggle}>
                                 {isExpanded ? (

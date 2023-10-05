@@ -46,7 +46,7 @@ const Reviews: FC = () => {
     ];
 
     return (
-
+<div className={style.bg}>
             <div className="wrap reviews">
                 <div className={style.titleMain}>
                 <h2 className={style.title}>Что о нас говорят</h2></div>
@@ -64,7 +64,7 @@ const Reviews: FC = () => {
                             slidesPerView: 2,
                         },
                         1200: {
-                            slidesPerView: 5,
+                            slidesPerView: 3,
                         },
                     }}
                 >
@@ -79,7 +79,7 @@ const Reviews: FC = () => {
                     ))}
                 </Swiper>
             </div>
-
+</div>
 
 )
     ;

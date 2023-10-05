@@ -9,7 +9,7 @@ import {Pagination} from 'swiper/modules';
 const OurAgents: FC = () => {
 
     return (
-        <div className="wrap">
+        <div className="wrap ourAgents">
             <div className={style.titleMain}>
                 <div className={style.star}>
                     <div className={style.titleStar}></div>
@@ -36,40 +36,47 @@ const OurAgents: FC = () => {
                     </div>
                 </div>
                 <div className={style.slide}>
-                    <div className={style.bg}>
-                        <Swiper
 
-                            spaceBetween={0}
-                            centeredSlides={true}
-                            pagination={{
-                                clickable: true,
-                            }}
-                            modules={[Pagination]}
-                            breakpoints={{
-                                768: {
-                                    slidesPerView: 2,
-                                },
-                                1200: {
-                                    slidesPerView: 3,
-                                },
-                            }}
-                        >
+                    <Swiper
+                        className={style.swiper}
+                        spaceBetween={0}
+
+                        centeredSlides={true}
+                        pagination={{
+                            clickable: true,
+                        }}
+                        modules={[Pagination]}
+                        breakpoints={{
+                            768: {
+                                slidesPerView: 2,
+                            },
+                            1200: {
+                                slidesPerView: 3,
+                            },
+                        }}
+                    >
 
 
-                            <SwiperSlide>
+                        <SwiperSlide>
+                            <div className={style.bg}>
                                 <div className={style.img1}></div>
-                            </SwiperSlide>
-                            <SwiperSlide>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className={style.bg}>
                                 <div className={style.img2}></div>
-                            </SwiperSlide>
-                            <SwiperSlide>
+                            </div>
+                        </SwiperSlide>
+                        <SwiperSlide>
+                            <div className={style.bg}>
                                 <div className={style.img3}></div>
-                            </SwiperSlide>
+                            </div>
+                        </SwiperSlide>
 
 
-                        </Swiper>
-                    </div>
+                    </Swiper>
                 </div>
+
             </div>
             <div className={style.circle}>
 

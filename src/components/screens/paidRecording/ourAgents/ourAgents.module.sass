@@ -3,8 +3,7 @@
   @media (min-width: 768px)
     display: flex
     align-items: center
-    justify-content: start
-    margin-bottom: 42px
+
   @media (min-width: 1200px)
     align-items: start
 
@@ -31,9 +30,8 @@
   text-align: center
   margin: 12px auto
   @media (min-width: 768px)
-    font-size: 48px
-    line-height: 48px
-    text-align: start
+    font-size: 32px
+    line-height: 38.4px
     margin: 0 0 0 24px
   @media (min-width: 1200px)
     text-align: start
@@ -48,6 +46,13 @@
     text-transform: uppercase
     font-weight: 400
     margin-bottom: 12px
+  @media (min-width: 768px)
+    width: 343px
+  @media (min-width: 1200px)
+    margin-left: 110px
+    margin-right: 101px
+
+
   &__text
     color: var(--grey-900)
     font-size: 14px
@@ -56,20 +61,44 @@
     margin-bottom: 32px
 .slide
   margin-top: 20px
+  @media (min-width: 768px)
+    position: absolute
+    max-width: 400px
+    top: -25px
+    right: -24px
+  @media (min-width: 1200px)
+    left: 500px
+
+
 .bg
   background-color: var(--purple-200)
   padding: 16px
+
 .img1
-  background: url("./../../../../../public/paidRecording/certificate1.png") center/cover no-repeat
+  background: url("./../../../../../public/paidRecording/certificate1.png") center/100% 100% no-repeat
   width: 207px
   height: 276px
+  @media (min-width: 1200px)
+    width: 246px
+
 .img2
   background: url("./../../../../../public/paidRecording/certification.png") center/100% 100% no-repeat
   width: 207px
   height: 276px
+  @media (min-width: 1200px)
+    width: 246px
 .img3
   background: url("./../../../../../public/paidRecording/certificate3.png") center/contain no-repeat
   width: 207px
   height: 276px
+  @media (min-width: 1200px)
+    width: 246px
+.container
+  @media (min-width: 768px)
+    position: relative
+
+.swiper
+  @media (min-width: 1200px)
+    width: 728px
 
 

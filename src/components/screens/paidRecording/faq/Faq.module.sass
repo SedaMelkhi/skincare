@@ -1,14 +1,20 @@
 .bg
-  background: var(--purple-400)
+  background-color: var(--purple-400)
   border-radius: 36px
   padding: 44px 0
-  position: relative
+
   @media (min-width: 1200px)
   z-index: -2
-.mainTitle
+
+
+.headerTitle
   display: flex
   align-items: center
   justify-content: space-between
+  position: relative
+
+
+
 .title
   color: var(--grey-25)
   font-size: 26px
@@ -19,6 +25,10 @@
   @media (min-width: 768px)
     font-size: 56px
     line-height: 64.96px
+  @media (min-width: 1200px)
+    margin-left: -1
+
+
 .text
   color: var(--grey-25)
   font-size: 16px
@@ -27,53 +37,115 @@
   @media (min-width: 768px)
     font-size: 24px
     line-height: 27.84px
+  @media (min-width: 1200px)
+    display: none
+
+
+
+
+
 .titleImg
+  background: url("./../../../../../public/paidRecording/imgFaq.png") center/cover no-repeat
+  width: 132.59px
+  height: 179.99px
+  position: relative
+  z-index: 2
   @media (min-width: 768px)
     width: 206.6px
     height: 280.45px
+  @media (min-width: 1200px)
+    background: url("./../../../../../public/paidRecording/imgFaq.png") center/cover no-repeat
+    height: 612px
+    position: absolute
+    left: 77px
+    top: 160px
+    width: 449px
+
+
+
+
+
+
 .circle
-  position: relative
+
   &__one
-    background: url("./../../../../../public/paidRecording/circle.png") center/cover no-repeat
     width: 54px
     height: 54px
     position: absolute
-    left: -40px
+    left: 170px
+    border-radius: 1000px
+    border: 2px solid var(--Primary-25)
+    top: 120px
+    z-index: 4
     @media (min-width: 768px)
       width: 83.8px
       height: 83.8px
-      left: -60px
+      top: 170px
+      left: 450px
+    @media (min-width: 1200px)
+      width: 182px
+      height: 182px
+      left: -40px
+      top: 450px
+      z-index: 4
+
   &__two
-    background: url("./../../../../../public/paidRecording/circle.png") center/cover no-repeat
+    border-radius: 1000px
+    border: 2px solid var(--Primary-25)
     width: 54px
     height: 54px
     position: absolute
-    top: -30px
-    left: -10px
-    z-index: -1
+    top: 100px
+    left: 200px
+    z-index: 1
     @media (min-width: 768px)
       width: 83.8px
       height: 83.8px
-      left: -20px
-      top: -40px
+      left: 490px
+      top: 120px
+    @media (min-width: 1200px)
+      width: 182px
+      height: 182px
+      left: 20px
+      top: 350px
+
+
 .borders
   margin-top: 44px
   display: flex
   flex-direction: column
   gap: 12px
+  @media (min-width: 1200px)
+    align-items: end
+
 .border
   border: 1px solid var(--grey-900)
   border-radius: 22px
   background-color: var(--grey-25)
   padding: 28px 30px
+  @media (min-width: 1200px)
+    width: 582px
+
   &__title
     text-transform: uppercase
     font-weight: 400
     font-size: 24px
     line-height: 31.2px
     color: var(--grey-900)
+    max-width: 225px
+    @media (min-width: 768px)
+      max-width: 604px
+    @media (min-width: 1200px)
+      max-width: 466px
+
   &__input
     background: url("./../../../../../public/paidRecording/plus.png")
     width: 32px
     height: 32px
+  &__main
+    display: flex
+    align-items: center
+    justify-content: space-between
+
+
 
