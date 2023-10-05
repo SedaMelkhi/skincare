@@ -8,6 +8,7 @@ import ExpertsSkinCare from "@/components/screens/aboutUs/experts/experts";
 import ShopSkinCare from "@/components/screens/aboutUs/shopSkinCare/shopSkinCare";
 
 import CareTips from "@/components/screens/aboutUs/careTips/careTips";
+import AboutUsExperts from "@/components/screens/aboutUs/aboutUsExperts/aboutUsExperts";
 
 const AboutUsPage: FC = () => {
     return (
@@ -21,9 +22,11 @@ const AboutUsPage: FC = () => {
 
             </div>
             <div className={style.experts}><ExpertsSkinCare/></div>
+            <div><AboutUsExperts/></div>
 
             <div className={style.shopSkinCare}><ShopSkinCare/></div>
             <div className={style.careTips}><CareTips/></div>
+
         </Layout>
     );
 };

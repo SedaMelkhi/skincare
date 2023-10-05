@@ -1,8 +1,18 @@
-import {FC} from 'react';
+import React, { FC, useState } from 'react';
 import style from './ConsultationTerms.module.sass';
-
+import ModalPaidConsultation from "./../modalPaidConsultation/modalPaidConsultation";
 
 const ConsultationTerms: FC = () => {
+    const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div>
             <div className="wrap">
@@ -50,7 +60,13 @@ const ConsultationTerms: FC = () => {
                 </div>
                 <div className={style.container}>
                     <h3 className={style.titleBtn}>Начните ваш путь к здоровой коже сейчас!</h3>
-                    <button className={style.btn}>записаться</button>
+                    <button className={style.btn} onClick={(event) => {
+                        event.preventDefault();
+                        setIsModalOpen(true);
+                    }}>записаться</button>
+
+                    {/* Модальное окно */}
+                    {isModalOpen && <ModalPaidConsultation active={isModalOpen} setActive={setIsModalOpen}/>}
                 </div>
 
             </div>

@@ -36,6 +36,7 @@ const PaidRecordingPage: FC = () => {
 
             <div className={style.record}> <Record/></div>
             <div className={style.otherServices}> <OtherServices/></div>
+            <AboutUsPage/>
 
 
 

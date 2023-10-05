@@ -22,7 +22,7 @@ const CertificateForm: FC = () => {
     };
 
     function extractNumbers(input: string): string {
-        const cleanedInput = input.replace(/\D/g, ''); // Убираем все символы, кроме цифр
+        const cleanedInput = input.replace(/\D/g, '');
         const number = parseInt(cleanedInput, 10);
         if (!isNaN(number)) {
             return number.toString();
