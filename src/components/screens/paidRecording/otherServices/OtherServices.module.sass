@@ -11,6 +11,8 @@
     line-height: 33.28px
     max-width: 553px
     margin: 0 auto
+  @media (min-width: 1200px)
+    margin-top: 265px
 
 .rhomb1
   background: url("./../../../../../public/paidRecording/phomb1M.png") center/contain no-repeat
@@ -22,7 +24,8 @@
 
   @media (min-width: 768px)
     position: absolute
-    right: 0
+    right: 150px
+    top: 120px
     z-index: 1
 
 
@@ -36,16 +39,23 @@
   padding-top: 31px
   @media (min-width: 768px)
     position: absolute
-    left: 0
+    right: 500px
+    top: 250px
+    z-index: 1
 
 
 
-.row
+
+
+.row1, .row2
   display: flex
   justify-content: center
   flex-direction: column
   @media (min-width: 768px)
     position: relative
+
+
+
 
 .subtitle1
   color: black
@@ -55,6 +65,12 @@
   line-height: 31.92px
   margin: 0 auto
   max-width: 190px
+  font-style: italic
+  @media (min-width: 768px)
+    position: absolute
+    top: 90px
+    right: 50px
+    z-index: 2
 .subtitle2
   color: black
   text-transform: uppercase
@@ -63,12 +79,24 @@
   line-height: 31.92px
   margin: 110px auto
   text-align: center
+  font-style: italic
+  @media (min-width: 768px)
+    position: absolute
+    top: -10px
+    right: 550px
+    z-index: 2
 
+.subtitle
+  &__main
+    @media (min-width: 768px)
+      position: relative
 
 
 .borderMain
   display: flex
   justify-content: center
+  @media (min-width: 768px)
+    justify-content: end
 .border1
   border: 1px solid #FF9838
   width: 342px
@@ -81,6 +109,11 @@
     width: 468px
     height: 180px
     padding: 57px 118px 85px 72px
+    border-radius: 200px
+    margin-right: 250px
+
+
+
 .border2
   border: 1px solid var(--purple-400)
   width: 342px
@@ -89,6 +122,15 @@
   padding: 35px 31px 43px 37px
   margin-top: 60px
   background-color: var(--grey-25)
+  @media (min-width: 768px)
+    width: 468px
+    height: 180px
+    padding: 57px 66px 58px 124px
+    border-radius: 200px
+
+    margin-right: 150px
+
+
 
 .text
   color: var(--grey-900)
@@ -129,7 +171,7 @@
   background: url("./../../../../../public/paidRecording/arrowRight.png")
   width: 32px
   height: 13px
-.btn
+.btn1,.btn2
   border: 1px solid var(--grey-900)
   border-radius: 12px
   padding: 16px 24px
@@ -140,12 +182,23 @@
   line-height: 18.62px
   font-style: italic
   font-weight: 400
+.btn1
   @media (min-width: 768px)
     position: absolute
+    right: 90px
+    top: 160px
+    z-index: 1
+.btn2
+  @media (min-width: 768px)
+    position: absolute
+    right: 550px
+    top: 150px
+    z-index: 1
 
 
 
 
+.btn
   &__main
     display: flex
     justify-content: center

@@ -7,8 +7,8 @@ const OtherServices: FC = () => {
         <div className="wrap">
             <div><h2 className={style.title}>Познакомьтесь с нашими Другими услугами</h2></div>
             <div className={style.container}>
-                <div className={style.row}>
-                    <div><h3 className={style.subtitle1}>Бесплатная консультация</h3></div>
+                <div className={style.row1}>
+                    <div className={style.subtitle__main}><h3 className={style.subtitle1}>Бесплатная консультация</h3></div>
                     <div className={style.rhomb1}></div>
 
                     <div className={style.borderMain}>
@@ -23,12 +23,12 @@ const OtherServices: FC = () => {
                         </div>
                     </div>
                     <div className={style.btn__main}>
-                        <button className={style.btn}>Записаться</button>
+                        <button className={style.btn1}>Записаться</button>
                     </div>
 
                 </div>
-                <div className={style.row}>
-                    <div><h3 className={style.subtitle2}>Beauty pro</h3></div>
+                <div className={style.row2}>
+                    <div className={style.subtitle__main}><h3 className={style.subtitle2}>Beauty pro</h3></div>
                     <div className={style.rhomb2}></div>
 
                         <div className={style.borderMain}>
@@ -44,7 +44,7 @@ const OtherServices: FC = () => {
                             </div>
                         </div>
                         <div className={style.btn__main}>
-                            <button className={style.btn}>Записаться</button>
+                            <button className={style.btn2}>Записаться</button>
                         </div>
 
                 </div>
