@@ -5,22 +5,49 @@ interface ModalPaidConsultationProps {
     active: boolean;
     setActive: (active: boolean) => void;
 }
-const CertificateModalWindow: FC<ModalPaidConsultationProps> = ({ active, setActive }) => {
 
+const CertificateModalWindow: FC<ModalPaidConsultationProps> = ({active, setActive}) => {
     return (
-        <div className={style.modal}>
-            <div className={style.title}></div>
-            <input className={style.name}/>
-            <input className={style.tel}/>
-            <div><label>С вами связаться через:</label>
-                <input type="checkbox"/>
-                <input type="checkbox"/></div>
+        <div
+            className={active ? `${style.active} ${style.modal}` : style.modal}
+            onClick={() => setActive(false)}>
+            <div
+                className={style.modal__content}
+                onClick={(e) => {
+                    e.stopPropagation();
+                }}>
+                <div className={style.close} onClick={() => setActive(false)}>
+                    <img alt="close" src={'./certificate/close.png'} className={style.closeImg}/>
+                </div>
 
 
-            <button className={style.closeButton} >Записаться</button>
+                <div className={style.title}>данные</div>
+                <form>
+                    <input className={style.name} type="text" id="name" name="name" placeholder="Имя*"/>
+                    <input className={style.tel} type="text" id="tel" name="tel" placeholder="Номер телефона*"/>
+                    <div className={style.subtitle}>С вами связаться через:</div>
+                    <div className={style.chackbox__main}>
+                        <div className={style.chackbox__telegram}>
+                            <img  src='./paidRecording/telegram.svg' className={style.chackbox__telegramImg}/>
+                            <label htmlFor="telegram" className={style.chackbox__telegramText}>Telegram</label>
+                            <input className={style.chackbox} type="checkbox" id="telegram"/>
+                        </div>
+                        <div className={style.chackbox__whatsapp}>
+                            <img src='./paidRecording/whatsapp.svg' className={style.chackbox__whatsappImg}/>
+                            <label htmlFor="whatsapp" className={style.chackbox__whatsappText}>Whatsapp</label>
+                            <input className={style.chackbox}  type="checkbox" id="whatsapp"/>
+                        </div>
+                    </div>
+                </form>
 
+
+                <div className={style.button__main}><button className={style.button}>Оплатить</button></div>
+
+
+            </div>
         </div>
-    );
+    )
+        ;
 };
 
 export default CertificateModalWindow;
