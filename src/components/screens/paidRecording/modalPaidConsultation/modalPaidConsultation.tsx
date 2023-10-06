@@ -1,16 +1,25 @@
 import React, {FC, useState} from 'react';
 import style from './ModalPaidConsultation.module.sass';
+import CertificateModalWindow from '@/components/screens/certificate/certificateModalWindow/certificateModalWindow';
 
 interface ModalPaidConsultationProps {
     active: boolean;
     setActive: (active: boolean) => void;
 }
 
-const CertificateModalWindow: FC<ModalPaidConsultationProps> = ({active, setActive}) => {
+const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActive}) => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
-        <div
-            className={active ? `${style.active} ${style.modal}` : style.modal}
-            onClick={() => setActive(false)}>
+        <div className={active ? `${style.active} ${style.modal}` : style.modal} onClick={() => setActive(false)}>
             <div
                 className={style.modal__content}
                 onClick={(e) => {
@@ -25,29 +34,35 @@ const CertificateModalWindow: FC<ModalPaidConsultationProps> = ({active, setActi
                 <form>
                     <input className={style.name} type="text" id="name" name="name" placeholder="Имя*"/>
                     <input className={style.tel} type="text" id="tel" name="tel" placeholder="Номер телефона*"/>
-                    <div className={style.subtitle}>С вами связаться через:</div>
+                    <div className={style.subtitle}>С вами связаться через:</div>
                     <div className={style.chackbox__main}>
                         <div className={style.chackbox__telegram}>
-                            <img  src='./paidRecording/telegram.svg' className={style.chackbox__telegramImg}/>
+                            <img src='./paidRecording/telegram.svg' className={style.chackbox__telegramImg}/>
                             <label htmlFor="telegram" className={style.chackbox__telegramText}>Telegram</label>
                             <input className={style.chackbox} type="checkbox" id="telegram"/>
                         </div>
                         <div className={style.chackbox__whatsapp}>
                             <img src='./paidRecording/whatsapp.svg' className={style.chackbox__whatsappImg}/>
                             <label htmlFor="whatsapp" className={style.chackbox__whatsappText}>Whatsapp</label>
-                            <input className={style.chackbox}  type="checkbox" id="whatsapp"/>
+                            <input className={style.chackbox} type="checkbox" id="whatsapp"/>
                         </div>
                     </div>
                 </form>
 
 
-                <div className={style.button__main}><button className={style.button}>Оплатить</button></div>
+                <div className={style.button__main}>
+                    <button className={style.button} onClick={(event) => {
+                        event.preventDefault();
+                        setIsModalOpen(true);
+                    }}>Оплатить
+                    </button>
+                </div>
 
 
             </div>
+            {isModalOpen && <CertificateModalWindow active={isModalOpen} setActive={setIsModalOpen}/>}
         </div>
-    )
-        ;
+    );
 };
 
-export default CertificateModalWindow;
+export default ModalPaidConsultation;
