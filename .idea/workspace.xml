@@ -4,64 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment=".">
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/Layer_x0020_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/Layer_x0020_1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/arrowDown.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/arrowRight.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/discriptionImg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/discriptionImg1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/divider.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/expertsImg.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/icon4.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/rectangle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/shopSkinCare.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/tips1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/aboutUs/tips2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/circle.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/faq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/imgBigM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/imgSmallM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/lineRecordingM.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/listStar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/paidRecording/plus.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsDescription/AboutUsDescription.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsDescription/aboutUsDescription.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/careTips/CareTips.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/careTips/careTips.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/experts/Experts.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/experts/experts.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/mission/Mission.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/mission/mission.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/shopSkinCare/ShopSkinCare.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/shopSkinCare/shopSkinCare.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/careSkinSolution/CareSkinSolution.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/careSkinSolution/careSkinSolution.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/consultationTerms/ConsultationTerms.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/consultationTerms/consultationTerms.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecording.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/record/Record.module.sass" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/record/record.tsx" afterDir="false" />
+    <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment="исправила адаптацию">
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/arrowLeft.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/ellipseAgents.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/paidRecording/iconRight.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsPage.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsPage.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/certificate/certificateForm/CertificateForm.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/certificate/certificateForm/CertificateForm.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/home/header/header.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/home/header/header.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/DescriptionRecord.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/DescriptionRecord.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/descriptionRecord.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/descriptionRecord/descriptionRecord.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/FAQ.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/Faq.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/FAQ.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/faq/Faq.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/swatchLine/swatchLine.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/aboutUs/careTips/CareTips.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/careTips/CareTips.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/aboutUs/shopSkinCare/ShopSkinCare.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/shopSkinCare/ShopSkinCare.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/ourAgents/ourAgents.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/ourAgents/ourAgents.module.sass" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/ourAgents/ourAgents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/ourAgents/ourAgents.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.sass" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +45,7 @@
   "keyToString": {
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "paid__recording",
-    "last_opened_file_path": "C:/Users/Makka/WebstormProjects/skincare/public/aboutUs",
+    "last_opened_file_path": "C:/Users/Makka/WebstormProjects/skincare/public/paidRecording",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -113,11 +65,12 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Makka\WebstormProjects\skincare\public\aboutUs" />
       <recent name="C:\Users\Makka\WebstormProjects\skincare\public\paidRecording" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\public\aboutUs" />
       <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\paidRecording" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\public\paidRecording" />
       <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\aboutUs" />
       <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\certificate\111" />
       <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\certificate\certificateImg" />
@@ -152,7 +105,9 @@
       <workItem from="1695976570848" duration="372000" />
       <workItem from="1695976955438" duration="28000" />
       <workItem from="1695976995645" duration="8187000" />
-      <workItem from="1695997574229" duration="124690000" />
+      <workItem from="1695997574229" duration="128583000" />
+      <workItem from="1696428377041" duration="17142000" />
+      <workItem from="1696450080856" duration="101327000" />
     </task>
     <task id="LOCAL-00001" summary=".">
       <created>1695579867596</created>
@@ -175,7 +130,56 @@
       <option name="project" value="LOCAL" />
       <updated>1696166998254</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="реализовала раздел О нас">
+      <created>1696401456766</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696401456766</updated>
+    </task>
+    <task id="LOCAL-00005" summary="реализовала раздел О нас">
+      <created>1696459298329</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696459298329</updated>
+    </task>
+    <task id="LOCAL-00006" summary=".">
+      <created>1696533332232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696533332232</updated>
+    </task>
+    <task id="LOCAL-00007" summary=".">
+      <created>1696543465191</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696543465191</updated>
+    </task>
+    <task id="LOCAL-00008" summary=".">
+      <created>1696572810631</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696572810631</updated>
+    </task>
+    <task id="LOCAL-00009" summary=".">
+      <created>1696583094621</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696583094621</updated>
+    </task>
+    <task id="LOCAL-00010" summary="исправила адаптацию">
+      <created>1696605364773</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696605364773</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +209,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="реализовала раздел О нас" />
     <MESSAGE value="." />
-    <option name="LAST_COMMIT_MESSAGE" value="." />
+    <MESSAGE value="исправила адаптацию" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправила адаптацию" />
   </component>
 </project>

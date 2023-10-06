@@ -34,7 +34,7 @@
     margin-left: 500px
 
 .arrow
-  position: relative
+  position: absolute
   &__text
     color: var(--grey-900)
     font-size: 16px
@@ -80,42 +80,55 @@
 
 .imgMain
 
-  position: relative
-  padding-bottom: 130px
+  padding-top: -100px
+  display: flex
+  justify-content: space-between
+
+  flex-direction: row-reverse
+
+  @media (min-width: 768px)
+    flex-direction: row
+
+
 .img1
   background: url("./../../../../../public/aboutUs/tips1.png") center/contain no-repeat
-  min-width: 210px
+  width: 210px
   height: 337px
-  position: absolute
-  top: -120px
-  right: -31px
-  z-index: -1
+
+  //position: absolute
+  //top: -120px
+  //right: -31px
+  //z-index: -1
   @media (min-width: 768px)
     width: 252px
     height: 405px
-    top: -210px
-    left: -40px
+    margin-top: -110px
+
   @media (min-width: 1200px)
     width: 473px
     height: 720px
-    top: -630px
+    margin-top: -580px
+
 
 
 .img2
   background: url("./../../../../../public/aboutUs/tips2.png") center/contain no-repeat
-  min-width: 229px
+  width: 229px
   height: 126px
-  position: absolute
-  top: 90px
-  left: -80px
-  z-index: -1
+  margin-top: 188px
+
+
+  //position: absolute
+  //top: 90px
+  //left: -80px
+  //z-index: -1
   @media (min-width: 768px)
     width: 267px
     height: 147px
-    left: 500px
-    top: 45px
+    margin-top: 150px
+
   @media (min-width: 1200px)
     width: 325px
     height: 179px
-    top: -100px
-    left: 1000px
+    margin-top: -30px
+
