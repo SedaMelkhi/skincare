@@ -30,7 +30,7 @@ const ExpertsSkinCare: FC = () => {
                         </div>
                     </div>
                     <div className={style.block__container}>
-                        <div className={style.block__row}>
+                        <div className={style.block__row1}>
                             <div className={style.block}>
                                 <div className={style.block__icon1}></div>
                                 <div className={style.block__text}>косметолог-эстетист</div>
@@ -42,7 +42,7 @@ const ExpertsSkinCare: FC = () => {
                             </div>
                             <div className={style.block__line}></div>
                         </div>
-                        <div className={style.block__row}>
+                        <div className={style.block__row2}>
                             <div className={style.block}>
                                 <div className={style.block__icon3}></div>
                                 <div className={style.block__text}>нутрициолог</div>
