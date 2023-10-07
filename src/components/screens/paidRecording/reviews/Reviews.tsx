@@ -54,21 +54,22 @@ const Reviews: FC = () => {
                 <Swiper
 
                     spaceBetween={20}
-                    centeredSlides={false}
+                    centeredSlides={true}
                     pagination={{
                         clickable: true,
                     }}
                     modules={[Pagination]}
                     breakpoints={{
+                        0:{
+                            slidesPerView: 1,
+                        },
                         768: {
                             slidesPerView: 2,
                         },
                         1200: {
                             slidesPerView: 4,
-                        },
-                        0:{
-                            slidesPerView: 1,
                         }
+
                     }}
                 >
                     {data.map((item) => (

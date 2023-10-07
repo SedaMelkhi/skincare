@@ -1,10 +1,49 @@
-import {FC, useState} from 'react';
+import React, {FC, useState} from 'react';
 import style from './Faq.module.sass';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+
+
+import iconExpand from '@/../public/paidRecording/plus.png';
+import iconCollapse from '@/../public/paidRecording/minus.svg';
 
 const Faq: FC = () => {
-    const [isExpanded, setIsExpanded] = useState(false);
-    const handleToggle = () => {
-        setIsExpanded(!isExpanded);
+    const faqData = [
+        {
+            id: "0",
+            question: 'Что такое Skin Solution и для кого она предназначена?',
+            answer: 'Skin Solution - это премиум программа, объединяющая экспертизу врача эндокринолога и косметолога. Она предназначена для тех, кто хочет решить проблемы с кожей, такие как акне, розацея, атопический дерматит, и получить комплексные рекомендации по уходу и питанию.',
+        },
+        {
+            id: "1",
+            question: 'кто врачи?',
+            answer: 'Skin Solution - это премиум программа, объединяющая экспертизу врача эндокринолога и косметолога. Она предназначена для тех, кто хочет решить проблемы с кожей, такие как акне, розацея, атопический дерматит, и получить комплексные рекомендации по уходу и питанию.',
+        },
+        {
+            id: "2",
+            question: 'Какие выгоды в Skin Solution?',
+            answer: 'Skin Solution - это премиум программа, объединяющая экспертизу врача эндокринолога и косметолога. Она предназначена для тех, кто хочет решить проблемы с кожей, такие как акне, розацея, атопический дерматит, и получить комплексные рекомендации по уходу и питанию.',
+        },
+        {
+            id: "3",
+            question: 'Как проходит консультация?',
+            answer: 'Skin Solution - это премиум программа, объединяющая экспертизу врача эндокринолога и косметолога. Она предназначена для тех, кто хочет решить проблемы с кожей, такие как акне, розацея, атопический дерматит, и получить комплексные рекомендации по уходу и питанию.',
+        },
+        {
+            id: "4",
+            question: 'что она включAет?',
+            answer: 'Skin Solution - это премиум программа, объединяющая экспертизу врача эндокринолога и косметолога. Она предназначена для тех, кто хочет решить проблемы с кожей, такие как акне, розацея, атопический дерматит, и получить комплексные рекомендации по уходу и питанию.',
+        },
+        {
+            id: "5",
+            question: 'Какие результаты можно ожидать?',
+            answer: 'Skin Solution - это премиум программа, объединяющая экспертизу врача эндокринолога и косметолога. Она предназначена для тех, кто хочет решить проблемы с кожей, такие как акне, розацея, атопический дерматит, и получить комплексные рекомендации по уходу и питанию.',
+        },]
+    const [isExpanded, setIsExpanded] = useState<number | null>(null);
+
+    const handleToggle = (index: number) => {
+        setIsExpanded(isExpanded === index ? null : index);
     };
     return (
         <div className={style.bg}>
@@ -14,97 +53,36 @@ const Faq: FC = () => {
                         <h2 className={style.title}>остались вопросы?</h2>
                         <p className={style.text}>Вот ответы на самые<br/> частые из них.</p>
                     </div>
-
                     <div className={style.img}>
                         <div className={style.circle__one}></div>
                         <div className={style.circle__two}></div>
-
-                        <div className={style.titleImg}>
-
-                        </div>
+                        <div className={style.titleImg}></div>
                     </div>
-
                 </div>
-                <div className={style.borders}>
-                    <div className={style.border}>
-                        <div className={style.border__main}>
-                            <h3 className={style.border__title}>Что такое Skin Solution и для кого она
-                                предназначена?</h3>
-                            <div className={style.border__input} onClick={handleToggle}>
-                                {isExpanded ? (
-                                    <div className={style.expandedContent}>
-                                        Skin Solution - это премиум программа, объединяющая экспертизу врача
-                                        эндокринолога и косметолога. Она предназначена для тех, кто хочет решить
-                                        проблемы с кожей, такие как акне, розацея, атопический дерматит, и получить
-                                        комплексные рекомендации по уходу и питанию.
-                                    </div>
-                                ) : null}
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.border}>
-                        <div className={style.border__main}>
-                            <h3 className={style.border__title}>кто врачи?</h3>
-                            <div className={style.border__input}></div>
-                        </div>
-                    </div>
-                    <div className={style.border}>
-                        <div className={style.border__main}>
-                            <h3 className={style.border__title}>Какие выгоды в Skin Solution?</h3>
-                            <div className={style.border__input} onClick={handleToggle}>
-                                {isExpanded ? (
-                                    <div className={style.expandedContent}>
-                                        Skin Solution - это премиум программа, объединяющая экспертизу врача
-                                        эндокринолога и косметолога. Она предназначена для тех, кто хочет решить
-                                        проблемы с кожей, такие как акне, розацея, атопический дерматит, и получить
-                                        комплексные рекомендации по уходу и питанию.
-                                    </div>
-                                ) : null}
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.border}>
-                        <div className={style.border__main}>
-                            <h3 className={style.border__title}>Как проходит консультация?</h3>
-                            <div className={style.border__input} onClick={handleToggle}>
-                                {isExpanded ? (
-                                    <div className={style.expandedContent}>
-                                        {/* Вставьте расширенный текст или компоненты здесь */}
-                                    </div>
-                                ) : null}
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.border}>
-                        <div className={style.border__main}>
-                            <h3 className={style.border__title}>что она
-                                включAет?</h3>
-                            <div className={style.border__input} onClick={handleToggle}>
-                                {isExpanded ? (
-                                    <div className={style.expandedContent}>
-                                        {/* Вставьте расширенный текст или компоненты здесь */}
-                                    </div>
-                                ) : null}
-                            </div>
-                        </div>
-                    </div>
-                    <div className={style.border}>
-                        <div className={style.border__main}>
-                            <h3 className={style.border__title}>Какие результаты можно ожидать?</h3>
-                            <div className={style.border__input} onClick={handleToggle}>
-                                {isExpanded ? (
-                                    <div className={style.expandedContent}>
-                                        {/* Вставьте расширенный текст или компоненты здесь */}
-                                    </div>
-                                ) : null}
-                            </div>
-                        </div>
-                    </div>
-
-
+                <div className={style.borders}>{faqData.map((faq, index) => (
+                    <Accordion
+                        key={index}
+                        expanded={isExpanded === index}
+                        onChange={() => handleToggle(index)}
+                        className={style.border}
+                    >
+                        <AccordionSummary
+                            expandIcon={
+                                <img src={isExpanded === index ? iconCollapse.src : iconExpand.src} alt=""
+                                     className={style.border__input}/>
+                            }
+                        >
+                            <h3 className={style.border__title}>{faq.question}</h3>
+                        </AccordionSummary>
+                        <AccordionDetails>
+                            <p className={style.border__text}>{faq.answer}</p>
+                        </AccordionDetails>
+                    </Accordion>
+                ))}
                 </div>
             </div>
         </div>
     );
 };
+
 export default Faq;
