@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import style from './ModalPaidConsultation.module.sass';
-import CertificateModalWindow from '@/components/screens/certificate/certificateModalWindow/certificateModalWindow';
+import ModalPay from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay";
 
 interface ModalPaidConsultationProps {
     active: boolean;
@@ -60,7 +60,7 @@ const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActiv
 
 
             </div>
-            {isModalOpen && <CertificateModalWindow active={isModalOpen} setActive={setIsModalOpen}/>}
+            {isModalOpen && <ModalPay active={isModalOpen} setActive={setIsModalOpen}/>}
         </div>
     );
 };

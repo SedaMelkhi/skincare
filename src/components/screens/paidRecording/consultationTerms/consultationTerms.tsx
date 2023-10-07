@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import style from './ConsultationTerms.module.sass';
-import ModalPaidConsultation from "./../modalPaidConsultation/modalPaidConsultation";
+import ModalPaidConsultation from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPaidConsultation";
 
 const ConsultationTerms: FC = () => {
     const [isModalOpen, setIsModalOpen] = React.useState(false);
