@@ -64,7 +64,7 @@ const Reviews: FC = () => {
                             slidesPerView: 2,
                         },
                         1200: {
-                            slidesPerView: 3,
+                            slidesPerView: 4,
                         },
                     }}
                 >
