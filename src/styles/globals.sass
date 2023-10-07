@@ -213,11 +213,13 @@ input
     &-active
       background-color: var(--grey-25)
   .swiper-slide
-    @media (min-width: 1200px)
-      transform: translateY(40px)!important
+    transform: translateY(30px)!important
+  .swiper-slide-active
+     transform: translateZ(0)!important
+     @media (min-width: 1200px)
+        transform: translateY(40px)!important
   .swiper-slide-active,.swiper-slide-prev,.swiper-slide-next
     @media (min-width: 1200px)
-
       transform: translateZ(0)!important
 
 .ourAgents
