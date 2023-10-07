@@ -54,7 +54,7 @@ const Reviews: FC = () => {
                 <Swiper
 
                     spaceBetween={20}
-                    centeredSlides={false}
+                    centeredSlides={true}
                     pagination={{
                         clickable: true,
                     }}
@@ -66,9 +66,6 @@ const Reviews: FC = () => {
                         1200: {
                             slidesPerView: 4,
                         },
-                        0:{
-                            slidesPerView: 1,
-                        }
                     }}
                 >
                     {data.map((item) => (
