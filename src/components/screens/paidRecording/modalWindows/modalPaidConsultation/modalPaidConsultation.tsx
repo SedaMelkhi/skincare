@@ -60,8 +60,10 @@ const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActiv
 
 
             </div>
+
             {isModalOpen && <ModalPay active={isModalOpen} setActive={setIsModalOpen}/>}
         </div>
+
     );
 };
 

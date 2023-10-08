@@ -14,6 +14,7 @@ import ConsultationTerms from "@/components/screens/paidRecording/consultationTe
 import AboutUsPage from "@/components/screens/aboutUs/aboutUsPage";
 import OurAgents from "@/components/screens/paidRecording/ourAgents/ourAgents";
 import OtherServices from "@/components/screens/paidRecording/otherServices/otherServices";
+import BeforeAndAfter from "@/components/screens/paidRecording/beforeAndAfter/beforeAndAfter";
 
 
 const PaidRecordingPage: FC = () => {
@@ -29,6 +30,7 @@ const PaidRecordingPage: FC = () => {
             <div className={style.swatch}><SwatchLine/></div>
             <div className={style.careSkinSolution}><CareSkinSolution/></div>
             <div className={style.terms}><ConsultationTerms/></div>
+            <div><BeforeAndAfter/></div>
             <div  className={style.ourAgents}><OurAgents/></div>
             <div className={style.care}><Care/></div>
             <div className={style.reviews}> <Reviews/></div>
