@@ -25,71 +25,75 @@ const OurAgents: FC = () => {
                     <h2 className={style.title}>Доверьтесь нашим агентам</h2>
                 </div>
                 <div className={style.container}>
-                    <div className={style.agent}>
-                        <h3 className={style.agent__name}>дудалова Аминат Адамовна
 
-                        </h3>
-                        <div className={style.agent__text}>Закончила астраханский государственный медицинский,
-                            ординатура по
-                            специальности эндокринология, прошла профессиональную переподготовку по специальности
-                            нутрициология,
-                            выпускник школы Uniprof, студент preventage
+                        <div className={style.agent}>
+                            <h3 className={style.agent__name}>дудалова Аминат Адамовна
+
+                            </h3>
+                            <div className={style.agent__text}>Закончила астраханский государственный медицинский,
+                                ординатура по
+                                специальности эндокринология, прошла профессиональную переподготовку по специальности
+                                нутрициология,
+                                выпускник школы Uniprof, студент preventage
+                            </div>
                         </div>
-                    </div>
-                    <div className={style.agent}>
-                        <h3 className={style.agent__name}>дидаева савдат Салмановна
+                        <div className={style.agent}>
+                            <h3 className={style.agent__name}>дидаева савдат Салмановна
 
-                        </h3>
-                        <div className={style.agent__text}>Дипломирования косметолог-эстетист, бьюти эксперт с опытом
-                            работы
-                            пять лет, более 1000 проведённых пациентов с акне, куперощам и другими дерматитами.
+                            </h3>
+                            <div className={style.agent__text}>Дипломирования косметолог-эстетист, бьюти эксперт с
+                                опытом
+                                работы
+                                пять лет, более 1000 проведённых пациентов с акне, куперощам и другими дерматитами.
+                            </div>
                         </div>
+                        <div className={style.slide}>
+
+                            <Swiper
+                                className={style.swiper}
+                                spaceBetween={0}
+
+
+                                pagination={pagination}
+                                modules={[Pagination]}
+                                breakpoints={{
+                                    0: {
+
+                                        slidesPerView: 1.5,
+                                    },
+                                    768: {
+                                        slidesPerView: 1.5,
+                                    },
+                                    1200: {
+                                        slidesPerView: 2,
+                                    },
+
+                                }}
+                            >
+
+
+                                <SwiperSlide>
+                                    <div className={style.bg}>
+                                        <div className={style.img1}></div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className={style.bg}>
+                                        <div className={style.img2}></div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide>
+                                    <div className={style.bg}>
+                                        <div className={style.img3}></div>
+                                    </div>
+                                </SwiperSlide>
+
+
+                            </Swiper>
+                        </div>
+
                     </div>
-                    <div className={style.slide}>
 
-                        <Swiper
-                            className={style.swiper}
-                            spaceBetween={0}
-
-
-                            pagination={pagination}
-                            modules={[Pagination]}
-                            breakpoints={{
-                                768: {
-                                    slidesPerView: 1,
-                                },
-                                1200: {
-                                    slidesPerView: 1,
-                                },
-                                0: {
-
-                                    slidesPerView: 1,
-                                }
-                            }}
-                        >
-
-
-                            <SwiperSlide>
-                                <div className={style.bg}>
-                                    <div className={style.img1}></div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={style.bg}>
-                                    <div className={style.img2}></div>
-                                </div>
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <div className={style.bg}>
-                                    <div className={style.img3}></div>
-                                </div>
-                            </SwiperSlide>
-
-
-                        </Swiper>
-                    </div>
-
-                </div>
                 <div className={style.arrows}><Arrows next="swiper-button-next" prev="swiper-button-prev"/></div>
             </div>
         </div>

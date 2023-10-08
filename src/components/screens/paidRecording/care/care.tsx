@@ -3,10 +3,11 @@ import style from './care.module.sass';
 
 const Care: FC = () => {
     return (
-        <div className={style.line}>
-            <div className={style.line__one}></div>
-            <div className={style.line__two}></div>
+
             <div className="wrap">
+                <div className={style.line}>
+                    <div className={style.line__one}></div>
+                    <div className={style.line__two}></div></div>
                 <h3 className={style.title}>ваша ванная</h3>
                 <div className={style.borders}>
                     <div className={style.border}>
@@ -49,7 +50,7 @@ const Care: FC = () => {
 
                         </ul>
                     </div>
-                </div>
+
             </div>
         </div>
     );
