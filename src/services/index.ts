@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
 import { RunningLineArray } from '@/interfaces/runningLine.interface';
+import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
 
 const API_URL = 'http://fkmva.beget.tech/local/api/';
 
@@ -16,6 +17,13 @@ export const MainSliderService = {
 export const RunningLineService = {
   async getRunningLine(): Promise<RunningLineArray> {
     const { data } = await axios.post('/main.php', { type: 'runningLine', code: 3 });
+    return data;
+  },
+};
+
+export const PromoBlockService = {
+  async getPromoBlock(): Promise<PromoBlockArray> {
+    const { data } = await axios.post('/main.php', { type: 'mainPromo' });
     return data;
   },
 };

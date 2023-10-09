@@ -122,10 +122,10 @@ const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = (
       <Marquee className={style.marquee__wrap} speed={100}>
         <div className={style.marquee}>
           {runningLine.map(({ mainText, url }, i) => (
-            <>
+            <span key={i}>
               <img src="./star.svg" alt="" />
               <Link href={url}>{mainText}</Link>
-            </>
+            </span>
           ))}
         </div>
       </Marquee>

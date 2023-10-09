@@ -5,11 +5,14 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 
 import Title from '@/components/other/title/title';
 import Button from '@/components/other/button/button';
+import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
 
 import 'swiper/css';
 import style from './experts.module.sass';
 
-const Experts: FC = () => {
+const Experts: FC<{ promoBlocks: PromoBlockArray }> = ({ promoBlocks }) => {
+  const colors = [style.step_pink, style.step_violet, style.step_grey];
+
   return (
     <div className="experts">
       <section className={style.experts}>
@@ -40,100 +43,38 @@ const Experts: FC = () => {
                   slidesPerView: 1.1,
                 },
               }}>
-              <SwiperSlide>
-                <div className={style.step + ' ' + style.step_pink}>
-                  <div className={style.hidden}>
-                    <h3 className={style.subtitle}>Бесплатно</h3>
-                    <div className={style.bottom}>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
+              {promoBlocks.map(({ mainText, url, urlText }, i) => (
+                <SwiperSlide key={i}>
+                  <div className={style.step + ' ' + colors[i % 3]}>
+                    <div className={style.hidden}>
+                      <h3 className={style.subtitle}>{mainText}</h3>
+                      <div className={style.bottom}>
+                        <div className={style.circle}>
+                          <img src="./arrowCircle.svg" alt="" />
+                        </div>
+                        <div className={style.description}>{urlText}</div>
                       </div>
-                      <div className={style.description}>Разбор косметички и подбор ухода</div>
+                      <div className={style.number}>{i > 9 ? i : '0' + (i + 1)}</div>
                     </div>
-                    <div className={style.number}>01</div>
-                  </div>
-                  <div className={style.flex}>
-                    <div className={style.left}>
-                      <div className={style.top}>
-                        <h3 className={style.title}>Разбор косметички и подбор ухода</h3>
-                        <div className={style.free}>Бесплатно</div>
+                    <div className={style.flex}>
+                      <div className={style.left}>
+                        <div className={style.top}>
+                          <h3 className={style.title}>{urlText}</h3>
+                          <div className={style.free}>{mainText}</div>
+                        </div>
+                        <div className={style.desc}>
+                          Разбираем ваш нынешний уход, проводим разбор косметички, рассказываем,
+                          когда и что использовать, а что вовсе убрать из ухода
+                        </div>
+                        <div className={style.btn}>
+                          <Button text="Узнать подробнее" link={url} />
+                        </div>
                       </div>
-                      <div className={style.desc}>
-                        Разбираем ваш нынешний уход, проводим разбор косметички, рассказываем, когда
-                        и что использовать, а что вовсе убрать из ухода
-                      </div>
-                      <div className={style.btn}>
-                        <Button text="Узнать подробнее" />
-                      </div>
+                      <div className={style.right}></div>
                     </div>
-                    <div className={style.right}></div>
                   </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={style.step + ' ' + style.step_violet}>
-                  <div className={style.hidden}>
-                    <h3 className={style.subtitle}>beauty pro</h3>
-                    <div className={style.bottom}>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
-                      </div>
-                      <div className={style.description}>
-                        Консультация с косметологом-эстетистом
-                      </div>
-                    </div>
-                    <div className={style.number}>02</div>
-                  </div>
-                  <div className={style.flex}>
-                    <div className={style.left}>
-                      <div className={style.top}>
-                        <h3 className={style.title}>Разбор косметички и подбор ухода</h3>
-                        <div className={style.free}>Бесплатно</div>
-                      </div>
-                      <div className={style.desc}>
-                        Разбираем ваш нынешний уход, проводим разбор косметички, рассказываем, когда
-                        и что использовать, а что вовсе убрать из ухода
-                      </div>
-                      <div className={style.btn}>
-                        <Button text="Узнать подробнее" />
-                      </div>
-                    </div>
-                    <div className={style.right}></div>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className={style.step + ' ' + style.step_grey}>
-                  <div className={style.hidden}>
-                    <h3 className={style.subtitle}>beauty pro</h3>
-                    <div className={style.bottom}>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
-                      </div>
-                      <div className={style.description}>
-                        Консультация с эндокринологом и косметологом
-                      </div>
-                    </div>
-                    <div className={style.number}>03</div>
-                  </div>
-                  <div className={style.flex}>
-                    <div className={style.left}>
-                      <div className={style.top}>
-                        <h3 className={style.title}>Разбор косметички и подбор ухода</h3>
-                        <div className={style.free}>Бесплатно</div>
-                      </div>
-                      <div className={style.desc}>
-                        Разбираем ваш нынешний уход, проводим разбор косметички, рассказываем, когда
-                        и что использовать, а что вовсе убрать из ухода
-                      </div>
-                      <div className={style.btn}>
-                        <Button text="Узнать подробнее" />
-                      </div>
-                    </div>
-                    <div className={style.right}></div>
-                  </div>
-                </div>
-              </SwiperSlide>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

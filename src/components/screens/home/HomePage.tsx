@@ -17,11 +17,13 @@ import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
 import { RunningLineArray } from '@/interfaces/runningLine.interface';
 
 import style from './Home.module.sass';
+import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
 
-const HomePage: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = ({
-  slider,
-  runningLine,
-}) => {
+const HomePage: FC<{
+  slider: MainSliderArray;
+  runningLine: RunningLineArray;
+  promoBlocks: PromoBlockArray;
+}> = ({ slider, runningLine, promoBlocks }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isVisibleSticker, setIsVisibleSticker] = useState(false);
   const section = useRef<HTMLDivElement | null>(null);
@@ -84,7 +86,7 @@ const HomePage: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> =
             <Sets isVisible={isVisible} />
             <Hits />
           </div>
-          <Experts />
+          <Experts promoBlocks={promoBlocks} />
           <Journal />
           <Present />
           <About />
