@@ -12,12 +12,16 @@ import Experts from './experts/experts';
 import Journal from './jourmal/journal';
 import Present from './present/presemt';
 import About from './about/about';
-import Footer from '@/components/layout/footer/footer';
-import { ContactsArray } from '@/interfaces/contact.interface';
+
+import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
+import { RunningLineArray } from '@/interfaces/runningLine.interface';
 
 import style from './Home.module.sass';
 
-const HomePage: FC<{ data: ContactsArray }> = ({ data }) => {
+const HomePage: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = ({
+  slider,
+  runningLine,
+}) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isVisibleSticker, setIsVisibleSticker] = useState(false);
   const section = useRef<HTMLDivElement | null>(null);
@@ -65,7 +69,7 @@ const HomePage: FC<{ data: ContactsArray }> = ({ data }) => {
   return (
     <>
       <Layout title="Главная" description="Онлайн магазин косметики">
-        <Header />
+        <Header slider={slider} runningLine={runningLine} />
         <main ref={sticker}>
           <Categories />
           <div className="wrap">

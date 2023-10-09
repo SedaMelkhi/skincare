@@ -4,6 +4,9 @@ import Link from 'next/link';
 import { Pagination, Navigation, EffectFade, Autoplay, Parallax } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { RunningLineArray } from '@/interfaces/runningLine.interface';
+import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
+
 import Marquee from 'react-fast-marquee';
 import Arrows from '@/components/other/arrows/arrows';
 
@@ -12,7 +15,10 @@ import 'swiper/css/effect-fade';
 
 import style from './header.module.sass';
 
-const Header: FC = () => {
+const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = ({
+  slider,
+  runningLine,
+}) => {
   const documentHeight = useCallback((document: Document) => {
     const doc = document.documentElement;
     doc.style.setProperty('--doc-height', `${window.innerHeight - 68}px`);
@@ -50,145 +56,57 @@ const Header: FC = () => {
               prevEl: '.swiper-button-prev',
               enabled: true,
             }}>
-            <SwiperSlide>
-              <div className={style.header}>
-                <div className={style.text__wrap}>
-                  <div className={style.text}>
-                    <h1 className={style.title} data-swiper-parallax="-100%">
-                      летняя коллекция
-                    </h1>
-                    <p className={style.description} data-swiper-parallax="-100%">
-                      Мы привезли много крутых новинок, давай скорее смотреть?
-                    </p>
-                    <div className={style.link__wrap}>
-                      <Link href="/" className={style.link}>
-                        смотреть
-                      </Link>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
+            {slider.map(({ mainImage, mainText, secondImage, secondText, url, urlText }, i) => (
+              <SwiperSlide key={i}>
+                <div className={style.header}>
+                  <div className={style.text__wrap}>
+                    <div className={style.text}>
+                      <h1 className={style.title} data-swiper-parallax="-100%">
+                        {mainText}
+                      </h1>
+                      <p className={style.description} data-swiper-parallax="-100%">
+                        {secondText}
+                      </p>
+                      <div className={style.link__wrap}>
+                        <Link href="/" className={style.link}>
+                          смотреть
+                        </Link>
+                        <div className={style.circle}>
+                          <img src="./arrowCircle.svg" alt="" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className={style.mainImg__wrap}>
-                  <div className={style.mainImg} data-swiper-parallax="-100%"></div>
-                  <div className={style.text + ' ' + style.text_mobile}>
-                    <h1 className={style.title} data-swiper-parallax="-100%">
-                      летняя коллекция
-                    </h1>
-                    <p className={style.description} data-swiper-parallax="-100%">
-                      Мы привезли много крутых новинок, давай скорее смотреть?
-                    </p>
-                    <div className={style.link__wrap}>
-                      <Link href="/" className={style.link}>
-                        смотреть
-                      </Link>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
+                  <div className={style.mainImg__wrap}>
+                    <div
+                      className={style.mainImg}
+                      data-swiper-parallax="-100%"
+                      style={{ backgroundImage: `url(http://fkmva.beget.tech${mainImage})` }}></div>
+                    <div className={style.text + ' ' + style.text_mobile}>
+                      <h1 className={style.title} data-swiper-parallax="-100%">
+                        летняя коллекция
+                      </h1>
+                      <p className={style.description} data-swiper-parallax="-100%">
+                        Мы привезли много крутых новинок, давай скорее смотреть?
+                      </p>
+                      <div className={style.link__wrap}>
+                        <Link href="/" className={style.link}>
+                          смотреть
+                        </Link>
+                        <div className={style.circle}>
+                          <img src="./arrowCircle.svg" alt="" />
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div className={style.smallImg} data-swiper-parallax="-110%"></div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={style.header}>
-                <div className={style.text__wrap}>
-                  <div className={style.text}>
-                    <h1 className={style.title} data-swiper-parallax="-100%">
-                      осенняя коллекция
-                    </h1>
-                    <p className={style.description} data-swiper-parallax="-100%">
-                      Мы привезли много крутых новинок, давай скорее смотреть?
-                    </p>
-                    <div className={style.link__wrap}>
-                      <Link href="/" className={style.link}>
-                        смотреть
-                      </Link>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={style.mainImg__wrap}>
                   <div
-                    className={style.mainImg}
-                    data-swiper-parallax="-100%"
-                    style={{ backgroundImage: 'url(./mainImg2.png)' }}></div>
-                  <div className={style.text + ' ' + style.text_mobile}>
-                    <h1 className={style.title} data-swiper-parallax="-100%">
-                      осенняя коллекция
-                    </h1>
-                    <p className={style.description} data-swiper-parallax="-100%">
-                      Мы привезли много крутых новинок, давай скорее смотреть?
-                    </p>
-                    <div className={style.link__wrap}>
-                      <Link href="/" className={style.link}>
-                        смотреть
-                      </Link>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
+                    className={style.smallImg}
+                    data-swiper-parallax="-110%"
+                    style={{ backgroundImage: `url(http://fkmva.beget.tech${secondImage})` }}></div>
                 </div>
-                <div
-                  className={style.smallImg}
-                  data-swiper-parallax="-110%"
-                  style={{ backgroundImage: 'url(./smallImg2.png)' }}></div>
-              </div>
-            </SwiperSlide>
-            <SwiperSlide>
-              <div className={style.header}>
-                <div className={style.text__wrap}>
-                  <div className={style.text}>
-                    <h1 className={style.title} data-swiper-parallax="-100%">
-                      зимняя коллекция
-                    </h1>
-                    <p className={style.description} data-swiper-parallax="-100%">
-                      Мы привезли много крутых новинок, давай скорее смотреть?
-                    </p>
-                    <div className={style.link__wrap}>
-                      <Link href="/" className={style.link}>
-                        смотреть
-                      </Link>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className={style.mainImg__wrap}>
-                  <div
-                    className={style.mainImg}
-                    data-swiper-parallax="-100%"
-                    style={{ backgroundImage: 'url(./mainImg3.png)' }}></div>
-                  <div className={style.text + ' ' + style.text_mobile}>
-                    <h1 className={style.title} data-swiper-parallax="-100%">
-                      летняя коллекция
-                    </h1>
-                    <p className={style.description} data-swiper-parallax="-100%">
-                      Мы привезли много крутых новинок, давай скорее смотреть?
-                    </p>
-                    <div className={style.link__wrap}>
-                      <Link href="/" className={style.link}>
-                        смотреть
-                      </Link>
-                      <div className={style.circle}>
-                        <img src="./arrowCircle.svg" alt="" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              </SwiperSlide>
+            ))}
 
-                <div
-                  className={style.smallImg}
-                  data-swiper-parallax="-110%"
-                  style={{ backgroundImage: 'url(./smallImg3.jpg)' }}></div>
-              </div>
-            </SwiperSlide>
             <div className={style.swiperParams}>
               <div className={style.swiperPagination__wrap}>
                 <div>
@@ -203,14 +121,12 @@ const Header: FC = () => {
 
       <Marquee className={style.marquee__wrap} speed={100}>
         <div className={style.marquee}>
-          <img src="./star.svg" alt="" />
-          <Link href="">подбор ухода</Link>
-          <img src="./star.svg" alt="" />
-          <Link href="">разбор косметички</Link>
-          <img src="./star.svg" alt="" />
-          <Link href="">подбор ухода</Link>
-          <img src="./star.svg" alt="" />
-          <Link href="">разбор косметички</Link>
+          {runningLine.map(({ mainText, url }, i) => (
+            <>
+              <img src="./star.svg" alt="" />
+              <Link href={url}>{mainText}</Link>
+            </>
+          ))}
         </div>
       </Marquee>
     </div>

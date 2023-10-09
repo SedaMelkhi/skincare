@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
+import { RunningLineArray } from '@/interfaces/runningLine.interface';
+
 const API_URL = 'http://fkmva.beget.tech/local/api/';
 
 axios.defaults.baseURL = API_URL;
@@ -7,6 +9,13 @@ axios.defaults.baseURL = API_URL;
 export const MainSliderService = {
   async getMainSlider(): Promise<MainSliderArray> {
     const { data } = await axios.post('/main.php', { type: 'mainSlider' });
+    return data;
+  },
+};
+
+export const RunningLineService = {
+  async getRunningLine(): Promise<RunningLineArray> {
+    const { data } = await axios.post('/main.php', { type: 'runningLine', code: 3 });
     return data;
   },
 };

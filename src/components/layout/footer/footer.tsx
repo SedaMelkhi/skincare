@@ -1,4 +1,4 @@
-import { FC, useEffect } from 'react';
+import { FC } from 'react';
 
 import { ContactsArray } from '@/interfaces/contact.interface';
 
@@ -15,10 +15,6 @@ interface RootState {
 }
 const Footer: FC = () => {
   const data = useSelector((state: RootState) => state.footer.footerData);
-
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
 
   const formatPhoneNumber = (phone: string) => {
     const match = phone.match(/^7(\d{3})(\d{3})(\d{2})(\d{2})$/);

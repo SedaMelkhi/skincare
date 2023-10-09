@@ -7,18 +7,28 @@ import HomePage from '@/components/screens/home/HomePage';
 import { ContactsArray } from '@/interfaces/contact.interface';
 import { ContactsService } from '@/services/contacts.service';
 import { useEffect } from 'react';
-import { MainSliderService } from '@/services';
+import { MainSliderService, RunningLineService } from '@/services';
 import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
+import { RunningLineArray } from '@/interfaces/runningLine.interface';
 
-const Home: NextPage<{ data: ContactsArray; slider: any }> = ({ data, slider }) => {
+const Home: NextPage<{
+  data: ContactsArray;
+  slider: MainSliderArray;
+  runningLine: RunningLineArray;
+}> = ({ data, slider, runningLine }) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    console.log(slider);
-
     dispatch(setFooterData(data));
   }, []);
 
-  return <HomePage data={data} />;
+  return (
+    <HomePage
+      slider={slider}
+      runningLine={
+        runningLine.length < 6 ? [...runningLine, ...runningLine, ...runningLine] : runningLine
+      }
+    />
+  );
 };
 
 export const getServerSideProps: GetServerSideProps<{
@@ -27,8 +37,9 @@ export const getServerSideProps: GetServerSideProps<{
 }> = async () => {
   const data = await ContactsService.getContacts(); // данные футера
   const slider = await MainSliderService.getMainSlider(); //данные главного слайдера
+  const runningLine = await RunningLineService.getRunningLine(); //данные главного слайдера
   return {
-    props: { data, slider },
+    props: { data, slider, runningLine },
   };
 };
 
