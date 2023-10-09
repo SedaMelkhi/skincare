@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 import { ContactsArray } from '@/interfaces/contact.interface';
 
@@ -6,8 +6,28 @@ import arrow from './../../../../public/arrow.svg';
 import logo from './../../../../public/logo.svg';
 
 import style from './footer.module.sass';
-//const Footer: FC<{ data: ContactsArray }> = ({ data })
+import { useSelector } from 'react-redux';
+import Link from 'next/link';
+interface RootState {
+  footer: {
+    footerData: ContactsArray;
+  };
+}
 const Footer: FC = () => {
+  const data = useSelector((state: RootState) => state.footer.footerData);
+
+  useEffect(() => {
+    console.log(data);
+  }, [data]);
+
+  const formatPhoneNumber = (phone: string) => {
+    const match = phone.match(/^7(\d{3})(\d{3})(\d{2})(\d{2})$/);
+    if (match) {
+      return `+7 (${match[1]}) ${match[2]}-${match[3]}-${match[4]}`;
+    }
+    return null; // или return phone; если вы хотите вернуть исходное значение в случае несоответствия
+  };
+
   return (
     <footer className={style.footer__wrap}>
       <div className="wrap">
@@ -21,9 +41,9 @@ const Footer: FC = () => {
             </div>
             <div className={style.menu}>
               <div className={style.column}>
-                <div className={style.subtitle}>
+                <Link href="/catalog/1" className={style.subtitle}>
                   Каталог <img src={arrow.src} />
-                </div>
+                </Link>
                 <div className={style.item}>Акции</div>
                 <div className={style.item}>Новинки</div>
                 <div className={style.item}>Бренды</div>
@@ -37,24 +57,33 @@ const Footer: FC = () => {
               <div className={style.column}>
                 <div className={style.subtitle}>Контакты</div>
                 <div className={style.item}>
-                  <a href="mailto:skincareagents@mail.com">skincareagents@mail.com</a>
+                  <a href={`mailto:${data.length > 0 ? data[0].value : ''}`}>
+                    {data.length > 0 ? data[0].value : ''}
+                  </a>
                 </div>
                 <div className={style.item}>
-                  <a href="tel:+79280853618">+7 (928) 085-36-18</a>
+                  <a href={`tel:+${data.length > 0 ? data[1].value : ''}`}>
+                    {data.length > 0 ? formatPhoneNumber(data[1].value) : ''}
+                  </a>
                 </div>
-                <div className={style.item}>
+
+                <a
+                  href={`https://t.me/+${data.length > 0 ? data[2].value : ''}`}
+                  className={style.item}>
                   Написать в Telegram <img src={arrow.src} />
-                </div>
+                </a>
               </div>
               <div className={style.column}>
                 <div className={style.subtitle}>Адрес</div>
-                <div className={style.item}>Грозный, Орзамиева 8, 6 этаж</div>
-                <div className={style.item}>10:00-19:00</div>
+                <div className={style.item}>{data.length > 0 ? data[4].value : ''}</div>
+                <div className={style.item}>{data.length > 0 ? data[5].value : ''}</div>
               </div>
             </div>
           </div>
           <div className={style.end}>
-            <img src={logo.src} alt="" className={style.logo} />
+            <Link href={'/'}>
+              <img src={logo.src} alt="" className={style.logo} />
+            </Link>
             <div className={style.end__text}>
               <p className={style.text}>Политика обработки персональных данных</p>
               <p className={style.text}>© 2023 — Skincare Agents</p>

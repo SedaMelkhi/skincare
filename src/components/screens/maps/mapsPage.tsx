@@ -17,7 +17,6 @@ import BasicPayCard from './basicPayCard/basicPayCard';
 
 const MapsPage: FC = () => {
   const [activeEl, setActiveEl] = useState(0);
-  console.log(1);
 
   return (
     <Layout title={'Адреса'}>
