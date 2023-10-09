@@ -15,12 +15,12 @@
   transition: 0.5s
 
   &__content
-    padding: 34px 0 72px 0
+    padding: 34px 0 90px 0
     border-radius: 8px
     background-color:  var(--light-purple)
     width: 375px
     @media ( min-width: 768px )
-      padding: 34px 24px 72px 24px
+      padding: 34px 24px 158px 24px
       width: 515px
 .modal.active
   transform: scale(1)
@@ -29,6 +29,12 @@
   display: flex
   justify-content: end
   margin-right: 28px
+  @media ( min-width: 768px )
+    margin-right: 0
+
+
+
+
 .title
   margin-top: 132px
   margin-bottom: 36px
@@ -38,6 +44,9 @@
   font-weight: 400
   text-transform: uppercase
   text-align: center
+  @media ( min-width: 768px )
+    margin-top: 164px
+    margin-bottom: 34px
 
 .subtitle
   font-size: 16px
@@ -46,14 +55,24 @@
   line-height: 20px
   text-align: center
   margin-bottom: 162.31px
+  @media ( min-width: 768px )
+    margin-bottom: 78px
 
 .line
   background: url("./../../../../../../../public/paidRecording/modalLine.png") center/cover no-repeat
   width: 100%
   height: 102.34px
   padding-top: 18px
+
+  @media ( min-width: 768px )
+    height: 87px
+
+
 .logo
   background: url("./../../../../../../../public/paidRecording/modallogo.png") center/contain no-repeat
   width: 127.92px
   height: 64.81px
   margin: 0  auto
+  @media ( min-width: 768px )
+    width: 117px
+    height: 55px

@@ -10,6 +10,9 @@ const ConsultationTerms: FC = () => {
     const [isModalPayOpen, setIsModalPayOpen] = React.useState(false);
     const [isModalSuccessfulRegistrationOpen, setIsModalSuccessfulRegistrationOpen] = React.useState(false);
 
+    const handlePaymentButtonClick = () => {
+        setIsModalPayOpen(true);
+    };
     return (
         <div>
             <div className="wrap">
@@ -63,7 +66,8 @@ const ConsultationTerms: FC = () => {
                     }}>записаться</button>
 
                     {/* Модальное окно */}
-                    {isModalPaidConsultationOpen && <ModalPaidConsultation active={isModalPaidConsultationOpen} setActive={setIsModalPaidConsultationOpen} setModalPayActive={setIsModalPayOpen}/>}
+
+                    {isModalPaidConsultationOpen && <ModalPaidConsultation active={isModalPaidConsultationOpen} setActive={setIsModalPaidConsultationOpen} setModalPayActive={setIsModalPayOpen} buttonText="Оплатить"/>}
                     {isModalPayOpen && <ModalPay active={isModalPayOpen} setActive={setIsModalPayOpen}  setModalSuccessfulRegistrationActive={setIsModalSuccessfulRegistrationOpen}/>}
                     {isModalSuccessfulRegistrationOpen && <ModalSuccessfulRegistration  active={isModalSuccessfulRegistrationOpen} setActive ={setIsModalSuccessfulRegistrationOpen}/>}
                 </div>

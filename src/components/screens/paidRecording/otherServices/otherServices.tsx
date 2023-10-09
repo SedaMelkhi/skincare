@@ -1,8 +1,20 @@
-import {FC, useState, useEffect} from 'react';
+import React, {FC, useState, useEffect} from 'react';
 import style from './OtherServices.module.sass';
+import ModalPaidConsultation
+    from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPaidConsultation";
+import ModalPay from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay";
+import ModalSuccessfulRegistration
+    from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration";
 
 const OtherServices: FC = () => {
     const [windowWidth, setWindowWidth] = useState(0); // начальное значение может быть любым
+
+    const [isModalPaidConsultationOpen, setIsModalPaidConsultationOpen] = React.useState(false);
+    const [isModalPayOpen, setIsModalPayOpen] = React.useState(false);
+    const [isModalSuccessfulRegistrationOpen, setIsModalSuccessfulRegistrationOpen] = React.useState(false);
+
+    const [isModalFreeConsultationOpen, setIsModalFreeConsultationOpen] = React.useState(false);
+    const [isModalFreeConsultationSuccessfulOpen, setIsModalFreeConsultationSuccessfulOpen] = React.useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -43,8 +55,14 @@ const OtherServices: FC = () => {
                         </div>
                     </div>
                     <div className={style.btn__main}>
-                        <button className={style.btn1}>Записаться</button>
+                        <button className={style.btn1} onClick={(event)=>{
+                            event.preventDefault()
+                            setIsModalFreeConsultationOpen(true)
+                        }}>Записаться</button>
                     </div>
+                    {isModalFreeConsultationOpen && <ModalPaidConsultation active={isModalFreeConsultationOpen} setActive={setIsModalFreeConsultationOpen} setModalPayActive={setIsModalFreeConsultationSuccessfulOpen} buttonText="Записаться"/>}
+                    {isModalFreeConsultationSuccessfulOpen && <ModalSuccessfulRegistration  active={isModalFreeConsultationSuccessfulOpen} setActive ={setIsModalFreeConsultationSuccessfulOpen}/>}
+
 
                 </div>
                 <div className={style.row2}>
@@ -65,8 +83,15 @@ const OtherServices: FC = () => {
                         </div>
                     </div>
                     <div className={style.btn__main}>
-                        <button className={style.btn2}>Записаться</button>
+                        <button className={style.btn2} onClick={(event)=>{
+                            event.preventDefault()
+                            setIsModalPaidConsultationOpen(true)
+                        }}>Записаться</button>
                     </div>
+
+                    {isModalPaidConsultationOpen && <ModalPaidConsultation active={isModalPaidConsultationOpen} setActive={setIsModalPaidConsultationOpen} setModalPayActive={setIsModalPayOpen} buttonText="Оплатить"/>}
+                    {isModalPayOpen && <ModalPay active={isModalPayOpen} setActive={setIsModalPayOpen}  setModalSuccessfulRegistrationActive={setIsModalSuccessfulRegistrationOpen}/>}
+                    {isModalSuccessfulRegistrationOpen && <ModalSuccessfulRegistration  active={isModalSuccessfulRegistrationOpen} setActive ={setIsModalSuccessfulRegistrationOpen}/>}
 
                 </div>
                 <div className={style.letters}>

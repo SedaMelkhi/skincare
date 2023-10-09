@@ -1,17 +1,31 @@
 import React, {FC, useState} from 'react';
 import style from './ModalPaidConsultation.module.sass';
+import ModalPay from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay";
+import ModalSuccessfulRegistration
+    from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration";
 
 
 interface ModalPaidConsultationProps {
     active: boolean;
     setActive: (active: boolean) => void;
     setModalPayActive: (active: boolean) => void;
+    buttonText: string;
 }
 
-const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActive, setModalPayActive}) => {
+const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActive, setModalPayActive, buttonText  }) => {
 
+    const [isModalPayOpen, setIsModalPayOpen] = React.useState(false);
+    const [isModalSuccessfulRegistrationOpen, setIsModalSuccessfulRegistrationOpen] = React.useState(false);
 
+    const handleButtonClick = () => {
+        setActive(false);
+        setModalPayActive(true);
+    };
 
+    const handleRegistrationButtonClick = () => {
+        setActive(false);
+        setIsModalPayOpen(true);
+    };
     return (
         <div className={active ? `${style.active} ${style.modal}` : style.modal} onClick={() => setActive(false)}>
             <div
@@ -47,12 +61,10 @@ const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActiv
                 <div className={style.button__main}>
                     <button className={style.button} onClick={(event) => {
                         event.preventDefault();
-                        setActive(false)
+                        setActive(false);
                         setModalPayActive(true);
-                    }}>Оплатить
-                    </button>
+                    }}>{buttonText}</button>
                 </div>
-
 
             </div>
 
