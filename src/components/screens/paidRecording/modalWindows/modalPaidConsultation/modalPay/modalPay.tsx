@@ -1,6 +1,6 @@
 import React, {FC, useState} from 'react';
 import style from './ModalPay.module.sass';
-// import ModalSuccessfulRegistration from '@/components/screens/paidRecording/modalWindows/modalPaidConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration'
+import ModalSuccessfulRegistration from '@/components/screens/paidRecording/modalWindows/modalPaidConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration'
 
 interface ModalPayProps {
     active: boolean;
@@ -60,8 +60,8 @@ const ModalPay: FC<ModalPayProps> = ({active, setActive}) => {
                         <button className={style.payBtn} onClick={handlePayButtonClick}> оплатить</button>
                     </div>
 
-                    {/*{isSecondModalOpen &&*/}
-                    {/*    <ModalSuccessfulRegistration active={isSecondModalOpen} setActive={setIsSecondModalOpen}/>}*/}
+                    {isSecondModalOpen &&
+                        <ModalSuccessfulRegistration  active={isSecondModalOpen} setActive={setIsSecondModalOpen}/>}
                 </div>
             </div>
         </div>
