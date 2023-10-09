@@ -1,22 +1,16 @@
 import React, {FC, useState} from 'react';
 import style from './ModalPaidConsultation.module.sass';
-import ModalPay from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay";
+
 
 interface ModalPaidConsultationProps {
     active: boolean;
     setActive: (active: boolean) => void;
+    setModalPayActive: (active: boolean) => void;
 }
 
-const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActive}) => {
-    const [isModalOpen, setIsModalOpen] = useState(false);
+const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActive, setModalPayActive}) => {
 
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
 
     return (
         <div className={active ? `${style.active} ${style.modal}` : style.modal} onClick={() => setActive(false)}>
@@ -53,7 +47,8 @@ const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActiv
                 <div className={style.button__main}>
                     <button className={style.button} onClick={(event) => {
                         event.preventDefault();
-                        setIsModalOpen(true);
+                        setActive(false)
+                        setModalPayActive(true);
                     }}>Оплатить
                     </button>
                 </div>
@@ -61,7 +56,7 @@ const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActiv
 
             </div>
 
-            {isModalOpen && <ModalPay active={isModalOpen} setActive={setIsModalOpen}/>}
+
         </div>
 
     );

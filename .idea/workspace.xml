@@ -4,19 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment="добавила изменения в разделе до и после">
+    <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment="добавила изменения в разделе до и после2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsExperts/aboutUsExperts.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsExperts/aboutUsExperts.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsExperts/aboutUsExperts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/aboutUs/aboutUsExperts/aboutUsExperts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/care/care.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/consultationTerms/consultationTerms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/consultationTerms/consultationTerms.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPaidConsultation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPaidConsultation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/ourAgents/ourAgents.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/ourAgents/ourAgents.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/ourAgents/ourAgents.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/ourAgents/ourAgents.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.module.sass" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/paidRecordingConsultation/paidRecordingConsultation.module.sass" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/reviews/Reviews.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/reviews/Reviews.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +26,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/node_modules/@mui/material/ListItem/ListItem.d.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/@mui/material/ListItemButton/ListItemButton.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/node_modules/swiper/swiper.css" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -217,7 +210,21 @@
       <option name="project" value="LOCAL" />
       <updated>1696799914626</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="добавила изменения в разделе до и после2">
+      <created>1696802268436</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696802268436</updated>
+    </task>
+    <task id="LOCAL-00017" summary="добавила изменения в разделе до и после2">
+      <created>1696840118919</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696840118919</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +261,8 @@
     <MESSAGE value="реализовала раздел Faq через Accordion" />
     <MESSAGE value="реализован раздел до и после" />
     <MESSAGE value="добавила изменения в разделе до и после" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавила изменения в разделе до и после" />
+    <MESSAGE value="добавила изменения в разделе до и после2" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавила изменения в разделе до и после2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

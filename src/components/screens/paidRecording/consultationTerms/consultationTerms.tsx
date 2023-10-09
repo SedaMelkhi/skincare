@@ -1,17 +1,14 @@
 import React, { FC, useState } from 'react';
 import style from './ConsultationTerms.module.sass';
 import ModalPaidConsultation from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPaidConsultation";
+import ModalPay from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay";
+import ModalSuccessfulRegistration
+    from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration";
 
 const ConsultationTerms: FC = () => {
-    const [isModalOpen, setIsModalOpen] = React.useState(false);
-
-    const openModal = () => {
-        setIsModalOpen(true);
-    };
-
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
+    const [isModalPaidConsultationOpen, setIsModalPaidConsultationOpen] = React.useState(false);
+    const [isModalPayOpen, setIsModalPayOpen] = React.useState(false);
+    const [isModalSuccessfulRegistrationOpen, setIsModalSuccessfulRegistrationOpen] = React.useState(false);
 
     return (
         <div>
@@ -62,11 +59,13 @@ const ConsultationTerms: FC = () => {
                     <h3 className={style.titleBtn}>Начните ваш путь к здоровой коже сейчас!</h3>
                     <button className={style.btn} onClick={(event) => {
                         event.preventDefault();
-                        setIsModalOpen(true);
+                        setIsModalPaidConsultationOpen(true);
                     }}>записаться</button>
 
                     {/* Модальное окно */}
-                    {isModalOpen && <ModalPaidConsultation active={isModalOpen} setActive={setIsModalOpen}/>}
+                    {isModalPaidConsultationOpen && <ModalPaidConsultation active={isModalPaidConsultationOpen} setActive={setIsModalPaidConsultationOpen} setModalPayActive={setIsModalPayOpen}/>}
+                    {isModalPayOpen && <ModalPay active={isModalPayOpen} setActive={setIsModalPayOpen}  setModalSuccessfulRegistrationActive={setIsModalSuccessfulRegistrationOpen}/>}
+                    {isModalSuccessfulRegistrationOpen && <ModalSuccessfulRegistration  active={isModalSuccessfulRegistrationOpen} setActive ={setIsModalSuccessfulRegistrationOpen}/>}
                 </div>
 
             </div>
