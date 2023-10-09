@@ -16,15 +16,17 @@ const ModalSuccessfulRegistration: FC<ModalSuccessfulRegistrationProps> = ({acti
                 onClick={(e) => {
                     e.stopPropagation();
                 }}>
-                <div className={style.close} onClick={() => setActive(false)}>
-                    <img alt="close" src={'./certificate/close.png'} className={style.closeImg}/>
-                </div>
+                <div className={style.container}>
+                    <div className={style.close} onClick={() => setActive(false)}>
+                        <img alt="close" src={'./certificate/close.png'} className={style.closeImg}/>
+                    </div>
 
 
-                <div className={style.title}>Cпасибо! Bы успешно зарегистрировались на консультацию!</div>
+                    <div className={style.title}>Cпасибо! Bы успешно зарегистрировались на консультацию!</div>
 
 
-                <div className={style.subtitle}>Мы с вами скоро свяжемся чтобы назначить день и время консультации.
+                    <div className={style.subtitle}>Мы с вами скоро свяжемся чтобы назначить день и время консультации.
+                    </div>
                 </div>
 
 

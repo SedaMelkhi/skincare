@@ -1,15 +1,15 @@
 import React, {FC, useState, useEffect} from 'react';
 import style from './OtherServices.module.sass';
 import ModalPaidConsultation
-    from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPaidConsultation";
-import ModalPay from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay";
+    from "@/components/screens/paidRecording/modalWindows/modalConsultation/modalPaidConsultation";
+import ModalPay from "@/components/screens/paidRecording/modalWindows/modalConsultation/modalPay/modalPay";
 import ModalSuccessfulRegistration
-    from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration";
+    from "@/components/screens/paidRecording/modalWindows/modalConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration";
 
 const OtherServices: FC = () => {
     const [windowWidth, setWindowWidth] = useState(0); // начальное значение может быть любым
 
-    const [isModalPaidConsultationOpen, setIsModalPaidConsultationOpen] = React.useState(false);
+    const [isModalConsultationOpen, setIsModalConsultationOpen] = React.useState(false);
     const [isModalPayOpen, setIsModalPayOpen] = React.useState(false);
     const [isModalSuccessfulRegistrationOpen, setIsModalSuccessfulRegistrationOpen] = React.useState(false);
 
@@ -85,11 +85,11 @@ const OtherServices: FC = () => {
                     <div className={style.btn__main}>
                         <button className={style.btn2} onClick={(event)=>{
                             event.preventDefault()
-                            setIsModalPaidConsultationOpen(true)
+                            setIsModalConsultationOpen(true)
                         }}>Записаться</button>
                     </div>
 
-                    {isModalPaidConsultationOpen && <ModalPaidConsultation active={isModalPaidConsultationOpen} setActive={setIsModalPaidConsultationOpen} setModalPayActive={setIsModalPayOpen} buttonText="Оплатить"/>}
+                    {isModalConsultationOpen && <ModalPaidConsultation active={isModalConsultationOpen} setActive={setIsModalConsultationOpen} setModalPayActive={setIsModalPayOpen} buttonText="Оплатить"/>}
                     {isModalPayOpen && <ModalPay active={isModalPayOpen} setActive={setIsModalPayOpen}  setModalSuccessfulRegistrationActive={setIsModalSuccessfulRegistrationOpen}/>}
                     {isModalSuccessfulRegistrationOpen && <ModalSuccessfulRegistration  active={isModalSuccessfulRegistrationOpen} setActive ={setIsModalSuccessfulRegistrationOpen}/>}
 

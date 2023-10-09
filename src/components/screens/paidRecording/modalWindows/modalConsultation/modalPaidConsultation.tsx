@@ -1,18 +1,16 @@
 import React, {FC, useState} from 'react';
-import style from './ModalPaidConsultation.module.sass';
-import ModalPay from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay";
-import ModalSuccessfulRegistration
-    from "@/components/screens/paidRecording/modalWindows/modalPaidConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration";
+import style from './ModalConsultation.module.sass';
 
 
-interface ModalPaidConsultationProps {
+
+interface ModalConsultationProps {
     active: boolean;
     setActive: (active: boolean) => void;
     setModalPayActive: (active: boolean) => void;
     buttonText: string;
 }
 
-const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActive, setModalPayActive, buttonText  }) => {
+const ModalConsultation: FC<ModalConsultationProps> = ({active, setActive, setModalPayActive, buttonText  }) => {
 
     const [isModalPayOpen, setIsModalPayOpen] = React.useState(false);
     const [isModalSuccessfulRegistrationOpen, setIsModalSuccessfulRegistrationOpen] = React.useState(false);
@@ -74,4 +72,4 @@ const ModalPaidConsultation: FC<ModalPaidConsultationProps> = ({active, setActiv
     );
 };
 
-export default ModalPaidConsultation;
+export default ModalConsultation;

@@ -1,7 +1,6 @@
 import React, {FC, useState} from 'react';
 import style from './ModalPay.module.sass';
-import ModalSuccessfulRegistration
-    from '@/components/screens/paidRecording/modalWindows/modalPaidConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration'
+
 
 interface ModalPayProps {
     active: boolean;

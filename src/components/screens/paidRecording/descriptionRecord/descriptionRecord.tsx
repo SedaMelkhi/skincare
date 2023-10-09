@@ -1,8 +1,19 @@
-import {FC} from 'react';
+import React, {FC} from 'react';
 import style from './DescriptionRecord.module.sass';
+import ModalPaidConsultation
+    from "@/components/screens/paidRecording/modalWindows/modalConsultation/modalPaidConsultation";
+import ModalPay from "@/components/screens/paidRecording/modalWindows/modalConsultation/modalPay/modalPay";
+import ModalSuccessfulRegistration
+    from "@/components/screens/paidRecording/modalWindows/modalConsultation/ModalSuccessfulRegistration/ModalSuccessfulRegistration";
 
 
 const DescriptionRecord: FC = () => {
+    const [isModalConsultationOpen, setIsModalConsultationOpen] = React.useState(false);
+    const [isModalPayOpen, setIsModalPayOpen] = React.useState(false);
+    const [isModalSuccessfulRegistrationOpen, setIsModalSuccessfulRegistrationOpen] = React.useState(false);
+    const handlePaymentButtonClick = () => {
+        setIsModalPayOpen(true);
+    };
 
     return (
         <div>
@@ -31,7 +42,13 @@ const DescriptionRecord: FC = () => {
                             </div>
                         </div>
                         <div className={style.btn}>
-                            <button className={style.button}>Записаться</button>
+                            <button className={style.button} onClick={(event) => {
+                                event.preventDefault();
+                                setIsModalConsultationOpen(true);
+                            }}>Записаться</button>
+                            {isModalConsultationOpen && <ModalPaidConsultation active={isModalConsultationOpen} setActive={setIsModalConsultationOpen} setModalPayActive={setIsModalPayOpen} buttonText="Оплатить"/>}
+                            {isModalPayOpen && <ModalPay active={isModalPayOpen} setActive={setIsModalPayOpen}  setModalSuccessfulRegistrationActive={setIsModalSuccessfulRegistrationOpen}/>}
+                            {isModalSuccessfulRegistrationOpen && <ModalSuccessfulRegistration  active={isModalSuccessfulRegistrationOpen} setActive ={setIsModalSuccessfulRegistrationOpen}/>}
                         </div>
                     </div>
                 </div>
