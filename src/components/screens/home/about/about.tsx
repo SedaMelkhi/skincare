@@ -3,6 +3,7 @@ import { FC } from 'react';
 import style from './about.module.sass';
 import Link from 'next/link';
 
+
 const About: FC = () => {
   return (
     <div className="wrap">
@@ -31,7 +32,7 @@ const About: FC = () => {
         </div>
       </div>
       <div className={style.btn}>
-        <Link href="./paidRecording">
+        <Link href="./aboutUs">
           <span>познакомимся поближе?</span>
           <div className={style.circle}>
             <img src="./arrowCircle.svg" alt="" />

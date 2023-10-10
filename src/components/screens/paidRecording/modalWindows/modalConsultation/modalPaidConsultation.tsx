@@ -38,7 +38,7 @@ const ModalConsultation: FC<ModalConsultationProps> = ({active, setActive, setMo
 
                 <div className={style.title}>данные</div>
                 <form>
-                    <input className={style.name} type="text" id="name" name="name" placeholder="Имя*"/>
+                    <input className={style.name} type="text" id="nameInput" name="name" placeholder="Имя*"/>
                     <input className={style.tel} type="text" id="tel" name="tel" placeholder="Номер телефона*"/>
                     <div className={style.subtitle}>С вами связаться через:</div>
                     <div className={style.chackbox__main}>
