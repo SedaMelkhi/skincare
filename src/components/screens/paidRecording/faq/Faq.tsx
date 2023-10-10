@@ -50,36 +50,39 @@ const Faq: FC = () => {
             <div className="wrap">
                 <div className={style.main}>
                     <div className={style.headerTitle}>
-                        <div className={style.title}>
+                        <div className={style.title__main}>
                             <h2 className={style.title}>остались вопросы?</h2>
                             <p className={style.text}>Вот ответы на самые<br/> частые из них.</p>
                         </div>
+                    </div>
+                    <div className={style.container}>
                         <div className={style.img}>
                             <div className={style.circle__one}></div>
                             <div className={style.circle__two}></div>
                             <div className={style.titleImg}></div>
                         </div>
-                    </div>
-                    <div className={style.borders}>{faqData.map((faq, index) => (
-                        <Accordion
-                            key={index}
-                            expanded={isExpanded === index}
-                            onChange={() => handleToggle(index)}
-                            className={style.border}
-                        >
-                            <AccordionSummary
-                                expandIcon={
-                                    <img src={isExpanded === index ? iconCollapse.src : iconExpand.src} alt=""
-                                         className={style.border__input}/>
-                                }
+                        <div className={style.borders}>{faqData.map((faq, index) => (
+                            <Accordion
+                                key={index}
+                                expanded={isExpanded === index}
+                                onChange={() => handleToggle(index)}
+                                className={style.border}
                             >
-                                <h3 className={style.border__title}>{faq.question}</h3>
-                            </AccordionSummary>
-                            <AccordionDetails>
-                                <p className={style.border__text}>{faq.answer}</p>
-                            </AccordionDetails>
-                        </Accordion>
-                    ))}
+                                <AccordionSummary
+                                    expandIcon={
+                                        <img src={isExpanded === index ? iconCollapse.src : iconExpand.src} alt=""
+                                             className={style.border__input}/>
+                                    }
+                                >
+                                    <h3 className={style.border__title}>{faq.question}</h3>
+                                </AccordionSummary>
+                                <AccordionDetails>
+                                    <p className={style.border__text}>{faq.answer}</p>
+                                </AccordionDetails>
+                            </Accordion>
+                        ))}
+
+                        </div>
                     </div>
                 </div>
             </div>
