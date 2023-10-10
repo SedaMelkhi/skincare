@@ -47,7 +47,7 @@ const Reviews: FC = () => {
 
     return (
 <div className={style.bg}>
-            <div className="wrap reviews">
+            <div className="reviews">
                 <div className={style.titleMain}>
                 <h2 className={style.title}>Что о нас говорят</h2></div>
 
@@ -65,9 +65,10 @@ const Reviews: FC = () => {
                         },
                         768: {
                             slidesPerView: 2,
+
                         },
                         1200: {
-                            slidesPerView: 4,
+                            slidesPerView:4.7,
                         }
 
                     }}

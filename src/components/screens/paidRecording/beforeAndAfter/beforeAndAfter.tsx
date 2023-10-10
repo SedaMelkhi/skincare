@@ -14,8 +14,8 @@ const BeforeAndAfter: FC = () => {
 
             <Swiper
                 className={style.swiper}
-                // width={568}
-                spaceBetween={20}
+
+
                 centeredSlides={false}
                 slidesPerGroup={1}
                 pagination={{
@@ -25,12 +25,17 @@ const BeforeAndAfter: FC = () => {
                 breakpoints={{
                     0: {
                         slidesPerView: 1.1,
+                        spaceBetween: 10
+
                     },
                     768: {
                         slidesPerView: 1,
+                        spaceBetween: 40
+
                     },
                     1200: {
-                        slidesPerView: 1,
+                        slidesPerView: 1.1,
+                        spaceBetween: 104
                     }
 
                 }}

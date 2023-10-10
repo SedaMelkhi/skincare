@@ -198,6 +198,12 @@ input
     display: block
 
 .reviews
+  margin: 0 auto
+  @media (min-width: 768px)
+    width: 600px
+  @media (min-width: 1200px)
+    width: 1440px
+
   .swiper-pagination
     position: relative
     margin-top: 29px
@@ -222,7 +228,9 @@ input
     @media (min-width: 1200px)
       transform: translateZ(0)!important
 
+
 .ourAgents
+
   .swiper-pagination-bullet
     width: 8px
     height: 8px
@@ -234,9 +242,25 @@ input
   .swiper-pagination
     position: relative
     margin-top: 22px
+    margin-left: -120px
+    @media (min-width: 768px)
+      margin-left: -150px
+    @media (min-width: 1200px)
+      margin-top: 32px
   .swiper-slide
     flex-shrink: 1
+
+
+
+
+
 .berofeAndAfter
+  margin: 0 auto
+  width: 345px
+  @media (min-width: 768px)
+    width: 660px
+  @media (min-width: 1200px)
+    width: 1119px
   .swiper-pagination-bullet
     width: 8px
     height: 8px
@@ -251,10 +275,9 @@ input
   .swiper-slide
     width: 325px!important
     @media (min-width: 768px)
-      width: 619px!important
+      width: 620px!important
     @media (min-width: 1200px)
-
-      width: 1000px!important
+      width: 1015px!important
 
 
 

@@ -6,6 +6,7 @@
 
   @media (min-width: 1200px)
     align-items: start
+    margin-bottom: 81px
 
 
 .star
@@ -38,6 +39,7 @@
     margin-left: 26px
     font-size: 56px
     line-height: 64.96px
+
 .agent
   &__name
     color: var(--indigo-900)
@@ -46,11 +48,21 @@
     text-transform: uppercase
     font-weight: 400
     margin-bottom: 12px
+    @media (min-width: 1200px)
+      color: var(--grey-900)
+      font-size: 20px
+      line-height: 24px
   @media (min-width: 768px)
     width: 343px
   @media (min-width: 1200px)
-    margin-left: 110px
-    margin-right: 101px
+    width: 400px
+
+
+
+
+
+
+
 
 
   &__text
@@ -59,6 +71,12 @@
     line-height: 18.62px
     font-weight: 400
     margin-bottom: 32px
+    @media (min-width: 1200px)
+      font-size: 16px
+      line-height: 20px
+      margin-bottom: 66px
+
+
 .slide
   margin-top: 20px
   @media (min-width: 768px)
@@ -68,9 +86,9 @@
     left: 350px
   @media (min-width: 1200px)
     left: 500px
+    top: -50px
 
-.swiper
-  width: 850px!important
+
 
 .bg
   background-color: var(--purple-200)
@@ -83,7 +101,9 @@
   width: 207px
   height: 276px
   @media (min-width: 1200px)
-    width: 246px
+    width: 258px
+    height: 362px
+
 
 .img2
   background: url("./../../../../../public/paidRecording/certification.png") center/100% 100% no-repeat
@@ -91,20 +111,29 @@
   height: 276px
   @media (min-width: 1200px)
     width: 466px
+    height: 362px
 .img3
-  background: url("./../../../../../public/paidRecording/certificate1.png") center/contain no-repeat
+  background: url("./../../../../../public/paidRecording/certificate1.png") center/100% 100% no-repeat
   width: 207px
   height: 276px
   @media (min-width: 1200px)
-    width: 246px
+    width: 258px
+    height: 362px
 .container
   @media (min-width: 768px)
     position: relative
+    margin: 0 auto
 
+    width: 814px
+  @media (min-width: 1200px)
+    width: 1115px
 .swiper
 
+  width: 597px
   @media (min-width: 1200px)
     width: 728px
+
+
 .circle
   position: relative
   &__img
@@ -113,12 +142,13 @@
     height: 141px
     position: absolute
     right: -77px
-    top: 400px
+    top: 0
     @media (min-width: 768px)
       top: 0
     @media (min-width: 1200px)
       width: 255px
       height: 255px
+
 
 .arrows
   position: absolute
@@ -126,9 +156,11 @@
   right: 30px
 
   @media (min-width: 768px)
-    position: static
-    display: flex
-    justify-content: end
+    right: 100px
+    top: 305px
+  @media (min-width: 1200px)
+    top: 380px
+    right: 0
 
 
 

@@ -51,27 +51,12 @@ const OurAgents: FC = () => {
 
                             <Swiper
                                 className={style.swiper}
-                                spaceBetween={0}
 
 
                                 pagination={pagination}
                                 modules={[Pagination]}
-                                breakpoints={{
-                                    0: {
-
-                                        slidesPerView: 1.5,
-                                    },
-                                    768: {
-                                        slidesPerView: 1.5,
-                                    },
-                                    1200: {
-                                        slidesPerView: 2,
-                                    },
-
-                                }}
+                                slidesPerView={1.5}
                             >
-
-
                                 <SwiperSlide>
                                     <div className={style.bg}>
                                         <div className={style.img1}></div>
@@ -91,10 +76,10 @@ const OurAgents: FC = () => {
 
                             </Swiper>
                         </div>
-
+                    <div className={style.arrows}><Arrows next="swiper-button-next" prev="swiper-button-prev"/></div>
                     </div>
 
-                <div className={style.arrows}><Arrows next="swiper-button-next" prev="swiper-button-prev"/></div>
+
             </div>
         </div>
     );
