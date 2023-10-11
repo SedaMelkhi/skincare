@@ -4,7 +4,7 @@ import style from './CareSkinSolution.module.sass';
 
 const CareSkinSolution: FC = () => {
     return (
-        <div className={style.aa}>
+        <div >
             <div className={style.circle}>
                 <div className={style.circle__big}></div>
                 <div className={style.circle__small}></div>
