@@ -11,7 +11,7 @@ import style from './aboutUsExperts.module.sass';
 
 const AboutUsExperts: FC = () => {
     return (
-        <div className="experts">
+        <div className="aboutUsExperts">
             <section className={style.experts}>
                 <div className="wrap">
                     <Title text="Как мы можем вам помочь" />
@@ -32,13 +32,11 @@ const AboutUsExperts: FC = () => {
                                     direction: 'vertical',
                                 },
                                 767: {
-                                    direction: 'horizontal',
+                                    direction: 'vertical',
                                     slidesPerView: 1.1,
                                 },
-                                0: {
-                                    direction: 'horizontal',
-                                    slidesPerView: 1.1,
-                                },
+
+
                             }}>
                             <SwiperSlide>
                                 <div className={style.step + ' ' + style.step_pink}>
