@@ -94,11 +94,7 @@ const OtherServices: FC = () => {
                     {isModalSuccessfulRegistrationOpen && <ModalSuccessfulRegistration  active={isModalSuccessfulRegistrationOpen} setActive ={setIsModalSuccessfulRegistrationOpen}/>}
 
                 </div>
-                <div className={style.letters}>
-                    <img src="./paidRecording/d.png" className={style.d}/>
-                    <img src="./paidRecording/t.png" className={style.t}/>
-                    <img src="./paidRecording/m.png" className={style.m}/>
-                </div>
+
             </div>
         </div>
 
