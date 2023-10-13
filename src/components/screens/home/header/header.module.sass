@@ -155,8 +155,8 @@
         left: -32px
        
 .mainImg
-    height:40vh
-    min-height:276px
+    height: 40vh
+    min-height: 276px
     width: 100%
     background: center/cover no-repeat
     @media ( min-width: 768px )
@@ -229,11 +229,6 @@
             width: 23.5%
 
 .marquee
-    &__wrap
-        background: linear-gradient(90deg, #DAD8E4 0%, #D1CFD7 8.77%, #F4F4FC 26.31%, #ECECF1 52.26%, #EBEBF2 73.02%, #D2D2DD 92.16%)
-        position: absolute!important
-        bottom: 0
-        z-index: 2
     height: 72px
     display: flex
     align-items: center
@@ -243,6 +238,12 @@
     line-height: 24px
     text-transform: uppercase
     padding-right: 16px
+    &__wrap
+        background: linear-gradient(90deg, #DAD8E4 0%, #D1CFD7 8.77%, #F4F4FC 26.31%, #ECECF1 52.26%, #EBEBF2 73.02%, #D2D2DD 92.16%)
+        position: absolute!important
+        bottom: 0
+        z-index: 2
+
     @media ( min-width: 768px )
         height: 126px
         font-size: 48px

@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment="" />
+    <list default="true" id="7c5d4b33-0433-4b95-b5a4-2f21b668f33e" name="Changes" comment="добавила изменения в разделе до и после2">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/consultationTerms/consultationTerms.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/consultationTerms/consultationTerms.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPaidConsultation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPaidConsultation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/screens/paidRecording/modalWindows/modalPaidConsultation/modalPay/modalPay.tsx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/dev" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/node_modules/@mui/material/ListItem/ListItem.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/@mui/material/ListItemButton/ListItemButton.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/@types/react/index.d.ts" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/node_modules/swiper/swiper.css" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -15,9 +37,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;paid__recording&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Makka/WebstormProjects/skincare/public/paidRecording&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;yarn&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Makka\\WebstormProjects\\skincare\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactDesignerToolWindowState">
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.rcb.reactComponents" value="false" />
+        <entry key="com.haulmont.rcb.reactInspector" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\public\paidRecording" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\public\aboutUs" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\paidRecording" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\public\paidRecording" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\aboutUs" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\certificate\111" />
+      <recent name="C:\Users\Makka\WebstormProjects\skincare\src\components\screens\certificate\certificateImg" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -27,7 +93,187 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695405507910</updated>
+      <workItem from="1695630446718" duration="2168000" />
+      <workItem from="1695741548706" duration="14000" />
+      <workItem from="1695899719346" duration="5000" />
+      <workItem from="1695927270333" duration="598000" />
+      <workItem from="1695976503969" duration="58000" />
+      <workItem from="1695976570848" duration="372000" />
+      <workItem from="1695976955438" duration="28000" />
+      <workItem from="1695976995645" duration="8187000" />
+      <workItem from="1695997574229" duration="128583000" />
+      <workItem from="1696428377041" duration="17142000" />
+      <workItem from="1696450080856" duration="101327000" />
     </task>
+    <task id="LOCAL-00001" summary=".">
+      <created>1695579867596</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1695579867596</updated>
+    </task>
+    <task id="LOCAL-00002" summary=".">
+      <created>1695584756311</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1695584756311</updated>
+    </task>
+    <task id="LOCAL-00003" summary=".">
+      <created>1696166998254</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1696166998254</updated>
+    </task>
+    <task id="LOCAL-00004" summary="реализовала раздел О нас">
+      <created>1696401456766</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1696401456766</updated>
+    </task>
+    <task id="LOCAL-00005" summary="реализовала раздел О нас">
+      <created>1696459298329</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1696459298329</updated>
+    </task>
+    <task id="LOCAL-00006" summary=".">
+      <created>1696533332232</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1696533332232</updated>
+    </task>
+    <task id="LOCAL-00007" summary=".">
+      <created>1696543465191</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1696543465191</updated>
+    </task>
+    <task id="LOCAL-00008" summary=".">
+      <created>1696572810631</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1696572810631</updated>
+    </task>
+    <task id="LOCAL-00009" summary=".">
+      <created>1696583094621</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1696583094621</updated>
+    </task>
+    <task id="LOCAL-00010" summary="исправила адаптацию">
+      <created>1696605364773</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1696605364773</updated>
+    </task>
+    <task id="LOCAL-00011" summary="поменяла слайдер">
+      <created>1696677372570</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1696677372570</updated>
+    </task>
+    <task id="LOCAL-00012" summary="поменяла слайдер">
+      <created>1696691834682</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696691834682</updated>
+    </task>
+    <task id="LOCAL-00013" summary="реализовала раздел Faq через Accordion">
+      <created>1696709156920</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696709156920</updated>
+    </task>
+    <task id="LOCAL-00014" summary="реализовала раздел Faq через Accordion">
+      <created>1696754842562</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1696754842562</updated>
+    </task>
+    <task id="LOCAL-00015" summary="добавила изменения в разделе до и после">
+      <created>1696799914626</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1696799914626</updated>
+    </task>
+    <task id="LOCAL-00016" summary="добавила изменения в разделе до и после2">
+      <created>1696802268436</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1696802268436</updated>
+    </task>
+    <task id="LOCAL-00017" summary="добавила изменения в разделе до и после2">
+      <created>1696840118919</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1696840118919</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="feature/true_about" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="реализовала раздел О нас" />
+    <MESSAGE value="." />
+    <MESSAGE value="исправила адаптацию" />
+    <MESSAGE value="поменяла слайдер" />
+    <MESSAGE value="реализовала раздел Faq через Accordion" />
+    <MESSAGE value="реализован раздел до и после" />
+    <MESSAGE value="добавила изменения в разделе до и после" />
+    <MESSAGE value="добавила изменения в разделе до и после2" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавила изменения в разделе до и после2" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/node_modules/swiper/types/swiper-options.d.ts</url>
+          <line>26</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

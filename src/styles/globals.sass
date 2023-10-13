@@ -16,10 +16,10 @@
   --primary-600: #A756D9
   --primary-500: #C077ED
   --Light-purple: #FBFAFF
-  --Grey-900:#19171A
+  --Grey-900: #19171A
   --Grey-800: #271F2B
   --Grey-600: #6B5F71
-  --Grey-700:#504655
+  --Grey-700: #504655
   --Grey-500: #8A7E8F
   --Grey-400: #C3BDC7
   --Grey-300: #DBD5DE
@@ -34,9 +34,18 @@
   --Primary-500: #C077ED
   --Primary-300: #E2BBFB
   --Primary-200: #F2DDFF
-  --Primary-100: #F7EBFF  
+  --Primary-100: #F7EBFF
+  --Primary-25: #FDFAFF
   --ff-4253: #FF4253
   --success-600: #039855
+  --indigo-900: #6038FF
+  --purple-100: #EBE9FE
+  --purple-50: #F4F3FF
+  --purple-400: #9B8AFB
+  --purple: #5D5DFF
+  --purple-200: #D9D6FE
+
+
 
 @font-face 
   font-family: "Evolventa"
@@ -187,6 +196,101 @@ input
 
   .react-datepicker-wrapper
     display: block
+
+.reviews
+  margin: 0 auto
+  @media (min-width: 768px)
+    width: 600px
+  @media (min-width: 1200px)
+    width: 1440px
+
+  .swiper-pagination
+    position: relative
+    margin-top: 29px
+    @media (min-width: 768px)
+      margin-top: 25px
+    @media (min-width: 1200px)
+      margin-top: 45px
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    background-color: var(--Grey-300)
+    opacity: 1
+    &-active
+      background-color: var(--grey-25)
+  .swiper-slide
+    transform: translateY(30px)!important
+  .swiper-slide-active
+     transform: translateZ(0)!important
+     @media (min-width: 1200px)
+        transform: translateY(40px)!important
+  .swiper-slide-active,.swiper-slide-prev,.swiper-slide-next
+    @media (min-width: 1200px)
+      transform: translateZ(0)!important
+
+
+.ourAgents
+
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    border: 1px solid var(--grey-700)
+    background-color: transparent
+    opacity: 1
+    &-active
+      background-color: var(--grey-800)
+  .swiper-pagination
+    position: relative
+    margin-top: 22px
+
+    margin-left: -170px
+    @media (min-width: 400px)
+
+
+      margin-left: -120px
+    @media (min-width: 768px)
+      margin-left: -150px
+    @media (min-width: 1200px)
+      margin-top: 32px
+  .swiper-slide
+    flex-shrink: 1
+
+
+
+
+
+.berofeAndAfter
+  margin: 0 auto
+  width: 345px
+  @media (min-width: 768px)
+    width: 660px
+  @media (min-width: 1200px)
+    width: 1203px
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    border: 1px solid var(--grey-700)
+    background-color: transparent
+    opacity: 1
+    &-active
+      background-color: var(--grey-800)
+  .swiper-pagination
+    position: relative
+    margin-top: 32px
+  .swiper-slide
+    width: 325px!important
+    @media (min-width: 768px)
+      width: 620px!important
+    @media (min-width: 1200px)
+      width: 1015px!important
+
+
+//.aboutUsExperts
+//  .swiper-wrapper
+//    display: flex
+//    flex-direction: column
+
+
 
 
 

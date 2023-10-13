@@ -3,6 +3,7 @@ import { FC } from 'react';
 import style from './about.module.sass';
 import Link from 'next/link';
 
+
 const About: FC = () => {
   return (
     <div className="wrap">

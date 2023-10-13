@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import Layout from '@/components/layout/Layout';
-import Footer from '@/components/layout/footer/footer';
 import { ContactsArray } from '@/interfaces/contact.interface';
 import style from './CertificatePage.module.sass';
 import CertificateForm from '@/components/screens/certificate/certificateForm/certificateForm';
