@@ -11,16 +11,16 @@ const BeforeAndAfter: FC = () => {
         <div className="wrap berofeAndAfter">
 
             <h2 className={style.title}>ваша кожа</h2>
-
             <Swiper
                 className={style.swiper}
 
 
-                centeredSlides={false}
+                centeredSlides={true}
                 slidesPerGroup={1}
                 pagination={{
                     clickable: true,
                 }}
+
                 modules={[Pagination]}
                 breakpoints={{
                     0: {
@@ -34,12 +34,13 @@ const BeforeAndAfter: FC = () => {
 
                     },
                     1200: {
-                        slidesPerView: 1.1,
+                        slidesPerView: 1.05,
                         spaceBetween: 104
                     }
 
                 }}
             >
+
 
                 <SwiperSlide className={style.slide}>
                     <div className={style.container}>
@@ -88,6 +89,8 @@ const BeforeAndAfter: FC = () => {
                 </SwiperSlide>
 
             </Swiper>
+
+
         </div>
 
 
