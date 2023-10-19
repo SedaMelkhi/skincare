@@ -1,11 +1,15 @@
 import Link from 'next/link';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import arrow from './../../../../../public/arr.svg';
 
 import style from './dropDownMenu.module.sass';
+import axios from 'axios';
 
-const DropDownMenu: FC = () => {
+const DropDownMenu: FC<any> = (catalog) => {
+  //const [catalog, setCatalog]: any = useState([]);
+  console.log(catalog);
+
   interface menu {
     id: number;
     name: string;
@@ -209,7 +213,7 @@ const DropDownMenu: FC = () => {
   ];
   return (
     <div className={style.catalog__wrap}>
-      <div className={style.wrap}>
+      {/* <div className={style.wrap}>
         <div className={style.catalog}>
           <div className={style.column}>
             <Link href="/bramds" className={style.item}>
@@ -249,7 +253,7 @@ const DropDownMenu: FC = () => {
             ))}
           </div>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

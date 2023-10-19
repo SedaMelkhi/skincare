@@ -2,6 +2,7 @@ import axios from 'axios';
 import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
 import { RunningLineArray } from '@/interfaces/runningLine.interface';
 import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
+import { NewProducts } from '@/interfaces/newProducts.interface';
 
 const API_URL = 'http://fkmva.beget.tech/local/api/';
 
@@ -24,6 +25,34 @@ export const RunningLineService = {
 export const PromoBlockService = {
   async getPromoBlock(): Promise<PromoBlockArray> {
     const { data } = await axios.post('/main.php', { type: 'mainPromo' });
+    return data;
+  },
+};
+
+export const NewProductsService = {
+  async getProductsService(): Promise<NewProducts> {
+    const { data } = await axios.post('/main.php', { type: 'getNewItems', count: 4 });
+    return data;
+  },
+};
+
+export const JournalService = {
+  async getJournalService(): Promise<any> {
+    const { data } = await axios.post('/main.php', { type: 'getJournal' });
+    return data;
+  },
+};
+
+export const HitsService = {
+  async getHitsService(): Promise<any> {
+    const { data } = await axios.post('/main.php', { type: 'getHits', count: 3 });
+    return data;
+  },
+};
+
+export const CatalogService = {
+  async getCatalogService(): Promise<any> {
+    const { data } = await axios.post('/catalog.php', { type: 'getCategoryList' });
     return data;
   },
 };

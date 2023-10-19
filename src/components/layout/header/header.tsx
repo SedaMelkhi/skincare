@@ -18,7 +18,7 @@ interface RootState {
   };
 }
 
-const Header: FC = () => {
+const Header: FC<any> = ({ catalog }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const isBasketOpen = useSelector((state: RootState) => state.basket.isBasketOpen);
   const dispatch = useDispatch();
@@ -45,7 +45,7 @@ const Header: FC = () => {
             </div>
           </div>
         </header>
-        <div className={style.menu}>{menuOpen && <DropDownMenu />}</div>
+        <div className={style.menu}>{menuOpen && <DropDownMenu catalog={catalog} />}</div>
       </div>
     </div>
   );

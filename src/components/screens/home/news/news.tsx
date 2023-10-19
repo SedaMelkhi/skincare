@@ -4,12 +4,14 @@ import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
-import 'swiper/css';
 import Arrows from '@/components/other/arrows/arrows';
 
+import { NewProducts } from '@/interfaces/newProducts.interface';
+
+import 'swiper/css';
 import style from './News.module.sass';
 
-const News: FC = () => {
+const News: FC<NewProducts | any> = ({ newProducts }) => {
   return (
     <section>
       <div className={style.news}>
@@ -46,54 +48,18 @@ const News: FC = () => {
                 spaceBetween: 16,
               },
             }}>
-            <SwiperSlide>
-              <Link href="/product/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_one}></div>
-                <h3 className={style.subtitle}>SKIN&LAB</h3>
-                <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
-                <div className={style.price}>2 234 ₽</div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/product/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_two}></div>
-                <h3 className={style.subtitle}>SKIN&LAB</h3>
-                <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
-                <div className={style.price}>2 234 ₽</div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/product/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_three}></div>
-                <h3 className={style.subtitle}>SKIN&LAB</h3>
-                <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
-                <div className={style.price}>2 234 ₽</div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/product/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_two}></div>
-                <h3 className={style.subtitle}>SKIN&LAB</h3>
-                <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
-                <div className={style.price}>2 234 ₽</div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/product/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_three}></div>
-                <h3 className={style.subtitle}>SKIN&LAB</h3>
-                <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
-                <div className={style.price}>2 234 ₽</div>
-              </Link>
-            </SwiperSlide>
-            <SwiperSlide>
-              <Link href="/product/1" className={style.card}>
-                <div className={style.img + ' img ' + style.img_one}></div>
-                <h3 className={style.subtitle}>SKIN&LAB</h3>
-                <p className={style.description}>Porebarrier Clear Pad очищающие пэды</p>
-                <div className={style.price}>2 234 ₽</div>
-              </Link>
-            </SwiperSlide>
+            {Object.values(newProducts).map(
+              ({ id, name, pin, sectionCode, sectionName, smallPhoto }: any) => (
+                <SwiperSlide key={id}>
+                  <Link href="/product/1" className={style.card} key={id}>
+                    <div className={style.img + ' img ' + style.img_one}></div>
+                    <h3 className={style.subtitle}>SKIN&LAB</h3>
+                    <p className={style.description}>{name}</p>
+                    <div className={style.price}>2 234 ₽</div>
+                  </Link>
+                </SwiperSlide>
+              ),
+            )}
           </Swiper>
         </div>
       </div>

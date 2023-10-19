@@ -7,7 +7,7 @@ import Accordion from './accordion/accordion';
 import style from './journal.module.sass';
 import Link from 'next/link';
 
-const Journal: FC = () => {
+const Journal: FC<any> = ({ journal }) => {
   return (
     <section className={style.journal}>
       <div className={style.title}>

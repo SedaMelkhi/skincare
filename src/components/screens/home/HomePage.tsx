@@ -15,15 +15,20 @@ import About from './about/about';
 
 import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
 import { RunningLineArray } from '@/interfaces/runningLine.interface';
+import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
+import { NewProducts } from '@/interfaces/newProducts.interface';
 
 import style from './Home.module.sass';
-import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
 
 const HomePage: FC<{
   slider: MainSliderArray;
   runningLine: RunningLineArray;
   promoBlocks: PromoBlockArray;
-}> = ({ slider, runningLine, promoBlocks }) => {
+  newProducts: NewProducts;
+  journal: any;
+  catalog: any;
+  hits: any;
+}> = ({ slider, runningLine, promoBlocks, newProducts, journal, hits, catalog }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isVisibleSticker, setIsVisibleSticker] = useState(false);
   const section = useRef<HTMLDivElement | null>(null);
@@ -70,7 +75,7 @@ const HomePage: FC<{
   }, []);
   return (
     <>
-      <Layout title="Главная" description="Онлайн магазин косметики">
+      <Layout title="Главная" description="Онлайн магазин косметики" catalog={catalog}>
         <Header slider={slider} runningLine={runningLine} />
         <main ref={sticker}>
           <Categories />
@@ -81,13 +86,13 @@ const HomePage: FC<{
               </Link>
             )}
           </div>
-          <News />
+          <News newProducts={newProducts} />
           <div ref={section} className={style.pinkMarqueeWrap}>
             <Sets isVisible={isVisible} />
-            <Hits />
+            <Hits hits={hits} />
           </div>
           <Experts promoBlocks={promoBlocks} />
-          <Journal />
+          <Journal journal={journal} />
           <Present />
           <About />
         </main>

@@ -9,9 +9,18 @@ import style from './../hits.module.sass';
 
 type HitsSwiperProps = {
   slidesPerView: number;
+  hits: Array<{
+    id: string;
+    name: string;
+    pin: string[];
+    scu: any;
+    sectionCode: string;
+    sectionName: string;
+    smallPhoto: string;
+  }>;
 };
 
-const HitsSwiper: FC<HitsSwiperProps> = ({ slidesPerView }) => {
+const HitsSwiper: FC<HitsSwiperProps> = ({ slidesPerView, hits }) => {
   return (
     <Swiper
       slidesPerView={slidesPerView}
@@ -44,9 +53,18 @@ const HitsSwiper: FC<HitsSwiperProps> = ({ slidesPerView }) => {
           spaceBetween: 16,
         },
       }}>
-      {[...new Array(6)].map((item, i) => (
-        <SwiperSlide key={i}>
-          <CardProduct available={true} />
+      {Object.values(hits).map(({ id, name, pin, scu, sectionCode, sectionName, smallPhoto }) => (
+        <SwiperSlide key={id}>
+          <CardProduct
+            available={true}
+            id={id}
+            name={name}
+            pin={pin}
+            scu={scu}
+            sectionCode={sectionCode}
+            sectionName={sectionName}
+            smallPhoto={smallPhoto}
+          />
         </SwiperSlide>
       ))}
     </Swiper>

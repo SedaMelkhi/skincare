@@ -5,13 +5,15 @@ import HitsSwiper from './hitsSwiper/hitsSwiper';
 
 import style from './hits.module.sass';
 
-const Hits: FC = () => {
+const Hits: FC<any> = ({ hits }) => {
+  console.log(hits);
+
   return (
     <section className={style.hits__wrap}>
       <div className={style.hits}>
         <h2 className={style.title}>хиты</h2>
         <div className={style.products}>
-          <HitsSwiper slidesPerView={3} />
+          <HitsSwiper slidesPerView={3} hits={hits} />
         </div>
       </div>
       <div className={style.arrows}>
