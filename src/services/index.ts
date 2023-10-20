@@ -3,6 +3,7 @@ import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
 import { RunningLineArray } from '@/interfaces/runningLine.interface';
 import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
 import { NewProducts } from '@/interfaces/newProducts.interface';
+import { CatalogArray } from '@/interfaces/catalog.interface';
 
 const API_URL = 'http://fkmva.beget.tech/local/api/';
 
@@ -51,7 +52,7 @@ export const HitsService = {
 };
 
 export const CatalogService = {
-  async getCatalogService(): Promise<any> {
+  async getCatalogService(): Promise<CatalogArray> {
     const { data } = await axios.post('/catalog.php', { type: 'getCategoryList' });
     return data;
   },

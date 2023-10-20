@@ -22,6 +22,7 @@ import { MainSliderArray } from '@/interfaces/mainSlider.inerface';
 import { RunningLineArray } from '@/interfaces/runningLine.interface';
 import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
 import { NewProducts } from '@/interfaces/newProducts.interface';
+import { CatalogArray } from '@/interfaces/catalog.interface';
 
 const Home: NextPage<{
   data: ContactsArray;
@@ -31,7 +32,7 @@ const Home: NextPage<{
   newProducts: NewProducts;
   journal: any;
   hits: any;
-  catalog: any;
+  catalog: CatalogArray;
 }> = ({ data, slider, runningLine, promoBlocks, newProducts, journal, hits, catalog }) => {
   const dispatch = useDispatch();
 

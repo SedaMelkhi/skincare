@@ -6,8 +6,6 @@ import HitsSwiper from './hitsSwiper/hitsSwiper';
 import style from './hits.module.sass';
 
 const Hits: FC<any> = ({ hits }) => {
-  console.log(hits);
-
   return (
     <section className={style.hits__wrap}>
       <div className={style.hits}>

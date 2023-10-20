@@ -31,7 +31,8 @@
 .categories
     position: absolute
     width: 320px
-    left: 236px
+    left: 240px
+    height: 100%
     top: 0
     visibility: hidden
     transition: .3s linear
@@ -43,34 +44,54 @@
     align-items: center
     justify-content: space-between
     padding: 4px 0
-    width: 180px
+    width: 240px
     margin-bottom: 8px
+    &:hover
+        color: var(--Grey-900)
+        font-weight: 600
     &__wrap
-        width: 180px
+        width: 240px
         &:hover
             width: 100%
+            color: var(--Grey-900)
+            font-weight: 600
             .categories
+                color: var(--grey-500)
+                font-weight: 400
                 visibility: visible
                 transform: translateX(0px)
                 opacity: 1
+                .subitem
+                    &:hover
+                        color: var(--Grey-900)
+                        font-weight: 600
+                        .subcategories
+                            color: var(--grey-500)
+                            font-weight: 400
+
 
 .subcategories
     position: absolute
     width: 206px
-    left: 296px
+    left: 280px
     top: 0
     visibility: hidden
     transition: .3s linear
     transform: translateX(-50px)
     opacity: 0
     z-index: 2
+    &__item
+        width: 240px
+        padding: 0 0 0 40px
 
 .subitem
-    padding: 9px 0
+    display: flex
+    align-items: center
+    width: 240px
+    padding: 9px 0 9px 30px
     width: 100%
     &:hover
         .subcategories
             visibility: visible
             transform: translateX(0px)
             opacity: 1
-
