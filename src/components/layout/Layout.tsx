@@ -17,7 +17,7 @@ interface RootNotifications {
     isNotifications: boolean;
   };
 }
-const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description, catalog }) => {
+const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) => {
   const isBasketOpen = useSelector((state: RootState) => state.basket.isBasketOpen);
   const isNotifications = useSelector((state: RootNotifications) => state.basket.isNotifications);
   const stopScrollStyle = { height: '100vh', overflow: 'hidden' };
@@ -27,7 +27,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description, ca
         title={title.length > 15 ? title.substring(0, 15) + '...' : title}
         description={description}
       />
-      <Header catalog={catalog} />
+      <Header />
       <Basket />
       <Notifications />
       {children}

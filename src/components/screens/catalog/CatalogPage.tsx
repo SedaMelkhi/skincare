@@ -10,9 +10,9 @@ import Products from '@/components/other/products/products';
 import filtersSvg from './../../../../public/catalog/filters.svg';
 
 import style from './catalog.module.sass';
+import { IProductArr } from '@/interfaces/products.interface';
 
-const CatalogPage: FC = () => {
-  const products = new Array(123);
+const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
   return (
     <Layout title="Каталог">
       <div className={`wrap ${style.catalog}`}>
@@ -32,7 +32,7 @@ const CatalogPage: FC = () => {
             </div>
             <div className={style.top}>
               <div className={`${style.flex}`}>
-                <h2 className={style.title}>Лицо</h2>
+                <h2 className={style.title}>{products && products[0].sectionName}</h2>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@ const CatalogPage: FC = () => {
         </div>
         <div className={style.wrap}>
           <Filters />
-          <Products />
+          <Products products={products} />
         </div>
       </div>
     </Layout>

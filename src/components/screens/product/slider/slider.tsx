@@ -16,7 +16,7 @@ import 'swiper/css/pagination';
 
 import style from './slider.module.sass';
 
-const Slider: FC = () => {
+const Slider: FC<{ detailPhoto?: string }> = ({ detailPhoto }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
 
   return (
@@ -33,7 +33,9 @@ const Slider: FC = () => {
           },
         }}>
         <SwiperSlide>
-          <div className={style.image} style={{ backgroundImage: `url(${image1.src})` }}></div>
+          <div
+            className={style.image}
+            style={{ backgroundImage: `url(http://fkmva.beget.tech/${detailPhoto})` }}></div>
         </SwiperSlide>
         <SwiperSlide>
           <div className={style.image} style={{ backgroundImage: `url(${image2.src})` }}></div>
@@ -50,7 +52,9 @@ const Slider: FC = () => {
         modules={[FreeMode, Thumbs]}
         className={style.thumbs}>
         <SwiperSlide>
-          <div className={style.image} style={{ backgroundImage: `url(${image1.src})` }}></div>
+          <div
+            className={style.image}
+            style={{ backgroundImage: `url(http://fkmva.beget.tech/${detailPhoto})` }}></div>
         </SwiperSlide>
         <SwiperSlide>
           <div className={style.image} style={{ backgroundImage: `url(${image2.src})` }}></div>

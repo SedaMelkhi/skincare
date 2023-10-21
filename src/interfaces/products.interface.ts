@@ -1,9 +1,20 @@
-export interface Product {
+interface IScu {
   id: number;
   name: string;
-  pin: string[];
-  scu: any;
+  value: string;
+  price: string | null;
+}
+
+export interface Product {
+  id: string;
+  name: string;
+  smallPhoto: string | null;
   sectionCode: string;
   sectionName: string;
-  smallPhoto: null;
+  pin: string[];
+  scu?: {
+    [key: string]: IScu;
+  };
 }
+
+export type IProductArr = Product[];

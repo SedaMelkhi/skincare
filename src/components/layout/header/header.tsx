@@ -45,7 +45,7 @@ const Header: FC<any> = ({ catalog }) => {
             </div>
           </div>
         </header>
-        <div className={style.menu}>{menuOpen && <DropDownMenu catalog={catalog} />}</div>
+        <div className={style.menu}>{menuOpen && <DropDownMenu setMenuOpen={setMenuOpen} />}</div>
       </div>
     </div>
   );

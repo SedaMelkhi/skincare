@@ -35,7 +35,7 @@ const Categories: FC = () => {
               },
             }}>
             <SwiperSlide>
-              <Link href="/catalog/1" className={style.card}>
+              <Link href="/catalog/19" className={style.card}>
                 <div className={style.img + ' ' + style.img_one}>
                   <div className={'img ' + style.bg_one}></div>
                 </div>
@@ -43,7 +43,7 @@ const Categories: FC = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Link href="/catalog/1" className={style.card}>
+              <Link href="/catalog/21" className={style.card}>
                 <div className={style.img + ' ' + style.img_two}>
                   <div className={'img ' + style.bg_two}></div>
                 </div>
@@ -52,7 +52,7 @@ const Categories: FC = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide>
-              <Link href="/catalog/1" className={style.card}>
+              <Link href="/catalog/20" className={style.card}>
                 <div className={style.img + ' ' + style.img_three}>
                   <div className={'img ' + style.bg_three}></div>
                 </div>

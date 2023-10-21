@@ -10,21 +10,27 @@ import HitsSwiper from '@/components/screens/home/hits/hitsSwiper/hitsSwiper';
 import askSvg from './../../../../public/ask.svg';
 
 import style from './product.module.sass';
+import { useSelector } from 'react-redux';
+import { Product } from '@/interfaces/products.interface';
 
-const ProductPage: FC = () => {
+const ProductPage: FC<{ data: Product }> = ({ data }) => {
+  // const hits = useSelector((state: any) => state.hits.hits);
+  // console.log(hits);
+  const product = Object.values(data)[0];
+  console.log(product.name);
   return (
-    <Layout title="Освежающий шампунь для глубокого увлажнения DAVINES Solu">
+    <Layout title={product.name}>
       <div className={`wrap ${style.wrap}`}>
         <Breadcrumbs
           arr={[
-            { text: 'Каталог', link: '/catalog' },
-            { text: 'Волосы', link: '/catalog/1' },
-            { text: 'Шампунь', link: '/catalog/1' },
+            { text: 'Каталог', link: '/catalog/' + product.sectionCode },
+            { text: 'Волосы', link: '/catalog/' + product.sectionCode },
+            { text: product.name, link: '/product/' + product.id },
           ]}
         />
         <section className={style.product}>
-          <Slider />
-          <Text />
+          <Slider detailPhoto={product.detailPhoto} />
+          <Text data={product} />
         </section>
         <div className={style.quenstion__wrap}>
           <div className={style.quenstion}>
@@ -41,7 +47,7 @@ const ProductPage: FC = () => {
       </div>
       <div className={style.recommendation}>
         <div className={style.recommendation__title}>Bам может понравиться </div>
-        <HitsSwiper slidesPerView={4} />
+        {/* <HitsSwiper slidesPerView={4} /> */}
       </div>
     </Layout>
   );

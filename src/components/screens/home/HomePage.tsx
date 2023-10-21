@@ -75,7 +75,7 @@ const HomePage: FC<{
   }, []);
   return (
     <>
-      <Layout title="Главная" description="Онлайн магазин косметики" catalog={catalog}>
+      <Layout title="Главная" description="Онлайн магазин косметики">
         <Header slider={slider} runningLine={runningLine} />
         <main ref={sticker}>
           <Categories />

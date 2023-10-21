@@ -1,8 +1,8 @@
 .wrap
     display: flex
-    justify-content: flex-end
-    width: var(--max-width)
+    max-width: var(--max-width)
     margin: 0 auto
+    
 
 .catalog
     display: flex
@@ -12,16 +12,20 @@
     color: var(--grey-500)
     line-height: 112%
     position: relative
+    flex-shrink: 0
     &__wrap
         position: absolute
         background: var(--light-purple)
         width: 100%
-        padding: 50px 0 100px
+        padding: 50px 40px 100px
         z-index: 2
         left: 0
         top: 68px
         padding-top: 23px
        
+.empty
+    width: 345px
+    flex-shrink: 1
 
 .column
     display: flex
@@ -48,13 +52,13 @@
     margin-bottom: 8px
     &:hover
         color: var(--Grey-900)
-        font-weight: 600
+        
     &__wrap
         width: 240px
         &:hover
             width: 100%
             color: var(--Grey-900)
-            font-weight: 600
+           
             .categories
                 color: var(--grey-500)
                 font-weight: 400
@@ -64,7 +68,7 @@
                 .subitem
                     &:hover
                         color: var(--Grey-900)
-                        font-weight: 600
+                        
                         .subcategories
                             color: var(--grey-500)
                             font-weight: 400

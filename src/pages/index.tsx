@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { NextPage, GetServerSideProps } from 'next';
 import { useDispatch } from 'react-redux';
 import { setFooterData } from '@/redux/footerSlice/footerSlice';
+import { setMenu } from '@/redux/menuSlice/menuSlice';
 
 import HomePage from '@/components/screens/home/HomePage';
 
@@ -23,6 +24,7 @@ import { RunningLineArray } from '@/interfaces/runningLine.interface';
 import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
 import { NewProducts } from '@/interfaces/newProducts.interface';
 import { CatalogArray } from '@/interfaces/catalog.interface';
+import { setHits } from '@/redux/hitsSlice/hitsSlice';
 
 const Home: NextPage<{
   data: ContactsArray;
@@ -37,8 +39,10 @@ const Home: NextPage<{
   const dispatch = useDispatch();
 
   useEffect(() => {
+    dispatch(setMenu(catalog));
     dispatch(setFooterData(data));
-  }, []);
+    dispatch(setHits(hits));
+  }, [catalog, data]);
 
   return (
     <HomePage

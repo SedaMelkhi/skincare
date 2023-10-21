@@ -8,33 +8,20 @@ import infoSvg from './../../../../../public/info.svg';
 import saveSvg from './../../../../../public/save.svg';
 
 import style from './text.module.sass';
+import { Product } from '@/interfaces/products.interface';
 
 type Size = {
   size: string;
   id: number;
 };
 
-const Text: FC = () => {
-  const [activeSize, setActiveSize] = useState(0);
-
-  const sizes: Size[] = [
-    {
-      size: '100мл',
-      id: 0,
-    },
-    {
-      size: '250мл',
-      id: 1,
-    },
-    {
-      size: '350мл',
-      id: 2,
-    },
-  ];
+const Text: FC<{ data: Product }> = ({ data }) => {
+  const [activeSize, setActiveSize] = useState(data.scu ? Object.values(data.scu)[0].id : 0);
+  console.log(data);
 
   return (
     <div className={style.text}>
-      <h2 className={style.title}>Освежающий шампунь для глубокого увлажнения DAVINES Solu</h2>
+      <h2 className={style.title}>{data.name}</h2>
       <div className={style.actions}>
         <div className={style.action}>
           <img src={actionSvg1.src} alt="" className={style.svg} />
@@ -55,14 +42,15 @@ const Text: FC = () => {
       </div>
       <div className={style.subtitle}>Объеm</div>
       <div className={style.sizes}>
-        {sizes.map(({ size, id }) => (
-          <div
-            className={style.size + ' ' + (activeSize === id ? style.active : '')}
-            key={id}
-            onClick={() => setActiveSize(id)}>
-            {size}
-          </div>
-        ))}
+        {data.scu &&
+          Object.values(data.scu).map(({ id, value }) => (
+            <div
+              className={style.size + ' ' + (activeSize === id ? style.active : '')}
+              key={id}
+              onClick={() => setActiveSize(id)}>
+              {value}
+            </div>
+          ))}
       </div>
       <div className={style.oldPrice}>
         <div>2 234 ₽</div>
@@ -70,7 +58,13 @@ const Text: FC = () => {
           <img src={infoSvg.src} alt="" />
         </div>
       </div>
-      <div className={style.price}>2 300 ₽</div>
+      <div className={style.price}>
+        {data.scu
+          ? data.scu[activeSize] && data.scu[activeSize].price
+            ? data.scu[activeSize].price + ' ₽'
+            : 'цены нет'
+          : ''}
+      </div>
       <div className={style.btns}>
         <button className={style.btn}>Добавить в сумочку</button>
         <img src={saveSvg.src} alt="" />
