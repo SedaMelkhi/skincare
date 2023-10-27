@@ -37,6 +37,7 @@ const Home: NextPage<{
   catalog: CatalogArray;
 }> = ({ data, slider, runningLine, promoBlocks, newProducts, journal, hits, catalog }) => {
   const dispatch = useDispatch();
+  console.log(journal);
 
   useEffect(() => {
     dispatch(setMenu(catalog));

@@ -7,27 +7,40 @@ import { useSelector } from 'react-redux';
 import Notifications from './notifications/notifications';
 import Footer from './footer/footer';
 
-interface RootState {
+import style from './layout.module.sass';
+
+interface IRootState {
   basket: {
     isBasketOpen: boolean;
   };
 }
-interface RootNotifications {
+interface IRootNotifications {
   basket: {
     isNotifications: boolean;
   };
 }
+interface IMenuOpen {
+  menu: {
+    isMenuOpen: boolean;
+  };
+}
+
 const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) => {
-  const isBasketOpen = useSelector((state: RootState) => state.basket.isBasketOpen);
-  const isNotifications = useSelector((state: RootNotifications) => state.basket.isNotifications);
-  const stopScrollStyle = { height: '100vh', overflow: 'hidden' };
+  const isBasketOpen = useSelector((state: IRootState) => state.basket.isBasketOpen);
+  const isNotifications = useSelector((state: IRootNotifications) => state.basket.isNotifications);
+  const isMenuOpen = useSelector((state: IMenuOpen) => state.menu.isMenuOpen);
+
   return (
-    <div style={isBasketOpen || isNotifications ? stopScrollStyle : {}}>
+    <div
+      className={
+        isBasketOpen || isNotifications || isMenuOpen ? style.stopScrollStyle : style.scroll
+      }>
       <Meta
         title={title.length > 15 ? title.substring(0, 15) + '...' : title}
         description={description}
       />
       <Header />
+      <div className={style.empty}></div>
       <Basket />
       <Notifications />
       {children}

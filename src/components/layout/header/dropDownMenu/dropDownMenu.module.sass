@@ -3,58 +3,88 @@
     max-width: var(--max-width)
     margin: 0 auto
     
+    
 
 .catalog
     display: flex
-    width: 1015px
+    width: 100%
     letter-spacing: 0.64px
     text-transform: uppercase
     color: var(--grey-500)
     line-height: 112%
     position: relative
     flex-shrink: 0
+    @media (min-width: 768px)
+        width: 1015px
     &__wrap
-        position: absolute
+        position: fixed
+        overflow-y: scroll
         background: var(--light-purple)
         width: 100%
-        padding: 50px 40px 100px
-        z-index: 2
+        padding: 64px 16px
+        z-index: 3
         left: 0
         top: 68px
-        padding-top: 23px
-       
+        &::-webkit-scrollbar 
+            display: none 
+        @media (min-width: 768px)
+            padding: 50px 24px 100px
+            min-height: calc(100vh - 68px)
+        @media (min-width: 1200px)
+            padding: 50px 40px 100px
+
+.scroll
+    border-bottom: 1px solid var(--Primary-100)
+    background: var(--Primary-50)
+
+
 .empty
     width: 345px
     flex-shrink: 1
 
-.column
+.pc
     display: flex
     flex-direction: column
     width: 350px
+    display: none
+    @media (min-width: 768px)
+        display: flex
+
+.mobile
+    width: 100%
+    display: block
+    @media (min-width: 768px)
+        display: none
 
 .categories
     position: absolute
     width: 320px
-    left: 240px
+    left: 180px
     height: 100%
     top: 0
     visibility: hidden
     transition: .3s linear
     transform: translateX(-50px)
     opacity: 0
+    @media (min-width: 1200px)
+        left: 240px
 
 .item
     display: flex
     align-items: center
     justify-content: space-between
     padding: 4px 0
-    width: 240px
+    width: 180px
     margin-bottom: 8px
+    font-size: 16px
     &:hover
         color: var(--Grey-900)
-        
+    @media (min-width: 1200px)
+        width: 240px  
     &__wrap
-        width: 240px
+        width: 180px
+        @media (min-width: 1200px)
+            width: 240px  
         &:hover
             width: 100%
             color: var(--Grey-900)
@@ -84,6 +114,7 @@
     transform: translateX(-50px)
     opacity: 0
     z-index: 2
+    
     &__item
         width: 240px
         padding: 0 0 0 40px

@@ -1,17 +1,17 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { useDispatch } from 'react-redux';
-
 import { setIsNotifications } from '@/redux/basketSlice/basketSlice';
+
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
+import Button from '@/components/other/button/button';
 
 import starSvg from '@/../public/violetStar.svg';
 import arrowSvg from '@/../public/arrowDown.svg';
 
 import style from './notification.module.sass';
-import Button from '@/components/other/button/button';
 
 interface NotificationProps {
   title: string;

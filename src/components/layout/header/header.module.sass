@@ -3,7 +3,12 @@
     display: flex
     justify-content: space-between    
     &__wrap
-        position: relative
+        position: fixed
+        width: 100%
+        top: 0
+        z-index: 5
+        background-color: var(--light-purple)
+        
 .logo
     @media ( min-width: 1200px )
         width: 345px
@@ -13,8 +18,7 @@
     @media( min-width:  768px)
         width: 132px
         flex-shrink: 0
-    &_right
-        
+    &_right      
         align-items: center
         justify-content: flex-end
         @media ( min-width: 1200px )
@@ -29,3 +33,9 @@
         width: 671px
         justify-content: space-between
 
+
+
+.scroll
+    border-bottom: 1px solid var(--Primary-100)
+    background: var(--Primary-50)
+        

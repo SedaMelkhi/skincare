@@ -35,6 +35,7 @@
   --Primary-300: #E2BBFB
   --Primary-200: #F2DDFF
   --Primary-100: #F7EBFF
+  --Primary-50: #FBF5FF
   --Primary-25: #FDFAFF
   --ff-4253: #FF4253
   --success-600: #039855
@@ -81,7 +82,9 @@ h1, h2, h3, h4, h5, h6, p, input, li, ul, body, button
   
 html
   font-size: 16px
-  overflow-x: hidden
+  &::-webkit-scrollbar 
+    width: 0px 
+   
   
 body 
   overflow-x: hidden
@@ -90,6 +93,7 @@ body
   font-size: 16px
   line-height: normal
   padding-right: 0!important
+ 
 
 a 
   color: inherit

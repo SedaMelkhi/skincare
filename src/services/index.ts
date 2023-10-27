@@ -44,6 +44,13 @@ export const JournalService = {
   },
 };
 
+// export const JournalService = {
+//   async getJournalService(): Promise<any> {
+//     const { data } = await axios.post('/journal.php', { type: 'getList', numPage: 2, count: 9 });
+//     return data;
+//   },
+// };
+
 export const HitsService = {
   async getHitsService(): Promise<any> {
     const { data } = await axios.post('/main.php', { type: 'getHits', count: 3 });

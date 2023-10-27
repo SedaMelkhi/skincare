@@ -105,7 +105,7 @@ const Products: FC<{ products: IProductArr }> = ({ products }) => {
             </div>
           </Link>
         ) : (
-          <Link href={'/product/' + id} className={style.cart}>
+          <Link href={'/product/' + id} className={style.cart} key={id}>
             <div
               className={style.image}
               style={{ backgroundImage: `url(http://fkmva.beget.tech/${smallPhoto})` }}></div>
