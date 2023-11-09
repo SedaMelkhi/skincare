@@ -13,6 +13,8 @@ import style from './catalog.module.sass';
 import { IProductArr } from '@/interfaces/products.interface';
 
 const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
+  console.log(products);
+
   return (
     <Layout title="Каталог">
       <div className={`wrap ${style.catalog}`}>
@@ -32,7 +34,9 @@ const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
             </div>
             <div className={style.top}>
               <div className={`${style.flex}`}>
-                <h2 className={style.title}>{products && products[0].sectionName}</h2>
+                <h2 className={style.title}>
+                  {products && products.length > 0 && products[0].sectionName}
+                </h2>
               </div>
             </div>
           </div>
@@ -49,7 +53,7 @@ const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
         </div>
         <div className={style.wrap}>
           <Filters />
-          <Products products={products} />
+          {products.length > 0 && <Products products={products} />}
         </div>
       </div>
     </Layout>

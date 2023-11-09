@@ -8,14 +8,14 @@ import img3 from './../../../../public/bonus/hit.svg';
 import style from './cardProduct.module.sass';
 
 interface CardProductProps {
-  available: boolean;
-  id: string;
-  name: string;
-  pin: string[];
-  scu: any;
-  sectionCode: string;
-  sectionName: string;
-  smallPhoto: string;
+  available?: boolean;
+  id?: string;
+  name?: string;
+  pin?: string[];
+  scu?: any;
+  sectionCode?: string;
+  sectionName?: string;
+  smallPhoto?: string;
 }
 
 const CardProduct: FC<CardProductProps> = ({
@@ -28,9 +28,10 @@ const CardProduct: FC<CardProductProps> = ({
   sectionName,
   smallPhoto,
 }) => {
+  console.log(scu);
   return (
     <Link href="/product/1" className={style.card}>
-      <div style={available ? {} : { opacity: '.5' }} className={style.padding}>
+      {/* <div style={available ? {} : { opacity: '.5' }} className={style.padding}>
         <div className={style.bonus}>
           <img src={img1.src} alt="" />
           <img src={img2.src} alt="" />
@@ -39,16 +40,16 @@ const CardProduct: FC<CardProductProps> = ({
         <div className={style.img + ' img ' + style.img_one}></div>
         <h3 className={style.description}>{name}</h3>
         <div className={style.size}>{scu ? Object.values(scu)[0].value : ''}</div>
-      </div>
+      </div> */}
 
-      {available ? (
+      {/* {available ? (
         <div className={style.price}>
           {scu ? Object.values(scu)[0].price : ''} ₽{' '}
           <span className={style.price__old}>2 234 ₽</span>
         </div>
       ) : (
         <div className={style.text}>Нет в наличии</div>
-      )}
+      )} */}
     </Link>
   );
 };

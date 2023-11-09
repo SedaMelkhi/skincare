@@ -1,41 +1,29 @@
 .basket
     &__wrap
+        width: 497px
+        height: 522px
         display: flex
+        border-radius: 16px
+        border: 1px solid var(--Grey-300)
+        background: var(--light-purple)
         justify-content: flex-end
         overflow: hidden
-        width: 100%
-        position: fixed
-        height: 100vh
-        top: 0
-        right: 0
-        z-index: 5
         background: rgba(72, 59, 81, 0.40)
         backdrop-filter: blur(8px)
         font-size: 16px
         line-height: 112.5%
         color: var(--grey-900)
 
-.empty
-    min-height: 100vh
-    position: fixed
-    left: 0
-    top: 0
-    width: 0
-    @media (min-width: 1200px)
-        width: calc(100% - 720px)
 
 .basket
     width: 100%
     display: flex
     flex-direction: column
     justify-content: space-between
-    min-height: 100vh
+    
     background-color: var(--grey-25)
-    padding: 85px 10px 0 0
-    @media (min-width: 768px)
-        padding-top: 112px
-    @media (min-width: 1200px)
-        width: 720px
+    padding: 73px 10px 0 0
+   
        
 
 .header
@@ -44,30 +32,30 @@
     padding: 16px
     top: 0
     right: 0
-    background: var(--grey-25)
-    @media (min-width: 768px)
-        padding: 24px
-    @media (min-width: 1200px)
-        width: 720px
+    background: var(--Grey-100)
+    color: var(--Grey-900)
+    font-size: 24px
+    line-height: 130%
+    letter-spacing: 0.48px
+    text-transform: uppercase
+    div
+        width: 232px
 
 
     
 .padding
-    padding: 16px
+    padding: 0 16px 16px 16px
     overflow-y: scroll
-    height: calc(100% - 196px)
+    height: 248px
+    margin-top: 30px
     &::-webkit-scrollbar 
-        width: 5px 
-        @media (min-width: 768px)
-            width: 8px
+        width: 2px 
     &::-webkit-scrollbar-track 
         background: var(--grey-25) 
     &::-webkit-scrollbar-thumb 
         border-radius: 10px
         margin-right: 5px
-        background: var(--grey-300)         
-    @media (min-width: 768px)
-        padding: 24px
+        background: var(--grey-900)         
     
 
 .slideEnter
@@ -115,21 +103,20 @@
         color: var(--grey-500)
         
 .description
-    margin-top: 133px
+    margin-top: 30px
     letter-spacing: 0.64px
     text-transform: uppercase
     @media (min-width: 768px)
         width: 435px
-        font-size: 24px
+        font-size: 18px
         letter-spacing: .48px
         line-height: 104%
 
 .search
     display: flex
     align-items: center
-    margin-top: 56px
-    @media (min-width: 768px)
-        margin-top: 72px
+    margin-top: 25px
+   
 
 .circle
     margin-left: -14px
@@ -148,27 +135,11 @@
     position: absolute
     width: 100%
     bottom: 0
-    padding: 16px
+    padding: 24px
     background-color: var(--grey-100)
-    @media (min-width: 1200px)
-        width: 720px
+    
 
-.btn
-    display: flex
-    align-items: center
-    justify-content: center
-    cursor: pointer
-    gap: 8px
-    width: 100%
-    padding: 16px 32px
-    background-color: var(--grey-900)
-    border-radius: 70px
-    color: var(--grey-25)
-    font-size: 16px
-    font-weight: 400
-    line-height: 112.5%
-    letter-spacing: 0.64px
-    text-transform: uppercase
+
 
 
 .promocode
@@ -181,23 +152,7 @@
         font-size: 16px
         border-top: none
 
-.table
-    width: 100% 
-    margin-bottom: 16px    
-    gap: 8px
-    display: flex
-    flex-direction: column
-    text-align: right
-    @media (min-width: 768px)
-        flex-direction: row
-        justify-content: space-between
-        margin-bottom: 24px   
-    &__row
-        display: flex
-        justify-content: space-between
-        @media (min-width: 768px)
-            flex-direction: column
-            gap: 12px
+
 
 .discount
     color: var(--primary-600)
@@ -214,3 +169,61 @@
     font-size: 20px
     @media (min-width: 768px)
         font-size: 32px
+
+
+.product
+    display: flex
+    gap: 24px
+    padding: 20px 0
+    border-bottom: 1px solid var(--Grey-300)
+
+.image
+    background: lightgray
+    width: 74px
+    height: 74px
+
+.name
+    color: var(--Grey-700)
+    font-size: 14px
+    margin-bottom: 10px
+
+.price
+    color: var(--Grey-900)
+    font-size: 14px
+
+.bottom
+    display: flex
+    gap: 29px
+    align-items: flex-start
+
+.size
+    color: var(--Grey-500)
+    font-size: 12px
+    line-height: 133.333% 
+
+.line
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 12px
+    margin-bottom: 17px
+    &__text
+        color: var(--Grey-700)
+        font-size: 14px
+        flex-shrink: 0
+
+.sum
+    flex-shrink: 0   
+    color: var(--Grey-600)
+
+.border
+    height: 1px
+    width: 100%
+    background: var(--Grey-300)
+
+.all__price
+    color: var(--Grey-900)
+    font-size: 32px
+    line-height: 120%
+    letter-spacing: 0.64px
+    text-transform: uppercase

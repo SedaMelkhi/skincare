@@ -16,11 +16,11 @@ import { Product } from '@/interfaces/products.interface';
 const ProductPage: FC<{ data: Product }> = ({ data }) => {
   // const hits = useSelector((state: any) => state.hits.hits);
   // console.log(hits);
-  const product = Object.values(data)[0];
-  console.log(product.name);
+  // const product = Object.values(data)[0];
+  // console.log(product.name);
   return (
-    <Layout title={product.name}>
-      <div className={`wrap ${style.wrap}`}>
+    <Layout title={'' /**product.name*/}>
+      {/* <div className={`wrap ${style.wrap}`}>
         <Breadcrumbs
           arr={[
             { text: 'Каталог', link: '/catalog/' + product.sectionCode },
@@ -44,9 +44,9 @@ const ProductPage: FC<{ data: Product }> = ({ data }) => {
           </div>
         </div>
         <TabPanel />
-      </div>
+      </div> */}
       <div className={style.recommendation}>
-        <div className={style.recommendation__title}>Bам может понравиться </div>
+        <div className={style.recommendation__title}>Bам может понравиться</div>
         {/* <HitsSwiper slidesPerView={4} /> */}
       </div>
     </Layout>

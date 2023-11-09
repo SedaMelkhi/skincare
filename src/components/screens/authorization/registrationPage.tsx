@@ -2,9 +2,9 @@ import { FC, useState } from 'react';
 import Link from 'next/link';
 
 import Layout from '@/components/layout/Layout';
+//import { UserApi } from '@/services';
 
 import style from './authorization.module.sass';
-import { UserApi } from '@/services';
 
 const RegistrationPage: FC = () => {
   const [name, setName] = useState('');

@@ -25,7 +25,7 @@ interface IMenuOpen {
   };
 }
 
-const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) => {
+const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description, nav }) => {
   const isBasketOpen = useSelector((state: IRootState) => state.basket.isBasketOpen);
   const isNotifications = useSelector((state: IRootNotifications) => state.basket.isNotifications);
   const isMenuOpen = useSelector((state: IMenuOpen) => state.menu.isMenuOpen);
@@ -39,8 +39,9 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description }) 
         title={title.length > 15 ? title.substring(0, 15) + '...' : title}
         description={description}
       />
-      <Header />
-      <div className={style.empty}></div>
+      {nav !== false && <Header />}
+      {nav !== false && <div className={style.empty}></div>}
+
       <Basket />
       <Notifications />
       {children}

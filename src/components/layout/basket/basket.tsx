@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
+import { useRouter } from 'next/router';
 
 import CircleArrow from '@/components/other/circleArrow/circleArrow';
 import NewProductsSwiper from './newProducts/newProductsSwiper';
@@ -22,8 +23,12 @@ const Basket: FC = () => {
   const arr = new Array(7);
   const isBasketOpen = useSelector((state: RootState) => state.basket.isBasketOpen);
   const dispatch = useDispatch();
+  const router = useRouter();
   const closeBasket = () => {
     dispatch(setIsBasketOpen(false));
+  };
+  const handleBtnClick = () => {
+    router.push('/placing');
   };
   return (
     <CSSTransition
@@ -99,7 +104,7 @@ const Basket: FC = () => {
                 <div className={style.promocode}>
                   Применить промокод, сертификат или баллы можно при оформлении заказа.
                 </div>
-                <button className={style.btn}>
+                <button className={style.btn} onClick={handleBtnClick}>
                   оформить заказ <img src={whiteArrowSvg.src} alt="->" />
                 </button>
               </div>
