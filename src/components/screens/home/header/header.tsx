@@ -124,7 +124,7 @@ const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = (
           {runningLine.map(({ mainText, url }, i) => (
             <span key={i}>
               <img src="./star.svg" alt="" />
-              <Link href={url}>{mainText}</Link>
+              <span>{mainText}</span>
             </span>
           ))}
         </div>

@@ -28,10 +28,20 @@ const CardProduct: FC<CardProductProps> = ({
   sectionName,
   smallPhoto,
 }) => {
+  const sizes: string[] = [];
+  const prices: number[] = [];
+  // const scu = item.scu ? Object.values(item.scu) : null;
+  // if (scu) {
+  //   scu.forEach((item) => {
+  //     !sizes.includes(item[0].value) && sizes.push(item[0].value);
+  //     item[0].price && !prices.includes(+item[0].price) && prices.push(+item[0].price);
+  //   });
+  // }
+  //console.log(prices);
   console.log(scu);
   return (
     <Link href="/product/1" className={style.card}>
-      {/* <div style={available ? {} : { opacity: '.5' }} className={style.padding}>
+      <div style={available ? {} : { opacity: '.5' }} className={style.padding}>
         <div className={style.bonus}>
           <img src={img1.src} alt="" />
           <img src={img2.src} alt="" />
@@ -40,16 +50,16 @@ const CardProduct: FC<CardProductProps> = ({
         <div className={style.img + ' img ' + style.img_one}></div>
         <h3 className={style.description}>{name}</h3>
         <div className={style.size}>{scu ? Object.values(scu)[0].value : ''}</div>
-      </div> */}
+      </div>
 
-      {/* {available ? (
+      {available ? (
         <div className={style.price}>
           {scu ? Object.values(scu)[0].price : ''} ₽{' '}
           <span className={style.price__old}>2 234 ₽</span>
         </div>
       ) : (
         <div className={style.text}>Нет в наличии</div>
-      )} */}
+      )}
     </Link>
   );
 };

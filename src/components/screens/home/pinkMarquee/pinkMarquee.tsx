@@ -1,13 +1,16 @@
 import { FC } from 'react';
-
 import Marquee from 'react-fast-marquee';
+
+import { RunningLineArray } from '@/interfaces/runningLine.interface';
+
 import style from './pinkMarquee.module.sass';
 
 interface PinkMarqueeProps {
   isVisible: boolean;
+  runningLine: RunningLineArray;
 }
 
-const PinkMarquee: FC<PinkMarqueeProps> = ({ isVisible }) => {
+const PinkMarquee: FC<PinkMarqueeProps> = ({ isVisible, runningLine }) => {
   return (
     <>
       <div className={style.marquee__wrap}>
@@ -19,47 +22,21 @@ const PinkMarquee: FC<PinkMarqueeProps> = ({ isVisible }) => {
             (isVisible ? ` ${style.marquee__pc_show}` : '')
           }
           speed={1}>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
+          {runningLine.map(({ mainText, url }, i) => (
+            <span key={i}>
+              {mainText} <img src={url} alt="" />
+            </span>
+          ))}
         </Marquee>
       </div>
 
       <div className={style.marquee__wrap}>
         <Marquee className={style.marquee} speed={50}>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
-          <span>
-            бесплатная доставка от 3000 ₽ <img src="./sets/star.svg" alt="" />
-          </span>
+          {runningLine.map(({ mainText, url }, i) => (
+            <span key={i}>
+              {mainText} <img src={url} alt="" />
+            </span>
+          ))}
         </Marquee>
       </div>
     </>

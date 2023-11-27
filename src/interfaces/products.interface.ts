@@ -5,7 +5,7 @@ interface IScu {
   price: string | null;
 }
 
-export interface Product {
+export interface IProduct {
   id: string;
   name: string;
   smallPhoto: string | null;
@@ -13,8 +13,8 @@ export interface Product {
   sectionName: string;
   pin: string[];
   scu?: {
-    [key: string]: IScu;
+    [key: string]: IScu[];
   };
 }
 
-export type IProductArr = Product[];
+export type IProductArr = IProduct[];

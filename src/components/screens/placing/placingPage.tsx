@@ -33,7 +33,6 @@ const PlacingPage: FC = () => {
       label: 'Оплата',
     },
   ];
-  console.log(isOpen);
 
   return (
     <Layout title="Оформление заказа" nav={false}>

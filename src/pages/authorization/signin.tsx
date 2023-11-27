@@ -1,11 +1,14 @@
-import { NextPage } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
 import Link from 'next/link';
 
 import Layout from '@/components/layout/Layout';
 
 import style from './authorization.module.sass';
+import { AuthService } from '@/services/auth.service';
 
-const SignIn: NextPage = () => {
+const SignIn: NextPage<any> = ({ data }) => {
+  console.log(data);
+
   return (
     <Layout title="Войти в аккаунт">
       <section className={style.login_page}>
@@ -35,4 +38,10 @@ const SignIn: NextPage = () => {
   );
 };
 
+export const getServerSideProps: GetServerSideProps<any> = async () => {
+  const data = await AuthService.getAuthData();
+  return {
+    props: { data },
+  };
+};
 export default SignIn;

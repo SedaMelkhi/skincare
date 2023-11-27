@@ -2,9 +2,6 @@ import { FC } from 'react';
 import style from './arrows.module.sass';
 
 const Arrows: FC<{ next: string; prev: string }> = ({ next, prev }) => {
-  // const mainTitle = document.querySelector('#main-title rect');
-  // console.log(`Svg is ${mainTitle.getTotalLength()}`);
-
   return (
     <div className={style.arrows}>
       <div className={prev + ' ' + style.arrow__left} id="main-title">

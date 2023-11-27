@@ -7,14 +7,13 @@ import Filters from '@/components/other/filters/filters';
 import Sort from '@/components/other/sort/sort';
 import Products from '@/components/other/products/products';
 
+import { IProductArr } from '@/interfaces/products.interface';
+
 import filtersSvg from './../../../../public/catalog/filters.svg';
 
 import style from './catalog.module.sass';
-import { IProductArr } from '@/interfaces/products.interface';
 
 const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
-  console.log(products);
-
   return (
     <Layout title="Каталог">
       <div className={`wrap ${style.catalog}`}>

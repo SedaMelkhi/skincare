@@ -14,6 +14,7 @@ import {
   JournalService,
   HitsService,
   CatalogService,
+  RunningVerticalLineService,
 } from '@/services';
 
 import { ContactsService } from '@/services/contacts.service';
@@ -30,14 +31,24 @@ const Home: NextPage<{
   data: ContactsArray;
   slider: MainSliderArray;
   runningLine: RunningLineArray;
+  runningVerticalLine: RunningLineArray;
   promoBlocks: PromoBlockArray;
   newProducts: NewProducts;
   journal: any;
   hits: any;
   catalog: CatalogArray;
-}> = ({ data, slider, runningLine, promoBlocks, newProducts, journal, hits, catalog }) => {
+}> = ({
+  data,
+  slider,
+  runningLine,
+  promoBlocks,
+  newProducts,
+  journal,
+  hits,
+  catalog,
+  runningVerticalLine,
+}) => {
   const dispatch = useDispatch();
-  console.log(journal);
 
   useEffect(() => {
     dispatch(setMenu(catalog));
@@ -51,6 +62,11 @@ const Home: NextPage<{
       catalog={catalog}
       runningLine={
         runningLine.length < 6 ? [...runningLine, ...runningLine, ...runningLine] : runningLine
+      }
+      runningVerticalLine={
+        runningVerticalLine.length < 6
+          ? [...runningVerticalLine, ...runningVerticalLine, ...runningVerticalLine]
+          : runningVerticalLine
       }
       promoBlocks={promoBlocks}
       newProducts={newProducts}
@@ -67,13 +83,24 @@ export const getServerSideProps: GetServerSideProps<{
   const data = await ContactsService.getContacts(); // данные футера
   const slider = await MainSliderService.getMainSlider(); //данные главного слайдера
   const runningLine = await RunningLineService.getRunningLine(); //данные главного слайдера
+  const runningVerticalLine = await RunningVerticalLineService.getRunningLine();
   const promoBlocks = await PromoBlockService.getPromoBlock();
   const newProducts = await NewProductsService.getProductsService();
   const journal = await JournalService.getJournalService();
   const hits = await HitsService.getHitsService();
   const catalog = await CatalogService.getCatalogService();
   return {
-    props: { data, slider, runningLine, promoBlocks, newProducts, journal, hits, catalog },
+    props: {
+      data,
+      slider,
+      runningLine,
+      promoBlocks,
+      newProducts,
+      journal,
+      hits,
+      catalog,
+      runningVerticalLine,
+    },
   };
 };
 

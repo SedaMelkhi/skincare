@@ -4,20 +4,23 @@ import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 
-import 'swiper/css';
+import PinkMarquee from './../pinkMarquee/pinkMarquee';
 import Arrows from '@/components/other/arrows/arrows';
 
+import { RunningLineArray } from '@/interfaces/runningLine.interface';
+
+import 'swiper/css';
 import style from './sets.module.sass';
-import PinkMarquee from './../pinkMarquee/pinkMarquee';
 
 interface SetsProps {
   isVisible: boolean;
+  runningLine: RunningLineArray;
 }
 
-const Sets: FC<SetsProps> = ({ isVisible }) => {
+const Sets: FC<SetsProps> = ({ isVisible, runningLine }) => {
   return (
     <section className={style.sets__wrap}>
-      <PinkMarquee isVisible={isVisible} />
+      <PinkMarquee isVisible={isVisible} runningLine={runningLine} />
       <div className={style.sets}>
         <h2 className={style.title}>сеты</h2>
         <div>

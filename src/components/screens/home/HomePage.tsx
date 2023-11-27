@@ -25,10 +25,11 @@ const HomePage: FC<{
   runningLine: RunningLineArray;
   promoBlocks: PromoBlockArray;
   newProducts: NewProducts;
+  runningVerticalLine: RunningLineArray;
   journal: any;
   catalog: any;
   hits: any;
-}> = ({ slider, runningLine, promoBlocks, newProducts, journal, hits, catalog }) => {
+}> = ({ slider, runningLine, promoBlocks, newProducts, journal, hits, runningVerticalLine }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [isVisibleSticker, setIsVisibleSticker] = useState(false);
   const section = useRef<HTMLDivElement | null>(null);
@@ -54,8 +55,6 @@ const HomePage: FC<{
 
       if (sticker.current) {
         const rect = sticker.current.getBoundingClientRect();
-        // const halfHeight = sticker.current.offsetHeight;
-        // console.log(rect.top, window.innerHeight - halfHeight);
 
         if (rect.top < 600 && window.document.body.scrollHeight + rect.top > 3000) {
           setIsVisibleSticker(true);
@@ -88,7 +87,7 @@ const HomePage: FC<{
           </div>
           <News newProducts={newProducts} />
           <div ref={section} className={style.pinkMarqueeWrap}>
-            <Sets isVisible={isVisible} />
+            <Sets isVisible={isVisible} runningLine={runningVerticalLine} />
             <Hits hits={hits} />
           </div>
           <Experts promoBlocks={promoBlocks} />

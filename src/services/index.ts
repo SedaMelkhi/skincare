@@ -23,6 +23,13 @@ export const RunningLineService = {
   },
 };
 
+export const RunningVerticalLineService = {
+  async getRunningLine(): Promise<RunningLineArray> {
+    const { data } = await axios.post('/main.php', { type: 'runningLine', code: 4 });
+    return data;
+  },
+};
+
 export const PromoBlockService = {
   async getPromoBlock(): Promise<PromoBlockArray> {
     const { data } = await axios.post('/main.php', { type: 'mainPromo' });
@@ -37,19 +44,19 @@ export const NewProductsService = {
   },
 };
 
-export const JournalService = {
-  async getJournalService(): Promise<any> {
-    const { data } = await axios.post('/main.php', { type: 'getJournal' });
-    return data;
-  },
-};
-
 // export const JournalService = {
 //   async getJournalService(): Promise<any> {
-//     const { data } = await axios.post('/journal.php', { type: 'getList', numPage: 2, count: 9 });
+//     const { data } = await axios.post('/main.php', { type: 'getJournal' });
 //     return data;
 //   },
 // };
+
+export const JournalService = {
+  async getJournalService(): Promise<any> {
+    const { data } = await axios.post('/journal.php', { type: 'getList', numPage: 2, count: 9 });
+    return data;
+  },
+};
 
 export const HitsService = {
   async getHitsService(): Promise<any> {

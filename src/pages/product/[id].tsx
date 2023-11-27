@@ -12,8 +12,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     type: 'getItem',
     itemId: context.params && context.params.id,
   });
-  console.log(data);
-  
+
   return {
     props: { data },
   };

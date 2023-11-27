@@ -8,16 +8,15 @@ import infoSvg from './../../../../../public/info.svg';
 import saveSvg from './../../../../../public/save.svg';
 
 import style from './text.module.sass';
-import { Product } from '@/interfaces/products.interface';
+import { IProduct } from '@/interfaces/products.interface';
 
 type Size = {
   size: string;
   id: number;
 };
 
-const Text: FC<{ data: Product }> = ({ data }) => {
+const Text: FC<{ data: IProduct }> = ({ data }) => {
   const [activeSize, setActiveSize] = useState(data.scu ? Object.values(data.scu)[0].id : 0);
-  console.log(data);
 
   return (
     <div className={style.text}>
