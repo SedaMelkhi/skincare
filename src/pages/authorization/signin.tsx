@@ -4,15 +4,41 @@ import Link from 'next/link';
 import Layout from '@/components/layout/Layout';
 
 import style from './authorization.module.sass';
-import { AuthService } from '@/services/auth.service';
+import { GetTokenService } from '@/services/auth.service';
+import { useEffect } from 'react';
 
 const SignIn: NextPage<any> = ({ data }) => {
   console.log(data);
-
+  useEffect(() => {
+    fetch(`/api/local/api/user.php`, {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'getToken',
+        pass: 'seda580890',
+        phone: '89281112233',
+      }),
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error('Fetch error:', error);
+      });
+  }, []);
   return (
     <Layout title="Войти в аккаунт">
       <section className={style.login_page}>
-        <h1 className={style.title}>вOйти</h1>
+        <h1 className={style.title}>войти</h1>
         <form action="">
           <input className={style.input_field} type="tel" placeholder="Номер телефона *" required />
           <input className={style.input_field} type="password" placeholder="Пароль *" required />
@@ -39,7 +65,8 @@ const SignIn: NextPage<any> = ({ data }) => {
 };
 
 export const getServerSideProps: GetServerSideProps<any> = async () => {
-  const data = await AuthService.getAuthData();
+  const data = await GetTokenService.getToken();
+  //localStorage.getItem('token');
   return {
     props: { data },
   };

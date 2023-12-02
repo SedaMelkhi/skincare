@@ -22,7 +22,7 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
         className={style.image}
         style={
           item.smallPhoto
-            ? { backgroundImage: `url(http://fkmva.beget.tech/${item.smallPhoto})` }
+            ? { backgroundImage: `url(https://skincareagents.com/${item.smallPhoto})` }
             : {}
         }></div>
       <div className={style.name}>{item.name}</div>

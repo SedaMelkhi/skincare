@@ -5,7 +5,7 @@ import { PromoBlockArray } from '@/interfaces/promoBlocks.interface';
 import { NewProducts } from '@/interfaces/newProducts.interface';
 import { CatalogArray } from '@/interfaces/catalog.interface';
 
-const API_URL = 'http://fkmva.beget.tech/local/api/';
+const API_URL = 'https://skincareagents.com/local/api/';
 
 axios.defaults.baseURL = API_URL;
 

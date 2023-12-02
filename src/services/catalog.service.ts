@@ -1,9 +1,5 @@
 import axios from 'axios';
 
-const API_URL = 'http://fkmva.beget.tech/local/api/';
-
-axios.defaults.baseURL = API_URL;
-
 export const CatalogService = {
   async getCatalog({ type, sectionId, count, itemId, numPage }: any): Promise<any> {
     const params = sectionId

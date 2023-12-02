@@ -19,7 +19,7 @@ const DropDownMenu: FC<IMenuOpen> = ({ setMenuOpen, scroll }) => {
   useEffect(() => {
     let arr: CatalogItems = [];
     if (catalog.length === 0) {
-      fetch('http://fkmva.beget.tech/local/api/catalog.php', {
+      fetch('https://skincareagents.com/local/api/catalog.php', {
         method: 'POST',
         headers: {
           Accept: 'application/json',

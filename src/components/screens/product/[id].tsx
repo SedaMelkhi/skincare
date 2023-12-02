@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import { useSelector } from 'react-redux';
 
 import Layout from '@/components/layout/Layout';
 import Breadcrumbs from '@/components/other/breadcrumbs/breadcrumbs';
@@ -7,16 +8,25 @@ import TabPanel from './tabPanel/tabPanel';
 import Text from './text/Text';
 import HitsSwiper from '@/components/screens/home/hits/hitsSwiper/hitsSwiper';
 
+import { IProduct, IScu } from '@/interfaces/products.interface';
+
 import askSvg from './../../../../public/ask.svg';
 
 import style from './product.module.sass';
-import { useSelector } from 'react-redux';
-import { IProduct } from '@/interfaces/products.interface';
 
 const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
   const hits = useSelector((state: any) => state.hits.hits);
-
   const product = Object.values(data)[0];
+
+  const sizes: string[] = [];
+  const prices: number[] = [];
+  const scu: IScu[] | null = product.scu ? Object.values(product.scu) : null;
+  if (scu) {
+    scu.forEach((item) => {
+      !sizes.includes(item.value) && sizes.push(item.value);
+      item.price && !prices.includes(+item.price) && prices.push(+item.price);
+    });
+  }
 
   return (
     <Layout title={product.name}>
@@ -30,7 +40,7 @@ const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
         />
         <section className={style.product}>
           <Slider detailPhoto={product.detailPhoto} />
-          <Text data={product} />
+          <Text data={data} />
         </section>
         <div className={style.quenstion__wrap}>
           <div className={style.quenstion}>

@@ -1,5 +1,7 @@
 import { FC, useState } from 'react';
 
+import { IProduct, IScu } from '@/interfaces/products.interface';
+
 import ArrowIcon from './../arrowIcon/arrowIcon';
 import actionSvg1 from './../../../../../public/action1.svg';
 import actionSvg2 from './../../../../../public/action2.svg';
@@ -8,15 +10,20 @@ import infoSvg from './../../../../../public/info.svg';
 import saveSvg from './../../../../../public/save.svg';
 
 import style from './text.module.sass';
-import { IProduct } from '@/interfaces/products.interface';
-
-type Size = {
-  size: string;
-  id: number;
-};
 
 const Text: FC<{ data: IProduct }> = ({ data }) => {
-  const [activeSize, setActiveSize] = useState(data.scu ? Object.values(data.scu)[0].id : 0);
+  const sizes: string[] = [];
+  const prices: number[] = [];
+  const product = Object.values(data)[0];
+  const scu: IScu[] | null = product.scu ? Object.values(product.scu) : null;
+  if (scu) {
+    scu.forEach((item) => {
+      !sizes.includes(item.value) && sizes.push(item.value);
+      item.price && !prices.includes(+item.price) && prices.push(+item.price);
+    });
+  }
+  const [activeSize, setActiveSize] = useState(sizes[0]);
+  console.log(product);
 
   return (
     <div className={style.text}>
@@ -35,21 +42,17 @@ const Text: FC<{ data: IProduct }> = ({ data }) => {
           <span>Питает</span>
         </div>
       </div>
-      <div className={style.description}>
-        Активно освежающий шампунь SOLU глубоко очищает волосы и кожу головы, удаляя остатки
-        стайлинговых продуктов.
-      </div>
+      <div className={style.description}>{product.preDescription}</div>
       <div className={style.subtitle}>Объеm</div>
       <div className={style.sizes}>
-        {data.scu &&
-          Object.values(data.scu).map(({ id, value }) => (
-            <div
-              className={style.size + ' ' + (activeSize === id ? style.active : '')}
-              key={id}
-              onClick={() => setActiveSize(id)}>
-              {value}
-            </div>
-          ))}
+        {sizes.map((item, i) => (
+          <div
+            className={style.size + ' ' + (activeSize === item ? style.active : '')}
+            key={i}
+            onClick={() => setActiveSize(item)}>
+            {item}
+          </div>
+        ))}
       </div>
       <div className={style.oldPrice}>
         <div>2 234 ₽</div>
@@ -58,11 +61,9 @@ const Text: FC<{ data: IProduct }> = ({ data }) => {
         </div>
       </div>
       <div className={style.price}>
-        {data.scu
-          ? data.scu[activeSize] && data.scu[activeSize].price
-            ? data.scu[activeSize].price + ' ₽'
-            : 'цены нет'
-          : ''}
+        {scu?.find((item) => item.value === activeSize)
+          ? scu?.find((item) => item.value === activeSize)?.price + ' ₽'
+          : 'цена не указана'}
       </div>
       <div className={style.btns}>
         <button className={style.btn}>Добавить в сумочку</button>

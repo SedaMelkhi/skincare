@@ -33,9 +33,7 @@ const Slider: FC<{ detailPhoto?: string }> = ({ detailPhoto }) => {
           },
         }}>
         <SwiperSlide>
-          <div
-            className={style.image}
-            style={{ backgroundImage: `url(http://fkmva.beget.tech/${detailPhoto})` }}></div>
+          <div className={style.image} style={{ backgroundImage: `url(/${detailPhoto})` }}></div>
         </SwiperSlide>
         <SwiperSlide>
           <div className={style.image} style={{ backgroundImage: `url(${image2.src})` }}></div>
@@ -52,9 +50,7 @@ const Slider: FC<{ detailPhoto?: string }> = ({ detailPhoto }) => {
         modules={[FreeMode, Thumbs]}
         className={style.thumbs}>
         <SwiperSlide>
-          <div
-            className={style.image}
-            style={{ backgroundImage: `url(http://fkmva.beget.tech/${detailPhoto})` }}></div>
+          <div className={style.image} style={{ backgroundImage: `url(/${detailPhoto})` }}></div>
         </SwiperSlide>
         <SwiperSlide>
           <div className={style.image} style={{ backgroundImage: `url(${image2.src})` }}></div>
