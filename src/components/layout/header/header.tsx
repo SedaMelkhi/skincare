@@ -10,9 +10,11 @@ import Basket from './basket/basketBtn';
 import { setIsBasketOpen, setIsNotifications } from '@/redux/basketSlice/basketSlice';
 import DropDownMenu from './dropDownMenu/dropDownMenu';
 import { setIsMenuOpen } from '@/redux/menuSlice/menuSlice';
+import { setMenu } from '@/redux/menuSlice/menuSlice';
 
+import { CatalogService } from '@/services';
 import style from './header.module.sass';
-
+import axios from 'axios';
 interface RootState {
   basket: {
     isBasketOpen: boolean;
@@ -35,6 +37,20 @@ const Header: FC = () => {
     });
   }, [menuOpen]);
 
+  useEffect(() => {
+    fetch('/api/local/api/catalog.php', {
+      method: 'POST',
+      credentials: 'include',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'getCategoryList',
+      }),
+    })
+      .then((res) => res.json())
+      .then((catalog) => dispatch(setMenu(catalog)));
+  }, []);
   return (
     <div className={style.header__wrap + ' ' + style[scroll]}>
       <div className="wrap">

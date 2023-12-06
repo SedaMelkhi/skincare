@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { NextPage, GetServerSideProps } from 'next';
 import { useDispatch } from 'react-redux';
 import { setFooterData } from '@/redux/footerSlice/footerSlice';
-import { setMenu } from '@/redux/menuSlice/menuSlice';
 
 import HomePage from '@/components/screens/home/HomePage';
 
@@ -13,7 +12,6 @@ import {
   NewProductsService,
   JournalService,
   HitsService,
-  CatalogService,
   RunningVerticalLineService,
 } from '@/services';
 
@@ -45,21 +43,18 @@ const Home: NextPage<{
   newProducts,
   journal,
   hits,
-  catalog,
   runningVerticalLine,
 }) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(setMenu(catalog));
     dispatch(setFooterData(data));
     dispatch(setHits(hits));
-  }, [catalog, data]);
+  }, [data]);
 
   return (
     <HomePage
       slider={slider}
-      catalog={catalog}
       runningLine={
         runningLine.length < 6 ? [...runningLine, ...runningLine, ...runningLine] : runningLine
       }
@@ -88,7 +83,7 @@ export const getServerSideProps: GetServerSideProps<{
   const newProducts = await NewProductsService.getProductsService();
   const journal = await JournalService.getJournalService();
   const hits = await HitsService.getHitsService();
-  const catalog = await CatalogService.getCatalogService();
+
   return {
     props: {
       data,
@@ -98,7 +93,7 @@ export const getServerSideProps: GetServerSideProps<{
       newProducts,
       journal,
       hits,
-      catalog,
+
       runningVerticalLine,
     },
   };

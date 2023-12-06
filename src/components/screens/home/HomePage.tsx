@@ -27,7 +27,7 @@ const HomePage: FC<{
   newProducts: NewProducts;
   runningVerticalLine: RunningLineArray;
   journal: any;
-  catalog: any;
+
   hits: any;
 }> = ({ slider, runningLine, promoBlocks, newProducts, journal, hits, runningVerticalLine }) => {
   const [isVisible, setIsVisible] = useState(false);
