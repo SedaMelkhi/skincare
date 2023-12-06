@@ -16,6 +16,7 @@ const DropDownMenu: FC<IMenuOpen> = ({ setMenuOpen, scroll }) => {
   const [items, setItems] = useState<CatalogItems>([]);
   const catalog = useSelector((state: CatalogMenu) => state.menu.menu);
   const dispatch = useDispatch();
+
   useEffect(() => {
     let arr: CatalogItems = [];
     if (catalog.length === 0) {

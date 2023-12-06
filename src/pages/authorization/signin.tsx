@@ -9,32 +9,32 @@ import { useEffect } from 'react';
 
 const SignIn: NextPage<any> = ({ data }) => {
   console.log(data);
-  useEffect(() => {
-    fetch(`/api/local/api/user.php`, {
-      method: 'POST',
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        type: 'getToken',
-        pass: 'seda580890',
-        phone: '89281112233',
-      }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error('Fetch error:', error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   fetch(`/api/local/api/user.php`, {
+  //     method: 'POST',
+  //     credentials: 'include',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //     },
+  //     body: JSON.stringify({
+  //       type: 'getToken',
+  //       pass: 'seda580890',
+  //       phone: '89281112233',
+  //     }),
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error(`HTTP error! status: ${response.status}`);
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       console.log(data);
+  //     })
+  //     .catch((error) => {
+  //       console.error('Fetch error:', error);
+  //     });
+  // }, []);
   return (
     <Layout title="Войти в аккаунт">
       <section className={style.login_page}>
