@@ -23,7 +23,6 @@ const Text: FC<{ data: IProduct }> = ({ data }) => {
     });
   }
   const [activeSize, setActiveSize] = useState(sizes[0]);
-  console.log(product);
 
   return (
     <div className={style.text}>

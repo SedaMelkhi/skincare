@@ -8,7 +8,6 @@ import { GetTokenService } from '@/services/auth.service';
 import { useEffect } from 'react';
 
 const SignIn: NextPage<any> = ({ data }) => {
-  console.log(data);
   // useEffect(() => {
   //   fetch(`/api/local/api/user.php`, {
   //     method: 'POST',

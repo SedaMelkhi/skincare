@@ -11,7 +11,6 @@ import style from './products.module.sass';
 
 const Products: FC<{ products: IProductArr }> = ({ products }) => {
   //const scu = products ? (products.scu ? Object.values(products.scu) : '') : '';
-  console.log(products);
 
   return (
     <div className={style.products}>

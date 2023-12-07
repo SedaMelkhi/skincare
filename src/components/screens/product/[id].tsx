@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import Layout from '@/components/layout/Layout';
@@ -17,16 +17,24 @@ import style from './product.module.sass';
 const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
   const hits = useSelector((state: any) => state.hits.hits);
   const product = Object.values(data)[0];
-
   const sizes: string[] = [];
   const prices: number[] = [];
+  const images: string[] = [];
+  const [activeScu, setActiveScu] = useState<number>(0);
   const scu: IScu[] | null = product.scu ? Object.values(product.scu) : null;
   if (scu) {
     scu.forEach((item) => {
       !sizes.includes(item.value) && sizes.push(item.value);
       item.price && !prices.includes(+item.price) && prices.push(+item.price);
     });
+    scu[0].photos && scu[0].photos.length > 0
+      ? images.push(...scu[0].photos)
+      : images.push(product.detailPhoto, ...product.addPhotos);
+    scu[0].shade && scu[0].shade.PREVIEW_PICTURE && images.push(scu[0].shade.PREVIEW_PICTURE);
+  } else {
+    images.push(product.detailPhoto, ...product.addPhotos);
   }
+  console.log(product);
 
   return (
     <Layout title={product.name}>
@@ -39,7 +47,7 @@ const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
           ]}
         />
         <section className={style.product}>
-          <Slider detailPhoto={product.detailPhoto} />
+          <Slider detailPhoto={images} />
           <Text data={data} />
         </section>
         <div className={style.quenstion__wrap}>

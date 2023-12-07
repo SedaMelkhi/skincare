@@ -38,7 +38,7 @@ const CardProduct: FC<CardProductProps> = ({
   //   });
   // }
   //console.log(prices);
-  console.log(scu);
+
   return (
     <Link href="/product/1" className={style.card}>
       <div style={available ? {} : { opacity: '.5' }} className={style.padding}>
