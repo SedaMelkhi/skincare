@@ -14,7 +14,6 @@ import style from './slider.module.sass';
 
 const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
-  console.log(detailPhoto);
 
   return (
     <div className={style.slider + ' productSlider'}>
@@ -30,8 +29,8 @@ const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
               pagination: false,
             },
           }}>
-          {detailPhoto.map((url) => (
-            <SwiperSlide>
+          {detailPhoto.map((url, i) => (
+            <SwiperSlide key={i}>
               <div
                 className={style.image}
                 style={{ backgroundImage: `url(https://skincareagents.com${url})` }}></div>
@@ -49,8 +48,8 @@ const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
           watchSlidesProgress={true}
           modules={[FreeMode, Thumbs]}
           className={style.thumbs}>
-          {detailPhoto.map((url) => (
-            <SwiperSlide>
+          {detailPhoto.map((url, i) => (
+            <SwiperSlide key={i}>
               <div
                 className={style.image}
                 style={{ backgroundImage: `url(https://skincareagents.com${url})` }}></div>

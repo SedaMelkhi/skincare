@@ -14,6 +14,8 @@ import filtersSvg from './../../../../public/catalog/filters.svg';
 import style from './catalog.module.sass';
 
 const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
+  console.log(products);
+
   return (
     <Layout title="Каталог">
       <div className={`wrap ${style.catalog}`}>

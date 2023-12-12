@@ -16,16 +16,16 @@ const httpsOptions = {
 app.prepare().then(() => {
   const server = express();
 
-  // Настройка прокси
-  server.use(
-    '/api',
-    createProxyMiddleware({
-      target: 'https://skincareagents.com', // URL вашего API
-      changeOrigin: true,
-      pathRewrite: { '^/api': '' },
-      secure: false, // Важно при использовании самоподписанных сертификатов
-    }),
-  );
+  // // Настройка прокси
+  // server.use(
+  //   '/api',
+  //   createProxyMiddleware({
+  //     target: 'https://skincareagents.com', // URL вашего API
+  //     changeOrigin: true,
+  //     pathRewrite: { '^/api': '' },
+  //     secure: false, // Важно при использовании самоподписанных сертификатов
+  //   }),
+  // );
 
   server.all('*', (req, res) => {
     return handle(req, res);
@@ -35,3 +35,17 @@ app.prepare().then(() => {
     console.log('> Ready on https://localhost:3000');
   });
 });
+
+//инфа для package.json
+// "scripts": {
+//   "dev": "node server.js",
+//   "build": "next build",
+//   "start": "NODE_ENV=production node server.js",
+//   "lint": "next lint"
+// },
+// "scripts": {
+//   "dev": "next dev",
+//   "build": "next build",
+//   "start": "next start",
+//   "lint": "next lint"
+// },

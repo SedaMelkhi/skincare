@@ -11,11 +11,11 @@ import saveSvg from './../../../../../public/save.svg';
 
 import style from './text.module.sass';
 
-const Text: FC<{ data: IProduct }> = ({ data }) => {
+const Text: FC<{ product: IProduct; scu: IScu[] | null }> = ({ product, scu }) => {
   const sizes: string[] = [];
   const prices: number[] = [];
-  const product = Object.values(data)[0];
-  const scu: IScu[] | null = product.scu ? Object.values(product.scu) : null;
+  const icons = [actionSvg1.src, actionSvg2.src, actionSvg3.src];
+  console.log(product);
   if (scu) {
     scu.forEach((item) => {
       !sizes.includes(item.value) && sizes.push(item.value);
@@ -26,22 +26,22 @@ const Text: FC<{ data: IProduct }> = ({ data }) => {
 
   return (
     <div className={style.text}>
-      <h2 className={style.title}>{data.name}</h2>
+      <h2 className={style.title}>{product.name}</h2>
       <div className={style.actions}>
-        <div className={style.action}>
-          <img src={actionSvg1.src} alt="" className={style.svg} />
-          <span>Oсвежает</span>
-        </div>
-        <div className={style.action}>
-          <img src={actionSvg2.src} alt="" className={style.svg} />
-          <span>Очищает</span>
-        </div>
-        <div className={style.action}>
-          <img src={actionSvg3.src} alt="" className={style.svg} />
-          <span>Питает</span>
-        </div>
+        {product.props &&
+          product.props['44'] &&
+          product.props['44'].value &&
+          product.props['44'].value.map((name: String, i: number) => (
+            <div className={style.action} key={i}>
+              <img src={icons[i % 3]} alt="" className={style.svg} />
+              <span>{name}</span>
+            </div>
+          ))}
       </div>
-      <div className={style.description}>{product.preDescription}</div>
+
+      <div
+        className={style.description}
+        dangerouslySetInnerHTML={{ __html: String(product.preDescription) }}></div>
       <div className={style.subtitle}>Объеm</div>
       <div className={style.sizes}>
         {sizes.map((item, i) => (
@@ -53,12 +53,12 @@ const Text: FC<{ data: IProduct }> = ({ data }) => {
           </div>
         ))}
       </div>
-      <div className={style.oldPrice}>
+      {/* <div className={style.oldPrice}>
         <div>2 234 ₽</div>
         <div>
           <img src={infoSvg.src} alt="" />
         </div>
-      </div>
+      </div> */}
       <div className={style.price}>
         {scu?.find((item) => item.value === activeSize)
           ? scu?.find((item) => item.value === activeSize)?.price + ' ₽'

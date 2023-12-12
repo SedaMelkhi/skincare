@@ -34,7 +34,6 @@ const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
   } else {
     images.push(product.detailPhoto, ...product.addPhotos);
   }
-  console.log(product);
 
   return (
     <Layout title={product.name}>
@@ -48,7 +47,7 @@ const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
         />
         <section className={style.product}>
           <Slider detailPhoto={images} />
-          <Text data={data} />
+          <Text product={product} scu={scu} />
         </section>
         <div className={style.quenstion__wrap}>
           <div className={style.quenstion}>

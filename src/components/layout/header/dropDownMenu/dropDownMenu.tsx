@@ -19,11 +19,11 @@ const DropDownMenu: FC<IMenuOpen> = ({ setMenuOpen, scroll }) => {
 
   useEffect(() => {
     let arr: CatalogItems = [];
+
     if (catalog.length === 0) {
-      fetch('https://skincareagents.com/local/api/catalog.php', {
+      fetch(' local/api/catalog.php', {
         method: 'POST',
         headers: {
-          Accept: 'application/json',
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
