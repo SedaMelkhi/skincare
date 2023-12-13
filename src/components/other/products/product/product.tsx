@@ -11,8 +11,8 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
   const scu = item.scu ? Object.values(item.scu) : null;
   if (scu) {
     scu.forEach((item) => {
-      !sizes.includes(item[0].value) && sizes.push(item[0].value);
-      item[0].price && !prices.includes(+item[0].price) && prices.push(+item[0].price);
+      item[0] && !sizes.includes(item[0].value) && sizes.push(item[0].value);
+      item[0] && item[0].price && !prices.includes(+item[0].price) && prices.push(+item[0].price);
     });
   }
 

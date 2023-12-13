@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { useRouter } from 'next/router';
@@ -30,6 +30,28 @@ const Basket: FC = () => {
   const handleBtnClick = () => {
     router.push('/placing');
   };
+  useEffect(() => {
+    fetch('https://skincareagents.com/local/api/cart.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        type: 'printCart',
+        saleUserId: 130,
+      }),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }, []);
+  //type: 'getSaleUserId',
+  //type: 'addSCUToCart',
+  // saleUserId: 119,
+  // SCUId: 136,
+  // quantity: 2,
+  //type: 'printCart',
+  // saleUserId: 119,
+
   return (
     <CSSTransition
       in={isBasketOpen}
