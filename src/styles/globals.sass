@@ -46,6 +46,7 @@
   --purple-400: #9B8AFB
   --purple: #5D5DFF
   --purple-200: #D9D6FE
+  --light-purple-65: rgba(251, 250, 255, 0.65)
 
 
 
@@ -302,3 +303,16 @@ input
 
 
 
+.slider__prevEl, .slider__nextEl
+  width: 48px
+  height: 48px
+  flex-shrink: 0
+  border-radius: 50%
+  border: 1px solid var(--Grey-400)
+  background: var(--light-purple-65)
+  display: flex
+  justify-content: center
+  align-items: center
+  &.swiper-button-disabled
+    opacity: 0.4
+   

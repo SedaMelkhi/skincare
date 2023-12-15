@@ -1,8 +1,11 @@
 import { FC, useState } from 'react';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { FreeMode, Thumbs, Pagination } from 'swiper/modules';
+import { FreeMode, Thumbs, Pagination, Navigation, Mousewheel } from 'swiper/modules';
 import { Swiper as SwiperType } from 'swiper/types';
+
+import arrowNext from './../../../../../public/arrowSliderNext.svg';
+import arrowPrev from './../../../../../public/arrowSliderPrev.svg';
 
 import 'swiper/css';
 import 'swiper/css/free-mode';
@@ -17,48 +20,67 @@ const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
 
   return (
     <div className={style.slider + ' productSlider'}>
-      {detailPhoto && detailPhoto.length > 0 ? (
-        <Swiper
-          style={{}}
-          pagination={true}
-          thumbs={{ swiper: thumbsSwiper }}
-          modules={[FreeMode, Thumbs, Pagination]}
-          className={style.swiper}
-          breakpoints={{
-            768: {
-              pagination: false,
-            },
-          }}>
-          {detailPhoto.map((url, i) => (
-            <SwiperSlide key={i}>
-              <div
-                className={style.image}
-                style={{ backgroundImage: `url(https://skincareagents.com${url})` }}></div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      ) : (
-        <div className={style.image__not}></div>
-      )}
-      {detailPhoto && detailPhoto.length > 0 ? (
-        <Swiper
-          onSwiper={setThumbsSwiper}
-          slidesPerView={4}
-          freeMode={true}
-          watchSlidesProgress={true}
-          modules={[FreeMode, Thumbs]}
-          className={style.thumbs}>
-          {detailPhoto.map((url, i) => (
-            <SwiperSlide key={i}>
-              <div
-                className={style.image}
-                style={{ backgroundImage: `url(https://skincareagents.com${url})` }}></div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      ) : (
-        <div className={style.image__not + ' ' + style.image__not_mobile}></div>
-      )}
+      <div className={style.mainImage}>
+        {detailPhoto && detailPhoto.length > 0 ? (
+          <Swiper
+            spaceBetween={10}
+            slidesPerView={1}
+            style={{}}
+            pagination={true}
+            navigation={{ nextEl: '.slider__nextEl', prevEl: '.slider__prevEl' }}
+            thumbs={{ swiper: thumbsSwiper }}
+            modules={[FreeMode, Thumbs, Pagination, Navigation]}
+            className={style.swiper}
+            breakpoints={{
+              768: {
+                pagination: false,
+              },
+            }}>
+            {detailPhoto.map((url, i) => (
+              <SwiperSlide key={i}>
+                <div
+                  className={style.image}
+                  style={{ backgroundImage: `url(https://skincareagents.com${url})` }}></div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className={style.image__not}></div>
+        )}
+        <div className={style.arrows}>
+          <div className="slider__prevEl">
+            <img src={arrowPrev.src} alt="" />
+          </div>
+          <div className="slider__nextEl">
+            <img src={arrowNext.src} alt="" />
+          </div>
+        </div>
+      </div>
+      <div className={style.thumbs__wrap}>
+        {detailPhoto && detailPhoto.length > 0 ? (
+          <Swiper
+            spaceBetween={22}
+            direction={'vertical'}
+            mousewheel={true}
+            onSwiper={setThumbsSwiper}
+            slidesPerView={4}
+            freeMode={true}
+            watchSlidesProgress={true}
+            modules={[FreeMode, Navigation, Thumbs, Mousewheel]}
+            className={style.thumbs}>
+            {detailPhoto.map((url, i) => (
+              <SwiperSlide key={i}>
+                <div
+                  className={style.image}
+                  style={{ backgroundImage: `url(https://skincareagents.com${url})` }}></div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className={style.image__not + ' ' + style.image__not_mobile}></div>
+        )}
+        <div className={style.shadow}></div>
+      </div>
     </div>
   );
 };

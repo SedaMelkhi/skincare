@@ -27,17 +27,20 @@
 
 .thumbs
     display: none
+    height: 343px
     @media (min-width: 768px)
         display: block
         width: 116px
-        div
-            flex-direction: column
-            justify-content: center   
-            gap: 16px
-            div
-                height: 116px
-                overflow: hidden
-                width: 116px!important
+        height: 545px
+    @media (min-width: 1200px)
+        height: 532px
+        width: 123px
+    &__wrap
+        position: relative
+        > div > div > div
+            height: 116px!important
+            @media (min-width: 768px)
+                height: 123px!important
 
 .swiper
     width: 100%
@@ -47,7 +50,37 @@
         height: 545px
     @media (min-width: 1200px)
         width: 532px
-        height: 532px
+        height: 529px
     
 
+.thumbs .image
+    width: 116px
+    height: 100%
+    background: center/cover no-repeat #fff
+    @media (min-width: 768px)
+        width: 123px
+        height: 100%
+
+.mainImage
+    position: relative
+
+.arrows
+    position: absolute
+    z-index: 2
+    display: flex
+    justify-content: space-between
+    width: 100%
+    padding: 0 20px
+    top: calc(50% - 26px)
+    
+.shadow
+    position: absolute
+    z-index: 2
+    width: 116px
+    height: 90px
+    bottom: 0
+    background: linear-gradient(180deg, rgba(251, 250, 255, 0) 0%, #FBFAFF 100%)
+    @media (min-width: 768px)
+        width: 123px
         
+    
