@@ -6,14 +6,14 @@ import InputMask from 'react-input-mask';
 
 import Layout from '@/components/layout/Layout';
 import { getTokenService, userRegisterService } from '@/services/auth.service';
+import { useDispatch } from 'react-redux';
+import { authSlice } from '@/redux/authSlice/authSlice';
+import { useRouter } from 'next/router';
 
 import eyeSvg1 from './../../../../public/eye.svg';
 import eyeSvg2 from './../../../../public/eyeClose.svg';
 
 import style from './authorization.module.sass';
-import { useDispatch } from 'react-redux';
-import { authSlice } from '@/redux/authSlice/authSlice';
-import { useRouter } from 'next/router';
 
 const RegistrationPage: FC = () => {
   const [name, setName] = useState('');

@@ -6,14 +6,20 @@ import { getTokenService } from '@/services/auth.service';
 import Link from 'next/link';
 import InputMask from 'react-input-mask';
 
+import eyeSvg1 from './../../../public/eye.svg';
+import eyeSvg2 from './../../../public/eyeClose.svg';
+
 import Layout from '@/components/layout/Layout';
 import style from './authorization.module.sass';
+import { useRouter } from 'next/router';
 
-const SignIn: NextPage<any> = ({ data }) => {
-  console.log(data);
+const SignIn: NextPage<any> = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [phoneError, setPhoneError] = useState('');
-
+  const [password, setPassword] = useState('');
+  const [passwordShown, setPasswordShown] = useState(false);
+  const [error, setError] = useState('');
+  const router = useRouter();
   const handlePhoneChange = (event: any) => {
     const input = event.target.value;
     setPhoneNumber(input);
@@ -25,28 +31,25 @@ const SignIn: NextPage<any> = ({ data }) => {
       setPhoneError('');
     }
   };
-  useEffect(() => {
-    fetch(``, {
-      credentials: 'include',
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => {
-        console.error('Fetch error:', error);
-      });
-  }, []);
+  const togglePasswordVisibility = () => {
+    setPasswordShown(!passwordShown);
+  };
+  const sendData = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const token = await getTokenService.getToken(phoneNumber, password);
+    if (token.status) {
+      setError(token.status.replace(/<br>/g, ' '));
+    } else if (token) {
+      setError('');
+      localStorage.setItem('token', token);
+      router.push('/authorization/numberconfirmed');
+    }
+  };
   return (
     <Layout title="Войти в аккаунт">
       <section className={style.login_page}>
         <h1 className={style.title}>войти</h1>
-        <form action="">
+        <form action="" onSubmit={sendData} className={style.form}>
           <InputMask
             mask="+7 (999) 999-99-99"
             maskChar={null}
@@ -58,18 +61,33 @@ const SignIn: NextPage<any> = ({ data }) => {
             onChange={handlePhoneChange}
           />
           {phoneError && <div className={style.error_message}>{phoneError}</div>}
-          <input className={style.input_field} type="password" placeholder="Пароль *" required />
+          <div className={style.password}>
+            <input
+              className={style.input_field}
+              type={passwordShown ? 'text' : 'password'}
+              placeholder="Придумайте пароль *"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {passwordShown ? (
+              <img src={eyeSvg1.src} alt="" onClick={togglePasswordVisibility} />
+            ) : (
+              <img src={eyeSvg2.src} alt="" onClick={togglePasswordVisibility} />
+            )}
+          </div>
+          {error && <div className={style.error_message}>{error}</div>}
+          <button className={style.btn + ' ' + style.btn_bg_white + ' ' + style.btn_margin}>
+            войти
+          </button>
         </form>
-        <a href="#" className={style.btn + ' ' + style.btn_bg_white}>
-          войти
-        </a>
         <div>
           <p className={style.login_page__links}>
             <Link href="/authorization/passwordrecovery" className={style.link_btn}>
               Забыли пароль?
             </Link>
             <span>
-              У вас нет аккаунта?{' '}
+              У вас нет аккаунта?
               <Link href="/authorization/registration" className={style.link_btn}>
                 Создать
               </Link>
@@ -81,11 +99,4 @@ const SignIn: NextPage<any> = ({ data }) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<any> = async () => {
-  const data = await getTokenService.getToken('dfsdf', 'sdfdsf');
-  //localStorage.getItem('token');
-  return {
-    props: { data },
-  };
-};
 export default SignIn;

@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 const withAuth = (WrappedComponent) => {
   return (props) => {
     const Router = useRouter();
-    const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('token') || false);
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     useEffect(() => {
       const token = localStorage.getItem('token'); // Или ваш способ получения токена
