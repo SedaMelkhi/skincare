@@ -1,17 +1,29 @@
 import axios from 'axios';
+const API_URL = 'https://skincareagents.com/local/api/';
 
-export const GetTokenService = {
-  async getToken(): Promise<any> {
+axios.defaults.baseURL = API_URL;
+export const userRegisterService = {
+  async userRegister(phone: string, pass: string): Promise<any> {
     const { data } = await axios.post('/user.php', {
-      type: 'getToken',
-      phone: '7777777',
-      pass: '580890',
-      token:
-        'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJkYXRhIjp7ImlkIjoxOCwibmFtZSI6IlNlZGEiLCJsYXN0X25hbWUiOiJHdWRpZXZhIiwic2Vjb25kX25hbWUiOiJTIiwiZW1haWwiOiJnLnNlZGEuZzE5OTZAZ21haWwuY29tIn0sInVpZCI6IjE4IiwiaWF0IjoxNzAyMTMwNzc0LCJleHAiOjE3MDIxMzkzNzR9.uvtHgC0kh7jo6AjiKEEfXRfS1DcZV3M2p6XzwB8qP08',
+      type: 'userRegister',
+      phone: phone,
+      pass: pass,
     });
     return data;
   },
 };
+
+export const getTokenService = {
+  async getToken(phone: string, pass: string): Promise<any> {
+    const { data } = await axios.post('/user.php', {
+      type: 'getToken',
+      phone: phone,
+      pass: pass,
+    });
+    return data;
+  },
+};
+
 /** 
 type: 'userRegister',
 {

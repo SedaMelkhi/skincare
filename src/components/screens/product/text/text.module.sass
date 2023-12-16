@@ -29,10 +29,10 @@
 .description
     margin-bottom: 24px
     @media (min-width: 768px)
-        margin-bottom: 42px 
+        margin-bottom: 32px 
 
 .subtitle
-    opacity: .7
+    opacity: .8
     text-transform: uppercase
 
 .sizes
@@ -125,3 +125,51 @@
     color: var(--grey-500)
     font-size: 12px
     line-height: 133.333% 
+
+.colors
+    display: flex
+    gap: 4px
+    margin-bottom: 24px
+
+.color
+    position: relative
+    cursor: pointer
+    &:hover
+        .color__name
+            opacity: 1            
+    &__name
+        position: absolute
+        top: -45px
+        left: -70px
+        opacity: 0
+        z-index: 2
+        transition: .3s
+        pointer-events: none
+        span
+            width: 100%
+            text-align: center
+            position: absolute
+            top: 9px
+            left: 0
+            right: 0
+            margin: 0 auto
+            color: var(--Grey-600)
+            font-size: 12px
+            line-height: 133.333%
+    &__border
+        padding: 3px
+        width: 32px
+        height: 32px
+        border-radius: 50%
+        border: 1px solid #fff0
+        &.active
+            border-color: var(--Grey-600)
+    &__image
+        width: 24px
+        height: 24px
+        flex-shrink: 0
+        border-radius: 50%
+        transition: .3s
+        
+.old__price
+    height: 20px

@@ -63,7 +63,7 @@ const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
             direction={'vertical'}
             mousewheel={true}
             onSwiper={setThumbsSwiper}
-            slidesPerView={4}
+            slidesPerView={3.6}
             freeMode={true}
             watchSlidesProgress={true}
             modules={[FreeMode, Navigation, Thumbs, Mousewheel]}

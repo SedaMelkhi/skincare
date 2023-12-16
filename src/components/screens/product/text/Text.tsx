@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import { IProduct, IScu } from '@/interfaces/products.interface';
 
@@ -11,18 +11,86 @@ import saveSvg from './../../../../../public/save.svg';
 
 import style from './text.module.sass';
 
-const Text: FC<{ product: IProduct; scu: IScu[] | null }> = ({ product, scu }) => {
+const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activeScu: any }> = ({
+  product,
+  scu,
+  setActiveScu,
+  activeScu,
+}) => {
   const sizes: string[] = [];
-  const prices: number[] = [];
+  const [colors, setColors] = useState<{ name: string; image: string; id: string }[]>([]);
   const icons = [actionSvg1.src, actionSvg2.src, actionSvg3.src];
-  console.log(product);
-  if (scu) {
-    scu.forEach((item) => {
-      !sizes.includes(item.value) && sizes.push(item.value);
-      item.price && !prices.includes(+item.price) && prices.push(+item.price);
-    });
-  }
+
+  scu?.forEach((item) => {
+    !sizes.includes(item.value) && sizes.push(item.value);
+  });
+
   const [activeSize, setActiveSize] = useState(sizes[0]);
+
+  scu?.forEach((item) => {
+    item.shade &&
+      !colors.some(({ id }) => id === item.shade?.ID) &&
+      item.value === activeSize &&
+      setColors([
+        ...colors,
+        {
+          name:
+            item.shade.NAME.length > 30
+              ? item.shade.NAME.substring(0, 30) + '...'
+              : item.shade.NAME,
+          image: item.shade.PREVIEW_PICTURE,
+          id: item.shade.ID,
+        },
+      ]);
+  });
+
+  const [activeColor, setActiveColor] = useState<string>(colors[0] ? colors[0].id : '0');
+
+  useEffect(() => {
+    const newColors: { name: string; image: string; id: string }[] = [];
+    setActiveScu(
+      scu?.filter(
+        ({ value, shade }) =>
+          value === activeSize && (colors.length > 0 ? shade?.ID === activeColor : true),
+      )[0],
+    );
+    scu?.forEach((item) => {
+      item.shade &&
+        !colors.some(({ id }) => id === item.shade?.ID) &&
+        item.value === activeSize &&
+        newColors.push({
+          name:
+            item.shade.NAME.length > 30
+              ? item.shade.NAME.substring(0, 30) + '...'
+              : item.shade.NAME,
+          image: item.shade.PREVIEW_PICTURE,
+          id: item.shade.ID,
+        });
+    });
+    setColors(newColors);
+  }, [activeSize]);
+
+  useEffect(() => {
+    if (colors.length > 0) {
+      setActiveColor((prev) => colors.filter(({ id }) => id === prev)[0]?.id || colors[0].id);
+    }
+
+    setActiveScu(
+      scu?.filter(
+        ({ value, shade }) =>
+          value === activeSize && (colors.length > 0 ? shade?.ID === activeColor : true),
+      )[0],
+    );
+  }, [colors]);
+
+  useEffect(() => {
+    setActiveScu(
+      scu?.filter(
+        ({ value, shade }) =>
+          value === activeSize && (colors.length > 0 ? shade?.ID === activeColor : true),
+      )[0],
+    );
+  }, [activeColor]);
 
   return (
     <div className={style.text}>
@@ -42,6 +110,21 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null }> = ({ product, scu }) =
       <div
         className={style.description}
         dangerouslySetInnerHTML={{ __html: String(product.preDescription) }}></div>
+      <div className={style.colors}>
+        {colors.map(({ name, image, id }) => (
+          <div className={style.color} key={id} onClick={() => setActiveColor(id)}>
+            <div className={style.color__name}>
+              <img src={'/Union.svg'} alt="" />
+              <span>{name}</span>
+            </div>
+            <div className={style.color__border + ' ' + (activeColor === id ? style.active : '')}>
+              <div
+                className={style.color__image}
+                style={{ background: `url(https://skincareagents.com/${image})` }}></div>
+            </div>
+          </div>
+        ))}
+      </div>
       <div className={style.subtitle}>Объеm</div>
       <div className={style.sizes}>
         {sizes.map((item, i) => (
@@ -53,15 +136,21 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null }> = ({ product, scu }) =
           </div>
         ))}
       </div>
-      {/* <div className={style.oldPrice}>
-        <div>2 234 ₽</div>
-        <div>
-          <img src={infoSvg.src} alt="" />
-        </div>
-      </div> */}
+      <div className={style.old__price}>
+        {activeScu && activeScu.price && activeScu.price.discount ? (
+          <div className={style.oldPrice}>
+            <div>{activeScu.price.basePrice + ' ₽'}</div>
+            {/* <div>
+            <img src={infoSvg.src} alt="" />
+          </div> */}
+          </div>
+        ) : (
+          ''
+        )}
+      </div>
       <div className={style.price}>
-        {scu?.find((item) => item.value === activeSize)
-          ? scu?.find((item) => item.value === activeSize)?.price + ' ₽'
+        {activeScu && activeScu.price && activeScu.price.discountPrice
+          ? activeScu.price.discountPrice + ' ₽'
           : 'цена не указана'}
       </div>
       <div className={style.btns}>

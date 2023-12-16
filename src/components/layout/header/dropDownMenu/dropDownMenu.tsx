@@ -3,9 +3,9 @@ import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
 import { CatalogItems, CatalogMenu } from './interface';
 import { setMenu } from '@/redux/menuSlice/menuSlice';
 import MobileMenu from './mobileMenu/mobileMenu';
+import PCMenu from './pcMenu/pcMenu';
 
 import style from './dropDownMenu.module.sass';
-import PCMenu from './pcMenu/pcMenu';
 
 interface IMenuOpen {
   setMenuOpen: Dispatch<SetStateAction<boolean>>;

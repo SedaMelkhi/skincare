@@ -1,33 +1,68 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { parsePhoneNumberFromString } from 'libphonenumber-js';
+
 import Link from 'next/link';
+import InputMask from 'react-input-mask';
 
 import Layout from '@/components/layout/Layout';
-//import { UserApi } from '@/services';
+import { getTokenService, userRegisterService } from '@/services/auth.service';
+
+import eyeSvg1 from './../../../../public/eye.svg';
+import eyeSvg2 from './../../../../public/eyeClose.svg';
 
 import style from './authorization.module.sass';
+import { useDispatch } from 'react-redux';
+import { setIsRegistred } from '@/redux/registredSlice/registredSlice';
+import { useRouter } from 'next/router';
 
 const RegistrationPage: FC = () => {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [password2, setPassword2] = useState('');
+  const [error, setError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
+  const [passwordShown, setPasswordShown] = useState(false);
+  const [password2Shown, setPassword2Shown] = useState(false);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  const togglePasswordVisibility = () => {
+    setPasswordShown(!passwordShown);
+  };
+  const togglePassword2Visibility = () => {
+    setPassword2Shown(!password2Shown);
+  };
+  const handlePhoneChange = (event: any) => {
+    const input = event.target.value;
+    setPhone(input);
+
+    const phone = parsePhoneNumberFromString(input, 'RU'); // Укажите здесь нужный регион
+    if (!phone || !phone.isValid()) {
+      setPhoneError('Введите действительный номер телефона.');
+    } else {
+      setPhoneError('');
+    }
+  };
   const sendData = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // if (password === password2) {
-    //   const data = await UserApi.register({
-    //     USER_LOGIN: phone,
-    //     USER_NAME: name,
-    //     USER_LAST_NAME: '',
-    //     USER_PASSWORD: password,
-    //     USER_CONFIRM_PASSWORD: password,
-    //     site_id: false,
-    //     captcha_word: '',
-    //     captcha_sid: 0,
-    //   });
-    //   console.log(data);
-    // } else {
-    //   console.log('пароли не совпадают');
-    // }
+    const containsLetters = /[a-zA-Z]/.test(password);
+    const containsDigits = /\d/.test(password);
+
+    if (password.length < 8 || !(containsLetters && containsDigits)) {
+      setError('Пароль должен быть больше 8 символов и содержать цифру.');
+    } else if (!phoneError) {
+      if (password === password2) {
+        const data = await userRegisterService.userRegister(phone, password);
+        if (data.TYPE === 'OK') {
+          dispatch(setIsRegistred(true));
+          router.push('/authorization/numberconfirmed');
+        }
+        console.log(data);
+        setError('');
+      } else {
+        setError('Пароль не соответствует.');
+      }
+    }
   };
   //href="/authorization/confirmed"
   return (
@@ -43,30 +78,49 @@ const RegistrationPage: FC = () => {
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
-          <input
-            className={style.input_field}
+          <InputMask
+            mask="+7 (999) 999-99-99"
+            maskChar={null}
+            className={style.input_field + ' ' + (phoneError ? style.error_border : '')}
             type="tel"
             placeholder="Номер телефона *"
             required
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
+            onChange={handlePhoneChange}
           />
-          <input
-            className={style.input_field}
-            type="password"
-            placeholder="Придумайте пароль *"
-            required
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-          <input
-            className={style.input_field}
-            type="password"
-            placeholder="Подтвердите пароль *"
-            value={password2}
-            onChange={(e) => setPassword2(e.target.value)}
-            required
-          />
+          {phoneError && <div className={style.error_message}>{phoneError}</div>}
+          <div className={style.password}>
+            <input
+              className={style.input_field}
+              type={passwordShown ? 'text' : 'password'}
+              placeholder="Придумайте пароль *"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {passwordShown ? (
+              <img src={eyeSvg1.src} alt="" onClick={togglePasswordVisibility} />
+            ) : (
+              <img src={eyeSvg2.src} alt="" onClick={togglePasswordVisibility} />
+            )}
+          </div>
+          {error && <div className={style.error_message}>{error}</div>}
+          <div className={style.password}>
+            <input
+              className={style.input_field}
+              type={password2Shown ? 'text' : 'password'}
+              placeholder="Подтвердите пароль *"
+              value={password2}
+              onChange={(e) => setPassword2(e.target.value)}
+              required
+            />
+            {password2Shown ? (
+              <img src={eyeSvg1.src} alt="" onClick={togglePassword2Visibility} />
+            ) : (
+              <img src={eyeSvg2.src} alt="" onClick={togglePassword2Visibility} />
+            )}
+          </div>
+          {error && <div className={style.error_message}>{error}</div>}
           <button className={style.btn + ' ' + style.btn_bg_white + ' ' + style.btn_margin}>
             Создать аккаунт
           </button>

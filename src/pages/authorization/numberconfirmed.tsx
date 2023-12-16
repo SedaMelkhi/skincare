@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 import Link from 'next/link';
-
+import withRegistred from '@/components/withRegistred';
 import Layout from '@/components/layout/Layout';
 
 import image from './../../../public/images/swatch-3.svg';
@@ -22,4 +22,4 @@ const NumberConfirmed: NextPage = () => {
   );
 };
 
-export default NumberConfirmed;
+export default withRegistred(NumberConfirmed);

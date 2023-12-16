@@ -18,7 +18,7 @@ type DetailsData = {
   desc: string;
   id: number;
 };
-const TabPanel: FC = () => {
+const TabPanel: FC<{ product: any }> = ({ product }) => {
   const [activeTabId, setActiveTabId] = useState(0);
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const onItemClick = (index: number): void => {
@@ -31,28 +31,26 @@ const TabPanel: FC = () => {
   const data: TabPanelData[] = [
     {
       name: 'Описание',
-      text: `Активно освежающий шампунь SOLU глубоко очищает волосы и кожу головы, удаляя остатки стайлинговых продуктов. 
-      Содержит экстракт гречихи из долины Вальтеллина, выращенной в рамках программы Slow Food Presidium. Формула насыщена антиоксидантами и минеральными солями, железом, цинком, селением и протеинами. Включает в себя все незаменимые аминокислоты в высокой концентрации: лизин, треонин, триптофан и аминокислоты. 
-      Подходит для всех типов волос перед процедурами химической завивки или разглаживания.`,
+      text: product.description.replace(/<br \/>/g, ' '),
       details: [
         {
           name: 'Бренд',
-          desc: 'SOLU',
+          desc: product.brand.NAME || '...',
           id: 0,
         },
         {
           name: 'Производитель',
-          desc: 'Россия',
+          desc: product.props[48].value || '...',
           id: 1,
         },
         {
           name: 'Проблемы',
-          desc: 'Акне, пигментация, неровный тон, черные точки, расширенные поры, розацеа, купероз, тусклость, морщины',
+          desc: 'ЭТОГО НЕТ В БЭКЕ!!!' || '...',
           id: 2,
         },
         {
           name: 'Тип кожи',
-          desc: 'Жирная, комбинированная, нормальная, проблемная, сухая, чувствительная',
+          desc: product.props[27].value || '...',
           id: 3,
         },
       ],
@@ -60,28 +58,22 @@ const TabPanel: FC = () => {
     },
     {
       name: 'применение',
-      text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti rerum maiores, earum repellat velit obcaecati alias eos aperiam sunt. Nisi aut dolorum repellendus maiores quos omnis sunt vero ad error itaque, quidem cupiditate consectetur totam sint, provident amet! Enim laboriosam eum obcaecati consequuntur quo, est sequi assumenda libero totam quam aperiam iste esse adipisci consequatur, voluptates deserunt beatae cumque dolor, mollitia quas tempore fugiat minima!`,
+      text: product.props[21].value.TEXT || '...',
       id: 1,
     },
     {
       name: 'состав',
-      text: `Minima nam incidunt expedita voluptatem at aliquam eaque fugit consequuntur ipsam eligendi
-      doloribus laboriosam, officia dignissimos nulla nostrum sunt distinctio dolores magni,
-      consequatur exercitationem, illo cupiditate similique autem. Neque cum maiores, ratione
-      numquam deleniti magnam!`,
+      text: product.props[22].value.TEXT || '...',
       id: 2,
     },
     {
       name: 'о бренде',
-      text: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti rerum maiores, earum repellat velit obcaecati alias eos aperiam sunt. Nisi aut dolorum repellendus maiores quos omnis sunt vero ad error itaque, quidem cupiditate consectetur totam sint, provident amet! Enim laboriosam eum obcaecati consequuntur quo, est sequi assumenda libero totam quam aperiam iste esse adipisci consequatur, voluptates deserunt beatae cumque dolor, mollitia quas tempore fugiat minima!`,
+      text: product.brand.PREVIEW_TEXT || '...',
       id: 3,
     },
     {
       name: 'дополнительно',
-      text: `Minima nam incidunt expedita voluptatem at aliquam eaque fugit consequuntur ipsam eligendi
-      doloribus laboriosam, officia dignissimos nulla nostrum sunt distinctio dolores magni,
-      consequatur exercitationem, illo cupiditate similique autem. Neque cum maiores, ratione
-      numquam deleniti magnam!`,
+      text: product.props[47].value.TEXT || '...',
       id: 4,
     },
   ];

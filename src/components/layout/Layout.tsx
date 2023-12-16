@@ -44,7 +44,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description, na
 
       <Basket />
       <Notifications />
-      {children}
+      <div className={style.container}>{children}</div>
       <Footer />
     </div>
   );

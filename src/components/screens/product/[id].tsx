@@ -1,4 +1,4 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import Layout from '@/components/layout/Layout';
@@ -17,23 +17,27 @@ import style from './product.module.sass';
 const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
   const hits = useSelector((state: any) => state.hits.hits);
   const product = Object.values(data)[0];
-  const sizes: string[] = [];
-  const prices: number[] = [];
-  const images: string[] = [];
-  const [activeScu, setActiveScu] = useState<number>(0);
+  const [images, setImages] = useState<string[]>([]);
   const scu: IScu[] | null = product.scu ? Object.values(product.scu) : null;
-  if (scu) {
-    scu.forEach((item) => {
-      !sizes.includes(item.value) && sizes.push(item.value);
-      item.price && !prices.includes(+item.price) && prices.push(+item.price);
-    });
-    scu[0].photos && scu[0].photos.length > 0
-      ? images.push(...scu[0].photos)
-      : images.push(product.detailPhoto, ...product.addPhotos);
-    scu[0].shade && scu[0].shade.PREVIEW_PICTURE && images.push(scu[0].shade.PREVIEW_PICTURE);
-  } else {
-    images.push(product.detailPhoto, ...product.addPhotos);
-  }
+
+  const [activeScu, setActiveScu] = useState<IScu | null>(null);
+  useEffect(() => {
+    let temp = [];
+
+    if (activeScu) {
+      activeScu.photos && activeScu.photos.length > 0
+        ? temp.push(...activeScu.photos)
+        : temp.push(product.detailPhoto, ...product.addPhotos);
+      activeScu.shade &&
+        activeScu.shade.PREVIEW_PICTURE &&
+        temp.push(activeScu.shade.PREVIEW_PICTURE);
+    }
+    temp.push(product.detailPhoto, ...product.addPhotos);
+    temp = temp.filter((item) => item !== null);
+
+    setImages(temp);
+  }, [activeScu]);
+  console.log(product);
 
   return (
     <Layout title={product.name}>
@@ -47,7 +51,7 @@ const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
         />
         <section className={style.product}>
           <Slider detailPhoto={images} />
-          <Text product={product} scu={scu} />
+          <Text product={product} scu={scu} setActiveScu={setActiveScu} activeScu={activeScu} />
         </section>
         <div className={style.quenstion__wrap}>
           <div className={style.quenstion}>
@@ -60,7 +64,7 @@ const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
             <img src={askSvg.src} alt="" />
           </div>
         </div>
-        <TabPanel />
+        <TabPanel product={product} />
       </div>
       <div className={style.recommendation}>
         <div className={style.recommendation__title}>Bам может понравиться</div>
