@@ -42,7 +42,7 @@ const SignIn: NextPage<any> = () => {
     } else if (token) {
       setError('');
       localStorage.setItem('token', token);
-      router.push('/authorization/numberconfirmed');
+      router.push('/profile');
     }
   };
   return (
