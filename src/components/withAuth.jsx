@@ -4,12 +4,12 @@ import React, { useEffect, useState } from 'react';
 const withAuth = (WrappedComponent) => {
   return (props) => {
     const Router = useRouter();
-    const [isAuthenticated, setIsAuthenticated] = useState(false);
+    const [isAuthenticated, setIsAuthenticated] = useState(localStorage.getItem('token') || false);
 
     useEffect(() => {
       const token = localStorage.getItem('token'); // Или ваш способ получения токена
       if (!token) {
-        Router.replace('/authorization/signin'); // Перенаправление на страницу входа
+        Router.replace('/authorization'); // Перенаправление на страницу входа
       } else {
         setIsAuthenticated(true);
         // Здесь может быть дополнительная проверка валидности токена

@@ -12,7 +12,7 @@ import eyeSvg2 from './../../../../public/eyeClose.svg';
 
 import style from './authorization.module.sass';
 import { useDispatch } from 'react-redux';
-import { setIsRegistred } from '@/redux/registredSlice/registredSlice';
+import { authSlice } from '@/redux/authSlice/authSlice';
 import { useRouter } from 'next/router';
 
 const RegistrationPage: FC = () => {
@@ -24,6 +24,7 @@ const RegistrationPage: FC = () => {
   const [phoneError, setPhoneError] = useState('');
   const [passwordShown, setPasswordShown] = useState(false);
   const [password2Shown, setPassword2Shown] = useState(false);
+  const [serverErr, setServerErr] = useState('');
   const dispatch = useDispatch();
   const router = useRouter();
   const togglePasswordVisibility = () => {
@@ -54,8 +55,13 @@ const RegistrationPage: FC = () => {
       if (password === password2) {
         const data = await userRegisterService.userRegister(phone, password);
         if (data.TYPE === 'OK') {
-          dispatch(setIsRegistred(true));
-          router.push('/authorization/numberconfirmed');
+          const token = await getTokenService.getToken(phone, password);
+          localStorage.setItem('token', token);
+          if (token) {
+            router.push('/authorization/numberconfirmed');
+          }
+        } else {
+          setServerErr(data.MESSAGE.replace(/<br>/g, ' '));
         }
         console.log(data);
         setError('');
@@ -69,10 +75,11 @@ const RegistrationPage: FC = () => {
     <Layout title="Регистрация">
       <section className={style.sign_up_page}>
         <h1 className={style.title}>новый AкКаунт</h1>
+        {serverErr && <div className={style.error_message}>{serverErr}</div>}
         <form action="" onSubmit={sendData}>
           <input
             className={style.input_field}
-            type="text"
+            type="name"
             placeholder="Имя *"
             required
             value={name}
