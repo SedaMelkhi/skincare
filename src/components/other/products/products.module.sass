@@ -9,6 +9,7 @@
 
 .card_big
     width: 100%
+    position: relative
     @media (min-width: 768px)
         width: 65%
     .image
@@ -19,6 +20,7 @@
             height: 466px
 
 .card
+    position: relative
     width: calc(50% - 8px)
     @media (min-width: 768px)
         width: 31%
@@ -75,3 +77,14 @@
         font-size: 14px
         line-height: normal
         text-decoration: line-through
+
+.pin
+    position: absolute
+    top: -5px
+    left: 16px
+    display: flex
+    gap: 4px
+
+.card_big
+    .pin
+        left: 24px

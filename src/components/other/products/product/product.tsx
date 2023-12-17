@@ -1,9 +1,12 @@
 import Link from 'next/link';
 import { FC } from 'react';
+import { IProduct } from '@/interfaces/products.interface';
+
+import discountImg from './../../../../../public/bonus/1.png';
+import newImg from './../../../../../public/bonus/new.png';
+import hitImg from './../../../../../public/bonus/hit.svg';
 
 import style from './../products.module.sass';
-
-import { IProduct } from '@/interfaces/products.interface';
 
 const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue }) => {
   const sizes: string[] = [];
@@ -15,9 +18,16 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
       item[0] && item[0].price && !prices.includes(+item[0].price) && prices.push(+item[0].price);
     });
   }
+  console.log(item);
 
   return (
     <Link href={'/product/' + item.id} className={style[classValue]} key={item.id}>
+      <div className={style.pin}>
+        {item.pin.includes('Скидка') && <img src={discountImg.src} alt="" />}
+        {item.pin.includes('Новинка') && <img src={newImg.src} alt="" />}
+        {item.pin.includes('Хит') && <img src={hitImg.src} alt="" />}
+      </div>
+
       <div
         className={style.image}
         style={

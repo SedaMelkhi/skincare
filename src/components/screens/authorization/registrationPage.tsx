@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useState } from 'react';
 import { parsePhoneNumberFromString } from 'libphonenumber-js';
 
 import Link from 'next/link';
@@ -7,7 +7,6 @@ import InputMask from 'react-input-mask';
 import Layout from '@/components/layout/Layout';
 import { getTokenService, userRegisterService } from '@/services/auth.service';
 import { useDispatch } from 'react-redux';
-import { authSlice } from '@/redux/authSlice/authSlice';
 import { useRouter } from 'next/router';
 
 import eyeSvg1 from './../../../../public/eye.svg';

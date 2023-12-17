@@ -58,7 +58,9 @@ const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu 
       ),
     );
   };
-
+  const handleLogOut = () => {
+    localStorage.removeItem('token');
+  };
   return (
     <aside className={style.aside}>
       <div className={style.row}>
@@ -88,7 +90,9 @@ const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu 
       </div>
       <div className={style.line}></div>
       <div className={style.logOut}>
-        <Link href="/authorization">выйти</Link>
+        <Link href="/authorization" onClick={handleLogOut}>
+          выйти
+        </Link>
       </div>
     </aside>
   );

@@ -1,17 +1,39 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { userInfoService } from '@/services/profile.service';
 import Link from 'next/link';
+import InputMask from 'react-input-mask';
+import parsePhoneNumberFromString from 'libphonenumber-js';
 
 import Input from '@/components/other/input/input';
 import Button from '@/components/other/button/button';
+import ProfileTitle from '../profileTitle/Title';
 
 import style from './profileData.module.sass';
-import ProfileTitle from '../profileTitle/Title';
 
 interface ProfileAsideProps {
   setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
+  const [phoneError, setPhoneError] = useState('');
+  const [phone, setPhone] = useState('');
+  //const [data, setData] = useState();
+  // useEffect(() => {
+  //   const data = userInfoService.getUserInfo();
+  //   data.then((res) => setData(res));
+  // }, []);
+  // console.log(data);
+  const handlePhoneChange = (event: any) => {
+    const input = event.target.value;
+    setPhone(input);
+
+    const phone = parsePhoneNumberFromString(input, 'RU'); // Укажите здесь нужный регион
+    if (!phone || !phone.isValid()) {
+      setPhoneError('Введите действительный номер телефона.');
+    } else {
+      setPhoneError('');
+    }
+  };
   return (
     <div className={style.data}>
       <div className={style.back} onClick={() => setActiveProfileData((prev) => !prev)}>
@@ -30,16 +52,16 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
               fill="#19171A"
             />
           </svg>
-        </span>{' '}
+        </span>
         мой профиль
       </div>
-      <ProfileTitle title="привет, Мария" link={false} />
+      <ProfileTitle title="привет, User" link={false} />
       <form className={style.form}>
         <div className={style.input}>
-          <Input value="Мария" />
+          <Input placeholder="Фамилия" value="" />
         </div>
         <div className={style.input}>
-          <Input placeholder="Мария" value="Адамова" />
+          <Input placeholder="Имя" value="User" />
         </div>
         <div className={style.input}>
           <Input placeholder="Отчество" />
@@ -51,7 +73,16 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
           <Input value="E-mail" />
         </div>
         <div className={style.input}>
-          <Input placeholder="+7 (___) ___-__-__" />
+          <InputMask
+            mask="+7 (999) 999-99-99"
+            maskChar={null}
+            className={style.input_field + ' ' + (phoneError ? style.error_border : '')}
+            type="tel"
+            placeholder="Номер телефона *"
+            required
+            value={phone}
+            onChange={handlePhoneChange}
+          />
         </div>
         <Link href="" className={style.link}>
           Изменить пароль
