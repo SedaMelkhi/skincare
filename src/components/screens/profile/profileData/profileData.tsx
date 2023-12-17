@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from 'react';
-import { userInfoService } from '@/services/profile.service';
+import { userInfoService, userUpdateService } from '@/services/profile.service';
 import Link from 'next/link';
 import InputMask from 'react-input-mask';
 import parsePhoneNumberFromString from 'libphonenumber-js';
@@ -14,28 +14,57 @@ interface ProfileAsideProps {
   setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
+interface IUserData {
+  birthday: string;
+  email: string;
+  lastName: string;
+  loginPhone: string;
+  name: string;
+  secondName: string;
+  userId: number;
+}
+
 const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
+  const [userData, setUserData] = useState<IUserData>({
+    birthday: '',
+    email: '',
+    lastName: '',
+    loginPhone: '',
+    name: '',
+    secondName: '',
+    userId: 0,
+  });
   const [phoneError, setPhoneError] = useState('');
-  const [phone, setPhone] = useState('');
-  const [data, setData] = useState();
-  console.log('token', localStorage.getItem('token'));
 
   useEffect(() => {
-    const data = userInfoService.getUserInfo();
-    data.then((res) => setData(res));
+    userInfoService.getUserInfo().then(setUserData);
   }, []);
+
+  const handleInputChange = (fieldName: keyof IUserData, value: string) => {
+    setUserData((prevData) => ({
+      ...prevData,
+      [fieldName]: value,
+    }));
+  };
 
   const handlePhoneChange = (event: any) => {
     const input = event.target.value;
-    setPhone(input);
+    handleInputChange('loginPhone', input);
 
-    const phone = parsePhoneNumberFromString(input, 'RU'); // Укажите здесь нужный регион
+    const phone = parsePhoneNumberFromString(input, 'RU');
     if (!phone || !phone.isValid()) {
       setPhoneError('Введите действительный номер телефона.');
     } else {
       setPhoneError('');
     }
   };
+
+  const handleChangeUserData = async (event: any) => {
+    event.preventDefault();
+    const response = await userUpdateService.userUpdate(userData);
+    console.log(response);
+  };
+
   return (
     <div className={style.data}>
       <div className={style.back} onClick={() => setActiveProfileData((prev) => !prev)}>
@@ -57,22 +86,42 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
         </span>
         мой профиль
       </div>
-      <ProfileTitle title="привет, User" link={false} />
+      <ProfileTitle title={`привет, ${userData.name}`} link={false} />
       <form className={style.form}>
         <div className={style.input}>
-          <Input placeholder="Фамилия" value="" />
+          <Input
+            placeholder="Фамилия"
+            value={userData.lastName}
+            onChange={(e) => handleInputChange('lastName', e.target.value)}
+          />
         </div>
         <div className={style.input}>
-          <Input placeholder="Имя" value="User" />
+          <Input
+            placeholder="Имя"
+            value={userData.name}
+            onChange={(e) => handleInputChange('name', e.target.value)}
+          />
         </div>
         <div className={style.input}>
-          <Input placeholder="Отчество" />
+          <Input
+            placeholder="Отчество"
+            value={userData.secondName}
+            onChange={(e) => handleInputChange('secondName', e.target.value)}
+          />
         </div>
         <div className={style.input}>
-          <Input placeholder="Дата рождения" />
+          <Input
+            placeholder="Дата рождения"
+            value={userData.birthday}
+            onChange={(e) => handleInputChange('birthday', e.target.value)}
+          />
         </div>
         <div className={style.input}>
-          <Input value="E-mail" />
+          <Input
+            placeholder="E-mail"
+            value={userData.email}
+            onChange={(e) => handleInputChange('email', e.target.value)}
+          />
         </div>
         <div className={style.input}>
           <InputMask
@@ -82,14 +131,15 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
             type="tel"
             placeholder="Номер телефона *"
             required
-            value={phone}
+            value={userData.loginPhone}
             onChange={handlePhoneChange}
           />
         </div>
         <Link href="" className={style.link}>
           Изменить пароль
         </Link>
-        <Button text="сохранить" />
+
+        <Button text="сохранить" onClick={handleChangeUserData} />
       </form>
     </div>
   );

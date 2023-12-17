@@ -15,6 +15,7 @@ import { setMenu } from '@/redux/menuSlice/menuSlice';
 import { CatalogService } from '@/services';
 import style from './header.module.sass';
 import axios from 'axios';
+import { saleUserIdService } from '@/services/noauth.service';
 interface RootState {
   basket: {
     isBasketOpen: boolean;
@@ -57,7 +58,16 @@ const Header: FC = () => {
     })
       .then((res) => res.json())
       .then((catalog) => dispatch(setMenu(catalog)));
+    if (!localStorage.getItem('saleUserId')) {
+      const data = saleUserIdService.getSaleUserId();
+      data.then((res) => {
+        if (res.result) {
+          localStorage.setItem('saleUserId', res.result);
+        }
+      });
+    }
   }, []);
+
   return (
     <div className={style.header__wrap + ' ' + style[scroll]}>
       <div className="wrap">

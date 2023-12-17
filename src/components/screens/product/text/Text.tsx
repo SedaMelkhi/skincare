@@ -8,8 +8,10 @@ import actionSvg2 from './../../../../../public/action2.svg';
 import actionSvg3 from './../../../../../public/action3.svg';
 import infoSvg from './../../../../../public/info.svg';
 import saveSvg from './../../../../../public/save.svg';
+import checkSvg from './../../../../../public/check.svg';
 
 import style from './text.module.sass';
+import { addSCUToCartService } from '@/services/noauth.service';
 
 const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activeScu: any }> = ({
   product,
@@ -20,7 +22,7 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
   const sizes: string[] = [];
   const [colors, setColors] = useState<{ name: string; image: string; id: string }[]>([]);
   const icons = [actionSvg1.src, actionSvg2.src, actionSvg3.src];
-
+  const [btnText, setBtnText] = useState('Добавить в сумочку');
   scu?.forEach((item) => {
     !sizes.includes(item.value) && sizes.push(item.value);
   });
@@ -92,6 +94,20 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
     );
   }, [activeColor]);
 
+  const addProductInCart = async () => {
+    if (localStorage.getItem('saleUserId')) {
+      const data = await addSCUToCartService.addSCUToCart(
+        localStorage.getItem('saleUserId'),
+        activeScu.id,
+        1,
+      );
+      if (data.status === 'ok') {
+        setBtnText('добавлен');
+      }
+      console.log(data);
+    }
+  };
+
   return (
     <div className={style.text}>
       <h2 className={style.title}>{product.name}</h2>
@@ -161,8 +177,10 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
           : 'цена не указана'}
       </div>
       <div className={style.btns}>
-        <button className={style.btn}>Добавить в сумочку</button>
-        <img src={saveSvg.src} alt="" />
+        <button className={style.btn} onClick={addProductInCart}>
+          {btnText} {btnText === 'добавлен' ? <img src={checkSvg.src} alt="" /> : ''}
+        </button>
+        <img src={saveSvg.src} alt="" className={style.save} />
       </div>
 
       <div className={style.select__wrap}>

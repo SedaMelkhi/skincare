@@ -1,22 +1,22 @@
-import { FC, useState } from 'react';
+import React, { FC } from 'react';
 
 import style from './input.module.sass';
 
-interface Input {
+interface InputProps {
   placeholder?: string;
   value?: string;
   type?: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void; // Добавлено свойство onChange
 }
 
-const Input: FC<Input> = ({ placeholder, value, type }) => {
-  const [data, setData] = useState(value || '');
+const Input: FC<InputProps> = ({ placeholder, value, type, onChange }) => {
   return (
     <input
       className={style.input + ' ' + (value ? style.input_active : '')}
       placeholder={placeholder}
-      type={type ? type : 'text'}
-      value={data}
-      onChange={(event) => setData(event.target.value)}
+      type={type || 'text'}
+      value={value || ''}
+      onChange={onChange || ((event) => {})} // Используйте переданный обработчик onChange
     />
   );
 };
