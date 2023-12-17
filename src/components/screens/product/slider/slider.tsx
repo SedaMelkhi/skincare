@@ -45,16 +45,21 @@ const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
             ))}
           </Swiper>
         ) : (
-          <div className={style.image__not}></div>
+          <div className={style.swiper + ' ' + style.swiper__not}></div>
         )}
-        <div className={style.arrows}>
-          <div className="slider__prevEl">
-            <img src={arrowPrev.src} alt="" />
+
+        {detailPhoto && detailPhoto.length > 0 ? (
+          <div className={style.arrows}>
+            <div className="slider__prevEl">
+              <img src={arrowPrev.src} alt="" />
+            </div>
+            <div className="slider__nextEl">
+              <img src={arrowNext.src} alt="" />
+            </div>
           </div>
-          <div className="slider__nextEl">
-            <img src={arrowNext.src} alt="" />
-          </div>
-        </div>
+        ) : (
+          ''
+        )}
       </div>
       <div className={style.thumbs__wrap}>
         {detailPhoto && detailPhoto.length > 0 ? (

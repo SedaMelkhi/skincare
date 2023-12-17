@@ -22,11 +22,13 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
 
   return (
     <Link href={'/product/' + item.id} className={style[classValue]} key={item.id}>
-      <div className={style.pin}>
-        {item.pin.includes('Скидка') && <img src={discountImg.src} alt="" />}
-        {item.pin.includes('Новинка') && <img src={newImg.src} alt="" />}
-        {item.pin.includes('Хит') && <img src={hitImg.src} alt="" />}
-      </div>
+      {item.pin && (
+        <div className={style.pin}>
+          {item.pin.includes('Скидка') && <img src={discountImg.src} alt="" />}
+          {item.pin.includes('Новинка') && <img src={newImg.src} alt="" />}
+          {item.pin.includes('Хит') && <img src={hitImg.src} alt="" />}
+        </div>
+      )}
 
       <div
         className={style.image}

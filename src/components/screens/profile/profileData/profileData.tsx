@@ -17,12 +17,14 @@ interface ProfileAsideProps {
 const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
   const [phoneError, setPhoneError] = useState('');
   const [phone, setPhone] = useState('');
-  //const [data, setData] = useState();
-  // useEffect(() => {
-  //   const data = userInfoService.getUserInfo();
-  //   data.then((res) => setData(res));
-  // }, []);
-  // console.log(data);
+  const [data, setData] = useState();
+  console.log('token', localStorage.getItem('token'));
+
+  useEffect(() => {
+    const data = userInfoService.getUserInfo();
+    data.then((res) => setData(res));
+  }, []);
+
   const handlePhoneChange = (event: any) => {
     const input = event.target.value;
     setPhone(input);

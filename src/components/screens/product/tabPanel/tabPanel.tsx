@@ -45,7 +45,7 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
         },
         {
           name: 'Проблемы',
-          desc: 'ЭТОГО НЕТ В БЭКЕ!!!' || '...',
+          desc: (product.props[26].value && product.props[26].value.join(', ')) || '...',
           id: 2,
         },
         {

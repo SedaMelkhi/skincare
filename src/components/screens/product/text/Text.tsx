@@ -106,10 +106,12 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
             </div>
           ))}
       </div>
+      {product.preDescription && (
+        <div
+          className={style.description}
+          dangerouslySetInnerHTML={{ __html: String(product.preDescription) }}></div>
+      )}
 
-      <div
-        className={style.description}
-        dangerouslySetInnerHTML={{ __html: String(product.preDescription) }}></div>
       <div className={style.colors}>
         {colors.map(({ name, image, id }) => (
           <div className={style.color} key={id} onClick={() => setActiveColor(id)}>
@@ -125,17 +127,22 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
           </div>
         ))}
       </div>
-      <div className={style.subtitle}>Объеm</div>
-      <div className={style.sizes}>
-        {sizes.map((item, i) => (
-          <div
-            className={style.size + ' ' + (activeSize === item ? style.active : '')}
-            key={i}
-            onClick={() => setActiveSize(item)}>
-            {item}
+      {sizes && sizes.length > 0 && (
+        <>
+          <div className={style.subtitle}>Объеm</div>
+          <div className={style.sizes}>
+            {sizes.map((item, i) => (
+              <div
+                className={style.size + ' ' + (activeSize === item ? style.active : '')}
+                key={i}
+                onClick={() => setActiveSize(item)}>
+                {item}
+              </div>
+            ))}
           </div>
-        ))}
-      </div>
+        </>
+      )}
+
       <div className={style.old__price}>
         {activeScu && activeScu.price && activeScu.price.discount ? (
           <div className={style.oldPrice}>

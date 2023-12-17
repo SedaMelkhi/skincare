@@ -32,7 +32,8 @@ const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
         activeScu.shade.PREVIEW_PICTURE &&
         temp.push(activeScu.shade.PREVIEW_PICTURE);
     }
-    temp.push(product.detailPhoto, ...product.addPhotos);
+    product.addPhotos && temp.push(...product.addPhotos);
+    product.detailPhoto && temp.push(product.detailPhoto);
     temp = temp.filter((item) => item !== null);
 
     setImages(temp);
