@@ -1,5 +1,5 @@
-import { Product } from './products.interface';
+import { IProduct } from './products.interface';
 
 export interface NewProducts {
-  [key: number]: Product;
+  [key: number]: IProduct;
 }

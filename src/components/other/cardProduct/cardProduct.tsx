@@ -6,13 +6,14 @@ import img2 from './../../../../public/bonus/new.png';
 import img3 from './../../../../public/bonus/hit.svg';
 
 import style from './cardProduct.module.sass';
+import { IScu } from '@/interfaces/products.interface';
 
 interface CardProductProps {
   available?: boolean;
   id?: string;
   name?: string;
   pin?: string[];
-  scu?: any;
+  scu?: IScu;
   sectionCode?: string;
   sectionName?: string;
   smallPhoto?: string;
@@ -49,7 +50,7 @@ const CardProduct: FC<CardProductProps> = ({
         </div>
         <div className={style.img + ' img ' + style.img_one}></div>
         <h3 className={style.description}>{name}</h3>
-        <div className={style.size}>{scu ? Object.values(scu)[0].value : ''}</div>
+        <div className={style.size}>{scu && Object.values(scu)[0].value}</div>
       </div>
 
       {available ? (
