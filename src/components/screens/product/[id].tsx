@@ -38,7 +38,7 @@ const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
 
     setImages(temp);
   }, [activeScu]);
-  console.log(activeScu);
+  console.log(data);
 
   return (
     <Layout title={product.name}>

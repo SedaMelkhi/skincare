@@ -35,22 +35,22 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
       details: [
         {
           name: 'Бренд',
-          desc: product.brand.NAME || '...',
+          desc: product.brand.NAME,
           id: 0,
         },
         {
           name: 'Производитель',
-          desc: product.props[48].value || '...',
+          desc: product.props[48].value,
           id: 1,
         },
         {
           name: 'Проблемы',
-          desc: (product.props[26].value && product.props[26].value.join(', ')) || '...',
+          desc: product.props[26].value && product.props[26].value.join(', '),
           id: 2,
         },
         {
           name: 'Тип кожи',
-          desc: product.props[27].value || '...',
+          desc: product.props[27].value,
           id: 3,
         },
       ],
@@ -58,25 +58,26 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
     },
     {
       name: 'применение',
-      text: product.props[21].value.TEXT || '...',
+      text: product.props[21].value.TEXT,
       id: 1,
     },
     {
       name: 'состав',
-      text: product.props[22].value.TEXT || '...',
+      text: product.props[22].value.TEXT,
       id: 2,
     },
     {
       name: 'о бренде',
-      text: product.brand.PREVIEW_TEXT || '...',
+      text: product.brand.PREVIEW_TEXT,
       id: 3,
     },
     {
       name: 'дополнительно',
-      text: product.props[47].value.TEXT || '...',
+      text: product.props[47].value.TEXT,
       id: 4,
     },
   ];
+  console.log(data);
 
   return (
     <div>
@@ -94,7 +95,7 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
         </div>
         {data.map(({ text, id, details }) => (
           <div key={id} style={{ display: activeTabId === id ? 'block' : 'none' }}>
-            <div className={style.text}>{text}</div>
+            <div className={style.text}>{text || 'Данных нет'}</div>
             {details && <Details detailsData={details} />}
           </div>
         ))}
@@ -112,21 +113,33 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
                     className={activeIndex === id ? style.rotate : ''}
                   />
                 </div>
-                <div
-                  className={
-                    style.description + ' ' + (activeIndex === id ? style.active : style.hidden)
-                  }>
-                  {text}
-                  <div className={style.details}>
-                    {details &&
-                      details.map(({ name, desc, id }) => (
-                        <div className={style.detailItem} key={id}>
-                          <div className={style.title}>{name}</div>
-                          <div className={style.detailDesc}>{desc}</div>
-                        </div>
-                      ))}
+                {text ? (
+                  <div
+                    className={
+                      style.description + ' ' + (activeIndex === id ? style.active : style.hidden)
+                    }>
+                    {text}
+                    <div className={style.details}>
+                      {details &&
+                        details.map(
+                          ({ name, desc, id }) =>
+                            desc && (
+                              <div className={style.detailItem} key={id}>
+                                <div className={style.title}>{name}</div>
+                                <div className={style.detailDesc}>{desc}</div>
+                              </div>
+                            ),
+                        )}
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div
+                    className={
+                      style.description + ' ' + (activeIndex === id ? style.active : style.hidden)
+                    }>
+                    Данных нет
+                  </div>
+                )}
               </div>
             </div>
           </div>
