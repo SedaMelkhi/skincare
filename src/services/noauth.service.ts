@@ -11,19 +11,3 @@ export const saleUserIdService = {
     return data;
   },
 };
-
-export const addSCUToCartService = {
-  async addSCUToCart(
-    saleUserId: number | string | null,
-    SCUId: number,
-    quantity: number,
-  ): Promise<any> {
-    const { data } = await axios.post('/cart.php', {
-      type: 'addSCUToCart',
-      saleUserId: saleUserId,
-      SCUId: SCUId,
-      quantity: quantity,
-    });
-    return data;
-  },
-};

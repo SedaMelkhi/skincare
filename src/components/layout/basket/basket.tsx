@@ -1,7 +1,10 @@
-import { FC, useEffect } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { useRouter } from 'next/router';
+import { getCartService } from '@/services/cart.service';
+
+import { IPricesObj, IbasketData } from '@/interfaces/basket.interface';
 
 import CircleArrow from '@/components/other/circleArrow/circleArrow';
 import NewProductsSwiper from './newProducts/newProductsSwiper';
@@ -10,20 +13,22 @@ import { setIsBasketOpen } from '@/redux/basketSlice/basketSlice';
 
 import closeSvg from './../../../../public/close.svg';
 import basketSvg from './../../../../public/basket2.svg';
-import whiteArrowSvg from './../../../../public/whiteArrow.svg';
+import whitebasketArrowSvg from './../../../../public/whiteArrow.svg';
 
 import style from './basket.module.sass';
 
-interface RootState {
+interface IRootState {
   basket: {
     isBasketOpen: boolean;
   };
 }
+
 const Basket: FC = () => {
-  const arr = new Array(7);
-  const isBasketOpen = useSelector((state: RootState) => state.basket.isBasketOpen);
+  const [basketArr, setBasketArr] = useState<IbasketData[] | []>([]);
+  const isBasketOpen = useSelector((state: IRootState) => state.basket.isBasketOpen);
   const dispatch = useDispatch();
   const router = useRouter();
+  const [pricesObj, setPricesObj] = useState<IPricesObj | null>(null);
   const closeBasket = () => {
     dispatch(setIsBasketOpen(false));
   };
@@ -31,27 +36,16 @@ const Basket: FC = () => {
     router.push('/placing');
   };
   useEffect(() => {
-    fetch('https://skincareagents.com/local/api/cart.php', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        type: 'printCart',
-        saleUserId: 130,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => console.log(res));
-  }, []);
-  //type: 'getSaleUserId',
-  //type: 'addSCUToCart',
-  // saleUserId: 119,
-  // SCUId: 136,
-  // quantity: 2,
-  //type: 'printCart',
-  // saleUserId: 119,
+    if (localStorage.getItem('saleUserId')) {
+      const data = getCartService.getCart(localStorage.getItem('saleUserId'));
+      data.then((res) => {
+        setPricesObj(res.basket);
+        setBasketArr(Object.values(res.cartItems));
+      });
+    }
+  }, [isBasketOpen]);
 
+  //cartItems
   return (
     <CSSTransition
       in={isBasketOpen}
@@ -75,12 +69,12 @@ const Basket: FC = () => {
                 <div className={style.bag}>
                   <img src={basketSvg.src} alt="" />
                   <div className={style.bag__text}>
-                    Сумочка <span>({arr.length})</span>
+                    Сумочка <span>({basketArr.length})</span>
                   </div>
                 </div>
               </div>
               <div className={style.content}>
-                {arr.length === 0 ? (
+                {basketArr.length === 0 ? (
                   <>
                     <p className={style.description}>
                       Похоже, ваша сумочка пуста. Давайте изменим это.
@@ -98,11 +92,11 @@ const Basket: FC = () => {
                     </div>
                   </>
                 ) : (
-                  <ProductsTable />
+                  <ProductsTable basketArr={basketArr} />
                 )}
               </div>
             </div>
-            {arr.length === 0 ? (
+            {basketArr.length === 0 ? (
               <div className={style.products}>
                 <div className={style.text}>новинки</div>
                 <NewProductsSwiper />
@@ -112,22 +106,28 @@ const Basket: FC = () => {
                 <div className={style.table}>
                   <div className={style.table__row}>
                     <div>Товаров на сумму</div>
-                    <div className={style.price + ' ' + style.old_price}>12 400 ₽</div>
+                    <div className={style.price + ' ' + style.old_price}>
+                      {pricesObj ? pricesObj.fullPrice : 0} ₽
+                    </div>
                   </div>
                   <div className={style.table__row}>
                     <div className={style.discount}>Скидка</div>
-                    <div className={style.price + ' ' + style.discount}>-2 000 ₽</div>
+                    <div className={style.price + ' ' + style.discount}>
+                      {pricesObj ? pricesObj.fullPrice - pricesObj.price : 0} ₽
+                    </div>
                   </div>
                   <div className={style.table__row}>
                     <div>Итого</div>
-                    <div className={style.price + ' ' + style.allPrice}>10 400 ₽</div>
+                    <div className={style.price + ' ' + style.allPrice}>
+                      {pricesObj ? pricesObj.price : 0} ₽
+                    </div>
                   </div>
                 </div>
                 <div className={style.promocode}>
                   Применить промокод, сертификат или баллы можно при оформлении заказа.
                 </div>
                 <button className={style.btn} onClick={handleBtnClick}>
-                  оформить заказ <img src={whiteArrowSvg.src} alt="->" />
+                  оформить заказ <img src={whitebasketArrowSvg.src} alt="->" />
                 </button>
               </div>
             )}

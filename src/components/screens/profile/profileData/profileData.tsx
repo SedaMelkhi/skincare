@@ -62,7 +62,6 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
   const handleChangeUserData = async (event: any) => {
     event.preventDefault();
     const response = await userUpdateService.userUpdate(userData);
-    console.log(response);
   };
 
   return (

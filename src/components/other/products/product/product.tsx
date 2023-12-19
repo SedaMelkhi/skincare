@@ -18,7 +18,6 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
       item[0] && item[0].price && !prices.includes(+item[0].price) && prices.push(+item[0].price);
     });
   }
-  console.log(item);
 
   return (
     <Link href={'/product/' + item.id} className={style[classValue]} key={item.id}>

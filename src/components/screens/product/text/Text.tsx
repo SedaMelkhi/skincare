@@ -11,7 +11,7 @@ import saveSvg from './../../../../../public/save.svg';
 import checkSvg from './../../../../../public/check.svg';
 
 import style from './text.module.sass';
-import { addSCUToCartService } from '@/services/noauth.service';
+import { addSCUToCartService } from '@/services/cart.service';
 
 const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activeScu: any }> = ({
   product,
@@ -104,7 +104,6 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
       if (data.status === 'ok') {
         setBtnText('добавлен');
       }
-      console.log(data);
     }
   };
 

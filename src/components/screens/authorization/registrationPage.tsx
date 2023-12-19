@@ -62,7 +62,7 @@ const RegistrationPage: FC = () => {
         } else {
           setServerErr(data.MESSAGE.replace(/<br>/g, ' '));
         }
-        console.log(data);
+
         setError('');
       } else {
         setError('Пароль не соответствует.');
