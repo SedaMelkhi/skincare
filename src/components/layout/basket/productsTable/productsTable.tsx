@@ -3,6 +3,7 @@ import { IbasketData } from '@/interfaces/basket.interface';
 
 import closeSvg from './../../../../../public/close.svg';
 import saveSvg from './../../../../../public/save.svg';
+import notphotoPng from './../../../../../public/notphoto.png';
 import minusSvg from './../../../../../public/minus.svg';
 import plusSvg from './../../../../../public/plus.svg';
 
@@ -28,7 +29,15 @@ const ProductsTable: FC<{ basketArr: IbasketData[] | [] }> = ({ basketArr }) => 
           <div className={style.row} key={scuId}>
             <div className={style.top}>
               <div>
-                <div className={style.image}></div>
+                <div
+                  className={style.image}
+                  style={{
+                    backgroundImage: `url(${
+                      parentItem.PREVIEW_PICTURE
+                        ? 'https://skincareagents.com' + parentItem.PREVIEW_PICTURE
+                        : notphotoPng.src
+                    })`,
+                  }}></div>
               </div>
               <div className={style.column}>
                 <div className={style.flex}>

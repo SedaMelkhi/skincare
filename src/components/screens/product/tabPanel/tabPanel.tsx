@@ -77,7 +77,6 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
       id: 4,
     },
   ];
-  console.log(data);
 
   return (
     <div>
