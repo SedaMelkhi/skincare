@@ -28,23 +28,29 @@ const BasketProduct: FC<IbasketData> = ({
   setBasketArr,
   setPricesObj,
 }) => {
-  const uniqueScuValue: string[] = Array.from(new Set(parentItem?.SCU.map(({ value }) => value)));
+  const [activeScu, setActiveScu] = useState(
+    parentItem?.SCU.filter(({ id, value }) => id === scuId),
+  );
   const uniqueColors: any = {};
   const [uniqueScuColor, setUniqueScuColor] = useState<IShade[]>(
-    parentItem?.SCU.map(({ shade }) => {
-      if (shade && !uniqueColors[shade.NAME]) {
-        uniqueColors[shade.NAME] = true;
-        return shade;
+    parentItem?.SCU.map((item) => {
+      if (item.shade && !uniqueColors[item.shade.NAME] && activeScu[0].value === item.value) {
+        uniqueColors[item.shade.NAME] = true;
+        return item.shade;
       }
       return false;
     }).filter((item) => item),
   );
-  const [activeScu, setActiveScu] = useState(
-    parentItem?.SCU.filter(({ id, value }) => id === scuId),
-  );
-  const handleSizeClick = () => {
-    // Логика обработки клика по размеру
-  };
+
+  const uniqueScuValue: string[] = Array.from(
+    new Set(
+      parentItem?.SCU.map(({ value, shade }) =>
+        shade?.ID === activeScu[0].shade?.ID ? value : '',
+      ),
+    ),
+  ).filter((item) => item !== '');
+  console.log(parentItem?.SCU);
+
   const handleRemoveScuToCart = (cartId: number) => {
     const data = removeSCUToCartService.removeSCUToCart(cartId);
     data.then((res) => {
@@ -59,8 +65,16 @@ const BasketProduct: FC<IbasketData> = ({
       }
     });
   };
+  const handleSizeClick = (newValue: string, cartId: number) => {
+    addSCUToCartService.addSCUToCart(
+      parentItem.SCU.filter(
+        ({ value, shade }) => shade?.ID === activeScu[0].shade?.ID && newValue == value,
+      )[0].id,
+      1,
+    );
+    handleRemoveScuToCart(cartId);
+  };
   const handleChangeActiveColor = (id: string, cartId: number) => {
-    console.log(id);
     addSCUToCartService.addSCUToCart(
       parentItem.SCU.filter(
         ({ value, shade }) => shade?.ID === id && activeScu[0].value == value,
@@ -120,7 +134,7 @@ const BasketProduct: FC<IbasketData> = ({
                       style.size + ' ' + (activeScu[0].value === value ? style.active : '')
                     }
                     key={i}
-                    onClick={() => handleSizeClick()}>
+                    onClick={() => handleSizeClick(value, cartId)}>
                     {value}
                   </div>
                 ))}
