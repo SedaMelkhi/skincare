@@ -96,11 +96,7 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
 
   const addProductInCart = async () => {
     if (localStorage.getItem('saleUserId')) {
-      const data = await addSCUToCartService.addSCUToCart(
-        localStorage.getItem('saleUserId'),
-        activeScu.id,
-        1,
-      );
+      const data = await addSCUToCartService.addSCUToCart(activeScu.id, 1);
       if (data.status === 'ok') {
         setBtnText('добавлен');
       }

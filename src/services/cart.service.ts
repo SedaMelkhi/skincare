@@ -4,14 +4,10 @@ const API_URL = 'https://skincareagents.com/local/api/';
 axios.defaults.baseURL = API_URL;
 
 export const addSCUToCartService = {
-  async addSCUToCart(
-    saleUserId: number | string | null,
-    SCUId: number,
-    quantity: number,
-  ): Promise<any> {
+  async addSCUToCart(SCUId: number, quantity: number): Promise<any> {
     const { data } = await axios.post('/cart.php', {
       type: 'addSCUToCart',
-      saleUserId: saleUserId,
+      saleUserId: localStorage.getItem('saleUserId'),
       SCUId: SCUId,
       quantity: quantity,
     });
@@ -32,10 +28,10 @@ export const removeSCUToCartService = {
 };
 
 export const getCartService = {
-  async getCart(saleUserId: number | string | null): Promise<any> {
+  async getCart(): Promise<any> {
     const { data } = await axios.post('/cart.php', {
       type: 'getCart',
-      saleUserId: saleUserId,
+      saleUserId: localStorage.getItem('saleUserId'),
     });
     return data;
   },

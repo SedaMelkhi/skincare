@@ -37,7 +37,7 @@ const Basket: FC = () => {
   };
   useEffect(() => {
     if (localStorage.getItem('saleUserId')) {
-      const data = getCartService.getCart(localStorage.getItem('saleUserId'));
+      const data = getCartService.getCart();
       data.then((res) => {
         setPricesObj(res.basket);
         setBasketArr(Object.values(res.cartItems));

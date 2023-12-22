@@ -17,7 +17,6 @@ import style from './slider.module.sass';
 
 const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
-  console.log(detailPhoto);
 
   return (
     <div className={style.slider + ' productSlider'}>

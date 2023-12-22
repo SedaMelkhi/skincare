@@ -1,3 +1,10 @@
+export interface IShade {
+  ID: string;
+  NAME: string;
+  PREVIEW_PICTURE: string;
+  PREVIEW_TEXT: string;
+}
+
 export interface IScu {
   id: number;
   name: string;
@@ -5,12 +12,7 @@ export interface IScu {
   price: string | null;
   photos?: string[];
   discount?: string;
-  shade?: {
-    ID: string;
-    NAME: string;
-    PREVIEW_PICTURE: string;
-    PREVIEW_TEXT: string;
-  };
+  shade?: IShade;
 }
 
 export interface IProduct {

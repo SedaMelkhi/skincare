@@ -1,8 +1,12 @@
 import { FC, useState } from 'react';
 import Link from 'next/link';
 import { IbasketData } from '@/interfaces/basket.interface';
-import { getCartService, removeSCUToCartService } from '@/services/cart.service';
-import { IScu } from '@/interfaces/products.interface';
+import {
+  addSCUToCartService,
+  getCartService,
+  removeSCUToCartService,
+} from '@/services/cart.service';
+import { IScu, IShade } from '@/interfaces/products.interface';
 
 import closeSvg from './../../../../../public/close.svg';
 import saveSvg from './../../../../../public/save.svg';
@@ -24,31 +28,29 @@ const BasketProduct: FC<IbasketData> = ({
   setBasketArr,
   setPricesObj,
 }) => {
-  const handleSizeClick = () => {
-    // Логика обработки клика по размеру
-  };
   const uniqueScuValue: string[] = Array.from(new Set(parentItem?.SCU.map(({ value }) => value)));
-
   const uniqueColors: any = {};
-  const uniqueScuColor: IScu[] = parentItem?.SCU.filter(({ shade }) => {
-    if (shade && !uniqueColors[shade.NAME]) {
-      uniqueColors[shade.NAME] = true;
-      return shade;
-    }
-    return false;
-  });
-
-  console.log(scuId, uniqueScuColor);
-
+  const [uniqueScuColor, setUniqueScuColor] = useState<IShade[]>(
+    parentItem?.SCU.map(({ shade }) => {
+      if (shade && !uniqueColors[shade.NAME]) {
+        uniqueColors[shade.NAME] = true;
+        return shade;
+      }
+      return false;
+    }).filter((item) => item),
+  );
   const [activeScu, setActiveScu] = useState(
     parentItem?.SCU.filter(({ id, value }) => id === scuId),
   );
+  const handleSizeClick = () => {
+    // Логика обработки клика по размеру
+  };
   const handleRemoveScuToCart = (cartId: number) => {
     const data = removeSCUToCartService.removeSCUToCart(cartId);
     data.then((res) => {
       if (res.status === 'ok') {
         if (localStorage.getItem('saleUserId')) {
-          const data = getCartService.getCart(localStorage.getItem('saleUserId'));
+          const data = getCartService.getCart();
           data.then((res) => {
             setPricesObj && setPricesObj(res.basket);
             setBasketArr && setBasketArr(Object.values(res.cartItems));
@@ -57,6 +59,17 @@ const BasketProduct: FC<IbasketData> = ({
       }
     });
   };
+  const handleChangeActiveColor = (id: string, cartId: number) => {
+    console.log(id);
+    addSCUToCartService.addSCUToCart(
+      parentItem.SCU.filter(
+        ({ value, shade }) => shade?.ID === id && activeScu[0].value == value,
+      )[0].id,
+      1,
+    );
+    handleRemoveScuToCart(cartId);
+  };
+
   return (
     <div className={style.row} key={scuId}>
       <div className={style.top}>
@@ -78,27 +91,27 @@ const BasketProduct: FC<IbasketData> = ({
                 <div className={style.title}>{name}</div>
               </Link>
               <div className={style.colors}>
-                {uniqueScuColor.map(
-                  ({ shade, id }) =>
-                    shade && (
-                      <div className={style.color} key={shade.ID}>
-                        <div className={style.color__name}>
-                          <img src={'/Union.svg'} alt="" />
-                          <span>{shade.NAME}</span>
-                        </div>
-                        <div
-                          className={
-                            style.color__border + ' ' + (scuId === id ? style.active : '')
-                          }>
-                          <div
-                            className={style.color__image}
-                            style={{
-                              background: `url(https://skincareagents.com/${shade.PREVIEW_PICTURE})`,
-                            }}></div>
-                        </div>
-                      </div>
-                    ),
-                )}
+                {uniqueScuColor.map(({ NAME, ID, PREVIEW_PICTURE }) => (
+                  <div className={style.color} key={ID}>
+                    <div className={style.color__name}>
+                      <img src={'/Union.svg'} alt="" />
+                      <span>{NAME}</span>
+                    </div>
+                    <div
+                      className={
+                        style.color__border +
+                        ' ' +
+                        (ID === activeScu[0].shade?.ID ? style.active : '')
+                      }
+                      onClick={() => handleChangeActiveColor(ID, cartId)}>
+                      <div
+                        className={style.color__image}
+                        style={{
+                          background: `url(https://skincareagents.com/${PREVIEW_PICTURE})`,
+                        }}></div>
+                    </div>
+                  </div>
+                ))}
               </div>
               <div className={style.sizes}>
                 {uniqueScuValue.map((value, i) => (
