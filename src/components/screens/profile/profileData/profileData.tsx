@@ -1,5 +1,5 @@
 import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
-import { userUpdateService } from '@/services/profile.service';
+import { userInfoService, userUpdateService } from '@/services/profile.service';
 import Link from 'next/link';
 import InputMask from 'react-input-mask';
 import parsePhoneNumberFromString from 'libphonenumber-js';
@@ -22,11 +22,17 @@ interface IUserData {
 
 interface ProfileAsideProps {
   setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>>;
+  userDataServer: IUserData;
   userData: IUserData;
   setUserData: Dispatch<SetStateAction<IUserData>>;
 }
 
-const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData, userData, setUserData }) => {
+const ProfileData: FC<ProfileAsideProps> = ({
+  setActiveProfileData,
+  userDataServer,
+  userData,
+  setUserData,
+}) => {
   const [phoneError, setPhoneError] = useState('');
 
   const handleInputChange = (fieldName: keyof IUserData, value: string) => {
@@ -51,6 +57,7 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData, userData, se
   const handleChangeUserData = async (event: any) => {
     event.preventDefault();
     const response = await userUpdateService.userUpdate(userData);
+    if (response.status === 'ok') userInfoService.getUserInfo().then(setUserData);
   };
 
   return (
@@ -74,7 +81,7 @@ const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData, userData, se
         </span>
         мой профиль
       </div>
-      <ProfileTitle title={`привет, ${userData.name}`} link={false} />
+      <ProfileTitle title={`привет, ${userDataServer.name || 'User'}`} link={false} />
       <form className={style.form}>
         <div className={style.input}>
           <Input

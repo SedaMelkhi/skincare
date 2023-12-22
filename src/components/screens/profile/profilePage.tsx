@@ -29,19 +29,36 @@ const ProfilePage: FC = () => {
     secondName: '',
     userId: 0,
   });
+  const [userDataServer, setUserDataServer] = useState<IUserData>({
+    birthday: '',
+    email: '',
+    lastName: '',
+    loginPhone: '',
+    name: '',
+    secondName: '',
+    userId: 0,
+  });
   useEffect(() => {
     userInfoService.getUserInfo().then(setUserData);
   }, []);
+  useEffect(() => {
+    userInfoService.getUserInfo().then(setUserDataServer);
+  }, [userData]);
+
   return (
     <Layout title="Личный кабинет">
       <div className={style.profile__wrap}>
         <div className={'wrap ' + style.profile}>
           <div className={!activeProfileData ? style.hidden : ''}>
-            <ProfileAside setActiveProfileData={setActiveProfileData} userData={userData} />
+            <ProfileAside
+              setActiveProfileData={setActiveProfileData}
+              userDataServer={userDataServer}
+            />
           </div>
           <div className={activeProfileData ? style.hidden : ''}>
             <ProfileData
               setActiveProfileData={setActiveProfileData}
+              userDataServer={userDataServer}
               userData={userData}
               setUserData={setUserData}
             />
