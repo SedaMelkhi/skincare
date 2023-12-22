@@ -48,7 +48,6 @@ const BasketProduct: FC<IbasketData> = ({
       ),
     ),
   ).filter((item) => item !== '');
-  console.log(quantity);
 
   const handleRemoveScuToCart = (cartId: number) => {
     const data = removeSCUToCartService.removeSCUToCart(cartId);

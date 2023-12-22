@@ -10,9 +10,20 @@ import arrowSvg from './../../../../../public/arrowCircle.svg';
 
 import style from './profileAside.module.sass';
 
+interface IUserData {
+  birthday: string;
+  email: string;
+  lastName: string;
+  loginPhone: string;
+  name: string;
+  secondName: string;
+  userId: number;
+}
+
 interface ProfileAsideProps {
   setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>> | null;
   activeMenu?: number;
+  userData: IUserData;
 }
 
 interface RootState {
@@ -21,7 +32,7 @@ interface RootState {
   };
 }
 
-const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu }) => {
+const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu, userData }) => {
   const isBasketOpen = useSelector((state: RootState) => state.basket.isNotifications);
   const dispatch = useDispatch();
   const [menu, setMenu] = useState([
@@ -72,11 +83,15 @@ const ProfileAside: FC<ProfileAsideProps> = ({ setActiveProfileData, activeMenu 
       {setActiveProfileData !== null ? (
         <div className={style.name} onClick={() => setActiveProfileData((prev) => !prev)}>
           <img src={arrowSvg.src} alt="" />
-          <div className={style.name__text}>Мария Адамова</div>
+          <div className={style.name__text}>
+            {(userData.name || 'User') + ' ' + (userData.lastName || '')}
+          </div>
         </div>
       ) : (
         <Link href="/profile" className={style.name}>
-          <div className={style.name__text}>Мария Адамова</div>
+          <div className={style.name__text}>
+            {(userData.name || 'User') + ' ' + (userData.lastName || '')}
+          </div>
         </Link>
       )}
 

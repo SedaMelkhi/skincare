@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from 'react';
-import { userInfoService, userUpdateService } from '@/services/profile.service';
+import { Dispatch, FC, SetStateAction, useEffect, useState } from 'react';
+import { userUpdateService } from '@/services/profile.service';
 import Link from 'next/link';
 import InputMask from 'react-input-mask';
 import parsePhoneNumberFromString from 'libphonenumber-js';
@@ -9,10 +9,6 @@ import Button from '@/components/other/button/button';
 import ProfileTitle from '../profileTitle/Title';
 
 import style from './profileData.module.sass';
-
-interface ProfileAsideProps {
-  setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>>;
-}
 
 interface IUserData {
   birthday: string;
@@ -24,21 +20,14 @@ interface IUserData {
   userId: number;
 }
 
-const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData }) => {
-  const [userData, setUserData] = useState<IUserData>({
-    birthday: '',
-    email: '',
-    lastName: '',
-    loginPhone: '',
-    name: '',
-    secondName: '',
-    userId: 0,
-  });
-  const [phoneError, setPhoneError] = useState('');
+interface ProfileAsideProps {
+  setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>>;
+  userData: IUserData;
+  setUserData: Dispatch<SetStateAction<IUserData>>;
+}
 
-  useEffect(() => {
-    userInfoService.getUserInfo().then(setUserData);
-  }, []);
+const ProfileData: FC<ProfileAsideProps> = ({ setActiveProfileData, userData, setUserData }) => {
+  const [phoneError, setPhoneError] = useState('');
 
   const handleInputChange = (fieldName: keyof IUserData, value: string) => {
     setUserData((prevData) => ({
