@@ -1,5 +1,6 @@
 import { FC, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+import { useRouter } from 'next/router';
 
 import Layout from '@/components/layout/Layout';
 import Breadcrumbs from '@/components/other/breadcrumbs/breadcrumbs';
@@ -13,31 +14,41 @@ import { IProduct, IScu } from '@/interfaces/products.interface';
 import askSvg from './../../../../public/ask.svg';
 
 import style from './product.module.sass';
+import { CatalogService } from '@/services/catalog.service';
 
 const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
   const hits = useSelector((state: any) => state.hits.hits);
-  const product = Object.values(data)[0];
+  const [product, setProduct] = useState(Object.values(data)[0]);
   const [images, setImages] = useState<string[]>([]);
   const scu: IScu[] | null = product.scu ? Object.values(product.scu) : null;
+  const router = useRouter();
 
   const [activeScu, setActiveScu] = useState<IScu | null>(null);
   useEffect(() => {
-    let temp = [];
-
-    if (activeScu) {
-      activeScu.photos && activeScu.photos.length > 0
-        ? temp.push(...activeScu.photos)
-        : temp.push(product.detailPhoto, ...product.addPhotos);
-      activeScu.shade &&
-        activeScu.shade.PREVIEW_PICTURE &&
-        temp.push(activeScu.shade.PREVIEW_PICTURE);
+    let temp: string[] = [];
+    if (product) {
+      if (activeScu) {
+        activeScu.photos && activeScu.photos.length > 0 && temp.push(...activeScu.photos);
+      }
+      temp = temp.filter((item) => item !== null);
+      if (temp.length === 0) {
+        product.addPhotos && temp.push(...product.addPhotos);
+        product.detailPhoto && temp.push(product.detailPhoto);
+      }
     }
-    product.addPhotos && temp.push(...product.addPhotos);
-    product.detailPhoto && temp.push(product.detailPhoto);
     temp = temp.filter((item) => item !== null);
-
     setImages(temp);
   }, [activeScu]);
+
+  // useEffect(() => {
+  //   if (product.id !== id) {
+  //     const answer = CatalogService.getCatalog({
+  //       type: 'getItem',
+  //       itemId: id,
+  //     });
+  //     answer.then((res) => setProduct(Object.values(res)[0]));
+  //   }
+  // }, [id]);
 
   return (
     <Layout title={product.name}>
