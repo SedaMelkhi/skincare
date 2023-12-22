@@ -4,8 +4,6 @@ import { CatalogService } from '@/services/catalog.service';
 import ProductPage from '@/components/screens/product/[id]';
 
 const Product: NextPage<any> = ({ data }) => {
-  console.log(Object.keys(data));
-
   return <ProductPage data={data} key={Object.keys(data)[0]} />;
 };
 

@@ -17,6 +17,7 @@ import style from './slider.module.sass';
 
 const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState<SwiperType | null>(null);
+  console.log(detailPhoto);
 
   return (
     <div className={style.slider + ' productSlider'}>
@@ -62,7 +63,7 @@ const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
         )}
       </div>
       <div className={style.thumbs__wrap}>
-        {detailPhoto && detailPhoto.length > 0 ? (
+        {detailPhoto && detailPhoto.length > 1 ? (
           <Swiper
             spaceBetween={22}
             direction={'vertical'}

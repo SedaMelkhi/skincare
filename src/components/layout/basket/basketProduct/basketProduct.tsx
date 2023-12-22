@@ -26,6 +26,7 @@ const BasketProduct: FC<IbasketData> = ({
   };
   const uniqueScuValue: string[] = Array.from(new Set(parentItem?.SCU.map(({ value }) => value)));
   const uniqueScuColor: any = Array.from(new Set(parentItem?.SCU.map(({ shade }) => shade)));
+  console.log(uniqueScuColor);
 
   const [activeScu, setActiveScu] = useState(
     parentItem?.SCU.filter(({ id, value }) => id === scuId),
