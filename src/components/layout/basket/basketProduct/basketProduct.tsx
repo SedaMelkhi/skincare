@@ -48,7 +48,10 @@ const BasketProduct: FC<IbasketData> = ({
         <div className={style.column}>
           <div className={style.flex}>
             <div>
-              <div className={style.title}>{name}</div>
+              <Link href={`/product/${parentItem.ID}`} key={parentItem.ID}>
+                <div className={style.title}>{name}</div>
+              </Link>
+
               <div className={style.sizes}>
                 {uniqueScuValue.map((value, i) => (
                   <div

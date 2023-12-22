@@ -44,7 +44,9 @@ const Basket: FC = () => {
       });
     }
   }, [isBasketOpen]);
-
+  useEffect(() => {
+    closeBasket();
+  }, [router]);
   //cartItems
   return (
     <CSSTransition
