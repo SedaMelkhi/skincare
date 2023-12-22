@@ -94,7 +94,11 @@ const Basket: FC = () => {
                     </div>
                   </>
                 ) : (
-                  <ProductsTable basketArr={basketArr} />
+                  <ProductsTable
+                    basketArr={basketArr}
+                    setBasketArr={setBasketArr}
+                    setPricesObj={setPricesObj}
+                  />
                 )}
               </div>
             </div>

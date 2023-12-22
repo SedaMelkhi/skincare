@@ -1,6 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 
 import { IProduct, IScu } from '@/interfaces/products.interface';
+import { addSCUToCartService } from '@/services/cart.service';
 
 import ArrowIcon from './../arrowIcon/arrowIcon';
 import actionSvg1 from './../../../../../public/action1.svg';
@@ -11,7 +12,6 @@ import saveSvg from './../../../../../public/save.svg';
 import checkSvg from './../../../../../public/check.svg';
 
 import style from './text.module.sass';
-import { addSCUToCartService } from '@/services/cart.service';
 
 const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activeScu: any }> = ({
   product,

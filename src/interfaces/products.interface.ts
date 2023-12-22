@@ -4,6 +4,7 @@ export interface IScu {
   value: string;
   price: string | null;
   photos?: string[];
+  discount?: string;
   shade?: {
     ID: string;
     NAME: string;

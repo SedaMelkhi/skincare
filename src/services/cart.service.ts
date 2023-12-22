@@ -19,6 +19,18 @@ export const addSCUToCartService = {
   },
 };
 
+export const removeSCUToCartService = {
+  async removeSCUToCart(cartId: number): Promise<any> {
+    const { data } = await axios.post('/cart.php', {
+      type: 'deleteCartItem',
+      saleUserId: localStorage.getItem('saleUserId'),
+      cartId: cartId,
+      //quantity: 2,
+    });
+    return data;
+  },
+};
+
 export const getCartService = {
   async getCart(saleUserId: number | string | null): Promise<any> {
     const { data } = await axios.post('/cart.php', {

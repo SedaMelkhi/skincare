@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from 'react';
 import { IScu } from './products.interface';
 
 export interface IPricesObj {
@@ -20,4 +21,6 @@ export interface IbasketData {
   finalPrice: number;
   fullPrice: number;
   price: number;
+  setBasketArr?: Dispatch<SetStateAction<IbasketData[] | []>>;
+  setPricesObj?: Dispatch<SetStateAction<IPricesObj | null>>;
 }
