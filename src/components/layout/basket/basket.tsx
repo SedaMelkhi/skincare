@@ -9,7 +9,7 @@ import { IPricesObj, IbasketData } from '@/interfaces/basket.interface';
 import CircleArrow from '@/components/other/circleArrow/circleArrow';
 import NewProductsSwiper from './newProducts/newProductsSwiper';
 import ProductsTable from './productsTable/productsTable';
-import { setIsBasketOpen } from '@/redux/basketSlice/basketSlice';
+import { setIsBasketOpen, setReduxBasketArr } from '@/redux/basketSlice/basketSlice';
 
 import closeSvg from './../../../../public/close.svg';
 import basketSvg from './../../../../public/basket2.svg';
@@ -44,6 +44,9 @@ const Basket: FC = () => {
       });
     }
   }, [isBasketOpen]);
+  useEffect(() => {
+    dispatch(setReduxBasketArr(basketArr));
+  }, [basketArr]);
   useEffect(() => {
     closeBasket();
   }, [router]);

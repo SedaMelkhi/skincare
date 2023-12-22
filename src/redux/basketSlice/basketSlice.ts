@@ -5,6 +5,7 @@ export const basketSlice = createSlice({
   initialState: {
     isBasketOpen: false,
     isNotifications: false,
+    basketArr: [],
   },
   reducers: {
     setIsBasketOpen: (state, { payload }) => {
@@ -13,8 +14,11 @@ export const basketSlice = createSlice({
     setIsNotifications: (state, { payload }) => {
       state.isNotifications = payload;
     },
+    setReduxBasketArr: (state, { payload }) => {
+      state.basketArr = payload;
+    },
   },
 });
 
-export const { setIsBasketOpen, setIsNotifications } = basketSlice.actions;
+export const { setIsBasketOpen, setIsNotifications, setReduxBasketArr } = basketSlice.actions;
 export default basketSlice.reducer;
