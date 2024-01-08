@@ -5,16 +5,19 @@ import CatalogPage from '@/components/screens/catalog/CatalogPage';
 import { IProductArr } from '@/interfaces/products.interface';
 
 const Catalog: NextPage<{ data: any }> = ({ data }) => {
-  const products: IProductArr = data ? Object.values(data) : [];
+  console.log(data);
 
-  return <CatalogPage products={products} />;
+  const products: IProductArr = data ? Object.values(data) : [];
+  console.log(products);
+  //<CatalogPage products={products} />
+  return '';
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const data = await CatalogService.getCatalog({
     type: 'getSectionItems',
     sectionId: context.params && context.params.id,
-    count: 10,
+    count: 6,
     numPage: 1,
   });
 

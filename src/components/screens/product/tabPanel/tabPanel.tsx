@@ -31,26 +31,26 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
   const data: TabPanelData[] = [
     {
       name: 'Описание',
-      text: product.description.replace(/<br \/>/g, ' '),
+      text: product.description && product.description.replace(/<br \/>/g, ' '),
       details: [
         {
           name: 'Бренд',
-          desc: product.brand.NAME,
+          desc: product.brand && product.brand.NAME,
           id: 0,
         },
         {
           name: 'Производитель',
-          desc: product.props[48].value,
+          desc: product.props && product.props[48].value,
           id: 1,
         },
         {
           name: 'Проблемы',
-          desc: product.props[26].value && product.props[26].value.join(', '),
+          desc: product.props && product.props[26].value && product.props[26].value.join(', '),
           id: 2,
         },
         {
           name: 'Тип кожи',
-          desc: product.props[27].value,
+          desc: product.props && product.props[27].value,
           id: 3,
         },
       ],
@@ -58,22 +58,22 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
     },
     {
       name: 'применение',
-      text: product.props[21].value.TEXT,
+      text: product.props && product.props[21].value.TEXT,
       id: 1,
     },
     {
       name: 'состав',
-      text: product.props[22].value.TEXT,
+      text: product.props && product.props[22].value.TEXT,
       id: 2,
     },
     {
       name: 'о бренде',
-      text: product.brand.PREVIEW_TEXT,
+      text: product.brand && product.brand.PREVIEW_TEXT,
       id: 3,
     },
     {
       name: 'дополнительно',
-      text: product.props[47].value.TEXT,
+      text: product.props && product.props[47].value.TEXT,
       id: 4,
     },
   ];

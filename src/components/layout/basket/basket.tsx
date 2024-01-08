@@ -16,6 +16,7 @@ import basketSvg from './../../../../public/basket2.svg';
 import whitebasketArrowSvg from './../../../../public/whiteArrow.svg';
 
 import style from './basket.module.sass';
+import Link from 'next/link';
 
 interface IRootState {
   basket: {
@@ -135,9 +136,11 @@ const Basket: FC = () => {
                 <div className={style.promocode}>
                   Применить промокод, сертификат или баллы можно при оформлении заказа.
                 </div>
-                <button className={style.btn} onClick={handleBtnClick}>
-                  оформить заказ <img src={whitebasketArrowSvg.src} alt="->" />
-                </button>
+                <Link href="placing">
+                  <button className={style.btn} onClick={handleBtnClick}>
+                    оформить заказ <img src={whitebasketArrowSvg.src} alt="->" />
+                  </button>
+                </Link>
               </div>
             )}
           </div>

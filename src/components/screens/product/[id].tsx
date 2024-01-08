@@ -18,7 +18,7 @@ import { CatalogService } from '@/services/catalog.service';
 
 const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
   const hits = useSelector((state: any) => state.hits.hits);
-  const [product, setProduct] = useState(Object.values(data)[0]);
+  const [product, setProduct] = useState(data ? Object.values(data)[0] : []);
   const [images, setImages] = useState<string[]>([]);
   const scu: IScu[] | null = product.scu ? Object.values(product.scu) : null;
   const router = useRouter();

@@ -1,6 +1,9 @@
 import Layout from '@/components/layout/Layout';
 import { Accordion, AccordionDetails, AccordionSummary, Box, Slider } from '@mui/material';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
+import { getTokenService } from '@/services/cdek.service';
 
 import BasketRight from './basketRight/basketRight';
 
@@ -12,8 +15,13 @@ import plusSvg from './../../../../public/plusSimple.svg';
 import arrowViolet from './../../../../public/arrowViolet.svg';
 
 import style from './placing.module.sass';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { getOrderInfoService } from '@/services/order.service';
+
+// access_token: jwt-токен;
+// token_type: тип токена (всегда принимает значение "bearer");
+// expires_in: срок действия токена (по умолчанию 3600 секунд);
+// scope: область действия токена (доступ к объектам и операциям над ними);
+// jti: уникальный идентификатор токена.
 
 const PlacingPage: FC = () => {
   const router = useRouter();
@@ -33,6 +41,16 @@ const PlacingPage: FC = () => {
       label: 'Оплата',
     },
   ];
+
+  const handleActiveChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setActiveEl(Number(event.target.value));
+  };
+
+  useEffect(() => {
+   
+    // const data = getOrderInfoService.getOrderInfo();
+    // data.then((res) => console.log(res));
+  }, []);
 
   return (
     <Layout title="Оформление заказа" nav={false}>
@@ -90,6 +108,7 @@ const PlacingPage: FC = () => {
                           id="one"
                           className={style.input}
                           checked={0 === activeEl}
+                          onChange={handleActiveChange}
                           value="Курьер по г. Грозный"
                         />
                         <div className={style.circle}>
@@ -123,6 +142,7 @@ const PlacingPage: FC = () => {
                             id="two"
                             className={style.input}
                             checked={1 === activeEl}
+                            onChange={handleActiveChange}
                             value="Пункт выдачи"
                           />
                           <div className={style.circle}>
@@ -149,6 +169,7 @@ const PlacingPage: FC = () => {
                             id="three"
                             className={style.input}
                             checked={2 === activeEl}
+                            onChange={handleActiveChange}
                             value="Самовывоз в г. Грозный"
                           />
                           <div className={style.circle}>

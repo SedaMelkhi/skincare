@@ -36,7 +36,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description, na
         isBasketOpen || isNotifications || isMenuOpen ? style.stopScrollStyle : style.scroll
       }>
       <Meta
-        title={title.length > 15 ? title.substring(0, 15) + '...' : title}
+        title={title && title.length > 15 ? title.substring(0, 15) + '...' : title}
         description={description}
       />
       {nav !== false && <Header />}

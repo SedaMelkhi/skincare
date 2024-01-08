@@ -4,7 +4,7 @@ import { CatalogService } from '@/services/catalog.service';
 import ProductPage from '@/components/screens/product/[id]';
 
 const Product: NextPage<any> = ({ data }) => {
-  return <ProductPage data={data} key={Object.keys(data)[0]} />;
+  return <ProductPage data={data} key={data && Object.keys(data)[0]} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
