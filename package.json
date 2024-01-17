@@ -13,6 +13,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.14.9",
     "@mui/material": "^5.14.7",
+    "@pbe/react-yandex-maps": "^1.2.5",
     "@reduxjs/toolkit": "^1.9.5",
     "@types/node": "20.5.0",
     "@types/react": "18.2.20",
@@ -32,13 +33,13 @@
     "react-input-mask": "^2.0.4",
     "react-redux": "^8.1.2",
     "react-transition-group": "^4.4.5",
-    "styled-components": "^5.3.11",
     "swiper": "^10.3.0",
     "typescript": "5.1.6"
   },
   "devDependencies": {
     "@types/react-datepicker": "^4.15.0",
     "@types/react-input-mask": "^3.0.5",
+    "@yandex/ymaps3-types": "^0.0.20",
     "sass": "^1.65.1"
   }
 }

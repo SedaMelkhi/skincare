@@ -149,7 +149,9 @@ const BasketProduct: FC<IbasketData> = ({
                           <div
                             className={style.color__image}
                             style={{
-                              background: `url(https://skincareagents.com/${item.PREVIEW_PICTURE})`,
+                              background: item.PREVIEW_PICTURE
+                                ? `url(https://skincareagents.com/${item.PREVIEW_PICTURE})`
+                                : '',
                             }}></div>
                         </div>
                       </div>

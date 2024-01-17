@@ -1,0 +1,81 @@
+.aside
+    &__wrap
+        display: flex
+        justify-content: flex-end
+        overflow: hidden
+        width: 100%
+        position: fixed
+        height: 100vh
+        top: 0
+        right: 0
+        z-index: 5
+        background: rgba(72, 59, 81, 0.40)
+        backdrop-filter: blur(8px)
+        font-size: 16px
+        line-height: 112.5%
+        color: var(--grey-900)
+
+
+.empty
+    min-height: 100vh
+    position: fixed
+    display: flex
+    justify-content: flex-end
+    left: 0
+    top: 0
+    width: 0
+    @media (min-width: 1200px)
+        width: calc(100% - 537px)
+
+.aside
+    width: 100%
+    background-color: var(--grey-25)
+    padding: 85px 16px 24px 
+    @media (min-width: 768px)
+        padding: 112px 16px 32px 
+    @media (min-width: 1200px)
+        width: 537px
+        padding: 112px 16px 40px 
+       
+.slideEnter
+    .aside
+        transform: translateX(100vw)
+    .map
+        opacity: 0
+        
+.slideEnterActive
+    .aside
+        transition: .5s
+        transform: translateX(0)
+    .map
+        transition: .5s
+        transform: translateX(0)
+
+.slideExit 
+    .aside
+        transform: translateX(0)
+    .map
+        transform: translateX(0)
+
+.slideExitActive
+    .aside
+        transition: .5s
+        transform: translateX(100vw)
+        @media (min-width: 1200px)
+            transition: 1.2s  
+    .map
+        transition: .5s
+        transform: translateX(100vw)
+        @media (min-width: 1200px)
+            transition: 1.2s  
+
+.closeBlock
+    width: 100%
+
+.map
+    width: 689px
+    flex-shrink: 0
+    > div
+        width: 100%!important
+        height: 100%!important
+        

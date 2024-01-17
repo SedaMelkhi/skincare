@@ -133,7 +133,13 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
             <div className={style.color__border + ' ' + (activeColor === id ? style.active : '')}>
               <div
                 className={style.color__image}
-                style={{ background: `url(https://skincareagents.com/${image})` }}></div>
+                style={
+                  image
+                    ? {
+                        background: `url(https://skincareagents.com/${image})`,
+                      }
+                    : {}
+                }></div>
             </div>
           </div>
         ))}

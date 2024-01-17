@@ -1,11 +1,13 @@
 import { FC, PropsWithChildren, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Meta from '../seo/Meta';
 import { IMeta } from '../seo/meta.interface';
+
 import Header from './header/header';
 import Basket from './basket/basket';
-import { useSelector } from 'react-redux';
 import Notifications from './notifications/notifications';
 import Footer from './footer/footer';
+import Address from './address/address';
 
 import style from './layout.module.sass';
 
@@ -44,6 +46,7 @@ const Layout: FC<PropsWithChildren<IMeta>> = ({ children, title, description, na
 
       <Basket />
       <Notifications />
+      <Address />
       <div className={style.container}>{children}</div>
       <Footer />
     </div>

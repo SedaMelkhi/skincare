@@ -13,17 +13,21 @@ import axios from 'axios';
 const client_id = 'EMscd6r9JnFiQ3bLoyjJY6eM78JrJceI'; //account
 const client_secret = 'PjLZkKBHEiLK3YsjtNrt3TGNG0ahs3kG'; //secure_password
 
-export const getTokenService = {
-  async getToken(): Promise<any> {
+export const getCdekTokenService = {
+  async getCdekToken(): Promise<any> {
     const { data } = await axios.post(
-      `https://api.edu.cdek.ru/v2/oauth/token?grant_type=client_credentials&client_id=${client_id}&client_secret=${client_secret}`,
-      {}, // тело запроса
-      {
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-      },
+      `https://api.edu.cdek.ru/v2/oauth/token?client_id=${client_id}&client_secret=${client_secret}&grant_type=client_credentials`,
+      {},
     );
+    return data;
+  },
+};
+
+export const getAddressesService = {
+  async getAddresses(token: any): Promise<any> {
+    const { data } = await axios.get('https://api.edu.cdek.ru/v2/deliverypoints', {
+      headers: { Authorization: 'Bearer ' + token },
+    });
     return data;
   },
 };

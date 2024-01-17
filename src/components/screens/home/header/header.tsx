@@ -81,9 +81,13 @@ const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = (
                     <div
                       className={style.mainImg}
                       data-swiper-parallax="-100%"
-                      style={{
-                        backgroundImage: `url(https://skincareagents.com${mainImage})`,
-                      }}></div>
+                      style={
+                        mainImage
+                          ? {
+                              backgroundImage: `url(https://skincareagents.com${mainImage})`,
+                            }
+                          : {}
+                      }></div>
                     <div className={style.text + ' ' + style.text_mobile}>
                       <h1 className={style.title} data-swiper-parallax="-100%">
                         летняя коллекция
@@ -104,9 +108,13 @@ const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = (
                   <div
                     className={style.smallImg}
                     data-swiper-parallax="-110%"
-                    style={{
-                      backgroundImage: `url(https://skincareagents.com${secondImage})`,
-                    }}></div>
+                    style={
+                      secondImage
+                        ? {
+                            backgroundImage: `url(https://skincareagents.com${secondImage})`,
+                          }
+                        : {}
+                    }></div>
                 </div>
               </SwiperSlide>
             ))}

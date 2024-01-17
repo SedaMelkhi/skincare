@@ -40,7 +40,13 @@ const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
               <SwiperSlide key={i}>
                 <div
                   className={style.image}
-                  style={{ backgroundImage: `url(https://skincareagents.com${url})` }}></div>
+                  style={
+                    url
+                      ? {
+                          backgroundImage: `url(https://skincareagents.com${url})`,
+                        }
+                      : {}
+                  }></div>
               </SwiperSlide>
             ))}
           </Swiper>
@@ -77,7 +83,13 @@ const Slider: FC<{ detailPhoto?: string[] }> = ({ detailPhoto }) => {
               <SwiperSlide key={i}>
                 <div
                   className={style.image}
-                  style={{ backgroundImage: `url(https://skincareagents.com${url})` }}></div>
+                  style={
+                    url
+                      ? {
+                          backgroundImage: `url(https://skincareagents.com${url})`,
+                        }
+                      : {}
+                  }></div>
               </SwiperSlide>
             ))}
           </Swiper>

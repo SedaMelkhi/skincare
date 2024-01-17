@@ -136,7 +136,7 @@ const Basket: FC = () => {
                 <div className={style.promocode}>
                   Применить промокод, сертификат или баллы можно при оформлении заказа.
                 </div>
-                <Link href="placing">
+                <Link href="/placing">
                   <button className={style.btn} onClick={handleBtnClick}>
                     оформить заказ <img src={whitebasketArrowSvg.src} alt="->" />
                   </button>
