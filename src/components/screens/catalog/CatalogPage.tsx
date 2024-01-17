@@ -21,7 +21,7 @@ const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
   const catalog = useSelector((state: CatalogMenu) => state.menu.menu);
   const router = useRouter();
   useEffect(() => {
-    setName(catalog.filter(({ ID }) => ID == router.query.id)[0].NAME);
+    setName(catalog ? catalog.filter(({ ID }) => ID == router.query.id)[0]?.NAME : '');
   }, [catalog, router]);
 
   return (

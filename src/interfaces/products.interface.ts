@@ -9,7 +9,12 @@ export interface IScu {
   id: number;
   name: string;
   value: string;
-  price: string | null;
+  price: {
+    basePrice: number;
+    discountPrice: number;
+    discount: number;
+    percent: number;
+  };
   photos?: string[];
   discount?: string;
   shade?: IShade;
@@ -33,9 +38,7 @@ export interface IProduct {
   detailPhoto?: string | null;
   preDescription?: string;
   props?: any;
-  scu?: {
-    [key: string]: IScu[];
-  };
+  scu?: IScu[];
 }
 
 export type IProductArr = IProduct[];

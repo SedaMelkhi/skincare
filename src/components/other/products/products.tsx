@@ -15,10 +15,14 @@ const Products: FC<{ products: IProductArr }> = ({ products }) => {
   return (
     <div className={style.products}>
       {products.map((item, i) =>
-        i % 6 === 0 ? (
-          <Product item={item} classValue="card_big" key={i} />
+        item.id ? (
+          i % 6 === 0 ? (
+            <Product item={item} classValue="card_big" key={i} />
+          ) : (
+            <Product item={item} classValue="card" key={i} />
+          )
         ) : (
-          <Product item={item} classValue="card" key={i} />
+          ''
         ),
       )}
     </div>
