@@ -23,7 +23,7 @@ interface IuserDataServer {
 interface ProfileAsideProps {
   setActiveProfileData: React.Dispatch<React.SetStateAction<boolean>> | null;
   activeMenu?: number;
-  userDataServer: IuserDataServer;
+  userDataServer?: IuserDataServer;
 }
 
 interface RootState {
@@ -88,7 +88,7 @@ const ProfileAside: FC<ProfileAsideProps> = ({
         <div className={style.name} onClick={() => setActiveProfileData((prev) => !prev)}>
           <img src={arrowSvg.src} alt="" />
           <div className={style.name__text}>
-            {userDataServer.name
+            {userDataServer?.name
               ? userDataServer.name + ' ' + (userDataServer.lastName || '')
               : 'User'}
           </div>
