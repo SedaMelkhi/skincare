@@ -31,7 +31,7 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
   const data: TabPanelData[] = [
     {
       name: 'Описание',
-      text: product.description && product.description.replace(/<br \/>/g, ' '),
+      text: product.description && product.description,
       details: [
         {
           name: 'Бренд',
@@ -94,7 +94,10 @@ const TabPanel: FC<{ product: any }> = ({ product }) => {
         </div>
         {data.map(({ text, id, details }) => (
           <div key={id} style={{ display: activeTabId === id ? 'block' : 'none' }}>
-            <div className={style.text}>{text || 'Данных нет'}</div>
+            <div
+              className={style.text}
+              dangerouslySetInnerHTML={{ __html: text || 'Данных нет' }}></div>
+
             {details && <Details detailsData={details} />}
           </div>
         ))}
