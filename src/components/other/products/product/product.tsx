@@ -22,7 +22,7 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
     });
   }
   return (
-    <Link href={'/product/' + item.id} className={style[classValue]} key={item.id}>
+    <div className={style[classValue]} key={item.id}>
       {item.pin && (
         <div className={style.pin}>
           {item.pin.includes('Скидка') && <img src={discountImg.src} alt="" />}
@@ -31,14 +31,17 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
         </div>
       )}
 
-      <div
-        className={style.image}
-        style={
-          item.smallPhoto
-            ? { backgroundImage: `url(https://skincareagents.com/${item.smallPhoto})` }
-            : {}
-        }></div>
-      <div className={style.name}>{item.name}</div>
+      <Link href={'/product/' + item.id}>
+        <div
+          className={style.image}
+          style={
+            item.smallPhoto
+              ? { backgroundImage: `url(https://skincareagents.com/${item.smallPhoto})` }
+              : {}
+          }></div>
+        <div className={style.name}>{item.name}</div>
+      </Link>
+
       <div className={style.sizes}>
         {sizes &&
           sizes.map(
@@ -68,7 +71,7 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
                 <img src={infoSvg.src} alt="" />
               </div> */}
       </div>
-    </Link>
+    </div>
   );
 };
 export default Product;
