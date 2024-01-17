@@ -21,7 +21,6 @@ const Product: FC<{ item: IProduct; classValue: string }> = ({ item, classValue 
         prices.push({ new: item.price.basePrice, old: item.price.discountPrice });
     });
   }
-  console.log(prices);
 
   return (
     <Link href={'/product/' + item.id} className={style[classValue]} key={item.id}>
