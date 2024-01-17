@@ -1,17 +1,18 @@
 import { FC } from 'react';
 import Link from 'next/link';
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
-
 import Arrows from '@/components/other/arrows/arrows';
-
+import NewProduct from './newProduct/newProduct';
 import { NewProducts } from '@/interfaces/newProducts.interface';
 
 import 'swiper/css';
 import style from './News.module.sass';
 
 const News: FC<NewProducts | any> = ({ newProducts }) => {
+  const products = Object.values(newProducts).splice(0, Object.values(newProducts).length - 1);
+  console.log(products);
+
   return (
     <section>
       <div className={style.news}>
@@ -48,18 +49,11 @@ const News: FC<NewProducts | any> = ({ newProducts }) => {
                 spaceBetween: 16,
               },
             }}>
-            {Object.values(newProducts).map(
-              ({ id, name, pin, sectionCode, sectionName, smallPhoto }: any) => (
-                <SwiperSlide key={id}>
-                  <Link href="/product/1" className={style.card} key={id}>
-                    <div className={style.img + ' img ' + style.img_one}></div>
-                    <h3 className={style.subtitle}>SKIN&LAB</h3>
-                    <p className={style.description}>{name}</p>
-                    <div className={style.price}>2 234 ₽</div>
-                  </Link>
-                </SwiperSlide>
-              ),
-            )}
+            {products.map((item: any) => (
+              <SwiperSlide key={item.id}>
+                <NewProduct item={item} />
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </div>

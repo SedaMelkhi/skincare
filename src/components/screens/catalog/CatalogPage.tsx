@@ -19,13 +19,10 @@ import { useRouter } from 'next/router';
 const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
   const [name, setName] = useState<string>('');
   const catalog = useSelector((state: CatalogMenu) => state.menu.menu);
-  const [count, setCount] = useState<number>(
-    products[products.length - 2] ? products[products.length - 2].count : 0,
-  );
+
   const router = useRouter();
   useEffect(() => {
     setName(catalog ? catalog.filter(({ ID }) => ID == router.query.id)[0]?.NAME : '');
-    setCount(products[products.length - 2] ? products[products.length - 2].count : 0);
   }, [catalog, router, products]);
 
   return (
@@ -42,7 +39,7 @@ const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
                     { text: 'Лицо', link: 'catalog/1' },
                   ]}
                 />
-                <CountProducts count={count} />
+                <CountProducts count={products.length - 2} />
               </div>
             </div>
             <div className={style.top}>

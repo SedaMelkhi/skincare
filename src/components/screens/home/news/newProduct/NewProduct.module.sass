@@ -1,0 +1,47 @@
+.card   
+    width: 182px
+    @media (min-width: 768px)
+        width: 200px
+    @media (min-width: 1200px)
+        width: 300px
+
+.img
+    height: 122px
+    border-radius: 217px
+    @media (min-width: 768px)
+        height: 134px
+    @media (min-width: 1200px)
+        height: 200px
+    &_one
+        background: url(/news/1.png) center/cover no-repeat
+    &_two
+        background: url(/news/2.png) center/cover no-repeat
+    &_three
+        background: url(/news/3.png) center/cover no-repeat
+
+.subtitle
+    margin-top: -20px
+    color: var(--grey-900)
+    font-size: 32px
+    font-weight: 400
+    line-height: 33px
+    text-transform: uppercase
+    @media (min-width: 1200px)
+        font-size: 48px
+        line-height: 104%
+
+.description
+    color: var(--grey-700)
+    font-size: 16px
+    line-height: 18px
+    margin: 8px 0
+    @media (min-width: 768px)
+        font-size: 20px
+        line-height: 24px
+        margin: 16px 0 12px
+.price
+    color: var(--grey-900)
+    font-size: 18px
+    font-style: italic
+    @media (min-width: 768px)
+        font-size: 20px

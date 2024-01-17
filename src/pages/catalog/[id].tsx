@@ -13,7 +13,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const data = await CatalogService.getCatalog({
     type: 'getSectionItems',
     sectionId: context.params && context.params.id,
-    count: 10,
+    count: 100,
     numPage: 1,
   });
 
