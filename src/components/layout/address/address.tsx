@@ -4,11 +4,10 @@ import { CSSTransition } from 'react-transition-group';
 import { useRouter } from 'next/router';
 import { setIsAddressOpen } from '@/redux/addressSlice/addressSlice';
 
-import { YMaps, Map, Placemark } from '@pbe/react-yandex-maps';
-
 import AsideHeader from './asideHeader/asideHeader';
 import CourierContent from './courierContent/courierContent';
 import PickupContent from './pickupContent/pickupContent';
+import YandexMap from './yandexMap/yandexMap';
 
 import style from './address.module.sass';
 
@@ -24,33 +23,11 @@ interface IType {
   };
 }
 
-interface IWorkTimeList {
-  day: number;
-  time: string;
-}
-
-interface IMapData {
-  type: string;
-  id: string;
-  geometry: { type: string; coordinates: number[] };
-  properties: {
-    balloonContentHeader: string;
-    balloonContentBody: string;
-    balloonContentFooter: string;
-  };
-  work_time_list: string;
-}
-
 const Address: FC = () => {
   const isAddressOpen = useSelector((state: IAddressState) => state.address.isAddressOpen);
   const type = useSelector((state: IType) => state.address.type);
   const dispatch = useDispatch();
   const router = useRouter();
-  const mapData: IMapData[] = useSelector((state: any) => state.address.mapData);
-  const defaultState = {
-    center: mapData[0] ? mapData[0].geometry.coordinates : [0, 0],
-    zoom: 5,
-  };
 
   const closeAside = () => {
     dispatch(setIsAddressOpen(false));
@@ -77,17 +54,7 @@ const Address: FC = () => {
             <div className={style.closeBlock} onClick={closeAside}></div>
             {type === 'pickup' && (
               <div className={style.map}>
-                <YMaps>
-                  <Map defaultState={defaultState} width={100}>
-                    {mapData.map(({ geometry, properties }) => (
-                      <Placemark
-                        geometry={geometry.coordinates}
-                        properties={properties}
-                        onClick={() => console.log(properties, geometry)}
-                      />
-                    ))}
-                  </Map>
-                </YMaps>
+                <YandexMap />
               </div>
             )}
           </div>

@@ -4,8 +4,6 @@ import { IProductArr } from '@/interfaces/products.interface';
 import CatalogPage from '@/components/screens/catalog/CatalogPage';
 
 const Catalog: NextPage<{ data: any }> = ({ data }) => {
-  console.log(data);
-
   const products: IProductArr = data ? Object.values(data) : [];
 
   return <CatalogPage products={products} />;

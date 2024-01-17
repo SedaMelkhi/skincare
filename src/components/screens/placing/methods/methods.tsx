@@ -20,8 +20,6 @@ const Methods: FC = () => {
   const handleActiveChange = (event: ChangeEvent<HTMLInputElement>) => {
     dispatch(setType(event.target.value));
   };
-  //HTMLLabelElement
-  console.log(type);
 
   return (
     <div className={style.method}>

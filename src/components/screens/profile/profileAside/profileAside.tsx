@@ -96,7 +96,7 @@ const ProfileAside: FC<ProfileAsideProps> = ({
       ) : (
         <Link href="/profile" className={style.name}>
           <div className={style.name__text}>
-            {userDataServer.name
+            {userDataServer?.name
               ? userDataServer.name + ' ' + (userDataServer.lastName || '')
               : 'User'}
           </div>

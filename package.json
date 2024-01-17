@@ -33,13 +33,13 @@
     "react-input-mask": "^2.0.4",
     "react-redux": "^8.1.2",
     "react-transition-group": "^4.4.5",
+    "react-yandex-maps": "^4.6.0",
     "swiper": "^10.3.0",
     "typescript": "5.1.6"
   },
   "devDependencies": {
     "@types/react-datepicker": "^4.15.0",
     "@types/react-input-mask": "^3.0.5",
-    "@yandex/ymaps3-types": "^0.0.20",
     "sass": "^1.65.1"
   }
 }

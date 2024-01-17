@@ -84,7 +84,6 @@ const BasketProduct: FC<IbasketData> = ({
     data.then((res) => {
       if (res.status === 'ok') {
         const data = getCartService.getCart();
-        console.log('sdfdsf');
 
         data.then((res) => {
           setPricesObj && setPricesObj(res.basket);

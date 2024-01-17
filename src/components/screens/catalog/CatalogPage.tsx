@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 
 import Layout from '@/components/layout/Layout';
 import Breadcrumbs from '@/components/other/breadcrumbs/breadcrumbs';
@@ -10,10 +10,21 @@ import Products from '@/components/other/products/products';
 import { IProductArr } from '@/interfaces/products.interface';
 
 import filtersSvg from './../../../../public/catalog/filters.svg';
+import { useSelector } from 'react-redux';
+import { CatalogMenu } from '@/components/layout/header/dropDownMenu/interface';
 
 import style from './catalog.module.sass';
+import { useRouter } from 'next/router';
 
 const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
+  const [name, setName] = useState<string>('');
+  const catalog = useSelector((state: CatalogMenu) => state.menu.menu);
+  const router = useRouter();
+  useEffect(() => {
+    setName(catalog.filter(({ ID }) => ID == router.query.id)[0].NAME);
+  }, [catalog, router]);
+  console.log(catalog);
+
   return (
     <Layout title="Каталог">
       <div className={`wrap ${style.catalog}`}>
@@ -33,9 +44,7 @@ const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
             </div>
             <div className={style.top}>
               <div className={`${style.flex}`}>
-                <h2 className={style.title}>
-                  {products && products.length > 0 && products[0].sectionName}
-                </h2>
+                <h2 className={style.title}>{name}</h2>
               </div>
             </div>
           </div>

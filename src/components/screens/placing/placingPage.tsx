@@ -25,8 +25,6 @@ const PlacingPage: FC = () => {
   const dispatch = useDispatch();
   const address = useSelector((state: any) => state.address.isAddressOpen);
 
-  console.log(address);
-
   useEffect(() => {
     // const data = getOrderInfoService.getOrderInfo();
     // data.then((res) => console.log(res));
