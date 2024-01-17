@@ -23,7 +23,6 @@ const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
   useEffect(() => {
     setName(catalog.filter(({ ID }) => ID == router.query.id)[0].NAME);
   }, [catalog, router]);
-  console.log(catalog);
 
   return (
     <Layout title="Каталог">
