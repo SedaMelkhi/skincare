@@ -1,4 +1,4 @@
-import { GetServerSideProps, NextPage } from 'next';
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 
 import PlacingPage from '@/components/screens/placing/placingPage';
 import { getAddressesService, getCdekTokenService } from '@/services/cdek.service';
@@ -74,7 +74,7 @@ const Placing: NextPage<{ data: IAddressObj[]; cdekToken: any }> = ({ data, cdek
   return <PlacingPage />;
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetStaticProps = async (context) => {
   const cdekToken = await getCdekTokenService.getCdekToken();
   const data = await getAddressesService.getAddresses(cdekToken.access_token);
   return {
