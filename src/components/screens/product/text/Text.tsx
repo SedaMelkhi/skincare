@@ -1,7 +1,7 @@
 import { FC, useEffect, useState } from 'react';
 
 import { IProduct, IScu } from '@/interfaces/products.interface';
-import { addSCUToCartService } from '@/services/cart.service';
+import { addSCUToCartService, getCartService } from '@/services/cart.service';
 
 import ArrowIcon from './../arrowIcon/arrowIcon';
 import actionSvg1 from './../../../../../public/action1.svg';
@@ -12,6 +12,8 @@ import saveSvg from './../../../../../public/save.svg';
 import checkSvg from './../../../../../public/check.svg';
 
 import style from './text.module.sass';
+import { setReduxBasketArr } from '@/redux/basketSlice/basketSlice';
+import { useDispatch } from 'react-redux';
 
 const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activeScu: any }> = ({
   product,
@@ -23,6 +25,7 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
   const [colors, setColors] = useState<{ name: string; image: string; id: string }[]>([]);
   const icons = [actionSvg1.src, actionSvg2.src, actionSvg3.src];
   const [btnText, setBtnText] = useState('Добавить в сумочку');
+  const dispatch = useDispatch();
   scu?.forEach((item) => {
     !sizes.includes(item.value) && sizes.push(item.value);
   });
@@ -97,8 +100,11 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
   const addProductInCart = async () => {
     if (localStorage.getItem('saleUserId')) {
       const data = await addSCUToCartService.addSCUToCart(activeScu.id, 1);
+
       if (data.status === 'ok') {
         setBtnText('добавлен');
+        const dataArr = getCartService.getCart();
+        dataArr.then((res) => dispatch(setReduxBasketArr(Object.values(res.cartItems))));
       }
     }
   };
@@ -184,14 +190,14 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
         <img src={saveSvg.src} alt="" className={style.save} />
       </div>
 
-      <div className={style.select__wrap}>
+      {/* <div className={style.select__wrap}>
         <div className={style.textGrey}>
           <span>Москва </span>
           <ArrowIcon />
         </div>
       </div>
       <div className={style.date}>В пункты выдачи 3 дня</div>
-      <div className={style.more}>Подробнее о доставке</div>
+      <div className={style.more}>Подробнее о доставке</div> */}
     </div>
   );
 };
