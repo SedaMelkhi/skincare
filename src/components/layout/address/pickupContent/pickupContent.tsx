@@ -1,40 +1,16 @@
-import { FC, useState } from 'react';
-
-import Input from '@/components/other/input/input';
+import { FC } from 'react';
 
 import style from './pickupContent.module.sass';
 
-interface ICloseAside {
-  closeAside: () => void;
-}
-
-const PickupContent: FC<ICloseAside> = ({ closeAside }) => {
-  const [city, setCity] = useState('');
-  const [street, setStreet] = useState('');
-  const [apartment, setApartment] = useState(''); //квартира
-  const [intercom, setIntercom] = useState(''); //домофон
-  const [entrance, setEntrance] = useState(''); //подъезд
-  const [floor, setFloor] = useState(''); //этаж
-
+const PickupContent: FC = () => {
   return (
     <form className={style.form}>
       <div className={style.content}>
-        <div className={style.margin}>
-          <Input
-            placeholder="Город"
-            value={city}
-            type="text"
-            isNecessary={true}
-            onChange={(e) => setCity(e.target.value)}
-          />
-        </div>
+        <div className={style.address}>Грозный, Орзамиева 8, этаж 6, офис 7</div>
+        <div className={style.time}>Часы работы:10:00 − 19:00</div>
+        <div className={style.question}>Как добраться?</div>
+        <div className={style.text}>Здание Rise</div>
       </div>
-
-      <button
-        className={style.btn + ' ' + (!(street && apartment && city) ? style.disabled : '')}
-        onClick={closeAside}>
-        сохранить адрес
-      </button>
     </form>
   );
 };

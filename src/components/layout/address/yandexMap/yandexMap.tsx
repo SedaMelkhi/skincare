@@ -1,5 +1,5 @@
 import { YMaps, Map, Placemark, ZoomControl, GeolocationControl } from 'react-yandex-maps';
-import { useMemo, useState } from 'react';
+import { Dispatch, FC, SetStateAction, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 interface IWorkTimeList {
@@ -8,18 +8,20 @@ interface IWorkTimeList {
 }
 
 interface IMapData {
-  type: string;
+  geometry: { coordinates: number[]; type: string };
   id: string;
-  geometry: { type: string; coordinates: number[] };
   properties: {
-    balloonContentHeader: string;
     balloonContentBody: string;
     balloonContentFooter: string;
+    balloonContentHeader: string;
   };
-  work_time_list: string;
+  type: 'Feature';
+  work_time_list: IWorkTimeList[];
 }
-
-const YandexMap = () => {
+interface IYandexMap {
+  setActiveAddress: Dispatch<SetStateAction<IMapData | null>>;
+}
+const YandexMap: FC<IYandexMap> = ({ setActiveAddress }) => {
   const apiKey = 'aabbc81f-486d-4525-9b53-133c380eb5fe';
   const mapData: IMapData[] = useSelector((state: any) => state.address.mapData);
 
@@ -33,7 +35,7 @@ const YandexMap = () => {
       center: clickedPlacemark.geometry.coordinates,
       zoom: mapState.zoom === 19 ? 20 : 19, // Установите желаемый масштаб
     };
-    console.log(newMapState);
+    setActiveAddress(mapData[index]);
 
     setMapState(newMapState);
   };

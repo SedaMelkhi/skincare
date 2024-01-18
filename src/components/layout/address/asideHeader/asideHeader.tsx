@@ -10,7 +10,10 @@ interface IAsideHeader {
 
 const AsideHeader: FC<IAsideHeader> = ({ title, closeAside }) => {
   return (
-    <div className={style.header}>
+    <div
+      className={
+        style.header + ' ' + (title.toLowerCase() === 'магазин skincare agents' ? style.small : '')
+      }>
       <div className={style.bag}>
         <div className={style.bag__text}>{title}</div>
       </div>
