@@ -39,7 +39,9 @@ const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
                     { text: 'Лицо', link: 'catalog/1' },
                   ]}
                 />
-                <CountProducts count={products.length - 2} />
+                <CountProducts
+                  count={products.length === 1 ? products.length - 1 : products.length - 2}
+                />
               </div>
             </div>
             <div className={style.top}>
