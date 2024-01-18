@@ -12,7 +12,7 @@ import saveSvg from './../../../../../public/save.svg';
 import checkSvg from './../../../../../public/check.svg';
 
 import style from './text.module.sass';
-import { setReduxBasketArr } from '@/redux/basketSlice/basketSlice';
+import { setIsAddNewItem, setReduxBasketArr } from '@/redux/basketSlice/basketSlice';
 import { useDispatch } from 'react-redux';
 
 const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activeScu: any }> = ({
@@ -104,7 +104,11 @@ const Text: FC<{ product: IProduct; scu: IScu[] | null; setActiveScu: any; activ
       if (data.status === 'ok') {
         setBtnText('добавлен');
         const dataArr = getCartService.getCart();
-        dataArr.then((res) => dispatch(setReduxBasketArr(Object.values(res.cartItems))));
+
+        dataArr.then((res) => {
+          dispatch(setReduxBasketArr(Object.values(res.cartItems)));
+          dispatch(setIsAddNewItem(true));
+        });
       }
     }
   };

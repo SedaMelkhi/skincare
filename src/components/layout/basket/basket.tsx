@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { CSSTransition } from 'react-transition-group';
 import { useRouter } from 'next/router';
 import { getCartService } from '@/services/cart.service';
-
+import Link from 'next/link';
 import { IPricesObj, IbasketData } from '@/interfaces/basket.interface';
 
 import CircleArrow from '@/components/other/circleArrow/circleArrow';
@@ -16,7 +16,6 @@ import basketSvg from './../../../../public/basket2.svg';
 import whitebasketArrowSvg from './../../../../public/whiteArrow.svg';
 
 import style from './basket.module.sass';
-import Link from 'next/link';
 
 interface IRootState {
   basket: {

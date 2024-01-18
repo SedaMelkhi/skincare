@@ -8,13 +8,12 @@ import Slider from './slider/slider';
 import TabPanel from './tabPanel/tabPanel';
 import Text from './text/Text';
 import HitsSwiper from '@/components/screens/home/hits/hitsSwiper/hitsSwiper';
-
+import { CatalogService } from '@/services/catalog.service';
 import { IProduct, IScu } from '@/interfaces/products.interface';
 
 import askSvg from './../../../../public/ask.svg';
 
 import style from './product.module.sass';
-import { CatalogService } from '@/services/catalog.service';
 
 const ProductPage: FC<{ data: IProduct }> = ({ data }) => {
   const hits = useSelector((state: any) => state.hits.hits);
