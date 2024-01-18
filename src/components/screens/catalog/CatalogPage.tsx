@@ -36,7 +36,7 @@ const CatalogPage: FC<{ products: IProductArr }> = ({ products }) => {
                 <Breadcrumbs
                   arr={[
                     { text: 'Каталог', link: 'catalog' },
-                    { text: 'Лицо', link: 'catalog/1' },
+                    { text: name, link: 'catalog/1' },
                   ]}
                 />
                 <CountProducts
