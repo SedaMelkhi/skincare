@@ -47,34 +47,36 @@ const Experts: FC<{ promoBlocks: PromoBlockArray }> = ({ promoBlocks }) => {
               }}>
               {arr.map(({ mainText, url, urlText }, i) => (
                 <SwiperSlide key={i}>
-                  <div className={style.step + ' ' + colors[i % 3]}>
-                    <div className={style.hidden}>
-                      <h3 className={style.subtitle}>{mainText}</h3>
-                      <div className={style.bottom}>
-                        <div className={style.circle}>
-                          <img src="./arrowCircle.svg" alt="" />
+                  <Link href={'/paidRecording'}>
+                    <div className={style.step + ' ' + colors[i % 3]}>
+                      <div className={style.hidden}>
+                        <h3 className={style.subtitle}>{mainText}</h3>
+                        <div className={style.bottom}>
+                          <div className={style.circle}>
+                            <img src="./arrowCircle.svg" alt="" />
+                          </div>
+                          <div className={style.description}>{urlText}</div>
                         </div>
-                        <div className={style.description}>{urlText}</div>
+                        <div className={style.number}>{i > 9 ? i : '0' + (i + 1)}</div>
                       </div>
-                      <div className={style.number}>{i > 9 ? i : '0' + (i + 1)}</div>
-                    </div>
-                    <div className={style.flex}>
-                      <div className={style.left}>
-                        <div className={style.top}>
-                          <h3 className={style.title}>{urlText}</h3>
-                          <div className={style.free}>{mainText}</div>
+                      <div className={style.flex}>
+                        <div className={style.left}>
+                          <div className={style.top}>
+                            <h3 className={style.title}>{urlText}</h3>
+                            <div className={style.free}>{mainText}</div>
+                          </div>
+                          <div className={style.desc}>
+                            Разбираем ваш нынешний уход, проводим разбор косметички, рассказываем,
+                            когда и что использовать, а что вовсе убрать из ухода
+                          </div>
+                          <div className={style.btn}>
+                            <Button text="Узнать подробнее" link={url} />
+                          </div>
                         </div>
-                        <div className={style.desc}>
-                          Разбираем ваш нынешний уход, проводим разбор косметички, рассказываем,
-                          когда и что использовать, а что вовсе убрать из ухода
-                        </div>
-                        <div className={style.btn}>
-                          <Button text="Узнать подробнее" link={url} />
-                        </div>
+                        <div className={style.right}></div>
                       </div>
-                      <div className={style.right}></div>
                     </div>
-                  </div>
+                  </Link>
                 </SwiperSlide>
               ))}
             </Swiper>
