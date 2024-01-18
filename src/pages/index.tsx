@@ -13,6 +13,7 @@ import {
   JournalService,
   HitsService,
   RunningVerticalLineService,
+  SetsService,
 } from '@/services';
 
 import { ContactsService } from '@/services/contacts.service';
@@ -35,6 +36,7 @@ const Home: NextPage<{
   journal: any;
   hits: any;
   catalog: CatalogArray;
+  sets: any;
 }> = ({
   data,
   slider,
@@ -44,8 +46,10 @@ const Home: NextPage<{
   journal,
   hits,
   runningVerticalLine,
+  sets,
 }) => {
   const dispatch = useDispatch();
+  console.log('asdsad', sets);
 
   useEffect(() => {
     dispatch(setFooterData(data));
@@ -83,6 +87,7 @@ export const getServerSideProps: GetServerSideProps<{
   const newProducts = await NewProductsService.getProductsService();
   const journal = await JournalService.getJournalService();
   const hits = await HitsService.getHitsService();
+  const sets = await SetsService.getSetsService();
 
   return {
     props: {
@@ -93,7 +98,7 @@ export const getServerSideProps: GetServerSideProps<{
       newProducts,
       journal,
       hits,
-
+      sets,
       runningVerticalLine,
     },
   };

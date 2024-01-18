@@ -23,6 +23,8 @@ const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = (
     const doc = document.documentElement;
     doc.style.setProperty('--doc-height', `${window.innerHeight - 68}px`);
   }, []);
+  console.log(slider);
+
   useEffect(() => {
     documentHeight(document);
     window.addEventListener('resize', () => documentHeight(document));
@@ -56,68 +58,69 @@ const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = (
               prevEl: '.swiper-button-prev',
               enabled: true,
             }}>
-            {slider.map(({ mainImage, mainText, secondImage, secondText, url, urlText }, i) => (
-              <SwiperSlide key={i}>
-                <div className={style.header}>
-                  <div className={style.text__wrap}>
-                    <div className={style.text}>
-                      <h1 className={style.title} data-swiper-parallax="-100%">
-                        {mainText}
-                      </h1>
-                      <p className={style.description} data-swiper-parallax="-100%">
-                        {secondText}
-                      </p>
-                      <div className={style.link__wrap}>
-                        <Link href="/" className={style.link}>
-                          смотреть
-                        </Link>
-                        <div className={style.circle}>
-                          <img src="./arrowCircle.svg" alt="" />
+            {slider &&
+              slider.map(({ mainImage, mainText, secondImage, secondText, url, urlText }, i) => (
+                <SwiperSlide key={i}>
+                  <div className={style.header}>
+                    <div className={style.text__wrap}>
+                      <div className={style.text}>
+                        <h1 className={style.title} data-swiper-parallax="-100%">
+                          {mainText}
+                        </h1>
+                        <p className={style.description} data-swiper-parallax="-100%">
+                          {secondText}
+                        </p>
+                        <div className={style.link__wrap}>
+                          <Link href="/" className={style.link}>
+                            смотреть
+                          </Link>
+                          <div className={style.circle}>
+                            <img src="./arrowCircle.svg" alt="" />
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                  <div className={style.mainImg__wrap}>
+                    <div className={style.mainImg__wrap}>
+                      <div
+                        className={style.mainImg}
+                        data-swiper-parallax="-100%"
+                        style={
+                          mainImage
+                            ? {
+                                backgroundImage: `url(https://skincareagents.com${mainImage})`,
+                              }
+                            : {}
+                        }></div>
+                      <div className={style.text + ' ' + style.text_mobile}>
+                        <h1 className={style.title} data-swiper-parallax="-100%">
+                          летняя коллекция
+                        </h1>
+                        <p className={style.description} data-swiper-parallax="-100%">
+                          Мы привезли много крутых новинок, давай скорее смотреть?
+                        </p>
+                        <div className={style.link__wrap}>
+                          <Link href="/" className={style.link}>
+                            смотреть
+                          </Link>
+                          <div className={style.circle}>
+                            <img src="./arrowCircle.svg" alt="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                     <div
-                      className={style.mainImg}
-                      data-swiper-parallax="-100%"
+                      className={style.smallImg}
+                      data-swiper-parallax="-110%"
                       style={
-                        mainImage
+                        secondImage
                           ? {
-                              backgroundImage: `url(https://skincareagents.com${mainImage})`,
+                              backgroundImage: `url(https://skincareagents.com${secondImage})`,
                             }
                           : {}
                       }></div>
-                    <div className={style.text + ' ' + style.text_mobile}>
-                      <h1 className={style.title} data-swiper-parallax="-100%">
-                        летняя коллекция
-                      </h1>
-                      <p className={style.description} data-swiper-parallax="-100%">
-                        Мы привезли много крутых новинок, давай скорее смотреть?
-                      </p>
-                      <div className={style.link__wrap}>
-                        <Link href="/" className={style.link}>
-                          смотреть
-                        </Link>
-                        <div className={style.circle}>
-                          <img src="./arrowCircle.svg" alt="" />
-                        </div>
-                      </div>
-                    </div>
                   </div>
-                  <div
-                    className={style.smallImg}
-                    data-swiper-parallax="-110%"
-                    style={
-                      secondImage
-                        ? {
-                            backgroundImage: `url(https://skincareagents.com${secondImage})`,
-                          }
-                        : {}
-                    }></div>
-                </div>
-              </SwiperSlide>
-            ))}
+                </SwiperSlide>
+              ))}
 
             <div className={style.swiperParams}>
               <div className={style.swiperPagination__wrap}>

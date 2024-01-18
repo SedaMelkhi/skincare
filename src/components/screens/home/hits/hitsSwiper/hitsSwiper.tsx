@@ -21,6 +21,8 @@ type HitsSwiperProps = {
 };
 
 const HitsSwiper: FC<HitsSwiperProps> = ({ slidesPerView, hits }) => {
+  console.log(hits);
+
   return (
     <Swiper
       slidesPerView={slidesPerView}

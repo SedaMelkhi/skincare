@@ -41,14 +41,18 @@ const CardProduct: FC<CardProductProps> = ({
   //console.log(prices);
 
   return (
-    <Link href="/product/1" className={style.card}>
+    <Link href={`/product/${id}`} className={style.card}>
       <div style={available ? {} : { opacity: '.5' }} className={style.padding}>
         <div className={style.bonus}>
           <img src={img1.src} alt="" />
           <img src={img2.src} alt="" />
           <img src={img3.src} alt="" />
         </div>
-        <div className={style.img + ' img ' + style.img_one}></div>
+        <div
+          className={style.img + ' img ' + style.img_one}
+          style={{
+            background: `url(https://skincareagents.com${smallPhoto}) center/contain no-repeat`,
+          }}></div>
         <h3 className={style.description}>{name}</h3>
         <div className={style.size}>{scu && Object.values(scu)[0].value}</div>
       </div>

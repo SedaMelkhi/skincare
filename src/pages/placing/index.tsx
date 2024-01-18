@@ -54,20 +54,27 @@ interface IAddressObj {
 
 const Placing: NextPage<{ data: IAddressObj[]; cdekToken: any }> = ({ data, cdekToken }) => {
   const dispatch = useDispatch();
+  console.log(data);
+
   useEffect(() => {
-    const yandexMapData: any = data.map((item) => {
-      return {
-        type: 'Feature',
-        id: item.uuid,
-        geometry: { type: 'Point', coordinates: [item.location.latitude, item.location.longitude] },
-        properties: {
-          balloonContentHeader: item.name,
-          balloonContentBody: item.location.address_full,
-          balloonContentFooter: item.work_time,
-        },
-        work_time_list: item.work_time_list,
-      };
-    });
+    const yandexMapData: any = data
+      ? data.map((item) => {
+          return {
+            type: 'Feature',
+            id: item.uuid,
+            geometry: {
+              type: 'Point',
+              coordinates: [item.location?.latitude, item.location?.longitude],
+            },
+            properties: {
+              balloonContentHeader: item.name,
+              balloonContentBody: item.location.address_full,
+              balloonContentFooter: item.work_time,
+            },
+            work_time_list: item.work_time_list,
+          };
+        })
+      : [];
     dispatch(setMapData(yandexMapData));
   }, []);
 
