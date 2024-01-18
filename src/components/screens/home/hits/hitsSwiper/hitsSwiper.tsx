@@ -21,7 +21,7 @@ type HitsSwiperProps = {
 };
 
 const HitsSwiper: FC<HitsSwiperProps> = ({ slidesPerView, hits }) => {
-  console.log(hits);
+  const hitsArr = hits ? Object.values(hits).splice(0, Object.values(hits).length - 1) : [];
 
   return (
     <Swiper
@@ -55,21 +55,20 @@ const HitsSwiper: FC<HitsSwiperProps> = ({ slidesPerView, hits }) => {
           spaceBetween: 16,
         },
       }}>
-      {hits &&
-        Object.values(hits).map(({ id, name, pin, scu, sectionCode, sectionName, smallPhoto }) => (
-          <SwiperSlide key={id}>
-            <CardProduct
-              available={true}
-              id={id}
-              name={name}
-              pin={pin}
-              scu={scu}
-              sectionCode={sectionCode}
-              sectionName={sectionName}
-              smallPhoto={smallPhoto}
-            />
-          </SwiperSlide>
-        ))}
+      {hitsArr.map(({ id, name, pin, scu, sectionCode, sectionName, smallPhoto }) => (
+        <SwiperSlide key={id}>
+          <CardProduct
+            available={true}
+            id={id}
+            name={name}
+            pin={pin}
+            scu={scu}
+            sectionCode={sectionCode}
+            sectionName={sectionName}
+            smallPhoto={smallPhoto}
+          />
+        </SwiperSlide>
+      ))}
     </Swiper>
   );
 };
