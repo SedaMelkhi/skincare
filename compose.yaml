@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  frontend:
+    ports:
+      - 3000:3000
+    build:
+      context: .
+    # image: nodejs
+    # container_name: nodejs
+    # restart: unless-stopped
+    # environment:
+      # - API_HOST=http://backend:8000
+      # - API_HOST=http://nginx
+      # - API_DOMAIN=127.0.0.1
+    # depends_on:
+    #   - nginx
