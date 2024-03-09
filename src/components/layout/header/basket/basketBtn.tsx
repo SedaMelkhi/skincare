@@ -55,7 +55,7 @@ const BasketBtn: FC = () => {
             className={style.image}
             style={{
               backgroundImage: lastItem
-                ? `url(https://skincareagents.com/${lastItem.parentItem.PREVIEW_PICTURE})`
+                ? `url(https://b.skincareagents.com/${lastItem.parentItem.PREVIEW_PICTURE})`
                 : '',
             }}></div>
           <div className={style.text}>

@@ -9,8 +9,8 @@ const app = next({ dev });
 const handle = app.getRequestHandler();
 
 const httpsOptions = {
-  key: fs.readFileSync('./localhost.key'), // Путь к ключу
-  cert: fs.readFileSync('./localhost.crt'), // Путь к сертификату
+  key: fs.readFileSync('./out/skincareagents.com_ecc/skincareagents.com.key'), // Путь к ключу
+  cert: fs.readFileSync('./out/skincareagents.com_ecc/fullchain.cer'), // Путь к сертификату
 };
 
 app.prepare().then(() => {
@@ -20,7 +20,7 @@ app.prepare().then(() => {
   // server.use(
   //   '/api',
   //   createProxyMiddleware({
-  //     target: 'https://skincareagents.com', // URL вашего API
+  //     target: 'https://b.skincareagents.com', // URL вашего API
   //     changeOrigin: true,
   //     pathRewrite: { '^/api': '' },
   //     secure: false, // Важно при использовании самоподписанных сертификатов
@@ -31,7 +31,7 @@ app.prepare().then(() => {
     return handle(req, res);
   });
 
-  https.createServer(httpsOptions, server).listen(3000, () => {
+  https.createServer(httpsOptions, server).listen(443, () => {
     console.log('> Ready on https://localhost:3000');
   });
 });

@@ -87,7 +87,7 @@ const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = (
                         style={
                           mainImage
                             ? {
-                                backgroundImage: `url(https://skincareagents.com${mainImage})`,
+                                backgroundImage: `url(https://b.skincareagents.com${mainImage})`,
                               }
                             : {}
                         }></div>
@@ -114,7 +114,7 @@ const Header: FC<{ slider: MainSliderArray; runningLine: RunningLineArray }> = (
                       style={
                         secondImage
                           ? {
-                              backgroundImage: `url(https://skincareagents.com${secondImage})`,
+                              backgroundImage: `url(https://b.skincareagents.com${secondImage})`,
                             }
                           : {}
                       }></div>
