@@ -1,0 +1,123 @@
+.articles
+  padding: 42px 16px 0
+  @media (min-width: 768px)
+    padding: 54px 24px 0
+  @media (min-width: 1200px)
+    display: flex
+    max-width: var(--max-width)
+    box-sizing: content-box
+    margin: 0 auto
+    padding: 56px 40px 0
+  &__leftCol
+    @media (min-width: 1200px)
+      width: 351px
+      z-index: 1
+  &__back
+    display: flex
+    gap: 5px
+    align-items: center
+    margin-bottom: 28px
+    @media (min-width: 768px)
+      margin-bottom: 33px
+    @media (min-width: 1200px)
+      margin-bottom: 32px
+    span
+      font-size: 1.25rem
+      text-transform: uppercase
+      opacity: 0.6
+      letter-spacing: 1px
+      @media (min-width: 1200px)
+        font-size: 1.5rem
+  &__title
+    font-size: 2rem
+    font-weight: 400
+    line-height: 100%
+    text-transform: uppercase
+    margin-bottom: 32px
+    @media (min-width: 1200px)
+      font-size: 3rem
+  &__categoryHolder
+    display: flex
+    gap: 8px
+    align-items: center
+    margin-bottom: 45px
+    @media (min-width: 768px)
+      margin-bottom: 38px
+    @media (min-width: 1200px)
+      margin-bottom: 0
+    span
+      color: #8A7E8F
+      letter-spacing: 1px
+      text-transform: uppercase
+  &__img
+    width: 100%
+    height: 460px
+    background: url('/public/journal/img-1.svg') no-repeat center/cover lightgrey
+    @media (min-width: 1200px)
+      flex-grow: 1
+    img
+      width: 100%
+  &__author
+    font-size: 1.5rem
+    letter-spacing: 1px
+    text-transform: uppercase
+    opacity: 0.6
+    margin-top: 44px
+    margin-bottom: 8px
+  &__text
+    font-size: 0.875rem
+    line-height: normal
+    margin-top: 24px
+    margin-bottom: 17px
+    @media (min-width: 768px)
+      margin-bottom: 54px
+    @media (min-width: 1200px)
+      margin-bottom: 124px
+      width: 80%
+  &__list
+    margin-left: 20px
+    span
+      background-color: #f2ddff
+  &__hits
+    letter-spacing: 1px
+    text-transform: uppercase
+    margin-bottom: 32px
+    @media (min-width: 768px)
+      display: none
+    @media (min-width: 1200px)
+      display: none
+  &__mentionedProducts
+    font-size: 32px
+    font-weight: 400
+    line-height: 100%
+    text-transform: uppercase
+    margin-bottom: 32px
+    display: none
+    @media (min-width: 768px)
+      display: block
+    @media (min-width: 1200px)
+      display: block
+
+.date
+  color: #8A7E8F
+  letter-spacing: 1px
+
+.swiper
+    width: 100%
+    &__wrap
+        display: flex
+        max-width: var(--max-width)
+        overflow-x: hidden
+        box-sizing: content-box
+        padding: 0 0 0 16px
+        margin: 0 auto
+        @media (min-width: 768px)
+            padding: 0 0 0 24px
+        @media (min-width: 1200px)
+            padding: 0 40px
+    
+.empty
+    flex-shrink: 0
+    @media (min-width: 1200px)
+        width: 351px
+        height: 351px

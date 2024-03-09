@@ -1,0 +1,160 @@
+.experts
+    margin-top: 160px
+
+.steps
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+    width: 1015px
+    gap: 16px
+    @media ( min-width: 768px )
+        height: 758px
+    &__wrap
+        display: flex
+        max-width: var(--max-width)
+        padding: 0 0 0 16px
+        box-sizing: content-box
+        margin: 0 auto
+        @media ( min-width: 768px )
+            padding: 0 24px
+            justify-content: flex-end
+        @media ( min-width: 1200px )
+            padding: 0 40px
+
+.hidden
+    padding: 32px 24px
+    @media ( min-width:  768px)
+        padding: 32px 40px
+
+.step
+    position: relative
+    width: 100%
+    border-radius: 16px
+    cursor: pointer
+    &:hover
+        .flex
+            right: 0
+            opacity: 1
+            visibility: visible
+            filter: blur(0px)
+        .hidden
+            filter: blur(5px)
+            opacity: 0
+    &_pink
+        background: linear-gradient(122deg, #FFEEE7 0%, rgba(255, 166, 187, 0.40) 100%)
+    &_violet
+        background: linear-gradient(126deg, #ECEBFF 6.57%, #C3C2ED 100%)
+    &_grey
+        background: linear-gradient(62deg, #BEC1CF 0.62%, #E3E4ED 10.28%, #EEECF5 23.22%, #FCF9FF 45.49%, #EDE5E7 64.66%, #FBDBDB 81.77%, #FFCDC2 100%)
+
+.flex
+    width: 100%
+    background: var(--grey-25)
+    display: flex
+    justify-content: space-between
+    gap: 20px
+    height: 100%
+    border: 1px solid #8D94B530
+    border-radius: 16px
+    position: absolute
+    top: 0
+    right: 0
+    transition: .5s linear
+    visibility: hidden
+    opacity: 0 
+    filter: blur(3px)
+.subtitle
+    color: var(--grey-800)
+    font-size: 24px
+    font-weight: 400
+    font-style: italic
+    line-height: normal
+    text-transform: uppercase
+    margin-bottom: 232px
+    @media (min-width: 768px)
+        font-size: 48px
+        margin-bottom: 34px
+        
+.bottom
+    display: flex
+    align-items: center
+    img
+        width: 45px
+        height: 18px
+
+.circle
+    display: flex
+    width: 80px
+    height: 80px
+    justify-content: center
+    align-items: center
+    border-radius: 50%
+    border: 1px solid var(--grey-500)
+    flex-shrink: 0
+
+.description
+    color: var(--grey-900)
+    font-size: 20px
+    line-height: 116%
+    margin-left: -8px
+    margin-top: 6px
+    @media ( min-width:  768px)
+        font-size: 24px
+        margin-left: -17px
+        
+.number
+    position: absolute
+    color: var(--grey-25)
+    text-align: right
+    font-family: Evolventa
+    font-size: 120px
+    line-height: 130px
+    letter-spacing: -9.6px
+    top: 6px
+    right: 6px
+    @media ( min-width:  768px)
+        bottom: 0
+
+.top
+    display: flex
+    justify-content: space-between
+    color: var(--Grey-900)
+    font-size: 14px
+    text-transform: uppercase
+    flex-direction: column
+    @media ( min-width: 768px )
+        flex-direction: row
+        gap: 8px
+
+.title
+    font-weight: 400
+    
+    
+.free
+    color: var(--Grey-500)  
+    font-style: italic
+
+.desc
+    font-size: 16px
+    max-width: 700px
+
+.left
+    padding: 24px 20px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+.right
+    display: none
+    width: 136px
+    height: 100%
+    background: url(/exp.png)
+    border-top-right-radius: 16px
+    border-bottom-right-radius: 16px
+    @media ( min-width: 768px )
+        display: block
+        
+
+.btn
+    max-width: 285px
+

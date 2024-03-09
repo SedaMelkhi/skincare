@@ -1,0 +1,41 @@
+.header
+    padding: 14px 0
+    display: flex
+    justify-content: space-between    
+    &__wrap
+        position: fixed
+        width: 100%
+        top: 0
+        z-index: 5
+        background-color: var(--light-purple)
+        
+.logo
+    @media ( min-width: 1200px )
+        width: 345px
+.group
+    display: flex
+    align-items: center
+    @media( min-width:  768px)
+        width: 132px
+        flex-shrink: 0
+    &_right      
+        align-items: center
+        justify-content: flex-end
+        @media ( min-width: 1200px )
+            width: 345px
+    img
+        display: block
+    @media ( min-width: 1200px )
+        order: 2
+.nav
+    align-items: center
+    @media ( min-width: 1200px )
+        width: 671px
+        justify-content: space-between
+
+
+
+.scroll
+    border-bottom: 1px solid var(--Primary-100)
+    background: var(--Primary-50)
+        

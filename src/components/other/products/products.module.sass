@@ -1,0 +1,102 @@
+.products
+    width: 1015px
+    margin-top: 16px
+    display: grid
+    grid-template-columns: repeat(1, 1fr)
+    gap: 32px 16px
+    @media (min-width: 768px)
+        grid-template-columns: repeat(2, 1fr)
+    @media (min-width: 1200px)
+        gap: 64px 20px 
+        grid-template-columns: repeat(3, 1fr)
+
+.card_big
+    width: 100%
+    position: relative
+    grid-column: span 1
+    @media (min-width: 768px)
+        grid-column: span 2 
+    .image
+        height: 247px
+        background: url(/notphoto.png) #ffffff center/contain no-repeat
+        &_big
+            background-size: contain
+        @media (min-width: 768px)
+            height: 320px
+        @media (min-width: 1200px)
+            height: 466px
+
+.card
+    position: relative
+    .image
+        height: 164px
+        background: url(/notphoto.png) #ffffff center/contain no-repeat
+        @media (min-width: 768px)
+            height: 229px
+        @media (min-width: 1200px)
+            height: 325px
+    .name
+        font-size: 16px
+        line-height: 120%
+        @media (min-width: 1200px)
+            font-size: 20px
+.image
+    border: 1px solid var(--grey-300)
+    background:  url(/notphoto.png) #ffffff center/cover no-repeat
+    margin-bottom: 20px
+    
+.name
+    color: var(--grey-800)
+    font-size: 24px
+    line-height: 116%
+    margin-bottom: 4px
+.sizes
+    display: flex
+    gap: 4px
+    margin: 8px 0 10px
+.size
+    cursor: pointer
+    padding: 4px 6px 3px
+    color: var(--Grey-800)
+    text-align: center
+    font-size: 12px
+    line-height: 1
+    border-radius: 5px
+    border: 1px solid var(--Grey-300)
+
+.price
+    font-style: italic
+    display: flex
+    gap: 8px
+    align-items: center
+    img
+        display: none
+        @media (min-width: 1200px)
+            width: 24px
+            display: block
+
+.new
+    color: var(--grey-800)
+    font-size: 18px
+    line-height: normal
+    @media (min-width: 1200px)
+        font-size: 20px
+
+.old
+   
+    @media (min-width: 1200px)
+        color: var(--grey-500)
+        font-size: 14px
+        line-height: normal
+        text-decoration: line-through
+
+.pin
+    position: absolute
+    top: -5px
+    left: 16px
+    display: flex
+    gap: 4px
+
+.card_big
+    .pin
+        left: 24px

@@ -1,0 +1,27 @@
+.flex
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    gap: 48px
+    position: relative
+    @media (min-width: 1200px)
+        flex-direction: row
+
+.address
+    margin-bottom: 16px
+
+.left
+    transition: .3s
+    &_flex
+        transition: .3s
+        display: flex
+        gap: 53px
+
+.right
+    transition: .2s
+    opacity: 1
+    &_hidden
+        opacity: 0
+        position: absolute
+        top: 0
+        z-index: -1

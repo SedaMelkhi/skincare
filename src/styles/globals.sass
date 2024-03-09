@@ -1,0 +1,308 @@
+:root 
+  --max-width: 1360px
+  --doc-height: calc(100% - 68px)
+  --light-purple: #FBFAFF
+  --grey-900: #19171A
+  --grey-800: #271F2B
+  --grey-600: #6B5F71
+  --grey-700: #504655
+  --grey-500: #8A7E8F
+  --grey-400: #C3BDC7
+  --grey-300: #DBD5DE
+  --grey-200: #F0EAF2
+  --grey-100: #F7F4F8
+  --grey-50: #FAF9FB
+  --grey-25: #FDFCFD
+  --primary-600: #A756D9
+  --primary-500: #C077ED
+  --Light-purple: #FBFAFF
+  --Grey-900: #19171A
+  --Grey-800: #271F2B
+  --Grey-600: #6B5F71
+  --Grey-700: #504655
+  --Grey-500: #8A7E8F
+  --Grey-600: #6B5F71
+  --Grey-400: #C3BDC7
+  --Grey-300: #DBD5DE
+  --Grey-200: #F0EAF2
+  --Grey-100: #F7F4F8
+  --Grey-50: #FAF9FB
+  --Grey-25: #FDFCFD
+  --Primary-900: #5F307D
+  --Primary-800: #77389E
+  --Primary-700: #9341C6
+  --Primary-600: #A756D9
+  --Primary-500: #C077ED
+  --Primary-300: #E2BBFB
+  --Primary-200: #F2DDFF
+  --Primary-100: #F7EBFF
+  --Primary-50: #FBF5FF
+  --Primary-25: #FDFAFF
+  --ff-4253: #FF4253
+  --success-600: #039855
+  --indigo-900: #6038FF
+  --purple-100: #EBE9FE
+  --purple-50: #F4F3FF
+  --purple-400: #9B8AFB
+  --purple: #5D5DFF
+  --purple-200: #D9D6FE
+  --light-purple-65: rgba(251, 250, 255, 0.65)
+  --error-500: #F04438
+
+
+
+@font-face 
+  font-family: "Evolventa"
+  src: local("Evolventa"), url("./../assets/fonts/Evolventa-Regular.woff")
+  font-weight: 400
+  font-style: normal
+
+@font-face 
+  font-family: "Evolventa"
+  src: local("Evolventa Oblique"), url("./../assets/fonts/Evolventa-Oblique.woff")
+  font-weight: 400
+  font-style: italic
+
+@font-face 
+  font-family: "Evolventa"
+  src: local("Evolventa Bold"), url("./../assets/fonts/Evolventa-Bold.woff")
+  font-weight: 700
+  font-style: normal
+
+@font-face 
+  font-family: "Evolventa"
+  src: local("Evolventa Bold Oblique"), url("./../assets/fonts/Evolventa-BoldOblique.woff")
+  font-weight: 700
+  font-style: italic
+
+* 
+  box-sizing: border-box
+
+h1, h2, h3, h4, h5, h6, p, input, li, ul, body, button
+  padding: 0
+  margin: 0
+  
+html
+  font-size: 16px
+  &::-webkit-scrollbar 
+    width: 0px 
+   
+  
+body 
+  overflow-x: hidden
+  background: var(--light-purple)
+  font-family: Evolventa
+  font-size: 16px
+  line-height: normal
+  padding-right: 0!important
+ 
+
+a 
+  color: inherit
+  text-decoration: none
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+
+input
+  font-family: inherit
+
+button
+  border: none
+  background-color: transparent
+  font-size: inherit
+  font-family: inherit
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  &:focus
+    outline: none
+.wrap
+  max-width: var(--max-width)
+  padding: 0 16px
+  box-sizing: content-box
+  margin: 0 auto
+  @media ( min-width: 768px )
+    padding: 0 24px
+  @media ( min-width: 1200px )
+    padding: 0 40px
+
+input
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+  &:focus
+    outline: none
+
+.categories
+  .swiper-slide
+    width: 233px
+    .img
+      transition: .3s
+  .swiper-slide-active
+    width: calc(100% - 16px)
+    .img
+      height: 366px
+
+.experts
+  .swiper
+    width: calc(100vw - 16px)
+    margin: 0
+    @media ( min-width: 768px )
+      width: 100%
+
+.MuiSlider-thumb.Mui-focusVisible
+  box-shadow: none
+  outline: none
+
+.productSlider
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    border: 1px solid var(--grey-700)
+    background-color: transparent
+    opacity: 1
+    &-active
+      background-color: var(--grey-800)
+
+.accordion__wrap
+  &>div
+    &>div
+      box-shadow: none!important
+      border-bottom: 1px solid #E6EDF0
+      border-radius: 12px!important
+      padding: 24px
+      &>div
+        &:nth-child(1)
+          min-height: auto !important
+          padding: 0 !important
+          &>div
+            margin: 0!important
+            font-weight: 600
+            font-size: 1.5rem
+            line-height: 2rem
+        &:nth-child(2)>div>div>div>div>div
+          padding: 16px 0 0!important
+          color: #70777A
+
+.certificate
+  .swiper-slide-thumb-active
+    width: 38px!important
+    height: 38px!important
+    border: 3px solid rgba(189, 180, 254, 1)
+    border-radius: 50px
+    justify-content: space-around!important
+    display: flex!important
+
+  .swiper-slide-visible
+    display: flex!important
+    justify-content: space-around!important
+    align-items: center!important
+
+  .react-datepicker__view-calendar-icon
+    input
+      padding-left: 70px!important
+
+  .react-datepicker-wrapper
+    display: block
+
+.reviews
+  margin: 0 auto
+  @media (min-width: 768px)
+    width: 600px
+  @media (min-width: 1200px)
+    width: 1440px
+  .swiper-pagination
+    position: relative
+    margin-top: 29px
+    @media (min-width: 768px)
+      margin-top: 25px
+    @media (min-width: 1200px)
+      margin-top: 45px
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    background-color: var(--Grey-300)
+    opacity: 1
+    &-active
+      background-color: var(--grey-25)
+  .swiper-slide
+    transform: translateY(30px)!important
+  .swiper-slide-active
+     transform: translateZ(0)!important
+     @media (min-width: 1200px)
+        transform: translateY(40px)!important
+  .swiper-slide-active,.swiper-slide-prev,.swiper-slide-next
+    @media (min-width: 1200px)
+      transform: translateZ(0)!important
+
+.ourAgents
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    border: 1px solid var(--grey-700)
+    background-color: transparent
+    opacity: 1
+    &-active
+      background-color: var(--grey-800)
+  .swiper-pagination
+    position: relative
+    margin-top: 22px
+    margin-left: -170px
+    @media (min-width: 400px)
+      margin-left: -120px
+    @media (min-width: 768px)
+      margin-left: -150px
+    @media (min-width: 1200px)
+      margin-top: 32px
+  .swiper-slide
+    flex-shrink: 1
+
+.berofeAndAfter
+  margin: 0 auto
+  width: 345px
+  @media (min-width: 768px)
+    width: 660px
+  @media (min-width: 1200px)
+    width: 1203px
+  .swiper-pagination-bullet
+    width: 8px
+    height: 8px
+    border: 1px solid var(--grey-700)
+    background-color: transparent
+    opacity: 1
+    &-active
+      background-color: var(--grey-800)
+  .swiper-pagination
+    position: relative
+    margin-top: 32px
+  .swiper-slide
+    width: 325px!important
+    @media (min-width: 768px)
+      width: 620px!important
+    @media (min-width: 1200px)
+      width: 1015px!important
+
+.swiper-button-disabled
+  opacity: 0
+  
+//.aboutUsExperts
+//  .swiper-wrapper
+//    display: flex
+//    flex-direction: column
+
+
+
+
+
+.slider__prevEl, .slider__nextEl
+  width: 48px
+  height: 48px
+  flex-shrink: 0
+  border-radius: 50%
+  border: 1px solid var(--Grey-400)
+  background: var(--light-purple-65)
+  display: flex
+  justify-content: center
+  align-items: center
+  user-select: none
+  &.swiper-button-disabled
+    opacity: 0.4
+   
+
+
+   

@@ -1,0 +1,229 @@
+.basket
+    &__wrap
+        width: 497px
+        height: 522px
+        display: flex
+        border-radius: 16px
+        border: 1px solid var(--Grey-300)
+        background: var(--light-purple)
+        justify-content: flex-end
+        overflow: hidden
+        background: rgba(72, 59, 81, 0.40)
+        backdrop-filter: blur(8px)
+        font-size: 16px
+        line-height: 112.5%
+        color: var(--grey-900)
+
+
+.basket
+    width: 100%
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    
+    background-color: var(--grey-25)
+    padding: 73px 10px 0 0
+   
+       
+
+.header
+    position: fixed
+    width: 100%
+    padding: 16px
+    top: 0
+    right: 0
+    background: var(--Grey-100)
+    color: var(--Grey-900)
+    font-size: 24px
+    line-height: 130%
+    letter-spacing: 0.48px
+    text-transform: uppercase
+    div
+        width: 232px
+
+
+    
+.padding
+    padding: 0 16px 16px 16px
+    overflow-y: scroll
+    height: 248px
+    margin-top: 30px
+    &::-webkit-scrollbar 
+        width: 2px 
+    &::-webkit-scrollbar-track 
+        background: var(--grey-25) 
+    &::-webkit-scrollbar-thumb 
+        border-radius: 10px
+        margin-right: 5px
+        background: var(--grey-900)         
+    
+
+.slideEnter
+    .basket
+        transform: translateX(100vw)
+        
+.slideEnterActive
+    .basket
+        transition: .5s
+        transform: translateX(0)
+
+.slideExit 
+    .basket
+        transform: translateX(0)
+
+.slideExitActive
+    .basket
+        transition: .5s
+        transform: translateX(100vw)
+        @media (min-width: 1200px)
+            transition: 1.2s
+
+.close
+    display: flex
+    justify-content: flex-end
+
+
+.bag
+    display: flex
+    gap: 8px
+    align-items: center
+    &__text
+        padding-top: 2px
+        font-size: 26px
+        line-height: 100%
+        text-transform: uppercase
+        @media (min-width: 768px)
+            font-size: 32px
+            padding-top: 6px
+    img
+        width: 28px
+        @media (min-width: 768px)
+            width: 40px
+    span
+        color: var(--grey-500)
+        
+.description
+    margin-top: 30px
+    letter-spacing: 0.64px
+    text-transform: uppercase
+    @media (min-width: 768px)
+        width: 435px
+        font-size: 18px
+        letter-spacing: .48px
+        line-height: 104%
+
+.search
+    display: flex
+    align-items: center
+    margin-top: 25px
+   
+
+.circle
+    margin-left: -14px
+
+.text
+    font-size: 14px
+    text-transform: uppercase
+
+.products
+    margin-top: 72px
+    padding: 0 0 0 16px
+    @media (min-width: 768px)
+        padding: 24px
+
+.footer
+    position: absolute
+    width: 100%
+    bottom: 0
+    padding: 24px
+    background-color: var(--grey-100)
+    
+
+
+
+
+.promocode
+    color: var(--grey-500)
+    font-size: 14px
+    border-top: 1px solid var(--grey-300)
+    padding-top: 8px
+    margin-bottom: 16px
+    @media (min-width: 768px)
+        font-size: 16px
+        border-top: none
+
+
+
+.discount
+    color: var(--primary-600)
+
+.price
+    @media (min-width: 768px)
+        font-size: 20px
+
+.old_price
+    color: var(--grey-400)
+    text-decoration: line-through
+
+.allPrice
+    font-size: 20px
+    @media (min-width: 768px)
+        font-size: 32px
+
+
+.product
+    display: flex
+    gap: 24px
+    padding: 20px 0
+    border-bottom: 1px solid var(--Grey-300)
+
+.image
+    background: lightgray
+    width: 74px
+    height: 74px
+
+.name
+    color: var(--Grey-700)
+    font-size: 14px
+    margin-bottom: 10px
+
+.price
+    color: var(--Grey-900)
+    font-size: 14px
+
+.bottom
+    display: flex
+    gap: 29px
+    align-items: flex-start
+
+.size
+    color: var(--Grey-500)
+    font-size: 12px
+    line-height: 133.333% 
+
+.line
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 12px
+    margin-bottom: 17px
+    &__text
+        color: var(--Grey-700)
+        font-size: 14px
+        flex-shrink: 0
+
+.sum
+    flex-shrink: 0   
+    color: var(--Grey-600)
+
+.border
+    height: 1px
+    width: 100%
+    background: var(--Grey-300)
+
+.all__price
+    color: var(--Grey-900)
+    font-size: 32px
+    line-height: 120%
+    letter-spacing: 0.64px
+    text-transform: uppercase

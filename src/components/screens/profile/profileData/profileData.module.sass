@@ -1,0 +1,52 @@
+.data
+    width: 100%
+    @media (min-width: 768px) 
+        width: 400px
+    @media (min-width: 1200px) 
+        width: 498px
+
+.input
+    margin-bottom: 16px
+
+.link
+    display: block
+    color: var(--Grey-800)
+    font-size: 16px
+    line-height: 137.5%
+    text-decoration: underline
+    margin-bottom: 56px
+
+.back
+    display: flex
+    align-items: center
+    gap: 8px
+    color: var(--Grey-900)
+    font-size: 16px
+    line-height: 112.5%
+    letter-spacing: 0.64px
+    text-transform: uppercase
+    margin-bottom: 35px
+    @media (min-width: 768px)
+        display: none
+
+.input_field
+  font-size: 1rem
+  width: 100%
+  border: none
+  border-bottom: 0.5px solid #8A7E8F
+  padding: 16px 15px 8px
+  background-color: transparent
+  &::placeholder
+    color: #8A7E8F
+  &:focus
+    outline: none
+  &:not(&:first-child)
+    margin-top: 10px
+    
+.error_message
+  color: var(--error-500)
+  font-size: 14px
+  margin-top: 8px
+
+.error_border
+  border-color: var(--error-500)

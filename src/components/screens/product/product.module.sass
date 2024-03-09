@@ -1,0 +1,49 @@
+.wrap
+    margin-top: 60px
+
+.product
+    display: flex
+    
+    flex-direction: column
+    gap: 15px
+    margin-top: 16px
+    color: var(--grey-900)
+    font-size: 14px
+    line-height: normal
+    @media (min-width: 768px)
+        gap: 32px
+    @media (min-width: 1200px)
+        margin-top: 48px
+        flex-direction: row
+
+.textGrey
+    text-transform: uppercase
+    display: flex
+    align-items: center
+    cursor: pointer
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+    span
+        opacity: .7
+   
+
+.quenstion
+    &__wrap
+        display: flex
+        align-items: center
+        margin-top: 72px
+        gap: 24px
+
+.recommendation
+    padding-left: 16px
+    @media (min-width: 768px)
+        padding: 0 24px
+        max-width: var(--max-width)
+        margin: 0 auto
+        box-sizing: content-box
+    &__title
+        color: var(--grey-900)
+        font-size: 32px
+        text-transform: uppercase
+        margin: 98px 0 36px
+        @media (min-width: 768px)
+            font-size: 56px

@@ -1,0 +1,105 @@
+.categories 
+    margin-top: 80px
+    @media (min-width: 1200px)
+        display: flex
+        justify-content: space-between
+        gap: 20px
+        flex-direction: row
+        max-width: var(--max-width)
+        padding: 160px 40px 0
+        box-sizing: content-box
+        margin: 0 auto
+        
+.products
+    height: 390px
+    padding-left: 16px
+    @media (min-width: 768px)
+        height: auto
+        padding:  0 24px
+    @media (min-width: 1200px)
+        width: 1015px
+
+.title
+    margin-bottom: 32px
+    color: var(--grey-800)
+    font-size: 20px
+    font-weight: 400
+    line-height: 24px
+    text-transform: uppercase
+    @media (min-width: 768px)
+        font-size: 32px
+        line-height: 100%
+    @media (min-width: 1200px)
+        margin: 0
+        padding: 0
+        
+
+.card
+    display: block     
+
+.bg
+    &_one
+        background: url(/smallImg2.png) center/cover no-repeat
+        transition: all .3s
+        @media (min-width: 768px)
+            height: 257px!important
+        @media (min-width: 1200px)
+            height: 366px!important
+        &:hover
+            transform: scale(1.3)
+    &_two
+        background: url(/mainImg2.png) center/cover no-repeat
+        transition: all .3s
+        @media (min-width: 768px)
+            height: 190px
+        @media (min-width: 1200px)
+            height: 269px
+        &:hover
+            transform: scale(1.3)
+    &_three
+        background: url(/categories3.png) center/cover no-repeat
+        transition: all .3s
+        @media (min-width: 768px)
+            height: 338px
+        @media (min-width: 1200px)
+            height: 480px
+        &:hover
+            transform: scale(1.3)
+
+
+.img
+    height: 262px
+    overflow: hidden
+    &_one
+        @media (min-width: 768px)
+            height: 257px!important
+        @media (min-width: 1200px)
+            height: 366px!important
+    &_two
+        @media (min-width: 768px)
+            height: 190px
+        @media (min-width: 1200px)
+            height: 269px
+    &_three
+        transition: all .4s
+        @media (min-width: 768px)
+            height: 338px
+        @media (min-width: 1200px)
+            height: 480px
+   
+
+.subtitle
+    margin-top: -20px
+    color: var(--grey-900)
+    font-size: 40px
+    font-weight: 400
+    line-height: 40px
+    text-transform: uppercase
+    position: relative
+    z-index: 30
+    @media (min-width: 768px)
+        font-size: 48px
+        line-height: 104%
+    @media (min-width: 1200px)
+        font-size: 56px
+        line-height: 104%

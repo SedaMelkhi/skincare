@@ -1,0 +1,261 @@
+.header
+    min-height: calc(100% - 196px)
+    width: 100%
+    height: auto
+    display: flex
+    justify-content: space-between
+    box-shadow: 0px 0px 250px 500px var(--light-purple)
+    position: relative
+    background-color: var(--light-purple)
+    margin-top: 2px
+    @media ( min-width: 768px )
+        padding: 0 24px
+    @media ( min-width: 1200px )
+        height: calc(100vh - 196px)
+        min-height: 650px
+        padding: 0
+    &__wrap
+        min-height: var(--doc-height)
+        position: relative
+        
+
+.swiper
+    position: relative
+    display: flex
+    width: 100%
+    height: 100%
+    &__wrap
+        min-height: var(--doc-height)
+        padding-bottom: 84px
+        @media ( min-width: 768px )
+            padding-bottom: 126px
+        @media ( min-width: 1200px )
+            max-width: var(--max-width)
+            box-sizing: content-box
+            margin: 0 auto
+            padding: 0 40px  
+
+.slide
+    height: 100%
+
+.text
+    display: flex
+    flex-direction: column
+    justify-content: center
+    position: absolute
+    left: 0
+    top: 0
+    height: 100%
+    z-index: 2
+    @media ( min-width: 768px )
+        width: 510px
+    @media ( min-width: 1200px )
+        width: 100%
+    &_mobile
+        display: flex
+        position: static
+        justify-content: flex-start
+        margin-top: -16px
+        @media ( min-width: 768px )
+            margin-top: -32px
+        @media ( min-width: 1200px )
+            display: none
+    &__wrap
+        width: 345px
+        position: relative
+        height: 100%
+        order: 1
+        display: none    
+        @media ( min-width: 1200px )
+            display: block
+            order: 0
+            
+
+.title
+    color: var(--grey-900)
+    font-size: 40px
+    line-height: 100%
+    font-weight: 400
+    text-transform: uppercase
+    padding: 0 16px
+    @media ( min-width: 768px )
+        font-size: 72px
+        line-height: 104%
+        padding: 0
+    @media ( min-width: 1200px )
+        font-size: 80px
+        line-height: 96%
+
+.description
+    margin-top: 8px
+    color: var(--grey-800)
+    font-size: 16px
+    line-height: 137%
+    padding: 0 16px
+    @media ( min-width: 768px )
+        line-height: 116%
+        margin-top: 16px 
+        font-size: 24px
+        padding: 0
+    @media ( min-width: 1200px )
+        line-height: 116%
+        margin-top: 24px
+.link
+    color: var(--grey-900)
+    font-size: 16px
+    line-height: 112%
+    letter-spacing: 0.64px
+    text-transform: uppercase
+    padding: 0 16px
+    @media ( min-width: 768px )
+        font-size: 24px
+        line-height: 104%
+        letter-spacing: 0.48px
+        padding: 0
+    &__wrap
+        display: flex
+        align-items: center
+        cursor: pointer
+        margin-top: 24px
+        @media ( min-width: 768px )
+            margin-top: 40px
+        @media ( min-width: 1200px )
+            margin-top: 95px
+            transition: .3s
+            &:hover .circle
+                border-color: var(--grey-900)
+.circle
+    display: flex
+    align-items: center
+    justify-content: center
+    position: relative
+    left: -17px
+    width: 66px
+    height: 66px
+    border-radius: 50%
+    border: 1px solid var(--grey-400, #C3BDC7)
+    transition: .3s
+    z-index: -1
+    &:hover
+        border-color: var(--grey-900)
+    img
+        width: 32px
+        @media ( min-width: 768px )
+            width: 45px
+        @media ( min-width: 1200px )
+            width: 60px
+            margin-top: -5px
+    @media ( min-width: 768px )
+        width: 80px
+        height: 80px
+        left: -16px    
+    @media ( min-width: 1200px )
+        width: 131px
+        height: 131px
+        left: -32px
+       
+.mainImg
+    height: 40vh
+    min-height: 276px
+    width: 100%
+    background: center/cover no-repeat
+    @media ( min-width: 768px )
+        height: 510px
+    @media ( min-width: 1200px )
+        height: 100%
+    &__wrap
+        height: 100%
+        width: 66%  
+        @media ( min-width: 1200px )
+            //width: 670px
+            width: 49%
+
+.smallImg
+    width: 32%
+    height: 20vh
+    min-height: 125px
+    margin-left: 8px
+    background: center/cover no-repeat
+    @media ( min-width: 768px )
+        height: 255px
+        margin-left: 20px
+    @media ( min-width: 1200px )
+        //width: 325px
+        width: 23.8%
+        height: 297px
+.swiperParams
+    width: 100%
+    bottom: 17px
+    top: auto
+    display: flex
+    justify-content: flex-end
+    align-items: end
+    position: absolute
+    z-index: 10
+    @media ( max-height: 720px )
+        bottom: auto
+        top: 83vh
+    @media ( max-width: 768px )
+        bottom: 10px
+        top: auto
+        padding-right: 16px
+    
+
+.swiperPagination
+    position: static
+    text-align: left
+    color: var(--grey-500)
+    font-size: 12px
+    line-height: 24px
+    @media ( min-width: 768px ) 
+        font-size: 14px
+    span:nth-child(1)
+        font-size: 16px
+        margin-right: -4px
+        color: var(--grey-900)
+        @media ( min-width: 768px ) 
+            font-size: 20px
+    span:nth-child(2)
+        margin-left: -2px
+    &__wrap
+        width: 32%
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: 27%
+        @media ( min-width: 768px )
+            width: 29%
+        @media ( min-width: 1200px )
+            width: 23.5%
+
+.marquee
+    height: 72px
+    display: flex
+    align-items: center
+    gap: 16px
+    color: var(--grey-800)
+    font-size: 20px
+    line-height: 24px
+    text-transform: uppercase
+    padding-right: 16px
+    &__wrap
+        background: linear-gradient(90deg, #DAD8E4 0%, #D1CFD7 8.77%, #F4F4FC 26.31%, #ECECF1 52.26%, #EBEBF2 73.02%, #D2D2DD 92.16%)
+        position: absolute!important
+        bottom: 0
+        z-index: 2
+    @media ( min-width: 768px )
+        height: 126px
+        font-size: 48px
+        line-height: 104%
+        gap: 51px
+        padding-right: 51px
+    img
+        width: 24px
+        margin: 0 20px 0 0 
+        position: relative
+        top: 3px
+        @media ( min-width: 768px )
+            width: 40px
+            margin: 0 45px 0 0 
+            top: 0
+            
